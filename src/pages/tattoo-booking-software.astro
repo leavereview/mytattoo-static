@@ -1,52 +1,307 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "What is tattoo booking software?",
+    answer: "Tattoo booking software lets clients book appointments online 24/7, pay deposits, and receive automatic confirmations. It replaces DMs, phone calls, and manual scheduling with an automated system that works while you sleep."
+  },
+  {
+    question: "How much does tattoo booking software cost?",
+    answer: "Tattoo booking software typically costs $20-100 per month. MyTattoo.Software offers flat monthly pricing with unlimited bookings—no per-booking fees that punish your success."
+  },
+  {
+    question: "Can clients pay deposits when booking?",
+    answer: "Yes, good tattoo booking software collects deposits automatically at the time of booking. This dramatically reduces no-shows because clients have skin in the game from the start."
+  },
+  {
+    question: "Will booking software reduce no-shows?",
+    answer: "Yes, studies show that deposit collection combined with automated reminders reduces no-shows by 60-80%. A $50 deposit makes clients much more likely to show up or properly cancel."
+  },
+  {
+    question: "Can I use booking software with Instagram?",
+    answer: "Absolutely. Most tattoo artists put their booking link in their Instagram bio. Clients tap the link, see your availability, and book instantly without DM back-and-forth."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tattoo Booking Software: Complete Guide to Online Booking",
+  "description": "Everything you need to know about online booking software for tattoo artists. Collect deposits, reduce no-shows, and let clients book 24/7.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyTattoo"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-01-15"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title="Tattoo Booking Software" description="Online booking software for tattoo studios. Let clients book 24/7, collect deposits automatically, and reduce no-shows.">
+<BaseLayout
+  title="Tattoo Booking Software: Complete Guide to Online Booking (2026)"
+  description="Online booking software for tattoo artists. Let clients book 24/7, collect deposits automatically, and reduce no-shows by 70%. Complete guide for tattoo shops."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Booking Software</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Stop Chasing Bookings. Let Clients Come to You.</h1>
-        <p class="text-xl text-gray-300 mb-8">24/7 online booking with automatic deposits. No more DM tennis or lost enquiries.</p>
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Booking Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Tattoo booking software</strong> lets clients book appointments online, pay deposits, and receive confirmations—all without you lifting a finger. Stop playing DM tennis and start waking up to confirmed bookings.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/pricing/" class="btn-secondary text-lg px-8 py-4">View Pricing</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-white">
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Booking Features</h2>
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">24/7 Online Booking:</strong> Clients book when it suits them. Wake up to bookings, not voicemails.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Automatic Deposits:</strong> Collect deposits at booking. Dramatically reduces no-shows.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Calendar Sync:</strong> Your availability updates in real-time. No double bookings.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Automated Reminders:</strong> SMS and email reminders reduce no-shows by 70%.</span>
-          </li>
-        </ul>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Booking Software?</a></li>
+            <li><a href="#why-need" class="hover:text-brand-red">→ Why You Need It</a></li>
+            <li><a href="#how-works" class="hover:text-brand-red">→ How Online Booking Works</a></li>
+            <li><a href="#deposits" class="hover:text-brand-red">→ Deposit Collection</a></li>
+            <li><a href="#no-shows" class="hover:text-brand-red">→ Reducing No-Shows</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Key Features</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Software</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Tattoo Booking Software?</h2>
+
+        <p><strong>Tattoo booking software</strong> is an online system that lets clients schedule appointments, pay deposits, and receive confirmations automatically. Instead of endless DM chains and phone tag, clients see your real availability and book when it works for them.</p>
+
+        <p>The best tattoo booking software is built specifically for the industry—handling consultations, multi-hour sessions, deposit collection, and appointment types that generic tools like Calendly can't manage properly.</p>
+
+        <h2 id="why-need" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Why You Need Online Booking</h2>
+
+        <p>You became a tattoo artist to create art, not spend hours managing a calendar. Without proper booking software, you're leaving money on the table and burning out on admin.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">The Problem With DM Booking</h3>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">Every ignored DM is lost revenue</p>
+          <p>While you're tattooing, potential clients are messaging you. By the time you reply, they've often booked with someone else. Online booking captures these clients while you work.</p>
+        </div>
+
+        <ul class="space-y-3">
+          <li><strong>Time sink:</strong> 5-10 messages to book one appointment. That's hours per week on scheduling alone.</li>
+          <li><strong>Lost bookings:</strong> Clients want to book at 11pm when they're browsing Instagram. DMs don't convert at midnight.</li>
+          <li><strong>No deposits = no-shows:</strong> Without payment at booking, 20-30% of appointments never happen.</li>
+          <li><strong>Double bookings:</strong> Keeping track manually means mistakes. Software eliminates conflicts.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits of Booking Software</h3>
+
+        <ul class="space-y-2">
+          <li><strong>24/7 booking</strong> — wake up to confirmed, paid appointments</li>
+          <li><strong>70% fewer no-shows</strong> — deposits and reminders work</li>
+          <li><strong>Zero scheduling conflicts</strong> — real-time availability updates</li>
+          <li><strong>More time for art</strong> — stop being a full-time administrator</li>
+        </ul>
+
+        <h2 id="how-works" class="text-3xl font-bold text-brand-navy mt-12 mb-6">How Online Booking Works</h2>
+
+        <p>Modern tattoo booking software creates a seamless experience for both you and your clients.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">The Client Experience</h3>
+
+        <ol class="space-y-2">
+          <li><strong>1. Client clicks your booking link</strong> — from Instagram bio, website, or Google listing</li>
+          <li><strong>2. Selects appointment type</strong> — consultation, small piece, half-day session, touch-up</li>
+          <li><strong>3. Picks available time</strong> — sees your real-time availability, no guessing</li>
+          <li><strong>4. Enters their info</strong> — contact details, tattoo description, reference images</li>
+          <li><strong>5. Pays deposit</strong> — secure card payment processed instantly</li>
+          <li><strong>6. Receives confirmation</strong> — email and SMS with all appointment details</li>
+        </ol>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What You See</h3>
+
+        <ul class="space-y-2">
+          <li>New booking notification (email, SMS, or app)</li>
+          <li>Deposit automatically in your account</li>
+          <li>Client info and reference images stored</li>
+          <li>Calendar updated with no conflicts</li>
+        </ul>
+
+        <h2 id="deposits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Deposit Collection</h2>
+
+        <p>Deposit collection is the single most important feature of booking software. Without it, you're gambling on every appointment.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Why Deposits Matter</h3>
+
+        <div class="bg-gray-50 p-6 rounded-lg my-6">
+          <p class="text-2xl font-bold text-brand-navy mb-2">$500 session × 20% no-show rate = $100 lost per booking</p>
+          <p class="text-gray-700">If you do 20 sessions a month without deposits, that's $2,000+ in lost income. A $50-100 deposit fixes this problem almost entirely.</p>
+        </div>
+
+        <ul class="space-y-3">
+          <li><strong>Financial commitment:</strong> Clients who pay upfront show up. Period.</li>
+          <li><strong>Professional image:</strong> Deposits signal that your time is valuable.</li>
+          <li><strong>Cancellation protection:</strong> Keep the deposit if they no-show without notice.</li>
+          <li><strong>Cash flow:</strong> Deposits provide predictable income before sessions.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Deposit Best Practices</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Amount:</strong> $50-100 or 20-30% of estimated total</li>
+          <li><strong>Policy:</strong> Non-refundable, applies to session cost</li>
+          <li><strong>Timing:</strong> Required at booking, not later</li>
+          <li><strong>Clear terms:</strong> State your cancellation policy upfront</li>
+        </ul>
+
+        <h2 id="no-shows" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Reducing No-Shows</h2>
+
+        <p>Booking software attacks no-shows from multiple angles—not just deposits.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Automated Reminders</h3>
+
+        <ul class="space-y-2">
+          <li><strong>48 hours before:</strong> Email reminder with appointment details</li>
+          <li><strong>24 hours before:</strong> SMS reminder with confirmation request</li>
+          <li><strong>2 hours before:</strong> Final SMS with address and parking info</li>
+        </ul>
+
+        <p>Studies show that SMS reminders alone reduce no-shows by 30-40%. Combined with deposits, you can cut no-shows by 70% or more.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Easy Rescheduling</h3>
+
+        <p>Give clients a simple way to reschedule if something comes up. It's better than a no-show. Good software includes self-service rescheduling with reasonable notice requirements.</p>
+
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Key Features to Look For</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Deposit Collection</h3>
+            <p class="text-gray-700 text-sm">Collect payments at booking time. If software doesn't do this, keep looking.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">SMS Reminders</h3>
+            <p class="text-gray-700 text-sm">Email isn't enough. SMS gets opened. Automated reminders reduce no-shows dramatically.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Custom Booking Types</h3>
+            <p class="text-gray-700 text-sm">Consultations, small pieces, large sessions—each needs different time blocks and deposits.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Reference Image Upload</h3>
+            <p class="text-gray-700 text-sm">Let clients share inspiration images at booking time, not through separate DMs.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Calendar Sync</h3>
+            <p class="text-gray-700 text-sm">Sync with Google Calendar or iCal. See everything in one place.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Mobile Friendly</h3>
+            <p class="text-gray-700 text-sm">Clients book on phones. Your booking page must work perfectly on mobile.</p>
+          </div>
+        </div>
+
+        <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software: Complete Guide</a></p>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Software</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Built for Tattoo vs. Generic</h3>
+
+        <p>Generic booking tools (Calendly, Acuity, Square Appointments) work for basic scheduling but lack tattoo-specific features:</p>
+
+        <ul class="space-y-2">
+          <li>Reference image collection at booking</li>
+          <li>Digital consent forms integrated with appointments</li>
+          <li>Proper handling of multi-hour sessions</li>
+          <li>Deposit policies that match industry norms</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Avoid</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Per-booking fees:</strong> Punishes success. Flat monthly is better.</li>
+          <li><strong>No deposit collection:</strong> The most important feature. Non-negotiable.</li>
+          <li><strong>No SMS reminders:</strong> Email-only reminders get ignored.</li>
+          <li><strong>Complicated setup:</strong> If it takes more than an hour to configure, it's too complex.</li>
+        </ul>
+
+        <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Actually Works</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Start Taking Bookings Online</h2>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Your Free Trial</a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Stop Chasing Bookings?</h2>
+      <p class="text-xl mb-8 opacity-90">MyTattoo.Software lets clients book 24/7 with automatic deposits. Wake up to confirmed appointments instead of full DM inboxes.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-studio-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Studio Software Guide</h3>
+          <p class="text-gray-600 text-sm">Complete platform for tattoo shops and studios</p>
+        </a>
+        <a href="/tattoo-artist-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Artist Software Guide</h3>
+          <p class="text-gray-600 text-sm">Tools for independent tattoo artists</p>
+        </a>
+        <a href="/blog/free-tattoo-booking-app-guide/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Free Booking Apps</h3>
+          <p class="text-gray-600 text-sm">What free tools can and can't do</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

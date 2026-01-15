@@ -1,55 +1,275 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "What is tattoo studio software?",
+    answer: "Tattoo studio software is an all-in-one platform that handles booking, client management, consent forms, deposits, reminders, and business reporting. It replaces paper files, spreadsheets, and scattered DMs with one integrated system."
+  },
+  {
+    question: "How much does tattoo studio software cost?",
+    answer: "Tattoo studio software typically costs $29-150 per month. MyTattoo.Software offers flat monthly pricing with all features included—no per-artist or per-booking fees."
+  },
+  {
+    question: "Can clients book appointments online?",
+    answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services, and pay deposits—all without you lifting a finger."
+  },
+  {
+    question: "Do I need separate software for consent forms?",
+    answer: "No, good tattoo studio software includes digital consent forms that clients sign before appointments. Forms are stored securely and linked to client profiles."
+  },
+  {
+    question: "Will this work for a multi-artist studio?",
+    answer: "Yes, tattoo studio software is designed for both solo artists and multi-artist shops. Each artist can have their own calendar, availability, and client base while you maintain oversight of the whole studio."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tattoo Studio Software: Complete Guide for Shop Owners",
+  "description": "Everything you need to know about software for tattoo studios. Booking, consent forms, client management, and business reporting in one platform.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyTattoo"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-01-15"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title="Tattoo Studio Software" description="Complete tattoo studio software for booking, client management, consent forms, and deposits. Built for tattoo artists and shop owners.">
+<BaseLayout
+  title="Tattoo Studio Software: Complete Guide for Shop Owners (2026)"
+  description="Complete guide to tattoo studio software. Online booking, consent forms, client management, and deposits. Built for tattoo artists and shop owners."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Tattoo Studio Software</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Run Your Tattoo Studio Without the Chaos</h1>
-        <p class="text-xl text-gray-300 mb-8">Stop juggling DMs, spreadsheets, and paper consent forms. MyTattoo.Software brings everything together.</p>
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Studio Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Tattoo studio software</strong> brings booking, consent forms, client management, and payments into one platform. Stop juggling DMs, spreadsheets, and paper forms—focus on creating art instead.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 10 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/pricing/" class="btn-secondary text-lg px-8 py-4">View Pricing</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-white">
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Why Studios Need Proper Software</h2>
-        <p class="text-lg text-gray-600 mb-8">You became a tattoo artist to create art, not spend your evenings chasing deposits and filing consent forms. But without the right tools, admin eats into your creative time—and your income.</p>
-
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Core Features</h2>
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Online Booking:</strong> Clients book consultations and appointments 24/7. Deposits collected automatically.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Digital Consent Forms:</strong> Clients sign digitally. Forms stored securely. No more paper.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Client Management:</strong> Store contact info, reference images, allergies, and session notes.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Automated Reminders:</strong> Reduce no-shows with SMS and email reminders.</span>
-          </li>
-        </ul>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Studio Software?</a></li>
+            <li><a href="#why-need" class="hover:text-brand-red">→ Why Your Studio Needs It</a></li>
+            <li><a href="#key-features" class="hover:text-brand-red">→ Key Features</a></li>
+            <li><a href="#booking" class="hover:text-brand-red">→ Online Booking</a></li>
+            <li><a href="#consent-forms" class="hover:text-brand-red">→ Digital Consent Forms</a></li>
+            <li><a href="#client-management" class="hover:text-brand-red">→ Client Management</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right Software</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Tattoo Studio Software?</h2>
+
+        <p><strong>Tattoo studio software</strong> is a comprehensive platform designed specifically for tattoo shops and artists. It handles everything from booking and scheduling to consent forms, client records, payments, and business analytics.</p>
+
+        <p>Unlike generic booking tools (Calendly, Acuity) or piecing together multiple apps, tattoo studio software understands the unique needs of the industry: deposit collection, health questionnaires, reference image storage, multi-hour session management, and aftercare communication.</p>
+
+        <h2 id="why-need" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Why Your Studio Needs Proper Software</h2>
+
+        <p>You became a tattoo artist to create art, not spend evenings chasing deposits and filing consent forms. Without the right tools, admin work eats into your creative time and income.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">The Cost of Not Having Software</h3>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">No-shows cost money</p>
+          <p>A single no-show on a $500 session hurts. With a 20% no-show rate (common without deposits), a busy artist loses $2,000+ monthly. Proper booking software with deposits cuts no-shows by 70%.</p>
+        </div>
+
+        <ul class="space-y-3">
+          <li><strong>Lost bookings:</strong> While you're tattooing, potential clients are DMing competitors who respond faster.</li>
+          <li><strong>Admin overwhelm:</strong> Hours spent managing DMs, texts, emails, and paper forms instead of tattooing.</li>
+          <li><strong>Unprofessional image:</strong> Clients expect online booking. Paper consent forms feel dated.</li>
+          <li><strong>Legal risk:</strong> Paper consent forms get lost. Digital forms are stored securely forever.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits of Studio Software</h3>
+
+        <ul class="space-y-2">
+          <li><strong>70% fewer no-shows</strong> — deposits and automated reminders work</li>
+          <li><strong>24/7 booking</strong> — wake up to confirmed appointments</li>
+          <li><strong>Zero paperwork</strong> — digital consent forms, stored forever</li>
+          <li><strong>More time for art</strong> — automate the admin, focus on tattooing</li>
+        </ul>
+
+        <h2 id="key-features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Key Features of Tattoo Studio Software</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Online Booking</h3>
+            <p class="text-gray-700 text-sm">24/7 client booking with deposit collection, service selection, and instant confirmation.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Digital Consent Forms</h3>
+            <p class="text-gray-700 text-sm">Clients sign digitally before appointments. Forms stored securely, linked to profiles.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Client Management</h3>
+            <p class="text-gray-700 text-sm">Contact info, tattoo history, reference images, allergies, and session notes.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Automated Reminders</h3>
+            <p class="text-gray-700 text-sm">SMS and email reminders reduce no-shows and include prep instructions.</p>
+          </div>
+        </div>
+
+        <h2 id="booking" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Online Booking</h2>
+
+        <p>Online booking is the single most valuable feature for most studios. It eliminates the back-and-forth of scheduling while securing bookings with deposits.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">How It Works</h3>
+
+        <ol class="space-y-2">
+          <li><strong>1. Client visits your booking page</strong> — linked from your Instagram bio, website, or Google listing</li>
+          <li><strong>2. Selects service and artist</strong> — consultation, small piece, large session, touch-up</li>
+          <li><strong>3. Chooses available time</strong> — sees real-time availability, picks what works</li>
+          <li><strong>4. Pays deposit</strong> — card payment collected instantly</li>
+          <li><strong>5. Receives confirmation</strong> — email and SMS with appointment details</li>
+        </ol>
+
+        <p>Related: <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software: Complete Guide</a></p>
+
+        <h2 id="consent-forms" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Digital Consent Forms</h2>
+
+        <p>Every tattoo requires informed consent. Paper forms work, but they're easy to lose and hard to search. Digital consent forms solve these problems.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits of Digital Forms</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Never lost:</strong> Forms stored securely in the cloud, accessible forever</li>
+          <li><strong>Pre-appointment completion:</strong> Clients sign before arriving, saving session time</li>
+          <li><strong>Health questionnaires:</strong> Capture allergies, medications, conditions automatically</li>
+          <li><strong>Legal protection:</strong> Timestamped signatures with IP address logging</li>
+          <li><strong>Easy retrieval:</strong> Find any consent form in seconds</li>
+        </ul>
+
+        <h2 id="client-management" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Client Management</h2>
+
+        <p>Build lasting client relationships with comprehensive profiles that remember everything.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Track</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Contact info:</strong> Phone, email, Instagram handle</li>
+          <li><strong>Tattoo history:</strong> Every piece you've done, with photos</li>
+          <li><strong>Reference images:</strong> Ideas they've shared for future work</li>
+          <li><strong>Health info:</strong> Allergies, skin conditions, medications</li>
+          <li><strong>Session notes:</strong> Ink brands used, needle sizes, healing notes</li>
+          <li><strong>Communication history:</strong> Every message and appointment</li>
+        </ul>
+
+        <p>Related: <a href="/blog/building-tattoo-client-base/" class="text-brand-red hover:underline">Building Your Tattoo Client Base</a></p>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Software</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
+
+        <ul class="space-y-3">
+          <li><strong>Built for tattoo:</strong> Generic booking tools lack consent forms, deposits, and industry-specific features.</li>
+          <li><strong>Mobile-friendly:</strong> You and your clients live on phones. The software should too.</li>
+          <li><strong>Deposit collection:</strong> If it doesn't collect deposits at booking, no-shows will kill you.</li>
+          <li><strong>Simple pricing:</strong> Avoid per-booking fees that punish success.</li>
+          <li><strong>Free trial:</strong> Test with real clients before committing.</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
+
+        <ul class="space-y-2">
+          <li>No deposit collection at booking</li>
+          <li>Per-booking or per-client fees</li>
+          <li>No digital consent forms</li>
+          <li>Can't store reference images</li>
+          <li>No SMS reminders (or they cost extra)</li>
+        </ul>
+
+        <p>Related: <a href="/blog/best-tattoo-studio-software/" class="text-brand-red hover:underline">Best Tattoo Studio Software Comparison</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Simplify Your Studio?</h2>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Your Free Trial</a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Run Your Studio Without the Chaos?</h2>
+      <p class="text-xl mb-8 opacity-90">MyTattoo.Software brings booking, consent forms, and client management together in one platform built for tattoo artists.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-booking-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Booking Software Guide</h3>
+          <p class="text-gray-600 text-sm">Online booking, deposits, and reducing no-shows</p>
+        </a>
+        <a href="/tattoo-artist-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Artist Software Guide</h3>
+          <p class="text-gray-600 text-sm">Tools for individual tattoo artists</p>
+        </a>
+        <a href="/blog/free-tattoo-booking-app-guide/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Free Booking Apps</h3>
+          <p class="text-gray-600 text-sm">What free tools can and can't do</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

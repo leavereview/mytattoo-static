@@ -1,50 +1,319 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: "What software do tattoo artists use?",
+    answer: "Professional tattoo artists use specialized software for booking, client management, consent forms, and payments. MyTattoo.Software combines all these tools in one platform built specifically for the tattoo industry."
+  },
+  {
+    question: "Do solo tattoo artists need software?",
+    answer: "Yes—solo artists often need software more than studios. Without a receptionist or manager, you're handling all admin yourself. Software automates booking, reminders, and client management so you can focus on tattooing."
+  },
+  {
+    question: "How much does tattoo artist software cost?",
+    answer: "Tattoo artist software typically costs $20-80 per month for solo artists. Look for flat monthly pricing with no per-booking fees—those add up quickly as you get busier."
+  },
+  {
+    question: "Can I use tattoo software as a guest artist?",
+    answer: "Yes, good tattoo software works for guest artists. Take your client list and booking system with you wherever you work. Some software even handles multiple locations."
+  },
+  {
+    question: "Is there free tattoo artist software?",
+    answer: "Free options exist but come with limitations—usually no deposit collection, limited clients, or no SMS reminders. For serious artists, the $30-50/month investment pays for itself with one prevented no-show."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tattoo Artist Software: Complete Guide for Solo Artists",
+  "description": "Software guide for independent tattoo artists. Booking, client management, consent forms, and payments without the complexity of studio software.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyTattoo"
+  },
+  "datePublished": "2025-01-01",
+  "dateModified": "2026-01-15"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
 ---
 
-<BaseLayout title="Tattoo Artist Software" description="Software for solo tattoo artists. Manage bookings, clients, consent forms, and deposits without the complexity.">
+<BaseLayout
+  title="Tattoo Artist Software: Complete Guide for Solo Artists (2026)"
+  description="Software for independent tattoo artists. Manage bookings, clients, consent forms, and deposits without complexity. Built for solo artists and guest artists."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Artist Software</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Software Built for Solo Tattoo Artists</h1>
-        <p class="text-xl text-gray-300 mb-8">Simple, powerful tools to run your tattooing business. No complexity, no bloat.</p>
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Artist Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Tattoo artist software</strong> gives solo artists professional tools without enterprise complexity. Handle booking, clients, and consent forms in one place—so you can focus on creating art.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/pricing/" class="btn-secondary text-lg px-8 py-4">View Pricing</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-white">
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-brand-navy mb-6">Perfect for Independent Artists</h2>
-        <p class="text-lg text-gray-600 mb-8">You don't need enterprise software. You need tools that work without getting in your way.</p>
-
-        <ul class="space-y-4 mb-8">
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Your Online Booking Page:</strong> Professional booking page you can share on Instagram, your website, anywhere.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Client Records:</strong> Store everything about your clients in one place. Reference images, notes, consent forms.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
-            <span class="text-gray-700"><strong class="text-brand-navy">Deposits That Work:</strong> Collect deposits at booking. Stop wasting time on no-shows.</span>
-          </li>
-        </ul>
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Artist Software?</a></li>
+            <li><a href="#solo-vs-studio" class="hover:text-brand-red">→ Solo vs. Studio Software</a></li>
+            <li><a href="#key-features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#booking" class="hover:text-brand-red">→ Online Booking</a></li>
+            <li><a href="#client-management" class="hover:text-brand-red">→ Client Management</a></li>
+            <li><a href="#consent-forms" class="hover:text-brand-red">→ Digital Consent Forms</a></li>
+            <li><a href="#guest-artists" class="hover:text-brand-red">→ For Guest Artists</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Tattoo Artist Software?</h2>
+
+        <p><strong>Tattoo artist software</strong> is a business management platform designed for independent tattoo artists. It handles the admin side of running a tattoo business—booking, client records, consent forms, payments—so you can spend more time tattooing and less time on your phone.</p>
+
+        <p>Unlike generic business tools, tattoo artist software understands the specific needs of the industry: deposit collection, reference image storage, multi-hour appointments, health questionnaires, and aftercare communication.</p>
+
+        <h2 id="solo-vs-studio" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Solo Artist vs. Studio Software</h2>
+
+        <p>Not all tattoo software is created equal. Solo artists have different needs than multi-artist studios.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What Solo Artists Need</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Simple booking:</strong> One calendar, one artist, no complexity</li>
+          <li><strong>Personal branding:</strong> Your booking page, your style</li>
+          <li><strong>Mobile-first:</strong> Manage everything from your phone</li>
+          <li><strong>Affordable pricing:</strong> No paying for features you don't need</li>
+          <li><strong>Quick setup:</strong> Working in minutes, not days</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What You Don't Need</h3>
+
+        <ul class="space-y-2">
+          <li>Multi-artist scheduling and permissions</li>
+          <li>Staff payroll and commission tracking</li>
+          <li>Complex reporting dashboards</li>
+          <li>Inventory management for supplies</li>
+          <li>Front desk features</li>
+        </ul>
+
+        <div class="bg-gray-50 p-6 rounded-lg my-6">
+          <p class="font-bold text-brand-navy mb-2">The Right Amount of Features</p>
+          <p class="text-gray-700">Good software for solo artists includes everything you need and nothing you don't. You shouldn't pay extra for studio features or deal with a cluttered interface built for larger operations.</p>
+        </div>
+
+        <h2 id="key-features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Features for Solo Artists</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Online Booking Page</h3>
+            <p class="text-gray-700 text-sm">Professional booking page to share on Instagram, your website, and Google. Clients book 24/7.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Deposit Collection</h3>
+            <p class="text-gray-700 text-sm">Collect deposits at booking. Reduces no-shows by 70% and ensures serious clients only.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Client Records</h3>
+            <p class="text-gray-700 text-sm">Contact info, tattoo history, reference images, allergies—everything in one place.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Digital Consent Forms</h3>
+            <p class="text-gray-700 text-sm">Clients sign before appointments. Forms stored securely and linked to their profile.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">SMS Reminders</h3>
+            <p class="text-gray-700 text-sm">Automated text reminders reduce no-shows. Clients can confirm or reschedule easily.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Reference Image Storage</h3>
+            <p class="text-gray-700 text-sm">Clients upload inspiration images at booking. No more hunting through DMs.</p>
+          </div>
+        </div>
+
+        <h2 id="booking" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Online Booking for Solo Artists</h2>
+
+        <p>Online booking is the single biggest time-saver for independent artists. Instead of DM tennis, clients see your availability and book themselves.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">How It Works</h3>
+
+        <ol class="space-y-2">
+          <li><strong>1. Share your booking link</strong> — Instagram bio, website, Linktree, business cards</li>
+          <li><strong>2. Client selects appointment type</strong> — consultation, small piece, large session</li>
+          <li><strong>3. Picks from your available times</strong> — real-time availability, no conflicts</li>
+          <li><strong>4. Pays deposit</strong> — card payment, instantly in your account</li>
+          <li><strong>5. You get notified</strong> — email, SMS, or app notification</li>
+        </ol>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">The Instagram Bio Link</p>
+          <p>Most tattoo clients find artists on Instagram. A booking link in your bio converts followers into paying clients while you sleep. "DM to book" loses clients to faster-responding competitors.</p>
+        </div>
+
+        <p>Related: <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software: Complete Guide</a></p>
+
+        <h2 id="client-management" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Client Management</h2>
+
+        <p>Build lasting relationships with clients by remembering everything about them.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Track</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Contact info:</strong> Phone, email, Instagram handle, preferred contact method</li>
+          <li><strong>Tattoo history:</strong> Every piece you've done, with photos and notes</li>
+          <li><strong>Reference images:</strong> Ideas they've shared for future work</li>
+          <li><strong>Health info:</strong> Allergies, skin conditions, medications that affect healing</li>
+          <li><strong>Session notes:</strong> Ink brands, needle sizes, how they healed</li>
+          <li><strong>Preferences:</strong> Music they like, if they need breaks, pain tolerance</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Why This Matters</h3>
+
+        <p>Returning clients are your most valuable asset. When someone comes back for their third piece and you remember their previous tattoos, their healing patterns, and that they like coffee during long sessions—that's the kind of experience that creates lifelong clients and referrals.</p>
+
+        <h2 id="consent-forms" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Digital Consent Forms</h2>
+
+        <p>Every tattoo needs informed consent. Digital forms are faster, more secure, and never get lost.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits Over Paper</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Clients sign before arriving:</strong> Save 10-15 minutes per appointment</li>
+          <li><strong>Never lost:</strong> Cloud storage means forms are safe forever</li>
+          <li><strong>Easy to search:</strong> Find any form in seconds</li>
+          <li><strong>Health screening:</strong> Capture allergies, medications, conditions automatically</li>
+          <li><strong>Legal protection:</strong> Timestamped signatures with IP logging</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What Forms Should Include</h3>
+
+        <ul class="space-y-2">
+          <li>Age verification (18+ or legal guardian consent)</li>
+          <li>Medical history questionnaire</li>
+          <li>Aftercare acknowledgment</li>
+          <li>Photo release (if you photograph your work)</li>
+          <li>Cancellation and deposit policy agreement</li>
+        </ul>
+
+        <h2 id="guest-artists" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Software for Guest Artists</h2>
+
+        <p>Traveling artists and guest spot tattooers have unique needs. Your software should work wherever you do.</p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Guest Artist Requirements</h3>
+
+        <ul class="space-y-3">
+          <li><strong>Portable client list:</strong> Your clients follow you, not the shop</li>
+          <li><strong>Location flexibility:</strong> Book for different cities and shops</li>
+          <li><strong>Independent deposits:</strong> Payments come to you, not the host shop</li>
+          <li><strong>Travel scheduling:</strong> Block time for travel and set location-specific availability</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Announcing Guest Spots</h3>
+
+        <p>Good software lets you open booking for specific dates at a new location. Announce your guest spot on Instagram, share the booking link, and let clients in that city book directly with deposit—all before you arrive.</p>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Software</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Must-Haves for Solo Artists</h3>
+
+        <ul class="space-y-2">
+          <li><strong>Deposit collection at booking:</strong> Non-negotiable for reducing no-shows</li>
+          <li><strong>SMS reminders:</strong> Email alone doesn't cut it</li>
+          <li><strong>Mobile app:</strong> Manage everything from your phone</li>
+          <li><strong>Simple pricing:</strong> Flat monthly, no per-booking fees</li>
+          <li><strong>Free trial:</strong> Test it with real clients first</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
+
+        <ul class="space-y-2">
+          <li>Per-booking fees that punish success</li>
+          <li>No deposit collection</li>
+          <li>Email-only reminders</li>
+          <li>Complicated setup requiring technical knowledge</li>
+          <li>Features designed for big studios you'll never use</li>
+        </ul>
+
+        <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Works and What Doesn't</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Built for Artists Like You</h2>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Your Free Trial</a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Software Built for Artists Like You</h2>
+      <p class="text-xl mb-8 opacity-90">MyTattoo.Software gives solo artists professional tools without enterprise complexity. Booking, clients, consent forms—all in one place.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-studio-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Studio Software Guide</h3>
+          <p class="text-gray-600 text-sm">Complete platform for multi-artist shops</p>
+        </a>
+        <a href="/tattoo-booking-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Booking Software Guide</h3>
+          <p class="text-gray-600 text-sm">Online booking and deposit collection</p>
+        </a>
+        <a href="/blog/how-much-do-tattoo-artists-make/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Tattoo Artist Income</h3>
+          <p class="text-gray-600 text-sm">How much tattoo artists actually make</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
