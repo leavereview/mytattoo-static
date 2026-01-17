@@ -1,6 +1,7 @@
 ---
 title: "Building Your Tattoo Client Base: A Guide for New Artists"
 description: "Starting out as a tattoo artist? Learn how to build a loyal client base from scratch with these proven strategies."
+image: /images/blog-client.jpg
 date: "2024-12-05"
 tags: ["tattoo business", "marketing", "clients"]
 ---

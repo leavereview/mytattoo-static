@@ -1,6 +1,7 @@
 ---
 title: "How to Reduce No-Shows at Your Tattoo Studio"
 description: "No-shows cost tattoo artists time and money. Learn proven strategies to reduce missed appointments and protect your income."
+image: /images/blog-consultation.jpg
 date: "2024-12-15"
 tags: ["tattoo business", "no-shows", "booking"]
 ---

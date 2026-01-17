@@ -1,6 +1,7 @@
 ---
 title: "Tattoo Prices Guide: Complete Pricing Strategy for Artists"
 description: "How to price your tattoo work profitably. Learn about hourly rates, flat fees, minimum charges, and pricing strategies that work."
+image: /images/blog-pricing.jpg
 date: "2026-01-11"
 tags: ["pricing", "business", "tattoo artists"]
 ---

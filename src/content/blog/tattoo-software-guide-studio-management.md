@@ -1,6 +1,7 @@
 ---
 title: "Tattoo Software: Complete Guide to Studio Management Solutions"
 description: "Everything you need to know about tattoo studio software. Compare features, pricing, and find the right solution for your shop."
+image: /images/blog-software.jpg
 date: "2026-01-14"
 tags: ["software", "studio management", "business"]
 ---

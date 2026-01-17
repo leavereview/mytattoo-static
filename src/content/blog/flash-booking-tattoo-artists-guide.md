@@ -1,6 +1,7 @@
 ---
 title: "Flash Booking: The Complete Guide for Tattoo Artists"
 description: "Master flash booking to fill cancellations and boost revenue. Learn pricing, promotion, and management strategies that successful tattoo artists use."
+image: /images/blog-flash.jpg
 date: "2026-01-15"
 tags: ["flash tattoos", "booking", "business tips"]
 ---

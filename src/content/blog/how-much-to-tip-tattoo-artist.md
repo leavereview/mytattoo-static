@@ -1,6 +1,7 @@
 ---
 title: "How Much to Tip a Tattoo Artist: Complete Guide"
 description: "Tattoo tipping etiquette explained. Learn how much to tip, when to tip, and what factors affect the appropriate tip amount."
+image: /images/blog-tips.jpg
 date: "2026-01-09"
 tags: ["tipping", "etiquette", "clients"]
 ---

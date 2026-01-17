@@ -1,6 +1,7 @@
 ---
 title: "Piercing Apprenticeship Guide: How to Start Your Career"
 description: "Complete guide to becoming a professional piercer. Learn about apprenticeships, certifications, costs, and what to expect from training."
+image: /images/blog-piercing.jpg
 date: "2026-01-13"
 tags: ["piercing", "apprenticeship", "career"]
 ---

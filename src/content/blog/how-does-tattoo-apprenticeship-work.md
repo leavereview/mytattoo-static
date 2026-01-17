@@ -1,6 +1,7 @@
 ---
 title: "How Does a Tattoo Apprenticeship Work? Complete Guide"
 description: "Everything you need to know about tattoo apprenticeships. Find out what to expect, how long it takes, costs, and how to land an apprenticeship."
+image: /images/blog-apprentice.jpg
 date: "2026-01-10"
 tags: ["apprenticeship", "career", "becoming a tattoo artist"]
 ---

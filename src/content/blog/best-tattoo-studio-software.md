@@ -1,6 +1,7 @@
 ---
 title: "Best Tattoo Studio Software in 2024: What to Look For"
 description: "Choosing the right software for your tattoo studio? Here's what features actually matter and what to avoid."
+image: /images/blog-software.jpg
 date: "2024-12-10"
 tags: ["tattoo software", "studio management", "guide"]
 ---
