@@ -1,35 +1,61 @@
 ---
-// Blog Index - /blog/
-import BaseLayout from '../../layouts/BaseLayout.astro';
+// Tag Archive Page - /blog/tag/[tag]
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 
-// Get all blog posts, sorted by date
-const now = new Date();
-const posts = (await getCollection('blog'))
-  .filter(post => new Date(post.data.date) <= now)
-  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
 
-// Get all unique tags
-const allTags = new Set<string>();
-posts.forEach(post => {
-  post.data.tags?.forEach(tag => allTags.add(tag));
-});
-const tags = Array.from(allTags).sort();
+  // Get all unique tags
+  const allTags = new Set<string>();
+  posts.forEach(post => {
+    post.data.tags?.forEach(tag => allTags.add(tag));
+  });
 
+  // Create a path for each tag
+  return Array.from(allTags).map(tag => ({
+    params: { tag: tag.toLowerCase().replace(/\s+/g, '-') },
+    props: {
+      tag,
+      posts: posts.filter(post => post.data.tags?.includes(tag))
+        .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+    }
+  }));
+}
+
+const { tag, posts } = Astro.props;
+
+function formatTagForDisplay(tag: string): string {
+  return tag.split(' ').map(word =>
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+}
 ---
 
 <BaseLayout
-  title="Blog"
-  description="Tattoo studio business insights, booking tips, and industry guides for tattoo artists and studio owners."
+  title={`${formatTagForDisplay(tag)} Articles`}
+  description={`Browse all articles about ${tag} for tattoo artists and studio owners.`}
 >
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: `Tag: ${formatTagForDisplay(tag)}` }
+      ]} />
+    </div>
+  </div>
+
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
     <div class="container-custom">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-4">Resources</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">MyTattoo Blog</h1>
+        <span class="badge-primary mb-4">Tag</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{formatTagForDisplay(tag)}</h1>
         <p class="text-xl text-gray-300">
-          Insights, guides, and tips for running a successful tattoo studio. From booking optimization to building your client base.
+          {posts.length} article{posts.length !== 1 ? 's' : ''} tagged with "{tag}"
         </p>
       </div>
     </div>
@@ -53,9 +79,9 @@ const tags = Array.from(allTags).sort();
                 </div>
               )}
               <div class="flex flex-wrap gap-2 mb-3">
-                {post.data.tags?.slice(0, 2).map(tag => (
-                  <span class="text-xs font-medium text-brand-red uppercase tracking-wider">
-                    {tag}
+                {post.data.tags?.slice(0, 2).map(t => (
+                  <span class={`text-xs font-medium uppercase tracking-wider ${t === tag ? 'text-brand-red' : 'text-gray-500'}`}>
+                    {t}
                   </span>
                 ))}
               </div>
@@ -84,38 +110,24 @@ const tags = Array.from(allTags).sort();
 
       {posts.length === 0 && (
         <div class="text-center py-12">
-          <p class="text-gray-500">No blog posts yet. Check back soon!</p>
+          <p class="text-gray-500">No articles found with this tag.</p>
+          <a href="/blog/" class="btn-primary mt-4 inline-block">
+            View All Articles
+          </a>
         </div>
       )}
     </div>
   </section>
 
-  <!-- Browse by Tag -->
-  <section class="section bg-gray-50">
-    <div class="container-custom">
-      <h2 class="text-2xl font-bold text-brand-navy mb-6 text-center">Browse by Topic</h2>
-      <div class="flex flex-wrap justify-center gap-3">
-        {tags.map(tag => (
-          <a
-            href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}/`}
-            class="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:border-brand-red hover:text-brand-red transition-colors"
-          >
-            {tag}
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter CTA -->
+  <!-- CTA -->
   <section class="section bg-brand-red-light">
     <div class="container-custom text-center">
-      <h2 class="text-3xl font-bold text-brand-navy mb-4">Stay Updated</h2>
+      <h2 class="text-3xl font-bold text-brand-navy mb-4">Explore More Topics</h2>
       <p class="text-gray-600 mb-6 max-w-xl mx-auto">
-        Get the latest tattoo business tips, booking guides, and industry insights delivered to your inbox.
+        Discover more insights and guides for running a successful tattoo studio.
       </p>
-      <a href="/contact/" class="btn-primary">
-        Subscribe to Updates
+      <a href="/blog/" class="btn-primary">
+        View All Articles
       </a>
     </div>
   </section>

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mytattoo.software/sitemap.xml
+
+Disallow: /api/
+Disallow: /_astro/

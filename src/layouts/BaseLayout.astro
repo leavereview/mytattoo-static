@@ -11,6 +11,7 @@ interface Props {
   publishedDate?: string;
   modifiedDate?: string;
   noindex?: boolean;
+  author?: string;
 }
 
 const {
@@ -20,7 +21,8 @@ const {
   type = 'website',
   publishedDate,
   modifiedDate,
-  noindex = false
+  noindex = false,
+  author = 'John Powell'
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -42,6 +44,24 @@ const schemaOrg = {
       "url": "https://mytattoo.software",
       "name": "MyTattoo.Software",
       "publisher": { "@id": "https://mytattoo.software/#organization" }
+    },
+    {
+      "@type": type === 'article' ? 'Article' : 'WebPage',
+      "@id": canonicalURL.href,
+      "url": canonicalURL.href,
+      "name": title,
+      "description": description,
+      "isPartOf": { "@id": "https://mytattoo.software/#website" },
+      ...(publishedDate && { "datePublished": publishedDate }),
+      ...(modifiedDate && { "dateModified": modifiedDate }),
+      ...(type === 'article' && {
+        "author": {
+          "@type": "Person",
+          "name": author,
+          "url": "https://mytattoo.software/about/"
+        },
+        "publisher": { "@id": "https://mytattoo.software/#organization" }
+      })
     }
   ]
 };
@@ -62,6 +82,12 @@ const schemaOrg = {
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:site_name" content="MyTattoo.Software" />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(image, Astro.site)} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

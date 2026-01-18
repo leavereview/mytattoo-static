@@ -77,7 +77,7 @@ Premium styles that command higher rates:
 
 ### Efficient Scheduling
 
-Using professional [tattoo scheduling software](/tattoo-scheduling-software/) can help:
+Using professional [tattoo booking software](/tattoo-booking-software/) can help:
 - Reduce no-shows by 40-60%
 - Optimize session lengths
 - Minimize gaps between appointments
