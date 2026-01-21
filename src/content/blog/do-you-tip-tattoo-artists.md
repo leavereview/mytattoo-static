@@ -1,9 +1,9 @@
 ---
-title: "Do You Tip Tattoo Artists? Complete Etiquette Guide 2024"
+title: "Tipping Tattoo Artists Guide"
 description: "Learn proper tipping etiquette for tattoo artists. Discover when, how much, and why tipping matters in tattoo shops."
 image: /images/blog-tips.jpg
 date: "2026-01-12"
-tags: ["tipping", "tattoo etiquette", "client guide"]
+tags: ["Pricing", "Client Care"]
 author: "MyTattoo Team"
 ---
 

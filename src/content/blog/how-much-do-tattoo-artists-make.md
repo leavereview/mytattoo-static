@@ -1,9 +1,9 @@
 ---
-title: "How Much Do Tattoo Artists Make in 2024? (Real Income Data)"
+title: "Tattoo Artist Income Guide (2024)"
 description: "Discover how much tattoo artists make in 2024, including factors affecting income, hourly rates, and proven strategies to maximize earnings."
 image: /images/blog-pricing.jpg
 date: "2026-01-12"
-tags: ["tattoo artist income", "tattoo career", "pricing"]
+tags: ["Career", "Pricing"]
 author: "MyTattoo Team"
 ---
 

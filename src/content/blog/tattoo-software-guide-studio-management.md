@@ -1,9 +1,9 @@
 ---
-title: "Tattoo Software: Complete Guide to Studio Management Solutions"
+title: "Tattoo Studio Software Guide"
 description: "Everything you need to know about tattoo studio software. Compare features, pricing, and find the right solution for your shop."
 image: /images/blog-software.jpg
 date: "2026-01-14"
-tags: ["software", "studio management", "business"]
+tags: ["Software", "Business"]
 ---
 
 Running a tattoo studio involves far more than creating art. Between managing appointments, tracking clients, handling payments, and staying compliant with health regulations, the administrative burden can overwhelm even the most organized shop owner. That's where tattoo studio software comes in.

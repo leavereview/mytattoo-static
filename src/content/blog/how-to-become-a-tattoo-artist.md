@@ -1,9 +1,9 @@
 ---
-title: "How to Become a Tattoo Artist: Complete 2024 Guide"
+title: "Become a Tattoo Artist (2024)"
 description: "Learn how to become a tattoo artist with our step-by-step guide. From apprenticeships to licensing, discover what it takes to start your tattoo career."
 image: /images/blog-career.jpg
 date: "2026-01-12"
-tags: ["tattoo career", "apprenticeship", "becoming a tattoo artist"]
+tags: ["Career"]
 author: "MyTattoo Team"
 ---
 

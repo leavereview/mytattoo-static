@@ -1,9 +1,9 @@
 ---
-title: "How Does a Tattoo Apprenticeship Work? Complete Guide"
+title: "Tattoo Apprenticeship Guide"
 description: "Everything you need to know about tattoo apprenticeships. Find out what to expect, how long it takes, costs, and how to land an apprenticeship."
 image: /images/blog-apprentice.jpg
 date: "2026-01-10"
-tags: ["apprenticeship", "career", "becoming a tattoo artist"]
+tags: ["Career"]
 ---
 
 A tattoo apprenticeship is the traditional pathway to becoming a professional tattoo artist. Unlike many careers where you can learn through school or self-study, tattooing is a trade best learned through hands-on mentorship. Here's how it works.

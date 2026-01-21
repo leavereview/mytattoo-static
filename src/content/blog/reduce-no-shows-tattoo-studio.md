@@ -1,9 +1,9 @@
 ---
-title: "How to Reduce No-Shows at Your Tattoo Studio"
+title: "Reduce Tattoo Studio No-Shows"
 description: "No-shows cost tattoo artists time and money. Learn proven strategies to reduce missed appointments and protect your income."
 image: /images/blog-consultation.jpg
 date: "2024-12-15"
-tags: ["tattoo business", "no-shows", "booking"]
+tags: ["Business", "Booking"]
 ---
 
 No-shows are one of the biggest frustrations for tattoo artists. When a client doesn't turn up for a session you've blocked out hours for, you lose income you can't recover.

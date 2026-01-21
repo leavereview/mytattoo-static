@@ -1,9 +1,9 @@
 ---
-title: "Tattoo Prices Guide: Complete Pricing Strategy for Artists"
+title: "Tattoo Pricing Strategy Guide"
 description: "How to price your tattoo work profitably. Learn about hourly rates, flat fees, minimum charges, and pricing strategies that work."
 image: /images/blog-pricing.jpg
 date: "2026-01-11"
-tags: ["pricing", "business", "tattoo artists"]
+tags: ["Pricing", "Business"]
 ---
 
 Pricing tattoos correctly is one of the most challenging aspects of running a tattoo business. Charge too little and you can't sustain your career. Charge too much and clients go elsewhere. This guide helps you find the right balance.

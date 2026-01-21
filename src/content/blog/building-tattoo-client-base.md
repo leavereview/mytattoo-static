@@ -1,9 +1,9 @@
 ---
-title: "Building Your Tattoo Client Base: A Guide for New Artists"
+title: "Building Your Tattoo Client Base"
 description: "Starting out as a tattoo artist? Learn how to build a loyal client base from scratch with these proven strategies."
 image: /images/blog-client.jpg
 date: "2024-12-05"
-tags: ["tattoo business", "marketing", "clients"]
+tags: ["Business"]
 ---
 
 Every successful tattoo artist started with zero clients. Building a loyal client base takes time, but with the right approach, you can accelerate your growth and establish a sustainable business.

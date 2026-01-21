@@ -31,11 +31,30 @@ function formatTagForDisplay(tag: string): string {
     word.charAt(0).toUpperCase() + word.slice(1)
   ).join(' ');
 }
+
+const displayTag = formatTagForDisplay(tag);
+
+// noindex sparse tags (fewer than 3 posts) to avoid thin content penalties
+const shouldNoindex = posts.length < 3;
+
+// Tag descriptions for SEO
+const tagDescriptions: Record<string, string> = {
+  'Software': 'Tattoo studio software guides: booking systems, design tools, and management platforms for artists and studio owners.',
+  'Business': 'Business advice for tattoo artists and studio owners including marketing, growth strategies, and operations.',
+  'Booking': 'Tattoo booking guides: appointment management, flash booking, no-show prevention, and scheduling best practices.',
+  'Career': 'Tattoo career resources including apprenticeships, becoming an artist, income guides, and professional development.',
+  'Pricing': 'Tattoo pricing guides covering rates, costs, tipping etiquette, and pricing strategies for artists.',
+  'Client Care': 'Client management resources including consent forms, preparation guides, aftercare, and consultation tips.',
+  'Studio Management': 'Studio management guides for running a successful tattoo shop including policies and workflows.',
+};
+
+const description = tagDescriptions[tag] || `Explore ${posts.length} articles about ${tag.toLowerCase()} for tattoo artists and studio owners.`;
 ---
 
 <BaseLayout
-  title={`${formatTagForDisplay(tag)} Articles`}
-  description={`Browse all articles about ${tag} for tattoo artists and studio owners.`}
+  title={`${displayTag} - Tattoo Articles & Guides`}
+  description={description}
+  noindex={shouldNoindex}
 >
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">

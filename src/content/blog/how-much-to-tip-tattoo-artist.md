@@ -1,9 +1,9 @@
 ---
-title: "How Much to Tip a Tattoo Artist: Complete Guide"
+title: "How Much to Tip Tattoo Artists"
 description: "Tattoo tipping etiquette explained. Learn how much to tip, when to tip, and what factors affect the appropriate tip amount."
 image: /images/blog-tips.jpg
 date: "2026-01-09"
-tags: ["tipping", "etiquette", "clients"]
+tags: ["Pricing"]
 ---
 
 Tipping your tattoo artist is customary, but the etiquette isn't always clear. This guide covers how much to tip, when it's appropriate, and answers common questions about tattoo tipping.

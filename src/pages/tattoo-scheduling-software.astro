@@ -1,0 +1,360 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: "What is tattoo scheduling software?",
+    answer: "Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles booking, calendar management, automated reminders, and often includes features like deposit collection and client management."
+  },
+  {
+    question: "How does scheduling software reduce no-shows?",
+    answer: "Scheduling software sends automated SMS and email reminders before appointments. Combined with deposit collection at booking, this typically reduces no-shows by 50-70% compared to manual booking methods."
+  },
+  {
+    question: "Can clients book appointments themselves?",
+    answer: "Yes. Modern tattoo scheduling software includes online booking portals where clients can view availability, select services, and book appointments 24/7 without needing to call or message."
+  },
+  {
+    question: "Does scheduling software work for multiple artists?",
+    answer: "Yes. Good scheduling software manages individual calendars for each artist, allowing clients to book with their preferred artist while preventing double-bookings across the studio."
+  },
+  {
+    question: "How much does tattoo scheduling software cost?",
+    answer: "Tattoo scheduling software typically costs £20-80 per month. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so your costs stay predictable as you get busier."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tattoo Scheduling Software: Appointment Management for Studios",
+  "description": "Complete guide to tattoo scheduling software. Online booking, calendar management, automated reminders, and multi-artist scheduling for tattoo studios.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyTattoo.Software"
+  },
+  "datePublished": "2026-01-18",
+  "dateModified": "2026-01-18"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="Tattoo Scheduling Software (2026)"
+  description="Tattoo scheduling software for studios and artists. Online booking, automated reminders, multi-artist calendars, and deposit collection. Start free trial."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Scheduling Software' }
+      ]} />
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/images/hero-tattoo.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Appointment Management</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Scheduling Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Tattoo scheduling software</strong> eliminates the chaos of manual booking. Let clients book online, send automatic reminders, manage multiple artist calendars, and protect your time with deposits—all from one system.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="py-8 bg-gray-50 border-b">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        <div>
+          <div class="text-xl font-bold text-brand-navy">60%</div>
+          <div class="text-xs text-gray-600">Less phone time</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">70%</div>
+          <div class="text-xs text-gray-600">Fewer no-shows</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">0</div>
+          <div class="text-xs text-gray-600">Double bookings</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">24/7</div>
+          <div class="text-xs text-gray-600">Online booking</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">Multi</div>
+          <div class="text-xs text-gray-600">Artist support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is Scheduling Software?</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Studios</a></li>
+            <li><a href="#multi-artist" class="hover:text-brand-red">→ Multi-Artist Management</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing Software</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is Tattoo Scheduling Software?</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          <strong>Tattoo scheduling software</strong> is a digital system that manages appointments for tattoo studios and individual artists. It replaces paper diaries, phone-based booking, and scattered DM conversations with a centralised calendar that clients can book directly.
+        </p>
+        <p class="text-gray-600 mb-8">
+          Beyond basic scheduling, modern tattoo software integrates deposit collection, automated reminders, client records, and multi-artist management. The goal is simple: spend less time on admin and more time tattooing.
+        </p>
+
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Scheduling Features</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Online Booking Portal</h3>
+            <p class="text-gray-700 text-sm">A branded booking page where clients see real availability, select services, and confirm appointments without calling or messaging.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Calendar Management</h3>
+            <p class="text-gray-700 text-sm">Visual calendar showing all appointments, blocked time, and availability. Easy to reschedule by dragging appointments.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Automated Reminders</h3>
+            <p class="text-gray-700 text-sm">SMS and email reminders sent automatically at set intervals before appointments. Dramatically reduces no-shows.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Deposit Integration</h3>
+            <p class="text-gray-700 text-sm">Collect deposits at time of booking to secure appointments and protect against last-minute cancellations.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Service Configuration</h3>
+            <p class="text-gray-700 text-sm">Set up different appointment types with custom durations, prices, and deposit requirements—consultations, small pieces, full sessions.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Buffer Time</h3>
+            <p class="text-gray-700 text-sm">Automatically add setup and cleanup time between appointments so you're never running behind.</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Advanced Features</h3>
+        <ul class="space-y-2 mb-8">
+          <li><strong>Waitlist management:</strong> Capture interested clients when fully booked</li>
+          <li><strong>Recurring appointments:</strong> Set up regular sessions for large projects</li>
+          <li><strong>Calendar sync:</strong> Two-way sync with Google Calendar or iCal</li>
+          <li><strong>Time-off management:</strong> Block holidays, conventions, or personal time</li>
+          <li><strong>Cancellation policies:</strong> Enforce and communicate your policies</li>
+          <li><strong>Confirmation workflows:</strong> Require client confirmation before appointments</li>
+        </ul>
+
+        <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Tattoo Studios</h2>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">Time is money</p>
+          <p>Studios using scheduling software report spending 60% less time on booking-related tasks. That's time you can spend tattooing, designing, or actually having a life outside the shop.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Operational Benefits</h3>
+        <ul class="space-y-3 mb-6">
+          <li><strong>24/7 booking:</strong> Clients book when it's convenient for them, not just during shop hours</li>
+          <li><strong>Zero double-bookings:</strong> Real-time availability prevents scheduling conflicts</li>
+          <li><strong>Reduced no-shows:</strong> Automated reminders and deposits protect your time</li>
+          <li><strong>Less phone time:</strong> Fewer calls and messages about availability</li>
+          <li><strong>Professional image:</strong> Modern booking experience impresses clients</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Financial Benefits</h3>
+        <ul class="space-y-3 mb-8">
+          <li><strong>Protected revenue:</strong> Deposits ensure client commitment</li>
+          <li><strong>Optimised schedule:</strong> Fill gaps efficiently, maximise billable hours</li>
+          <li><strong>Reduced admin costs:</strong> Less time = lower overhead</li>
+          <li><strong>Better forecasting:</strong> See upcoming revenue at a glance</li>
+        </ul>
+
+        <h2 id="multi-artist" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Multi-Artist Studio Management</h2>
+        <p class="text-gray-600 mb-6">
+          For studios with multiple artists, scheduling software becomes even more valuable. Each artist needs their own calendar, availability settings, and booking preferences—but the studio needs unified management.
+        </p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Individual Artist Features</h3>
+        <ul class="space-y-2 mb-6">
+          <li><strong>Personal calendars:</strong> Each artist manages their own schedule</li>
+          <li><strong>Style-based booking:</strong> Clients can filter artists by specialty</li>
+          <li><strong>Custom availability:</strong> Different working hours for each artist</li>
+          <li><strong>Portfolio integration:</strong> Show artist work on booking page</li>
+          <li><strong>Individual pricing:</strong> Set rates per artist if they vary</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Studio-Level Management</h3>
+        <ul class="space-y-2 mb-8">
+          <li><strong>Unified view:</strong> See all artist schedules in one place</li>
+          <li><strong>Workstation management:</strong> Prevent conflicts when sharing space</li>
+          <li><strong>Reporting:</strong> Track bookings and revenue by artist</li>
+          <li><strong>Consistent policies:</strong> Apply standard deposits and cancellation rules</li>
+          <li><strong>Guest artist support:</strong> Easily add temporary artists</li>
+        </ul>
+
+        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Manual Booking vs. Scheduling Software</h2>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b-2 border-gray-200">
+                <th class="py-3 px-4 text-brand-navy">Task</th>
+                <th class="py-3 px-4 text-brand-navy">Manual/DMs</th>
+                <th class="py-3 px-4 text-brand-navy">Scheduling Software</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Showing availability</td>
+                <td class="py-3 px-4 text-gray-600">Type out dates manually</td>
+                <td class="py-3 px-4 text-gray-600">Client sees live calendar</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Collecting deposits</td>
+                <td class="py-3 px-4 text-gray-600">Separate PayPal/Venmo</td>
+                <td class="py-3 px-4 text-gray-600">Integrated at booking</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Sending reminders</td>
+                <td class="py-3 px-4 text-gray-600">Manual messages</td>
+                <td class="py-3 px-4 text-gray-600">Automatic SMS/email</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Rescheduling</td>
+                <td class="py-3 px-4 text-gray-600">Back-and-forth messages</td>
+                <td class="py-3 px-4 text-gray-600">One-click reschedule</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Finding client history</td>
+                <td class="py-3 px-4 text-gray-600">Scroll through DMs</td>
+                <td class="py-3 px-4 text-gray-600">Instant client profile</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">After-hours booking</td>
+                <td class="py-3 px-4 text-gray-600">Wait until you respond</td>
+                <td class="py-3 px-4 text-gray-600">Instant confirmation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing Scheduling Software</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Must-Have Features</h3>
+        <ul class="space-y-2 mb-6">
+          <li><strong>Online booking:</strong> Clients should book without messaging you</li>
+          <li><strong>Automated reminders:</strong> SMS and email before appointments</li>
+          <li><strong>Deposit collection:</strong> Integrated payment at booking</li>
+          <li><strong>Mobile access:</strong> Manage schedule from your phone</li>
+          <li><strong>Calendar sync:</strong> Integrate with your personal calendar</li>
+          <li><strong>Buffer time:</strong> Automatic gaps between appointments</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Nice-to-Have Features</h3>
+        <ul class="space-y-2 mb-6">
+          <li>Design reference upload at booking</li>
+          <li>Client intake forms and waivers</li>
+          <li>Multi-session project tracking</li>
+          <li>Reporting and analytics</li>
+          <li>Marketing tools (email campaigns)</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
+        <ul class="space-y-2 mb-8">
+          <li>Per-booking fees that increase with volume</li>
+          <li>No mobile app or mobile-optimized interface</li>
+          <li>Clunky deposit collection</li>
+          <li>No automated reminders</li>
+          <li>Desktop-only with no cloud access</li>
+        </ul>
+
+        <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software</a> | <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software</a> | <a href="/tattoo-booking-app/" class="text-brand-red hover:underline">Tattoo Booking App</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-8">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Take Control of Your Schedule?</h2>
+      <p class="text-xl mb-8 opacity-90">Stop the DM chaos. Let clients book online, send automatic reminders, and protect your time with deposits—all in one system.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 10 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-studio-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Tattoo Studio Software</h3>
+          <p class="text-gray-600 text-sm">Complete studio management</p>
+        </a>
+        <a href="/tattoo-booking-app/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Tattoo Booking App</h3>
+          <p class="text-gray-600 text-sm">Mobile booking for clients</p>
+        </a>
+        <a href="/blog/reduce-no-shows-tattoo-studio/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Reducing No-Shows</h3>
+          <p class="text-gray-600 text-sm">Protect your bookings</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

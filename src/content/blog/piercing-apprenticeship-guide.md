@@ -1,9 +1,9 @@
 ---
-title: "Piercing Apprenticeship Guide: How to Start Your Career"
+title: "Piercing Apprenticeship Guide"
 description: "Complete guide to becoming a professional piercer. Learn about apprenticeships, certifications, costs, and what to expect from training."
 image: /images/blog-piercing.jpg
 date: "2026-01-13"
-tags: ["piercing", "apprenticeship", "career"]
+tags: ["Career"]
 ---
 
 A piercing apprenticeship is the gateway to a professional career in body modification. Unlike tattooing, where self-taught artists exist (though it's not recommended), piercing requires hands-on training under experienced professionals. This guide covers everything you need to know.

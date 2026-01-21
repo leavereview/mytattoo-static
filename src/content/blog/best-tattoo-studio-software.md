@@ -1,9 +1,9 @@
 ---
-title: "Best Tattoo Studio Software in 2024: What to Look For"
+title: "Best Tattoo Studio Software (2024)"
 description: "Choosing the right software for your tattoo studio? Here's what features actually matter and what to avoid."
 image: /images/blog-software.jpg
 date: "2024-12-10"
-tags: ["tattoo software", "studio management", "guide"]
+tags: ["Software"]
 ---
 
 Running a tattoo studio involves more than just incredible artwork. Between managing bookings, handling deposits, coordinating multiple artists, and staying on top of clients - the admin can quickly become overwhelming.

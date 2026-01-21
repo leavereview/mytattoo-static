@@ -1,9 +1,9 @@
 ---
-title: "How Much Do Tattoos Cost? Complete 2024 Pricing Guide"
+title: "Tattoo Cost Guide (2024)"
 description: "Discover tattoo pricing factors, average costs by style and size, and how to set profitable rates as a tattoo artist. Complete 2024 guide with examples."
 image: /images/blog-pricing.jpg
 date: "2026-01-12"
-tags: ["tattoo pricing", "tattoo cost", "pricing guide"]
+tags: ["Pricing"]
 author: "MyTattoo Team"
 ---
 

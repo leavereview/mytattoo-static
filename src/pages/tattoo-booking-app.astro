@@ -1,0 +1,380 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const faqs = [
+  {
+    question: "What is a tattoo booking app?",
+    answer: "A tattoo booking app is a mobile-friendly system that lets clients book tattoo appointments online, view artist portfolios, submit design references, pay deposits, and manage their bookings—all from their phone."
+  },
+  {
+    question: "Do I need a separate app or is a mobile website enough?",
+    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything, and you avoid app store fees. A responsive booking portal gives you the benefits of an app without the complications."
+  },
+  {
+    question: "Can clients submit tattoo ideas through a booking app?",
+    answer: "Yes. Good tattoo booking systems include image upload features so clients can share reference images, placement photos, and design ideas when they book. This gives you everything you need before the consultation."
+  },
+  {
+    question: "How do booking apps handle deposits?",
+    answer: "Booking apps can require deposits at time of booking, either as a fixed amount or percentage of the estimated cost. Deposits are typically non-refundable for no-shows but can be applied to the final price."
+  },
+  {
+    question: "How much does a tattoo booking app cost?",
+    answer: "Tattoo booking software typically costs £20-80 per month. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so your costs don't increase as you get busier."
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tattoo Booking App: Mobile Booking for Tattoo Studios and Artists",
+  "description": "Everything you need to know about tattoo booking apps. Online scheduling, deposit collection, client management, and portfolio integration for tattoo studios.",
+  "author": {
+    "@type": "Organization",
+    "name": "MyTattoo.Software"
+  },
+  "datePublished": "2026-01-18",
+  "dateModified": "2026-01-18"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title="Tattoo Booking App Guide (2026)"
+  description="Tattoo booking app for studios and artists. Let clients book online, submit design ideas, pay deposits, and manage appointments from their phone. Free trial."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-3">
+    <div class="container-custom">
+      <Breadcrumbs items={[
+        { label: 'Home', href: '/' },
+        { label: 'Booking App' }
+      ]} />
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: url('/images/hero-tattoo.jpg'); background-size: cover; background-position: center;"></div>
+    </div>
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Mobile Booking</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Booking App</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>A tattoo booking app</strong> lets clients book appointments, submit design ideas, and pay deposits—all from their phone. Stop losing bookings to DM chaos and missed messages. Give clients the modern booking experience they expect.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="py-8 bg-gray-50 border-b">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        <div>
+          <div class="text-xl font-bold text-brand-navy">24/7</div>
+          <div class="text-xs text-gray-600">Booking available</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">70%</div>
+          <div class="text-xs text-gray-600">Fewer no-shows</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">0</div>
+          <div class="text-xs text-gray-600">Lost DM bookings</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">100%</div>
+          <div class="text-xs text-gray-600">Deposits secured</div>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-brand-navy">Mobile</div>
+          <div class="text-xs text-gray-600">First design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
+          <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#what-is" class="hover:text-brand-red">→ What Is a Tattoo Booking App?</a></li>
+            <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
+            <li><a href="#benefits" class="hover:text-brand-red">→ Benefits for Artists</a></li>
+            <li><a href="#clients" class="hover:text-brand-red">→ Client Experience</a></li>
+            <li><a href="#choosing" class="hover:text-brand-red">→ Choosing the Right App</a></li>
+            <li><a href="#faq" class="hover:text-brand-red">→ FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+
+        <h2 id="what-is" class="text-3xl font-bold text-brand-navy mb-6">What Is a Tattoo Booking App?</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          A <strong>tattoo booking app</strong> is a mobile-optimized platform that lets clients schedule tattoo appointments online. Instead of messaging back and forth on Instagram or playing phone tag, clients visit your booking page, choose an available slot, submit their design ideas, pay a deposit, and confirm—all in one seamless flow.
+        </p>
+        <p class="text-gray-600 mb-8">
+          The best tattoo booking apps integrate with your existing workflow. They sync with your calendar, collect the information you need upfront (design references, placement, size, budget), and protect your time with automatic deposits. At MyTattoo.Software, we've built booking tools specifically for the tattoo industry, understanding that a tattoo booking is very different from a haircut or spa appointment.
+        </p>
+
+        <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Features for Tattoo Booking</h2>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Online Appointment Scheduling</h3>
+            <p class="text-gray-700 text-sm">Clients see your real availability and book instantly. No more back-and-forth messages trying to find a time that works.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Design Reference Upload</h3>
+            <p class="text-gray-700 text-sm">Clients attach inspiration images, placement photos, and notes when booking. You get everything you need before the appointment.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Deposit Collection</h3>
+            <p class="text-gray-700 text-sm">Require deposits at booking to protect against no-shows. Set fixed amounts or percentages, with clear policies displayed.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Automated Reminders</h3>
+            <p class="text-gray-700 text-sm">SMS and email reminders sent before appointments. Dramatically reduces no-shows and last-minute cancellations.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Artist Selection</h3>
+            <p class="text-gray-700 text-sm">For studios with multiple artists, clients can choose their preferred artist based on style and availability.</p>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="font-bold text-brand-navy mb-2">Service Configuration</h3>
+            <p class="text-gray-700 text-sm">Set up different appointment types: consultations, small pieces, half-day sessions, full-day sessions, touch-ups.</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Advanced Booking Features</h3>
+        <ul class="space-y-2 mb-8">
+          <li><strong>Waitlist management:</strong> Capture interest when you're fully booked</li>
+          <li><strong>Flash booking:</strong> Special booking flow for flash events and available designs</li>
+          <li><strong>Consultation scheduling:</strong> Separate booking type for initial consultations</li>
+          <li><strong>Multi-session projects:</strong> Link appointments for large pieces requiring multiple sittings</li>
+          <li><strong>Cancellation policies:</strong> Display and enforce your cancellation terms</li>
+          <li><strong>Custom intake forms:</strong> Collect health information, consent, and aftercare acknowledgment</li>
+        </ul>
+
+        <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Tattoo Artists</h2>
+
+        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+          <p class="font-bold text-brand-navy">Your time is valuable</p>
+          <p>Every hour spent managing DMs and chasing deposits is an hour you're not tattooing or creating. A booking app gives you that time back while actually improving the client experience.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">For Solo Artists</h3>
+        <ul class="space-y-3 mb-6">
+          <li><strong>No more DM management:</strong> Point enquiries to your booking link instead of endless message threads</li>
+          <li><strong>Protected time:</strong> Deposits ensure clients are committed before you block out hours or days</li>
+          <li><strong>Professional image:</strong> A polished booking experience sets you apart from hobbyists</li>
+          <li><strong>Better preparation:</strong> Reference images and notes arrive before the appointment</li>
+          <li><strong>Work-life balance:</strong> Clients can book when convenient; you don't need to respond at midnight</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">For Studios</h3>
+        <ul class="space-y-3 mb-6">
+          <li><strong>Unified booking:</strong> All artists bookable through one system with individual calendars</li>
+          <li><strong>Workstation management:</strong> Ensure rooms or stations aren't double-booked</li>
+          <li><strong>Revenue visibility:</strong> Track bookings and deposits across all artists</li>
+          <li><strong>Consistent policies:</strong> Same deposit and cancellation rules applied to everyone</li>
+          <li><strong>Reduced front desk burden:</strong> Fewer calls and walk-in booking requests</li>
+        </ul>
+
+        <h2 id="clients" class="text-3xl font-bold text-brand-navy mt-12 mb-6">The Client Booking Experience</h2>
+        <p class="text-gray-600 mb-6">
+          Modern clients expect to book everything from their phone—including tattoo appointments. Here's what a great mobile booking experience looks like:
+        </p>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">The Booking Flow</h3>
+        <ol class="space-y-4 mb-8">
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">1</span>
+            <div>
+              <strong class="text-brand-navy">Find your link</strong>
+              <p class="text-gray-600">Client clicks your booking link from Instagram bio, website, or Google</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">2</span>
+            <div>
+              <strong class="text-brand-navy">Choose service</strong>
+              <p class="text-gray-600">Select appointment type: consultation, small piece, half-day, full-day</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">3</span>
+            <div>
+              <strong class="text-brand-navy">Pick date and time</strong>
+              <p class="text-gray-600">See real availability and choose a slot that works</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">4</span>
+            <div>
+              <strong class="text-brand-navy">Submit design info</strong>
+              <p class="text-gray-600">Upload reference images, describe the concept, indicate size and placement</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">5</span>
+            <div>
+              <strong class="text-brand-navy">Pay deposit</strong>
+              <p class="text-gray-600">Secure the appointment with card payment</p>
+            </div>
+          </li>
+          <li class="flex gap-3">
+            <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">6</span>
+            <div>
+              <strong class="text-brand-navy">Receive confirmation</strong>
+              <p class="text-gray-600">Instant confirmation email with appointment details and policies</p>
+            </div>
+          </li>
+        </ol>
+
+        <h2 id="dm-vs-app" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Instagram DMs vs. Booking App</h2>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="border-b-2 border-gray-200">
+                <th class="py-3 px-4 text-brand-navy">Task</th>
+                <th class="py-3 px-4 text-brand-navy">Instagram DMs</th>
+                <th class="py-3 px-4 text-brand-navy">Booking App</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Showing availability</td>
+                <td class="py-3 px-4 text-gray-600">Type out dates manually</td>
+                <td class="py-3 px-4 text-gray-600">Real-time calendar</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Collecting references</td>
+                <td class="py-3 px-4 text-gray-600">Images mixed in chat history</td>
+                <td class="py-3 px-4 text-gray-600">Organised per booking</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Taking deposits</td>
+                <td class="py-3 px-4 text-gray-600">PayPal/Venmo separately</td>
+                <td class="py-3 px-4 text-gray-600">Integrated at booking</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Sending reminders</td>
+                <td class="py-3 px-4 text-gray-600">Manual messages</td>
+                <td class="py-3 px-4 text-gray-600">Automatic SMS/email</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Tracking no-shows</td>
+                <td class="py-3 px-4 text-gray-600">Memory or notes</td>
+                <td class="py-3 px-4 text-gray-600">Automatic flagging</td>
+              </tr>
+              <tr class="border-b border-gray-100">
+                <td class="py-3 px-4">Rescheduling</td>
+                <td class="py-3 px-4 text-gray-600">Start conversation over</td>
+                <td class="py-3 px-4 text-gray-600">One-click reschedule</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Booking App</h2>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
+        <ul class="space-y-2 mb-6">
+          <li><strong>Built for tattoo:</strong> Generic booking tools miss tattoo-specific needs</li>
+          <li><strong>Mobile-first design:</strong> Your clients are booking from their phones</li>
+          <li><strong>Deposit integration:</strong> Collecting deposits should be seamless, not an afterthought</li>
+          <li><strong>Image uploads:</strong> Clients need to submit reference images</li>
+          <li><strong>Customizable forms:</strong> Collect the specific information you need</li>
+          <li><strong>Flat pricing:</strong> Avoid per-booking fees that punish success</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
+        <ul class="space-y-2 mb-8">
+          <li>No deposit collection or clunky integration</li>
+          <li>No way to upload reference images</li>
+          <li>Desktop-focused design that's awkward on mobile</li>
+          <li>Per-booking fees that increase with volume</li>
+          <li>No automated reminders</li>
+        </ul>
+
+        <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software</a> | <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software</a> | <a href="/blog/reduce-no-shows-tattoo-studio/" class="text-brand-red hover:underline">Reducing No-Shows Guide</a></p>
+
+        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-8">
+          {faqs.map((faq) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
+              <p class="text-gray-700">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Booking?</h2>
+      <p class="text-xl mb-8 opacity-90">Stop losing bookings in your DMs. Give clients the professional booking experience they expect—and protect your time with automatic deposits.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 10 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-studio-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Tattoo Studio Software</h3>
+          <p class="text-gray-600 text-sm">Complete studio management</p>
+        </a>
+        <a href="/tattoo-booking-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Tattoo Booking Software</h3>
+          <p class="text-gray-600 text-sm">Full booking system guide</p>
+        </a>
+        <a href="/blog/reduce-no-shows-tattoo-studio/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Reducing No-Shows</h3>
+          <p class="text-gray-600 text-sm">Protect your bookings</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

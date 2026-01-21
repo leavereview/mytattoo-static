@@ -1,9 +1,9 @@
 ---
-title: "Free Tattoo Booking App: Complete Guide for Studios in 2024"
+title: "Free Tattoo Booking App Guide"
 description: "Discover the best free tattoo booking apps for your studio. Compare features, benefits, and find the perfect solution to streamline your appointments."
 image: /images/blog-booking.jpg
 date: "2026-01-15"
-tags: ["booking app", "free software", "tattoo studio"]
+tags: ["Software"]
 author: "MyTattoo Team"
 ---
 
