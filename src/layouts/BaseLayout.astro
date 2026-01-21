@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
+  schemaType?: 'Article' | 'BlogPosting' | 'WebPage' | 'CollectionPage';
   publishedDate?: string;
   modifiedDate?: string;
   noindex?: boolean;
@@ -19,11 +20,15 @@ const {
   description = 'MyTattoo.Software - The complete tattoo studio management platform. Booking, client management, consent forms, and deposits.',
   image = '/images/og-default.jpg',
   type = 'website',
+  schemaType,
   publishedDate,
   modifiedDate,
   noindex = false,
   author = 'John Powell'
 } = Astro.props;
+
+// Determine the schema type to use
+const resolvedSchemaType = schemaType || (type === 'article' ? 'Article' : 'WebPage');
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === 'Home' ? 'MyTattoo.Software - Tattoo Studio Management Software' : `${title} | MyTattoo.Software`;
@@ -46,7 +51,7 @@ const schemaOrg = {
       "publisher": { "@id": "https://mytattoo.software/#organization" }
     },
     {
-      "@type": type === 'article' ? 'Article' : 'WebPage',
+      "@type": resolvedSchemaType,
       "@id": canonicalURL.href,
       "url": canonicalURL.href,
       "name": title,
@@ -54,7 +59,7 @@ const schemaOrg = {
       "isPartOf": { "@id": "https://mytattoo.software/#website" },
       ...(publishedDate && { "datePublished": publishedDate }),
       ...(modifiedDate && { "dateModified": modifiedDate }),
-      ...(type === 'article' && {
+      ...((resolvedSchemaType === 'Article' || resolvedSchemaType === 'BlogPosting') && {
         "author": {
           "@type": "Person",
           "name": author,
