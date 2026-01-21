@@ -2,7 +2,7 @@
 title: "Tattoo Booking Form Template Guide"
 description: "Create an effective tattoo booking form. Essential fields, optional information, and best practices for gathering client details before appointments."
 image: /images/blog-consultation.jpg
-date: "2026-01-18"
+date: "2026-01-23"
 tags: ["Booking", "Client Care"]
 author: "MyTattoo Team"
 ---

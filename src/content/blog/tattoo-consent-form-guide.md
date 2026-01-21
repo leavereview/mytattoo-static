@@ -2,7 +2,7 @@
 title: "Tattoo Consent Form Guide"
 description: "Learn what should be included in a tattoo consent form to protect your business and clients. Includes essential clauses and professional guidance."
 image: /images/blog-consultation.jpg
-date: "2026-01-18"
+date: "2026-01-30"
 tags: ["Client Care", "Business"]
 author: "MyTattoo Team"
 ---

@@ -2,7 +2,7 @@
 title: "Tattoo Appointment Guide"
 description: "Complete guide to tattoo appointments. Learn what happens during your session, how to prepare, aftercare essentials, and what makes a great tattoo experience."
 image: /images/blog-client.jpg
-date: "2026-01-18"
+date: "2026-01-23"
 tags: ["Client Care"]
 author: "MyTattoo Team"
 ---

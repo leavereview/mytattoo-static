@@ -2,7 +2,7 @@
 title: "Tattoo Booking Guide (2026)"
 description: "Master tattoo appointment booking for your studio. Learn about booking systems, deposits, consultations, and workflow management."
 image: /images/blog-booking.jpg
-date: "2026-01-18"
+date: "2026-01-30"
 tags: ["Booking", "Business"]
 author: "MyTattoo Team"
 ---

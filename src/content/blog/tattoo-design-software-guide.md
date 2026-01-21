@@ -2,7 +2,7 @@
 title: "Tattoo Design Software Guide"
 description: "Explore tattoo design software options for creating and presenting designs. From iPad apps to desktop programs, find the right digital tools for your artwork."
 image: /images/blog-designs.jpg
-date: "2026-01-18"
+date: "2026-02-06"
 tags: ["Software"]
 author: "MyTattoo Team"
 ---
