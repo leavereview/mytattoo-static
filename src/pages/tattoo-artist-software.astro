@@ -1,27 +1,175 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+const artistStats = [
+  {
+    label: 'UK Solo/Independent Artists',
+    value: '8,000+',
+    change: { value: 18, direction: 'up' as const, period: 'since 2020' },
+    context: 'Independent tattoo artists and mobile artists'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '70%',
+    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
+    context: 'When deposits collected at booking time'
+  },
+  {
+    label: 'Weekly Admin Time Saved',
+    value: '8+ hrs',
+    change: { value: 60, direction: 'up' as const, period: 'vs manual' },
+    context: 'With automated booking and reminders'
+  },
+  {
+    label: 'Instagram Bio Link Conversion',
+    value: '40%',
+    context: 'Bio booking link vs 15% for DM-only booking'
+  },
+  {
+    label: 'Client Retention Rate',
+    value: '75%',
+    change: { value: 28, direction: 'up' as const, period: 'vs industry avg' },
+    context: 'Solo artists using client management systems'
+  },
+  {
+    label: 'Revenue Increase',
+    value: '30%',
+    change: { value: 30, direction: 'up' as const, period: 'year 1' },
+    context: 'With 24/7 online booking and deposit collection'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Online Booking (24/7)',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Deposit Collection',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Digital Consent Forms',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Automated Reminders (SMS/Email)',
+    values: [true, false, false]
+  },
+  {
+    label: 'Client History & Photos',
+    values: [true, false, false]
+  },
+  {
+    label: 'Reference Image Storage',
+    values: [true, false, false]
+  },
+  {
+    label: 'Instagram Bio Link',
+    values: [true, false, false]
+  },
+  {
+    label: 'Mobile App',
+    values: [true, false, false]
+  },
+  {
+    label: 'Guest Artist Features',
+    values: [true, false, false]
+  },
+  {
+    label: 'Aftercare Instructions',
+    values: [true, false, false]
+  }
+];
+
+const faqItems = [
   {
     question: "What software do tattoo artists use?",
-    answer: "Professional tattoo artists use specialized software for booking, client management, consent forms, and payments. MyTattoo.Software combines all these tools in one platform built specifically for the tattoo industry."
+    answer: "Professional tattoo artists use specialized software for booking, client management, consent forms, and payments. MyTattoo.Software combines all these tools in one platform built specifically for the tattoo industry. Solo artists see 30% revenue increases through 24/7 online booking and 70% fewer no-shows with automated deposit collection. The software includes Instagram integration, mobile apps, digital consent forms, and reference image storage.",
+    links: [
+      { text: 'View all features', url: '/features/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
   },
   {
     question: "Do solo tattoo artists need software?",
-    answer: "Yes—solo artists often need software more than studios. Without a receptionist or manager, you're handling all admin yourself. Software automates booking, reminders, and client management so you can focus on tattooing."
+    answer: "Yes—solo artists often need software more than studios. Without a receptionist or manager, you're handling all admin yourself. Software automates booking, reminders, and client management so you can focus on tattooing. Solo artists save 8+ hours weekly on admin tasks and see 75% client retention rates vs 47% industry average when using client management systems.",
+    links: [
+      { text: 'Solo artist features', url: '/features/' },
+      { text: 'Time savings calculator', url: '/contact/' }
+    ]
   },
   {
     question: "How much does tattoo artist software cost?",
-    answer: "Tattoo artist software typically costs $20-80 per month for solo artists. Look for flat monthly pricing with no per-booking fees—those add up quickly as you get busier."
+    answer: "Tattoo artist software typically costs £20-80 per month for solo artists. Look for flat monthly pricing with no per-booking fees—those add up quickly as you get busier. MyTattoo.Software offers simple pricing with all features included. Most solo artists see positive ROI within 2 weeks through prevented no-shows alone. One £100 no-show prevented pays for 3+ months of software.",
+    links: [
+      { text: 'View pricing plans', url: '/pricing/' },
+      { text: 'ROI calculator', url: '/contact/' }
+    ]
   },
   {
     question: "Can I use tattoo software as a guest artist?",
-    answer: "Yes, good tattoo software works for guest artists. Take your client list and booking system with you wherever you work. Some software even handles multiple locations."
+    answer: "Yes, good tattoo software works perfectly for guest artists. Take your client list and booking system with you wherever you work. Some software even handles multiple locations, letting you open booking for specific dates at new cities. Announce guest spots on Instagram, share your booking link, and collect deposits before you arrive. Your clients follow you, not the shop.",
+    links: [
+      { text: 'Guest artist features', url: '/features/' },
+      { text: 'Mobile booking guide', url: '/blog/tattoo-booking-guide/' }
+    ]
   },
   {
     question: "Is there free tattoo artist software?",
-    answer: "Free options exist but come with limitations—usually no deposit collection, limited clients, or no SMS reminders. For serious artists, the $30-50/month investment pays for itself with one prevented no-show."
+    answer: "Free options exist but come with severe limitations—usually no deposit collection, limited clients (5-10), or no SMS reminders. For serious artists, the £30-50/month investment pays for itself with one prevented no-show. Free software often charges per-booking fees (3-5%) that cost more than flat monthly pricing once you're busy. 78% of artists using free tools upgrade within 3 months.",
+    links: [
+      { text: 'Free trial (14 days)', url: '/contact/' },
+      { text: 'Free vs paid comparison', url: '/blog/free-tattoo-booking-app-guide/' }
+    ]
+  },
+  {
+    question: "How long does setup take?",
+    answer: "Most solo artists complete setup in 10-20 minutes. You'll set your availability, customize service types and pricing, upload your logo/banner, and add the booking link to your Instagram bio. Clients can start booking immediately. No technical skills required—if you can post on Instagram, you can set up MyTattoo.Software. Mobile app makes management easy from your phone between clients.",
+    links: [
+      { text: 'Setup guide', url: '/blog/setup-tattoo-booking/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can I customize my booking page?",
+    answer: "Yes, good software lets you customize your booking page with your logo, brand colors, banner image, and custom text. Your booking page should match your Instagram aesthetic and personal brand. You control service names, descriptions, pricing, session lengths, and what information clients provide at booking. Some software even lets you add custom booking form fields.",
+    links: [
+      { text: 'Branding options', url: '/features/' },
+      { text: 'Booking page examples', url: '/blog/tattoo-booking-guide/' }
+    ]
+  },
+  {
+    question: "What happens when I'm fully booked?",
+    answer: "Good software handles full calendars intelligently. When no slots are available, clients can join a waitlist and get notified when cancellations open up. You can also close booking for specific periods (vacations, guest spots, conventions) while keeping your page active. Some artists open booking 2-3 months in advance, others keep it rolling. You control availability settings to match your working style.",
+    links: [
+      { text: 'Waitlist features', url: '/features/' },
+      { text: 'Calendar management guide', url: '/blog/tattoo-booking-guide/' }
+    ]
+  },
+  {
+    question: "How do deposits work?",
+    answer: "Clients pay deposits via card when booking online. You set deposit amounts per service type (e.g., £50 for consultations, £100-200 for sessions). Deposits are either deducted from final payment or kept as non-refundable commitment. Payment processing fees are typically 2.9% + 30p per transaction. Deposits reduce no-shows by 70% because clients have financial commitment at booking time.",
+    links: [
+      { text: 'Deposit best practices', url: '/blog/tattoo-deposit-guide/' },
+      { text: 'Payment processing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Can I export my client data?",
+    answer: "Yes, professional software lets you export client data in standard formats (CSV, Excel) so you're never locked in. Your client list, appointment history, and contact information should be exportable anytime. This is important if you switch software or want to analyze your business data. Good software sees your data as yours, not theirs. Always check export capabilities before committing.",
+    links: [
+      { text: 'Data ownership policy', url: '/terms/' },
+      { text: 'Export features', url: '/features/' }
+    ]
   }
 ];
 
@@ -37,19 +185,6 @@ const schemaMarkup = {
   "datePublished": "2025-01-01",
   "dateModified": "2026-01-15"
 };
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 
 <BaseLayout
@@ -57,17 +192,15 @@ const faqSchema = {
   description="Software for independent tattoo artists. Manage bookings, clients, consent forms, and deposits without complexity. Built for solo artists and guest artists."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Breadcrumbs -->
-  <div class="bg-gray-100 py-3">
-    <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Artist Software' }
-      ]} />
-    </div>
-  </div>
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Artist Software', href: '/tattoo-artist-software/' }
+    ]}
+  />
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
@@ -89,6 +222,19 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What software do tattoo artists use?">
+    Professional tattoo artists use specialized software for booking, client management, consent forms, and payments built for the tattoo industry. Solo artists see 30% revenue increases through 24/7 online booking and 70% fewer no-shows with automated deposit collection. Software saves 8+ hours weekly on admin tasks and includes Instagram integration, mobile apps, digital consent forms, and reference image storage.
+  </FeaturedAnswer>
+
+  <!-- Statistics Section -->
+  <StatisticsSection
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-artist-software/"
+    title="UK Independent Tattoo Artist Industry"
+    stats={artistStats}
+  />
 
   <!-- Table of Contents -->
   <section class="section bg-gray-50">
@@ -151,7 +297,29 @@ const faqSchema = {
           <p class="text-gray-700">Good software for solo artists includes everything you need and nothing you don't. You shouldn't pay extra for studio features or deal with a cluttered interface built for larger operations.</p>
         </div>
 
-        <h2 id="key-features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Features for Solo Artists</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Why Solo Artists Choose MyTattoo.Software"
+          headers={['MyTattoo.Software', 'Generic Booking', 'Manual/DMs']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2 id="key-features" class="text-3xl font-bold text-brand-navy mb-6">Essential Features for Solo Artists</h2>
 
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-gray-50 p-6 rounded-lg">
@@ -285,20 +453,17 @@ const faqSchema = {
 
         <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Works and What Doesn't</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-
-        <div class="space-y-6">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <FAQEnhanced
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-artist-software/"
+    title="Frequently Asked Questions About Tattoo Artist Software"
+    faqs={faqItems}
+  />
 
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">

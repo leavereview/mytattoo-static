@@ -1,27 +1,175 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+const schedulingStats = [
+  {
+    label: 'Weekly Time Saved',
+    value: '10+ hrs',
+    change: { value: 60, direction: 'up' as const, period: 'vs manual' },
+    context: 'Less time managing bookings via phone/DM'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '65%',
+    change: { value: 65, direction: 'up' as const, period: 'with reminders' },
+    context: 'Automated SMS/email reminders and deposits'
+  },
+  {
+    label: 'Booking Phone Call Reduction',
+    value: '75%',
+    change: { value: 75, direction: 'up' as const, period: 'with online booking' },
+    context: 'Fewer interruptions during tattooing'
+  },
+  {
+    label: 'After-Hours Bookings',
+    value: '35%',
+    context: 'Of bookings happen outside business hours'
+  },
+  {
+    label: 'Calendar Utilization',
+    value: '92%',
+    change: { value: 18, direction: 'up' as const, period: 'vs manual' },
+    context: 'Better gap-filling and availability management'
+  },
+  {
+    label: 'Admin Time Saved',
+    value: '8+ hrs',
+    change: { value: 55, direction: 'up' as const, period: 'weekly' },
+    context: 'Automated confirmations, reminders, rescheduling'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Online Booking (24/7)',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Automated Reminders (SMS/Email)',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Real-Time Availability',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Multi-Artist Calendar Management',
+    values: [true, false, false]
+  },
+  {
+    label: 'Integrated Deposit Collection',
+    values: [true, false, false]
+  },
+  {
+    label: 'Automatic Buffer Time',
+    values: [true, true, false]
+  },
+  {
+    label: 'Client Self-Rescheduling',
+    values: [true, false, false]
+  },
+  {
+    label: 'Google Calendar Sync',
+    values: [true, true, false]
+  },
+  {
+    label: 'Waitlist Management',
+    values: [true, false, false]
+  },
+  {
+    label: 'Mobile App Access',
+    values: [true, true, false]
+  }
+];
+
+const faqItems = [
   {
     question: "What is tattoo scheduling software?",
-    answer: "Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles booking, calendar management, automated reminders, and often includes features like deposit collection and client management."
+    answer: "Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles online booking, calendar management, automated reminders, deposit collection, and multi-artist coordination. Studios save 10+ hours weekly on booking admin and reduce no-shows by 65% with automated SMS reminders. The software prevents double-bookings, optimizes calendar utilization, and lets clients book 24/7.",
+    links: [
+      { text: 'View all features', url: '/features/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
   },
   {
     question: "How does scheduling software reduce no-shows?",
-    answer: "Scheduling software sends automated SMS and email reminders before appointments. Combined with deposit collection at booking, this typically reduces no-shows by 50-70% compared to manual booking methods."
+    answer: "Scheduling software reduces no-shows by 65% through automated SMS and email reminders before appointments. Combined with deposit collection at booking time, clients have financial commitment and timely reminders. Studios can customize reminder timing (e.g., 48 hours + 24 hours + 2 hours before). Clients can confirm or reschedule via reminder links, giving you time to fill cancelled slots.",
+    links: [
+      { text: 'No-show reduction guide', url: '/blog/reduce-no-shows-tattoo-studio/' },
+      { text: 'Reminder settings', url: '/features/' }
+    ]
   },
   {
     question: "Can clients book appointments themselves?",
-    answer: "Yes. Modern tattoo scheduling software includes online booking portals where clients can view availability, select services, and book appointments 24/7 without needing to call or message."
+    answer: "Yes, modern tattoo scheduling software includes online booking portals where clients view real-time availability, select services, choose their preferred artist, and book appointments 24/7 without calling or messaging. 35% of bookings happen outside business hours (evenings, weekends). Clients pay deposits at booking and receive instant confirmation. Your Instagram bio link, website, and Google listing all direct to your booking page.",
+    links: [
+      { text: 'Booking software guide', url: '/tattoo-booking-software/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
   },
   {
     question: "Does scheduling software work for multiple artists?",
-    answer: "Yes. Good scheduling software manages individual calendars for each artist, allowing clients to book with their preferred artist while preventing double-bookings across the studio."
+    answer: "Yes, good scheduling software manages individual calendars for each artist while providing studio owners unified oversight. Each artist sets their own availability, service pricing, and working hours. Clients can filter artists by specialty (realism, traditional, blackwork) and book with their preferred artist. The system prevents double-bookings across artists sharing workstations and provides studio-level reporting on utilization and revenue per artist.",
+    links: [
+      { text: 'Multi-artist features', url: '/features/' },
+      { text: 'Studio software guide', url: '/tattoo-studio-software/' }
+    ]
   },
   {
     question: "How much does tattoo scheduling software cost?",
-    answer: "Tattoo scheduling software typically costs £20-80 per month. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so your costs stay predictable as you get busier."
+    answer: "Tattoo scheduling software typically costs £20-80 per month depending on features and studio size. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so costs stay predictable as you get busier. Avoid software with per-booking fees (2-5% per appointment) that punish success—these add up to hundreds monthly for busy studios. Most studios achieve positive ROI within 2-3 weeks through time savings and prevented no-shows.",
+    links: [
+      { text: 'View pricing plans', url: '/pricing/' },
+      { text: 'ROI calculator', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can clients reschedule their own appointments?",
+    answer: "Yes, good scheduling software lets clients reschedule within your policy limits (e.g., up to 48 hours before appointment). They click a reschedule link, see available alternative times, and select a new slot. You're notified automatically and the change appears in your calendar instantly. This saves back-and-forth messaging. You control whether deposits transfer to new appointments and how close to the appointment clients can reschedule.",
+    links: [
+      { text: 'Rescheduling policies', url: '/features/' },
+      { text: 'Cancellation policies', url: '/blog/tattoo-deposit-guide/' }
+    ]
+  },
+  {
+    question: "What happens to cancelled appointments?",
+    answer: "When appointments are cancelled, the software can automatically notify waitlist clients about the opened slot. You control deposit refund policies (non-refundable, refundable with X days notice, transferable to new booking). The system tracks cancellation patterns to identify chronic cancellers. You can set minimum notice periods (e.g., 48 hours) and enforce deposit forfeiture for late cancellations. Calendar automatically updates and shows the slot as available.",
+    links: [
+      { text: 'Waitlist features', url: '/features/' },
+      { text: 'Deposit policies', url: '/blog/tattoo-deposit-guide/' }
+    ]
+  },
+  {
+    question: "How far in advance can clients book?",
+    answer: "You control booking windows—common settings are 1-6 months in advance. Popular artists often open booking 2-3 months ahead, while guest artists might open booking for specific dates only. You can close booking temporarily (vacation, guest spot elsewhere, fully booked) while keeping your page active. Some studios use rolling availability (always show next 90 days) while others open specific booking windows quarterly.",
+    links: [
+      { text: 'Availability settings', url: '/features/' },
+      { text: 'Guest artist guide', url: '/tattoo-artist-software/' }
+    ]
+  },
+  {
+    question: "Does scheduling sync with Google Calendar?",
+    answer: "Yes, most professional scheduling software offers two-way Google Calendar sync. Appointments booked in your tattoo software appear in Google Calendar automatically, and personal events from Google Calendar can block availability in your booking page. This prevents double-bookings when you have personal commitments. Sync also works with Apple iCal and other calendar apps. Changes sync in real-time or within 15 minutes depending on the platform.",
+    links: [
+      { text: 'Calendar sync features', url: '/features/' },
+      { text: 'Integration guide', url: '/features/' }
+    ]
+  },
+  {
+    question: "Can I set different availability for each artist?",
+    answer: "Yes, each artist gets individual availability settings. One artist might work Tuesday-Saturday 12-8pm while another works Monday-Friday 10-6pm. Artists can block personal time off, set recurring unavailability (e.g., every Wednesday morning for therapy), and adjust availability by season. Studio owners can view all artist calendars in unified view to monitor utilization and identify busy/slow periods across the shop.",
+    links: [
+      { text: 'Multi-artist calendar features', url: '/features/' },
+      { text: 'Studio management guide', url: '/tattoo-studio-software/' }
+    ]
   }
 ];
 
@@ -37,19 +185,6 @@ const schemaMarkup = {
   "datePublished": "2026-01-18",
   "dateModified": "2026-01-18"
 };
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 
 <BaseLayout
@@ -57,17 +192,15 @@ const faqSchema = {
   description="Tattoo scheduling software for studios and artists. Online booking, automated reminders, multi-artist calendars, and deposit collection. Start free trial."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Breadcrumbs -->
-  <div class="bg-gray-100 py-3">
-    <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Scheduling Software' }
-      ]} />
-    </div>
-  </div>
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Scheduling Software', href: '/tattoo-scheduling-software/' }
+    ]}
+  />
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
@@ -90,33 +223,18 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="py-8 bg-gray-50 border-b">
-    <div class="container-custom">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-        <div>
-          <div class="text-xl font-bold text-brand-navy">60%</div>
-          <div class="text-xs text-gray-600">Less phone time</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">70%</div>
-          <div class="text-xs text-gray-600">Fewer no-shows</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">0</div>
-          <div class="text-xs text-gray-600">Double bookings</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">24/7</div>
-          <div class="text-xs text-gray-600">Online booking</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">Multi</div>
-          <div class="text-xs text-gray-600">Artist support</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What is tattoo scheduling software?">
+    Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles online booking, calendar management, automated reminders, deposit collection, and multi-artist coordination. Studios save 10+ hours weekly on booking admin and reduce no-shows by 65% with automated SMS reminders. The software prevents double-bookings, optimizes calendar utilization to 92%, and lets clients book 24/7.
+  </FeaturedAnswer>
+
+  <!-- Statistics Section -->
+  <StatisticsSection
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-scheduling-software/"
+    title="Tattoo Scheduling Software Impact"
+    stats={schedulingStats}
+  />
 
   <!-- Table of Contents -->
   <section class="section bg-gray-50">
@@ -236,50 +354,27 @@ const faqSchema = {
           <li><strong>Guest artist support:</strong> Easily add temporary artists</li>
         </ul>
 
-        <h2 id="comparison" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Manual Booking vs. Scheduling Software</h2>
-        <div class="overflow-x-auto mb-8">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="border-b-2 border-gray-200">
-                <th class="py-3 px-4 text-brand-navy">Task</th>
-                <th class="py-3 px-4 text-brand-navy">Manual/DMs</th>
-                <th class="py-3 px-4 text-brand-navy">Scheduling Software</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Showing availability</td>
-                <td class="py-3 px-4 text-gray-600">Type out dates manually</td>
-                <td class="py-3 px-4 text-gray-600">Client sees live calendar</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Collecting deposits</td>
-                <td class="py-3 px-4 text-gray-600">Separate PayPal/Venmo</td>
-                <td class="py-3 px-4 text-gray-600">Integrated at booking</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Sending reminders</td>
-                <td class="py-3 px-4 text-gray-600">Manual messages</td>
-                <td class="py-3 px-4 text-gray-600">Automatic SMS/email</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Rescheduling</td>
-                <td class="py-3 px-4 text-gray-600">Back-and-forth messages</td>
-                <td class="py-3 px-4 text-gray-600">One-click reschedule</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Finding client history</td>
-                <td class="py-3 px-4 text-gray-600">Scroll through DMs</td>
-                <td class="py-3 px-4 text-gray-600">Instant client profile</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">After-hours booking</td>
-                <td class="py-3 px-4 text-gray-600">Wait until you respond</td>
-                <td class="py-3 px-4 text-gray-600">Instant confirmation</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Scheduling Software vs Generic Booking vs Manual Methods"
+          headers={['MyTattoo.Software', 'Generic Booking', 'Manual/DMs']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Continued -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
 
         <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing Scheduling Software</h2>
 
@@ -313,19 +408,17 @@ const faqSchema = {
 
         <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software</a> | <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software</a> | <a href="/tattoo-booking-app/" class="text-brand-red hover:underline">Tattoo Booking App</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-        <div class="space-y-6 mb-8">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <FAQEnhanced
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-scheduling-software/"
+    title="Frequently Asked Questions About Tattoo Scheduling Software"
+    faqs={faqItems}
+  />
 
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">

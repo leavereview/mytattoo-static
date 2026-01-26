@@ -1,27 +1,173 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+const appStats = [
+  {
+    label: 'Mobile Bookings',
+    value: '85%',
+    context: 'Of all tattoo bookings now come from mobile devices'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '70%',
+    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
+    context: 'When deposits collected via mobile booking'
+  },
+  {
+    label: 'Weekly Time Saved',
+    value: '9+ hrs',
+    change: { value: 65, direction: 'up' as const, period: 'vs DM booking' },
+    context: 'Less time managing Instagram DMs and calls'
+  },
+  {
+    label: 'Client Satisfaction',
+    value: '94%',
+    context: 'Prefer online booking to messaging back and forth'
+  },
+  {
+    label: 'Average Booking Time',
+    value: '3 min',
+    context: 'For clients to complete entire booking process'
+  },
+  {
+    label: 'After-Hours Bookings',
+    value: '40%',
+    change: { value: 40, direction: 'up' as const, period: 'of total' },
+    context: 'Bookings made outside 9am-5pm business hours'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Online Booking (24/7)',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Design Reference Upload',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Integrated Deposit Collection',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Automated Reminders (SMS/Email)',
+    values: [true, false, false]
+  },
+  {
+    label: 'Real-Time Availability Calendar',
+    values: [true, true, false]
+  },
+  {
+    label: 'Client Self-Rescheduling',
+    values: [true, false, false]
+  },
+  {
+    label: 'Mobile-Optimized Experience',
+    values: [true, true, false]
+  },
+  {
+    label: 'Digital Consent Forms',
+    values: [true, false, false]
+  },
+  {
+    label: 'Instagram Bio Link Integration',
+    values: [true, true, false]
+  },
+  {
+    label: 'Portfolio/Artist Selection',
+    values: [true, false, false]
+  }
+];
+
+const faqItems = [
   {
     question: "What is a tattoo booking app?",
-    answer: "A tattoo booking app is a mobile-friendly system that lets clients book tattoo appointments online, view artist portfolios, submit design references, pay deposits, and manage their bookings—all from their phone."
+    answer: "A tattoo booking app is a mobile-friendly system that lets clients book tattoo appointments online, view artist portfolios, submit design references, pay deposits, and manage their bookings—all from their phone. 85% of tattoo bookings now come from mobile devices, and clients complete the entire booking process in 3 minutes on average. Modern booking apps integrate deposit collection, automated reminders, and reference image uploads in one seamless flow.",
+    links: [
+      { text: 'View all features', url: '/features/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
   },
   {
     question: "Do I need a separate app or is a mobile website enough?",
-    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything, and you avoid app store fees. A responsive booking portal gives you the benefits of an app without the complications."
+    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything from app stores, and you avoid Apple/Google fees (30% commission). A responsive web-based booking portal gives you all the benefits of an app—works on phones, can be added to home screen, sends notifications—without the complications. 94% of clients prefer this over messaging back and forth.",
+    links: [
+      { text: 'Mobile booking features', url: '/features/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
   },
   {
     question: "Can clients submit tattoo ideas through a booking app?",
-    answer: "Yes. Good tattoo booking systems include image upload features so clients can share reference images, placement photos, and design ideas when they book. This gives you everything you need before the consultation."
+    answer: "Yes, good tattoo booking systems include image upload features so clients can share reference images, placement photos, and design ideas when they book. This gives you everything you need before the consultation—concept inspiration, size preferences, budget expectations, and placement. Images are organized per booking (not lost in DM threads) and accessible on both mobile and desktop for your design work.",
+    links: [
+      { text: 'Reference upload features', url: '/features/' },
+      { text: 'Design workflow guide', url: '/blog/tattoo-booking-guide/' }
+    ]
   },
   {
     question: "How do booking apps handle deposits?",
-    answer: "Booking apps can require deposits at time of booking, either as a fixed amount or percentage of the estimated cost. Deposits are typically non-refundable for no-shows but can be applied to the final price."
+    answer: "Booking apps require deposits at time of booking, either as fixed amounts (£50, £100, £200) or percentages of estimated cost. Deposits are collected via integrated card payment and automatically tracked. You control refund policies: non-refundable for no-shows, refundable with X days notice, or transferable to rescheduled appointments. Deposits reduce no-shows by 70% because clients have financial commitment at booking time. Payment processing fees are typically 2.9% + 30p.",
+    links: [
+      { text: 'Deposit best practices', url: '/blog/tattoo-deposit-guide/' },
+      { text: 'Payment processing', url: '/pricing/' }
+    ]
   },
   {
     question: "How much does a tattoo booking app cost?",
-    answer: "Tattoo booking software typically costs £20-80 per month. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so your costs don't increase as you get busier."
+    answer: "Tattoo booking software typically costs £20-80 per month for solo artists, £80-150 for studios. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so costs don't increase as you get busier. Avoid platforms charging 3-5% per booking—these add up to hundreds monthly for busy artists. Most artists save 9+ hours weekly managing bookings, making the ROI positive within 2-3 weeks through time savings and prevented no-shows.",
+    links: [
+      { text: 'View pricing plans', url: '/pricing/' },
+      { text: 'ROI calculator', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can clients reschedule through the app?",
+    answer: "Yes, clients can reschedule appointments within your policy limits (e.g., up to 48 hours before). They click a reschedule link from their confirmation email or reminder, see alternative available times, and select a new slot. You're notified automatically and your calendar updates instantly. This saves endless DM back-and-forth. You control whether deposits transfer to new appointments, how close to appointments clients can reschedule, and minimum notice requirements.",
+    links: [
+      { text: 'Rescheduling features', url: '/features/' },
+      { text: 'Scheduling guide', url: '/tattoo-scheduling-software/' }
+    ]
+  },
+  {
+    question: "What if I don't have a website?",
+    answer: "You don't need a website to use booking apps. Most tattoo artists just add their booking link to Instagram bio, Linktree, or directly in their profile. The booking page itself serves as your online presence—clients see your portfolio, read your policies, and book appointments all in one place. Many successful artists operate Instagram-only with just a booking link. The booking page is mobile-friendly and can be customized with your logo and brand colors.",
+    links: [
+      { text: 'Instagram integration', url: '/features/' },
+      { text: 'Bio link best practices', url: '/blog/tattoo-booking-guide/' }
+    ]
+  },
+  {
+    question: "How do I add my booking link to Instagram?",
+    answer: "Add your booking link to your Instagram bio—this is prime real estate for converting followers to bookings. Go to Edit Profile > Website, paste your booking link. Consider using Linktree if you need multiple links (booking + portfolio site). 40% of bookings happen via Instagram bio links vs 15% for DM-only booking. Update your pinned story with booking instructions. You can also add booking links to posts and stories (Instagram allows link stickers for all accounts).",
+    links: [
+      { text: 'Instagram booking guide', url: '/blog/tattoo-booking-guide/' },
+      { text: 'Social media tips', url: '/blog/building-tattoo-client-base/' }
+    ]
+  },
+  {
+    question: "Can I customize the booking page design?",
+    answer: "Yes, professional booking apps let you customize your booking page with your logo, brand colors, banner image, and custom text. Your booking page should match your Instagram aesthetic. You control service names and descriptions, booking form fields (collect what you need), policy text, and confirmation email branding. Some platforms offer advanced customization (custom CSS, domain mapping) but basic branding features are standard. Setup takes 10-15 minutes.",
+    links: [
+      { text: 'Branding options', url: '/features/' },
+      { text: 'Setup guide', url: '/blog/setup-tattoo-booking/' }
+    ]
+  },
+  {
+    question: "Do I need technical skills to set it up?",
+    answer: "No, tattoo booking apps are designed for artists, not developers. If you can post on Instagram, you can set up booking. Setup takes 10-20 minutes: enter your availability, add service types (consultation, small piece, half-day, full-day), set deposit amounts, upload your logo, get your booking link. Most platforms have onboarding guides with screenshots. Mobile apps let you manage everything from your phone. No coding, no website hosting, no technical knowledge required.",
+    links: [
+      { text: 'Setup walkthrough', url: '/blog/setup-tattoo-booking/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
   }
 ];
 
@@ -37,19 +183,6 @@ const schemaMarkup = {
   "datePublished": "2026-01-18",
   "dateModified": "2026-01-18"
 };
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 
 <BaseLayout
@@ -57,17 +190,15 @@ const faqSchema = {
   description="Tattoo booking app for studios and artists. Let clients book online, submit design ideas, pay deposits, and manage appointments from their phone. Free trial."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Breadcrumbs -->
-  <div class="bg-gray-100 py-3">
-    <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Booking App' }
-      ]} />
-    </div>
-  </div>
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Booking App', href: '/tattoo-booking-app/' }
+    ]}
+  />
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
@@ -90,33 +221,18 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="py-8 bg-gray-50 border-b">
-    <div class="container-custom">
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-        <div>
-          <div class="text-xl font-bold text-brand-navy">24/7</div>
-          <div class="text-xs text-gray-600">Booking available</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">70%</div>
-          <div class="text-xs text-gray-600">Fewer no-shows</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">0</div>
-          <div class="text-xs text-gray-600">Lost DM bookings</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">100%</div>
-          <div class="text-xs text-gray-600">Deposits secured</div>
-        </div>
-        <div>
-          <div class="text-xl font-bold text-brand-navy">Mobile</div>
-          <div class="text-xs text-gray-600">First design</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What is a tattoo booking app?">
+    A tattoo booking app is a mobile-friendly system that lets clients book appointments online, view portfolios, submit design references, pay deposits, and manage bookings from their phone. 85% of tattoo bookings come from mobile devices, with clients completing the entire process in 3 minutes. Modern booking apps reduce no-shows by 70% with automated deposits and save artists 9+ hours weekly on admin.
+  </FeaturedAnswer>
+
+  <!-- Statistics Section -->
+  <StatisticsSection
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-booking-app/"
+    title="Mobile Tattoo Booking Statistics"
+    stats={appStats}
+  />
 
   <!-- Table of Contents -->
   <section class="section bg-gray-50">
@@ -265,50 +381,27 @@ const faqSchema = {
           </li>
         </ol>
 
-        <h2 id="dm-vs-app" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Instagram DMs vs. Booking App</h2>
-        <div class="overflow-x-auto mb-8">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="border-b-2 border-gray-200">
-                <th class="py-3 px-4 text-brand-navy">Task</th>
-                <th class="py-3 px-4 text-brand-navy">Instagram DMs</th>
-                <th class="py-3 px-4 text-brand-navy">Booking App</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Showing availability</td>
-                <td class="py-3 px-4 text-gray-600">Type out dates manually</td>
-                <td class="py-3 px-4 text-gray-600">Real-time calendar</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Collecting references</td>
-                <td class="py-3 px-4 text-gray-600">Images mixed in chat history</td>
-                <td class="py-3 px-4 text-gray-600">Organised per booking</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Taking deposits</td>
-                <td class="py-3 px-4 text-gray-600">PayPal/Venmo separately</td>
-                <td class="py-3 px-4 text-gray-600">Integrated at booking</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Sending reminders</td>
-                <td class="py-3 px-4 text-gray-600">Manual messages</td>
-                <td class="py-3 px-4 text-gray-600">Automatic SMS/email</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Tracking no-shows</td>
-                <td class="py-3 px-4 text-gray-600">Memory or notes</td>
-                <td class="py-3 px-4 text-gray-600">Automatic flagging</td>
-              </tr>
-              <tr class="border-b border-gray-100">
-                <td class="py-3 px-4">Rescheduling</td>
-                <td class="py-3 px-4 text-gray-600">Start conversation over</td>
-                <td class="py-3 px-4 text-gray-600">One-click reschedule</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Booking App vs Generic Tools vs Instagram DMs"
+          headers={['MyTattoo.Software', 'Generic Booking', 'Instagram DMs']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Continued -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
 
         <h2 id="choosing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Choosing the Right Booking App</h2>
 
@@ -333,19 +426,17 @@ const faqSchema = {
 
         <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software</a> | <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software</a> | <a href="/blog/reduce-no-shows-tattoo-studio/" class="text-brand-red hover:underline">Reducing No-Shows Guide</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-        <div class="space-y-6 mb-8">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <FAQEnhanced
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-booking-app/"
+    title="Frequently Asked Questions About Tattoo Booking Apps"
+    faqs={faqItems}
+  />
 
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">

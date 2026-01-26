@@ -1,6 +1,181 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// Software Application Schema
+const softwareApplicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://mytattoo.software/#software",
+  "name": "MyTattoo.Software",
+  "alternateName": "MyTattoo",
+  "description": "Complete tattoo studio management software for tattoo artists and body art studios. Online booking, consent forms, client management, and deposit collection in one platform.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "offers": {
+    "@type": "Offer",
+    "@id": "https://mytattoo.software/#free-trial",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "name": "14-Day Free Trial",
+    "description": "Try MyTattoo.Software free for 14 days with full access",
+    "availability": "https://schema.org/InStock",
+    "url": "https://mytattoo.software/contact/",
+    "priceValidUntil": "2026-12-31"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "86",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "Online Booking & Consultations",
+    "Client Management & Profiles",
+    "Digital Consent Forms",
+    "Deposit Collection",
+    "Artist Portfolio Management",
+    "Appointment Scheduling",
+    "Automated Reminders (SMS & Email)",
+    "Aftercare Instructions",
+    "Payment Processing",
+    "Reports & Analytics",
+    "Mobile App",
+    "Instagram Integration"
+  ],
+  "url": "https://mytattoo.software",
+  "screenshot": "https://mytattoo.software/images/dashboard-screenshot.jpg",
+  "softwareVersion": "2.0",
+  "applicationSubCategory": "Tattoo Studio Management",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Tattoo Studios, Tattoo Artists, Body Art Studios, Piercing Studios"
+  }
+};
+
+// Free Trial Offer Schema
+const offerSchema = {
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://mytattoo.software/#free-trial-offer",
+  "name": "14-Day Free Trial - MyTattoo.Software",
+  "description": "Try MyTattoo.Software free for 14 days with complete access to all features including online booking, consent forms, and deposit collection. No credit card required.",
+  "price": "0",
+  "priceCurrency": "GBP",
+  "priceValidUntil": "2026-12-31",
+  "availability": "https://schema.org/InStock",
+  "url": "https://mytattoo.software/contact/",
+  "seller": {
+    "@type": "Organization",
+    "name": "MyTattoo.Software"
+  },
+  "itemOffered": {
+    "@type": "SoftwareApplication",
+    "name": "MyTattoo.Software",
+    "applicationCategory": "BusinessApplication"
+  },
+  "eligibleRegion": {
+    "@type": "Place",
+    "name": "United Kingdom"
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Trial Duration",
+      "value": "14 days"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Credit Card Required",
+      "value": "No"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Full Feature Access",
+      "value": "Yes"
+    }
+  ]
+};
+
+// Review Schemas from testimonials
+const reviewSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": "https://mytattoo.software/#review-1",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "@id": "https://mytattoo.software/#software",
+      "name": "MyTattoo.Software"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Jake Morrison"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "MyTattoo cut my admin time in half. Clients book online, deposits come in automatically, and I can focus on creating art.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Jake Morrison"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": "https://mytattoo.software/#review-2",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "@id": "https://mytattoo.software/#software",
+      "name": "MyTattoo.Software"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Lisa Chen"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "The consent form system alone is worth it. Digital signatures, stored securely, and clients can fill them before arriving.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ink & Iron"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": "https://mytattoo.software/#review-3",
+    "itemReviewed": {
+      "@type": "SoftwareApplication",
+      "@id": "https://mytattoo.software/#software",
+      "name": "MyTattoo.Software"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Marcus Webb"
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "reviewBody": "Our no-show rate dropped 70% with deposits and reminders. That's real money back in our pockets.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Webb's Tattoo Studio"
+    }
+  }
+];
+
 const features = [
   { icon: 'calendar', title: 'Online Booking', description: 'Let clients book consultations and appointments 24/7. Deposits collected automatically.' },
   { icon: 'users', title: 'Client Management', description: 'Store client info, reference images, consent forms, and aftercare details in one place.' },
@@ -25,6 +200,13 @@ const stats = [
 ---
 
 <BaseLayout title="Home" description="MyTattoo.Software - The complete tattoo studio management platform. Booking, client management, consent forms, and deposits.">
+  <!-- Structured Data Schemas -->
+  <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+  {reviewSchemas.map(reviewSchema => (
+    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+  ))}
+
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
     <div class="absolute inset-0 opacity-10">
       <div class="absolute inset-0" style="background-image: url('/images/hero-tattoo.jpg'); background-size: cover; background-position: center;"></div>

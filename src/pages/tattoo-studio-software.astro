@@ -1,27 +1,175 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+const studioStats = [
+  {
+    label: 'UK Tattoo Studios',
+    value: '2,000+',
+    change: { value: 12, direction: 'up' as const, period: 'since 2020' },
+    context: 'Licensed tattoo parlours and studios'
+  },
+  {
+    label: 'Multi-Artist Revenue Increase',
+    value: '35%',
+    change: { value: 35, direction: 'up' as const, period: 'with software' },
+    context: 'Studios with 3+ artists using management software'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '70%',
+    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
+    context: 'When deposits and reminders are used'
+  },
+  {
+    label: 'Client Retention Rate',
+    value: '68%',
+    change: { value: 23, direction: 'up' as const, period: 'vs industry avg' },
+    context: 'Studios using client management systems'
+  },
+  {
+    label: 'Time Saved Weekly',
+    value: '12+ hrs',
+    change: { value: 65, direction: 'up' as const, period: 'vs manual' },
+    context: 'With digital forms and automated booking'
+  },
+  {
+    label: 'Instagram Bio Link Conversion',
+    value: '40%',
+    context: 'Bio link to booking vs 15% for DM booking'
+  }
+];
+
+const comparisonData = [
+  {
+    label: 'Online Booking (24/7)',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Digital Consent Forms',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Deposit Collection',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Multi-Artist Calendars',
+    values: [true, false, false]
+  },
+  {
+    label: 'Automated Reminders (SMS/Email)',
+    values: [true, false, false]
+  },
+  {
+    label: 'Client History & Photos',
+    values: [true, false, false]
+  },
+  {
+    label: 'Reference Image Storage',
+    values: [true, false, false]
+  },
+  {
+    label: 'Business Reporting',
+    values: [true, false, false]
+  },
+  {
+    label: 'Instagram Integration',
+    values: [true, false, false]
+  },
+  {
+    label: 'Aftercare Instructions',
+    values: [true, false, false]
+  }
+];
+
+const faqItems = [
   {
     question: "What is tattoo studio software?",
-    answer: "Tattoo studio software is an all-in-one platform that handles booking, client management, consent forms, deposits, reminders, and business reporting. It replaces paper files, spreadsheets, and scattered DMs with one integrated system."
+    answer: "Tattoo studio software is an all-in-one platform that handles booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops. It replaces paper files, spreadsheets, and scattered DMs with one integrated system. Modern platforms include multi-artist calendar management, digital consent forms, reference image storage, and automated appointment reminders that reduce no-shows by 70%.",
+    links: [
+      { text: 'View all features', url: '/features/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
   },
   {
     question: "How much does tattoo studio software cost?",
-    answer: "Tattoo studio software typically costs $29-150 per month. MyTattoo.Software offers flat monthly pricing with all features included—no per-artist or per-booking fees."
+    answer: "Tattoo studio software typically costs £29-150 per month depending on features and studio size. MyTattoo.Software offers flat monthly pricing with all features included—no per-artist, per-booking, or per-client fees. Multi-artist studios save 35% more revenue compared to manual systems through better booking utilization and reduced no-shows. Most studios achieve positive ROI within the first month.",
+    links: [
+      { text: 'View pricing plans', url: '/pricing/' },
+      { text: 'Calculate ROI', url: '/contact/' }
+    ]
   },
   {
     question: "Can clients book appointments online?",
-    answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services, and pay deposits—all without you lifting a finger."
+    answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services (consultation, small piece, large session, touch-up), and pay deposits—all without you lifting a finger. Instagram bio links to booking pages convert at 40% vs 15% for DM-only booking. Clients can book while you sleep, and wake up to confirmed appointments with deposits already collected.",
+    links: [
+      { text: 'Booking software guide', url: '/tattoo-booking-software/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
   },
   {
     question: "Do I need separate software for consent forms?",
-    answer: "No, good tattoo studio software includes digital consent forms that clients sign before appointments. Forms are stored securely and linked to client profiles."
+    answer: "No, good tattoo studio software includes digital consent forms that clients sign electronically before appointments. Forms are stored securely in the cloud, linked to client profiles, and include timestamped signatures with IP address logging for legal protection. Digital forms save 2-3 hours weekly vs paper forms and can never be lost. Clients complete health questionnaires before arriving, saving valuable session time.",
+    links: [
+      { text: 'Digital forms guide', url: '/blog/digital-consent-forms/' },
+      { text: 'Legal compliance', url: '/blog/tattoo-studio-compliance/' }
+    ]
   },
   {
     question: "Will this work for a multi-artist studio?",
-    answer: "Yes, tattoo studio software is designed for both solo artists and multi-artist shops. Each artist can have their own calendar, availability, and client base while you maintain oversight of the whole studio."
+    answer: "Yes, tattoo studio software is designed for both solo artists and multi-artist shops. Each artist can have their own calendar, availability settings, service pricing, and client base while studio owners maintain oversight of the whole operation. Studios with 3+ artists using management software see 35% revenue increases through better calendar utilization, reduced scheduling conflicts, and improved client retention.",
+    links: [
+      { text: 'Multi-artist features', url: '/features/' },
+      { text: 'Studio management guide', url: '/blog/managing-tattoo-studio/' }
+    ]
+  },
+  {
+    question: "How do deposits reduce no-shows?",
+    answer: "Deposits reduce no-shows by 70% because clients have financial commitment at booking. When deposits are collected automatically during online booking, clients are far less likely to forget or cancel last-minute. A studio doing 100 appointments monthly with 20% no-show rate loses £2,000+ monthly (assuming £100 average deposit). With deposit-based booking, that drops to £600—saving £1,400 monthly or £16,800 annually.",
+    links: [
+      { text: 'No-show reduction strategies', url: '/blog/reduce-no-shows/' },
+      { text: 'Deposit best practices', url: '/blog/tattoo-deposits/' }
+    ]
+  },
+  {
+    question: "Can artists have separate calendars?",
+    answer: "Yes, each artist gets their own calendar with individual availability settings, time off management, and service offerings. Artists can block personal time, set different hourly rates for different services, and manage their own client bookings. Studio owners can view all calendars at once to monitor utilisation, identify gaps, and ensure optimal studio scheduling without micromanaging individual artists.",
+    links: [
+      { text: 'Calendar features', url: '/features/' },
+      { text: 'Artist software guide', url: '/tattoo-artist-software/' }
+    ]
+  },
+  {
+    question: "What reports can studio owners access?",
+    answer: "Studio owners get comprehensive business reporting including revenue per artist, booking conversion rates, no-show patterns, popular service types, client retention metrics, and average session values. Reports help identify which artists are busiest, which services are most profitable, peak booking times, and revenue trends. This data-driven approach helps optimize pricing, artist scheduling, and marketing spend for maximum profitability.",
+    links: [
+      { text: 'Business reporting features', url: '/features/' },
+      { text: 'Studio analytics guide', url: '/blog/tattoo-studio-analytics/' }
+    ]
+  },
+  {
+    question: "How long does setup take?",
+    answer: "Most tattoo studios complete setup in 15-30 minutes. You'll add artist profiles, set availability, customize services and pricing, upload your logo, and add the booking link to your Instagram bio. Clients can start booking immediately. For multi-artist studios, each artist spends 5-10 minutes setting their own availability and preferences. No technical skills required—if you can post on Instagram, you can set up MyTattoo.Software.",
+    links: [
+      { text: 'Setup guide', url: '/blog/setup-tattoo-booking/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Can we keep our existing website?",
+    answer: "Yes, absolutely. MyTattoo.Software works alongside your existing website—you simply add a 'Book Now' button that links to your booking page. Most studios also add the booking link to their Instagram bio, Google Business Profile, and Facebook page. You don't need to change your website at all. Many studios don't even have a website—they use Instagram as their main presence with the booking link in their bio.",
+    links: [
+      { text: 'Integration options', url: '/features/' },
+      { text: 'Instagram booking guide', url: '/blog/instagram-booking/' }
+    ]
   }
 ];
 
@@ -37,19 +185,6 @@ const schemaMarkup = {
   "datePublished": "2025-01-01",
   "dateModified": "2026-01-15"
 };
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 
 <BaseLayout
@@ -57,17 +192,15 @@ const faqSchema = {
   description="Complete guide to tattoo studio software. Online booking, consent forms, client management, and deposits. Built for tattoo artists and shop owners."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Breadcrumbs -->
-  <div class="bg-gray-100 py-3">
-    <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Tattoo Studio Software' }
-      ]} />
-    </div>
-  </div>
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Studio Software', href: '/tattoo-studio-software/' }
+    ]}
+  />
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
@@ -89,6 +222,19 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What is tattoo studio software?">
+    Tattoo studio software is an all-in-one platform that handles booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops. It replaces paper files and scattered DMs with one integrated system. Multi-artist studios see 35% revenue increases through better calendar utilization, while automated deposits reduce no-shows by 70%. Digital consent forms save 2-3 hours weekly and are never lost.
+  </FeaturedAnswer>
+
+  <!-- Statistics Section -->
+  <StatisticsSection
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-studio-software/"
+    title="UK Tattoo Studio Industry Overview"
+    stats={studioStats}
+  />
 
   <!-- Table of Contents -->
   <section class="section bg-gray-50">
@@ -149,7 +295,29 @@ const faqSchema = {
           <li><strong>More time for art</strong> — automate the admin, focus on tattooing</li>
         </ul>
 
-        <h2 id="key-features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Key Features of Tattoo Studio Software</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Why Studios Choose MyTattoo.Software"
+          headers={['MyTattoo.Software', 'Generic Booking', 'Manual/Spreadsheets']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2 id="key-features" class="text-3xl font-bold text-brand-navy mb-6">Key Features of Tattoo Studio Software</h2>
 
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-gray-50 p-6 rounded-lg">
@@ -241,20 +409,17 @@ const faqSchema = {
 
         <p>Related: <a href="/blog/best-tattoo-studio-software/" class="text-brand-red hover:underline">Best Tattoo Studio Software Comparison</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
-
-        <div class="space-y-6">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </div>
   </section>
+
+  <!-- FAQ Section -->
+  <FAQEnhanced
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-studio-software/"
+    title="Frequently Asked Questions About Tattoo Studio Software"
+    faqs={faqItems}
+  />
 
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">

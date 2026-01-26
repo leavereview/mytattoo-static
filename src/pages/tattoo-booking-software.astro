@@ -1,27 +1,169 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import StatisticsSection from '../components/seo/StatisticsSection.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-const faqs = [
+// Tattoo Booking Industry Statistics
+const bookingStats = [
+  {
+    label: 'UK Tattoo Studios',
+    value: '2,000+',
+    change: { value: 12, direction: 'up' as const, period: 'since 2020' },
+    context: 'Licensed tattoo parlours and studios'
+  },
+  {
+    label: 'No-Show Rate (No Deposit)',
+    value: '25%',
+    context: 'Average appointment no-show without deposits'
+  },
+  {
+    label: 'No-Show Reduction',
+    value: '70%',
+    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
+    context: 'When deposits and reminders are used'
+  },
+  {
+    label: 'Admin Time Saved',
+    value: '10+ hrs',
+    change: { value: 10, direction: 'up' as const, period: 'weekly' },
+    context: 'With automated booking and reminders'
+  },
+  {
+    label: 'Instagram Booking Link Conversion',
+    value: '40%',
+    context: 'Bio link to booking vs 15% for DM booking'
+  },
+  {
+    label: 'Average Deposit Amount',
+    value: '£50-100',
+    context: 'Typical deposit for tattoo session booking'
+  }
+];
+
+// Comparison Table Data
+const comparisonData = [
+  {
+    label: '24/7 Online Booking',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'Automatic Deposit Collection',
+    values: [true, false, false],
+    highlight: true
+  },
+  {
+    label: 'SMS & Email Reminders',
+    values: [true, false, false]
+  },
+  {
+    label: 'Reference Image Upload',
+    values: [true, false, false]
+  },
+  {
+    label: 'Instagram Bio Link',
+    values: [true, true, false]
+  },
+  {
+    label: 'Digital Consent Forms',
+    values: [true, false, false]
+  },
+  {
+    label: 'Multi-Hour Session Handling',
+    values: [true, false, false]
+  },
+  {
+    label: 'Self-Service Rescheduling',
+    values: [true, false, false]
+  },
+  {
+    label: 'Calendar Sync (Google/iCal)',
+    values: [true, true, false]
+  },
+  {
+    label: 'Booking Analytics',
+    values: [true, false, false]
+  }
+];
+
+// Enhanced FAQ Items
+const faqItems = [
   {
     question: "What is tattoo booking software?",
-    answer: "Tattoo booking software lets clients book appointments online 24/7, pay deposits, and receive automatic confirmations. It replaces DMs, phone calls, and manual scheduling with an automated system that works while you sleep."
+    answer: "Tattoo booking software lets clients book appointments online 24/7, pay deposits, and receive automatic confirmations. It replaces DMs, phone calls, and manual scheduling with an automated system that works while you sleep. Modern platforms integrate with Instagram, collect deposits at booking, and send automated SMS reminders.",
+    links: [
+      { text: 'View all features', url: '/features/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
   },
   {
     question: "How much does tattoo booking software cost?",
-    answer: "Tattoo booking software typically costs $20-100 per month. MyTattoo.Software offers flat monthly pricing with unlimited bookings—no per-booking fees that punish your success."
+    answer: "Tattoo booking software typically costs £20-80 per month. MyTattoo.Software offers flat monthly pricing (Solo Artist £29, Studio £79) with unlimited bookings—no per-booking fees that punish your success. All plans include deposit collection, automated reminders, and Instagram integration.",
+    links: [
+      { text: 'Full pricing details', url: '/pricing/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
   },
   {
     question: "Can clients pay deposits when booking?",
-    answer: "Yes, good tattoo booking software collects deposits automatically at the time of booking. This dramatically reduces no-shows because clients have skin in the game from the start."
+    answer: "Yes, good tattoo booking software collects deposits automatically at the time of booking. This dramatically reduces no-shows by 70% because clients have financial commitment from the start. You can set custom deposit amounts (flat £50 or percentage like 20%) and define your cancellation policy.",
+    links: [
+      { text: 'Deposit management features', url: '/features/' }
+    ]
   },
   {
     question: "Will booking software reduce no-shows?",
-    answer: "Yes, studies show that deposit collection combined with automated reminders reduces no-shows by 60-80%. A $50 deposit makes clients much more likely to show up or properly cancel."
+    answer: "Yes, deposit collection combined with automated SMS reminders reduces no-shows by 70% or more. A £50 deposit makes clients much more likely to show up or properly cancel. The system sends reminders 48 hours, 24 hours, and 2 hours before appointments, giving clients multiple chances to confirm or reschedule.",
+    links: [
+      { text: 'Reminder features', url: '/features/' }
+    ]
   },
   {
     question: "Can I use booking software with Instagram?",
-    answer: "Absolutely. Most tattoo artists put their booking link in their Instagram bio. Clients tap the link, see your availability, and book instantly without DM back-and-forth."
+    answer: "Absolutely. Put your booking link in your Instagram bio and link stickers. Clients tap the link, see your real-time availability, and book instantly without DM back-and-forth. Instagram bio link bookings convert at 40% vs 15% for DM-based booking.",
+    links: [
+      { text: 'Instagram integration', url: '/features/' }
+    ]
+  },
+  {
+    question: "Does tattoo booking software work for consultations?",
+    answer: "Yes. Create different appointment types (consultation, small piece, half-day session, touch-up) with custom durations and deposit amounts. Consultations can be free or low-cost (£20) to qualify leads, while full sessions require higher deposits (£50-100).",
+    links: [
+      { text: 'Appointment types', url: '/features/' }
+    ]
+  },
+  {
+    question: "Can clients upload reference images when booking?",
+    answer: "Yes, modern tattoo booking software includes reference image upload at booking time. Clients attach inspiration photos, existing tattoo photos, or placement ideas. This eliminates separate DM chains for sharing images and ensures you have everything before the appointment.",
+    links: [
+      { text: 'Client intake features', url: '/features/' }
+    ]
+  },
+  {
+    question: "Is there booking software for tattoo studios with multiple artists?",
+    answer: "Yes. Studio plans support multiple artists with individual calendars, booking pages, and deposit settings. Clients select their preferred artist (or choose 'first available') when booking. The Studio Plan (£79/month) handles up to 5 artists.",
+    links: [
+      { text: 'Studio plan details', url: '/pricing/' },
+      { text: 'Multi-artist features', url: '/tattoo-studio-software/' }
+    ]
+  },
+  {
+    question: "What happens if a client cancels?",
+    answer: "You define the cancellation policy. Typically: free cancellation with 48+ hours notice, deposit forfeit with 24-48 hours notice, full deposit forfeit for no-shows. The software applies your policy automatically and tracks no-shows for repeat offenders.",
+    links: [
+      { text: 'Cancellation policy features', url: '/features/' }
+    ]
+  },
+  {
+    question: "How does tattoo booking software compare to Calendly or Square?",
+    answer: "Generic booking tools lack tattoo-specific features: reference image collection, digital consent forms, proper multi-hour session handling, and deposit policies that match industry norms. Tattoo-specific software is built for how artists actually work, not generic appointments.",
+    links: [
+      { text: 'Compare features', url: '/pricing/' },
+      { text: 'Tattoo studio software guide', url: '/tattoo-studio-software/' }
+    ]
   }
 ];
 
@@ -37,19 +179,6 @@ const schemaMarkup = {
   "datePublished": "2025-01-01",
   "dateModified": "2026-01-15"
 };
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-};
 ---
 
 <BaseLayout
@@ -57,17 +186,15 @@ const faqSchema = {
   description="Online booking software for tattoo artists. Let clients book 24/7, collect deposits automatically, and reduce no-shows by 70%. Complete guide for tattoo shops."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Breadcrumbs -->
-  <div class="bg-gray-100 py-3">
-    <div class="container-custom">
-      <Breadcrumbs items={[
-        { label: 'Home', href: '/' },
-        { label: 'Booking Software' }
-      ]} />
-    </div>
-  </div>
+  <!-- Breadcrumbs with Schema -->
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Booking Software', href: '/tattoo-booking-software/' }
+    ]}
+  />
 
   <!-- Hero Section -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
@@ -89,6 +216,19 @@ const faqSchema = {
       </div>
     </div>
   </section>
+
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What is tattoo booking software?">
+    Tattoo booking software lets clients schedule appointments online 24/7, pay deposits automatically, and receive confirmations without DM management. Modern platforms integrate with Instagram, collect deposits at booking, send automated SMS reminders, and reduce no-shows by 70%. Artists save 10+ hours weekly by eliminating phone tag and manual calendar management.
+  </FeaturedAnswer>
+
+  <!-- Statistics Section -->
+  <StatisticsSection
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-booking-software/"
+    title="Tattoo Booking Industry Overview"
+    stats={bookingStats}
+  />
 
   <!-- Table of Contents -->
   <section class="section bg-gray-50">
@@ -273,17 +413,31 @@ const faqSchema = {
 
         <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Actually Works</a></p>
 
-        <h2 id="faq" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Frequently Asked Questions</h2>
+      </div>
+    </div>
+  </section>
 
-        <div class="space-y-6">
-          {faqs.map((faq) => (
-            <div class="bg-gray-50 p-6 rounded-lg">
-              <h3 class="font-bold text-brand-navy mb-2">{faq.question}</h3>
-              <p class="text-gray-700">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+  <!-- Comparison Table -->
+  <ComparisonTable
+    title="MyTattoo vs Generic Booking Tools vs Manual DM Booking"
+    headers={['MyTattoo', 'Generic Tools', 'Manual/DMs']}
+    rows={comparisonData}
+  />
 
+  <!-- FAQ Section -->
+  <section id="faq">
+    <FAQEnhanced
+      site="tattoo"
+      pageUrl="https://mytattoo.software/tattoo-booking-software/"
+      title="Frequently Asked Questions About Tattoo Booking Software"
+      faqs={faqItems}
+    />
+  </section>
+
+  <!-- Remaining Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
       </div>
     </div>
   </section>
