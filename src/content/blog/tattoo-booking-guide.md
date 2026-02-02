@@ -154,6 +154,16 @@ Many studios combine methods:
 - Remind in pre-appointment communication
 - Enforce consistently
 
+---
+
+**📊 Calculate Your Booking Utilisation & Revenue**
+
+Wondering how booking rates and deposit policies affect your bottom line? Our free [Revenue Calculator](/tattoo-studio-calculator/) shows exactly how improving your booking utilisation from 55% to 75% translates to thousands in additional annual revenue. Model no-show impact, deposit recovery, and find hidden revenue in your schedule.
+
+[→ Calculate Your Booking Revenue](/tattoo-studio-calculator/)
+
+---
+
 ### Minimum Booking
 
 **Options:**

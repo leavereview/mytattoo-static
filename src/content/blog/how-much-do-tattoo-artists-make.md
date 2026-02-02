@@ -102,6 +102,16 @@ Using professional [tattoo booking software](/tattoo-booking-software/) can help
 - Business insurance: $800-$2,000
 - Equipment replacement: $1,000-$3,000
 
+---
+
+**💰 Calculate Your Actual Take-Home Income**
+
+Want to know your real earnings after expenses, commission splits, and booking gaps? Use our free [Revenue Calculator](/tattoo-studio-calculator/) to model your hourly rate, booking utilisation, costs, and actual take-home pay. See exactly how factors like deposit policies, booking rates, and pricing strategies impact your annual income.
+
+[→ Try the Tattoo Revenue Calculator](/tattoo-studio-calculator/)
+
+---
+
 ## FAQ
 
 ### How much do beginner tattoo artists make per hour?

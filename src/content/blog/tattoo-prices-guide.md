@@ -82,6 +82,16 @@ Calculate your true costs before setting prices:
 
 **Placement**: Difficult areas (ribs, feet, hands) may warrant premiums
 
+---
+
+**💷 Calculate Your Optimal Pricing Strategy**
+
+See how your pricing translates to actual annual income after costs, commission splits, and booking gaps. Our free [Revenue Calculator](/tattoo-studio-calculator/) helps you model different hourly rates, pricing models (hourly vs day rate vs per-piece), and shows your real take-home earnings. Find the sweet spot between competitive pricing and profitable business.
+
+[→ Model Your Pricing Strategy](/tattoo-studio-calculator/)
+
+---
+
 ## Setting Your Prices
 
 ### Step 1: Calculate Your Hourly Cost

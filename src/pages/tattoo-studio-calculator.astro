@@ -1,0 +1,3139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Tattoo Studio Revenue Calculator — Free Income & Profit Planner for Artists & Studios";
+const description = "Calculate your tattoo studio revenue, artist earnings, and profit margins with our free calculator. Model hourly rates, booking utilisation, commissions, and growth.";
+
+// Additional schema markup for calculator
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mytattoo.software/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tattoo Studio Revenue Calculator",
+      "item": "https://mytattoo.software/tattoo-studio-calculator/"
+    }
+  ]
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Your Tattoo Studio Revenue and Profitability",
+  "description": "Step-by-step guide to calculate your tattoo studio's revenue, costs, artist earnings, and growth projections",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter Your Studio Profile",
+      "text": "Choose between solo artist or studio owner path, set your currency, location type, operating days and hours, and configure the number of artists and chairs if running a studio."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure Revenue Model",
+      "text": "Set your pricing structure (hourly, day rate, or per-piece), booking rate, commission splits for each artist, and enable additional revenue streams like walk-ins, guest artists, piercings, and retail."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Enter Operating Costs",
+      "text": "Input your monthly expenses including rent/chair rental, supplies, equipment, sterilisation, insurance, marketing, professional development, and business software costs."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Project Growth Scenarios",
+      "text": "Define your growth parameters including booking rate targets, planned rate increases, potential studio expansion, projection period, and seasonal patterns."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Review Your Financial Dashboard",
+      "text": "Analyze comprehensive results including revenue breakdown, booking utilisation, commission splits, no-show impact, costs, profitability, growth projections, and personalized action items."
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do tattoo studios make per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Average UK tattoo studios with 3-5 artists generate £150,000-£400,000 in annual revenue. Solo artists typically earn £15,000-£100,000+ depending on their experience, rates, and booking utilisation. Studio owners' profit margins typically range from 15-30% after covering all costs and artist commissions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good booking rate for tattoo artists?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A strong booking rate for tattoo artists is 70-85% of available hours. The industry average is 55-70%. Booking rates below 50% indicate significant revenue loss from empty chair time. Top artists in high demand can achieve 85%+ booking rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should a tattoo artist charge per hour?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UK tattoo artists typically charge £80-£150 per hour depending on experience and location. Beginner artists start at £60-£80/hour, established artists charge £100-£130/hour, and highly sought-after specialists command £150-£250+/hour. US rates in major cities range from $150-$300/hour."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the average commission split in tattoo studios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common commission split is 60/40 (artist/studio) where artists keep 60% and the studio retains 40%. A 50/50 split typically means the studio supplies everything and does active marketing. Experienced artists with established clientele often negotiate 70/30 splits. Chair rental is an alternative model costing £100-£300/week in the UK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it more profitable to rent a chair or work on commission?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This depends on your booking rate and revenue. Chair rental (£100-£300/week UK) is more profitable if you have high, consistent bookings. At 70%+ booking rates and £120+/hour, rental usually beats 60/40 commission. For newer artists or those with fluctuating bookings, commission provides more stability and lower risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many bookings does a tattoo artist need per week to make a living?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To earn £30,000/year (£2,500/month) working 5 days/week at £100/hour on a 60/40 split, you need approximately 42 billable hours per month or 2-3 full-day sessions per week. This assumes 70% booking rate and accounts for consultation time. Higher rates or better booking utilisation reduce the required hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are typical tattoo studio operating costs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly operating costs for UK tattoo studios typically include: rent (£800-£3,000 depending on location), utilities (£150-£300), insurance (£100-£300), supplies per session (£10-£25), sterilisation and compliance (£100-£200), marketing (3-8% of revenue), and software/admin (£50-£150). Solo artists renting chairs pay £400-£1,200/month for space plus their own supplies and insurance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do seasonal patterns affect tattoo studio revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tattoo studios experience strong seasonality. Spring and summer (April-August) see 15-25% higher booking rates as people show more skin and plan for holidays. December typically sees a 20-30% dip. January-February can be slow (10-15% below average) but valentines provides a small boost. Planning for this seasonality is crucial for cash flow management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can no-shows impact my tattoo studio revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Without deposit requirements, studios experience 8-15% no-show rates, which can cost thousands in lost revenue monthly. A £50 non-refundable deposit typically reduces no-shows to 2-5%. For a busy artist doing 100 sessions/month at £300 average, implementing deposits could recover £2,500-£3,500 in lost revenue monthly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I add piercings to my tattoo studio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Piercings can be highly profitable with low overhead. At £25-£40 per piercing plus 50-100% jewellery markup, a studio doing just 20 piercings per week can add £2,000-£4,000 monthly revenue. It diversifies income, attracts younger clients, and has faster turnover than tattooing. However, it requires separate training, licensing, and sterile setup."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  schemaType="WebPage"
+>
+  <!-- Additional Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero Section -->
+  <section class="section bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="badge bg-brand-red-light text-brand-red mb-6 inline-flex">
+          Free Financial Planning Tool
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Tattoo Studio Revenue & Booking Rate Calculator
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+          Model your tattoo studio's income, artist earnings, costs, and growth potential with real industry benchmarks
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose-custom">
+        <div class="bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            Understanding your tattoo studio's financial picture is critical whether you're a solo artist, renting a chair, or running a multi-artist studio. Most tattoo artists never properly model their business finances—they work on feel and hope the numbers work out. This calculator changes that.
+          </p>
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            This free revenue calculator is specifically built for the tattoo industry, accounting for the unique economics of tattoo studios: commission splits, chair rental models, booking utilisation, no-show impacts, seasonal patterns, and multiple revenue streams from piercings to retail. It's designed for both <strong>solo tattoo artists</strong> wanting to understand their true take-home and <strong>studio owners</strong> managing multiple artists and chairs.
+          </p>
+
+          <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-4">What You'll Discover</h2>
+          <ul class="space-y-3 text-text-secondary mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Your actual take-home earnings</strong> after accounting for commission splits, costs, booking gaps, and no-shows—not just your hourly rate</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Booking utilisation analysis</strong> showing exactly how much revenue you're losing to empty chair time and how to fill it</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Commission model comparison</strong> (for studio owners) showing which artists are most profitable and where models can be optimised</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>No-show impact</strong> quantifying how much revenue is lost to missed appointments and the ROI of implementing deposits</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Growth projections</strong> modeling revenue and profit over 6-24 months including seasonal patterns, rate increases, and studio expansion</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span><strong>Actionable recommendations</strong> comparing your numbers to industry benchmarks and identifying the highest-impact improvements</span>
+            </li>
+          </ul>
+
+          <p class="text-lg text-text-secondary leading-relaxed mb-8">
+            The calculator uses real-world data from tattoo studios across the UK and US. Average UK tattoo artists earn £15,000-£100,000+ annually depending on experience, rates (£80-£150/hour typical), and booking utilisation (70-85% is strong). Studio owners with 3-5 artists generate £150,000-£400,000 annual revenue with 15-30% profit margins. Understanding where you sit relative to these benchmarks helps you price correctly, optimise operations, and grow sustainably.
+          </p>
+
+          <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg">
+            <h3 class="text-lg font-semibold text-brand-navy mb-2">For Solo Artists & Studio Owners</h3>
+            <p class="text-text-secondary">
+              Whether you're a solo artist working from home, renting a chair, running your own studio, or managing multiple artists across several chairs, this calculator adapts to your business model. Choose your path in Step 1, and the calculator will show you exactly what matters for your situation. All data stays private—calculations happen entirely in your browser, nothing is stored or transmitted.
+            </p>
+          </div>
+
+          <div class="mt-8 text-center">
+            <p class="text-sm text-text-tertiary mb-4">
+              Interested in automating your studio? Learn about <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">tattoo studio software</a>, <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">tattoo booking software</a>, and <a href="/tattoo-scheduling-software/" class="text-brand-red hover:underline">tattoo scheduling software</a>. Understand the full financial picture with our guide on <a href="/blog/how-much-do-tattoo-artists-make/" class="text-brand-red hover:underline">how much tattoo artists make</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-6xl mx-auto">
+        <div id="calculator-app" class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+          <!-- Progress bar -->
+          <div class="bg-gray-100 h-2">
+            <div id="progress-bar" class="bg-brand-red h-full transition-all duration-300" style="width: 20%"></div>
+          </div>
+
+          <!-- Calculator content -->
+          <div class="p-6 md:p-10">
+            <!-- Step indicators -->
+            <div class="flex justify-between items-center mb-8">
+              <div class="flex-1 text-center step-indicator active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Profile</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Revenue</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Costs</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-label">Growth</div>
+              </div>
+              <div class="flex-1 text-center step-indicator" data-step="5">
+                <div class="step-number">5</div>
+                <div class="step-label">Results</div>
+              </div>
+            </div>
+
+            <!-- Step 1: Studio Profile -->
+            <div id="step-1" class="calculator-step">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Your Studio Profile</h2>
+              <p class="text-text-secondary mb-8">Tell us about your tattoo business to get started.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label class="block text-sm font-semibold text-brand-navy mb-3">I am a...</label>
+                  <div class="flex gap-4">
+                    <label class="flex-1 flex items-center justify-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="studio-type" value="solo" class="mr-3" checked>
+                      <span class="font-medium">Solo Artist</span>
+                    </label>
+                    <label class="flex-1 flex items-center justify-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="studio-type" value="studio-owner" class="mr-3">
+                      <span class="font-medium">Studio Owner</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="currency" class="block text-sm font-semibold text-brand-navy mb-2">Currency</label>
+                  <select id="currency" class="input">
+                    <option value="£" selected>£ (GBP)</option>
+                    <option value="$">$ (USD)</option>
+                    <option value="€">€ (EUR)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="location-type" class="block text-sm font-semibold text-brand-navy mb-2">Location Type</label>
+                  <select id="location-type" class="input">
+                    <option value="city-centre">City Centre / Urban</option>
+                    <option value="suburban" selected>Suburban</option>
+                    <option value="town">Town</option>
+                    <option value="rural">Rural</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="operating-days" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Operating Days Per Week
+                    <span class="text-text-tertiary font-normal">(3-6)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="operating-days" class="input" value="5" min="3" max="6">
+                </div>
+
+                <div>
+                  <label for="working-hours" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Working Hours Per Day
+                    <span class="text-text-tertiary font-normal">(4-10)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="working-hours" class="input" value="7" min="4" max="10">
+                </div>
+
+                <!-- Studio owner specific fields -->
+                <div id="studio-owner-fields" class="hidden space-y-6 pt-6 border-t border-gray-200">
+                  <div>
+                    <label for="num-chairs" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Number of Tattoo Chairs
+                      <span class="text-text-tertiary font-normal">(1-15)</span>
+                    </label>
+                    <input type="number" inputmode="numeric" id="num-chairs" class="input" value="4" min="1" max="15">
+                  </div>
+
+                  <div>
+                    <label for="num-artists" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Number of Artists
+                      <span class="text-text-tertiary font-normal">(1-15)</span>
+                    </label>
+                    <input type="number" inputmode="numeric" id="num-artists" class="input" value="3" min="1" max="15">
+                  </div>
+
+                  <div>
+                    <label for="guest-slots" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Guest Artist Slots Available
+                      <span class="text-text-tertiary font-normal">(0-5)</span>
+                    </label>
+                    <input type="number" inputmode="numeric" id="guest-slots" class="input" value="1" min="0" max="5">
+                  </div>
+
+                  <div>
+                    <label class="flex items-center">
+                      <input type="checkbox" id="walkin-friendly" class="mr-3">
+                      <span class="font-medium text-brand-navy">Walk-in Friendly Studio</span>
+                    </label>
+                    <p class="text-sm text-text-tertiary mt-2">Check if you accept walk-in clients for flash/small pieces</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Revenue Model -->
+            <!-- Solo artist revenue path -->
+            <div id="step-2-solo" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Your Revenue Model</h2>
+              <p class="text-text-secondary mb-8">Configure your pricing and booking structure.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label class="block text-sm font-semibold text-brand-navy mb-3">Pricing Model</label>
+                  <div class="space-y-2">
+                    <label class="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="pricing-model" value="hourly" class="mr-3" checked>
+                      <span>Hourly Rate</span>
+                    </label>
+                    <label class="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="pricing-model" value="day-rate" class="mr-3">
+                      <span>Day Rate</span>
+                    </label>
+                    <label class="flex items-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="pricing-model" value="per-piece" class="mr-3">
+                      <span>Per-Piece Pricing</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div id="hourly-rate-field">
+                  <label for="solo-hourly-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                    <span id="rate-label">Hourly Rate</span>
+                    <span class="text-text-tertiary font-normal" id="rate-range">(£50-£300)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="solo-hourly-rate" class="input" value="120" min="50" max="300">
+                </div>
+
+                <div id="per-piece-fields" class="hidden space-y-4">
+                  <div>
+                    <label for="pieces-per-day" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Average Pieces Per Day
+                      <span class="text-text-tertiary font-normal">(1-10)</span>
+                    </label>
+                    <input type="number" inputmode="numeric" id="pieces-per-day" class="input" value="3" min="1" max="10">
+                  </div>
+                  <div>
+                    <label for="hours-per-piece" class="block text-sm font-semibold text-brand-navy mb-2">
+                      Average Hours Per Piece
+                      <span class="text-text-tertiary font-normal">(0.5-8)</span>
+                    </label>
+                    <input type="number" inputmode="numeric" id="hours-per-piece" class="input" value="2" min="0.5" max="8" step="0.5">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="solo-booking-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Booking Rate (% of Available Hours)
+                    <span class="text-text-tertiary font-normal">(20-100%)</span>
+                  </label>
+                  <input type="range" id="solo-booking-rate" class="w-full" value="70" min="20" max="100" step="5">
+                  <div class="flex justify-between text-sm text-text-tertiary mt-1">
+                    <span>20%</span>
+                    <span class="font-semibold text-brand-red" id="solo-booking-rate-display">70%</span>
+                    <span>100%</span>
+                  </div>
+                  <p class="text-sm text-text-tertiary mt-2">Industry average: 55-70%. Strong: 70-85%.</p>
+                </div>
+
+                <div>
+                  <label for="consultation-pct" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Consultation Time (% of Booked Hours)
+                    <span class="text-text-tertiary font-normal">(0-30%)</span>
+                  </label>
+                  <input type="range" id="consultation-pct" class="w-full" value="10" min="0" max="30" step="5">
+                  <div class="flex justify-between text-sm text-text-tertiary mt-1">
+                    <span>0%</span>
+                    <span class="font-semibold text-brand-red" id="consultation-pct-display">10%</span>
+                    <span>30%</span>
+                  </div>
+                </div>
+
+                <!-- Deposit toggle -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Deposits Required</h3>
+                      <p class="text-sm text-text-tertiary">Non-refundable booking deposits</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-deposits" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="deposit-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="deposit-amount" class="block text-sm font-medium text-brand-navy mb-2">Deposit Amount</label>
+                      <input type="number" inputmode="numeric" id="deposit-amount" class="input" value="50" min="0">
+                    </div>
+                    <div>
+                      <label for="noshow-rate" class="block text-sm font-medium text-brand-navy mb-2">
+                        No-Show Rate (%)
+                        <span class="text-text-tertiary font-normal">(0-20%)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="noshow-rate" class="input" value="2" min="0" max="20" step="0.5">
+                      <p class="text-sm text-text-tertiary mt-1">With deposits: 2-5%. Without: 8-15%.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Additional revenue streams -->
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Tips</h3>
+                      <p class="text-sm text-text-tertiary">Client gratuities</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-tips" class="sr-only peer" checked>
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="tips-inputs" class="space-y-4">
+                    <div>
+                      <label for="tips-pct" class="block text-sm font-medium text-brand-navy mb-2">
+                        Average Tip % of Session Cost
+                        <span class="text-text-tertiary font-normal">(0-25%)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="tips-pct" class="input" value="15" min="0" max="25" step="5">
+                    </div>
+                    <div>
+                      <label for="clients-who-tip-pct" class="block text-sm font-medium text-brand-navy mb-2">
+                        % of Clients Who Tip
+                        <span class="text-text-tertiary font-normal">(0-100%)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="clients-who-tip-pct" class="input" value="60" min="0" max="100" step="10">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Flash Days</h3>
+                      <p class="text-sm text-text-tertiary">Pre-drawn flash tattoo events</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-flash" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="flash-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="flash-per-month" class="block text-sm font-medium text-brand-navy mb-2">Flash Days Per Month</label>
+                      <input type="number" inputmode="numeric" id="flash-per-month" class="input" value="1" min="0" max="8">
+                    </div>
+                    <div>
+                      <label for="flash-revenue" class="block text-sm font-medium text-brand-navy mb-2">Revenue Per Flash Day</label>
+                      <input type="number" inputmode="numeric" id="flash-revenue" class="input" value="400" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Merchandise</h3>
+                      <p class="text-sm text-text-tertiary">Aftercare, apparel, art prints</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-merch-solo" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="merch-solo-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="merch-monthly-solo" class="block text-sm font-medium text-brand-navy mb-2">Monthly Merchandise Revenue</label>
+                      <input type="number" inputmode="numeric" id="merch-monthly-solo" class="input" value="150" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Guest Spots</h3>
+                      <p class="text-sm text-text-tertiary">Working as a guest at other studios</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-guest-spots" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="guest-spots-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="guest-spots-monthly" class="block text-sm font-medium text-brand-navy mb-2">Monthly Guest Spot Revenue</label>
+                      <input type="number" inputmode="numeric" id="guest-spots-monthly" class="input" value="800" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Online/Digital Revenue</h3>
+                      <p class="text-sm text-text-tertiary">Designs, courses, digital products</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-online" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="online-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="online-monthly" class="block text-sm font-medium text-brand-navy mb-2">Monthly Online Revenue</label>
+                      <input type="number" inputmode="numeric" id="online-monthly" class="input" value="200" min="0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Studio owner revenue path -->
+            <div id="step-2-studio" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Studio Revenue Model</h2>
+              <p class="text-text-secondary mb-8">Configure each artist's commission structure and studio-level revenue streams.</p>
+
+              <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-brand-navy">Artist Configuration</h3>
+                <div id="artist-cards-container" class="space-y-6">
+                  <!-- Artist cards will be dynamically generated here -->
+                </div>
+
+                <button type="button" id="refresh-artists-btn" class="btn-secondary w-full md:w-auto">
+                  Update Artist Cards
+                </button>
+
+                <h3 class="text-xl font-semibold text-brand-navy mt-10">Studio-Level Revenue</h3>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Walk-In Clients</h3>
+                      <p class="text-sm text-text-tertiary">Flash and small pieces for walk-ins</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-walkins" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="walkins-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="walkins-per-week" class="block text-sm font-medium text-brand-navy mb-2">Walk-Ins Per Week</label>
+                      <input type="number" inputmode="numeric" id="walkins-per-week" class="input" value="8" min="0" max="50">
+                    </div>
+                    <div>
+                      <label for="walkin-avg-spend" class="block text-sm font-medium text-brand-navy mb-2">Average Spend Per Walk-In</label>
+                      <input type="number" inputmode="numeric" id="walkin-avg-spend" class="input" value="80" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Guest Artists</h3>
+                      <p class="text-sm text-text-tertiary">Visiting artists renting chairs</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-guests" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="guests-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="guest-studio-cut" class="block text-sm font-medium text-brand-navy mb-2">
+                        Studio Cut (%)
+                        <span class="text-text-tertiary font-normal">(20-50%)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="guest-studio-cut" class="input" value="30" min="20" max="50" step="5">
+                    </div>
+                    <div>
+                      <label for="guest-daily-revenue" class="block text-sm font-medium text-brand-navy mb-2">Average Guest Daily Revenue</label>
+                      <input type="number" inputmode="numeric" id="guest-daily-revenue" class="input" value="600" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Piercings</h3>
+                      <p class="text-sm text-text-tertiary">Body piercing services</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-piercings" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="piercings-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="piercings-per-week" class="block text-sm font-medium text-brand-navy mb-2">Piercings Per Week</label>
+                      <input type="number" inputmode="numeric" id="piercings-per-week" class="input" value="20" min="0" max="100">
+                    </div>
+                    <div>
+                      <label for="piercing-price" class="block text-sm font-medium text-brand-navy mb-2">Average Piercing Price</label>
+                      <input type="number" inputmode="numeric" id="piercing-price" class="input" value="30" min="0">
+                    </div>
+                    <div>
+                      <label for="jewellery-markup" class="block text-sm font-medium text-brand-navy mb-2">
+                        Jewellery Markup (%)
+                        <span class="text-text-tertiary font-normal">(50-100%)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="jewellery-markup" class="input" value="75" min="50" max="100" step="25">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 class="text-lg font-semibold text-brand-navy">Retail & Merchandise</h3>
+                      <p class="text-sm text-text-tertiary">Aftercare products, apparel, art</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-retail" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="retail-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="retail-monthly" class="block text-sm font-medium text-brand-navy mb-2">Monthly Retail Revenue</label>
+                      <input type="number" inputmode="numeric" id="retail-monthly" class="input" value="400" min="0">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Operating Costs -->
+            <!-- Solo artist costs path -->
+            <div id="step-3-solo" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Operating Costs</h2>
+              <p class="text-text-secondary mb-8">Enter your monthly operating expenses to calculate profitability.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label for="solo-studio-cost-model" class="block text-sm font-semibold text-brand-navy mb-2">Studio Cost Model</label>
+                  <select id="solo-studio-cost-model" class="input">
+                    <option value="rental">Chair Rental</option>
+                    <option value="own-studio">Own Studio / Rent Full Space</option>
+                    <option value="home-studio">Home Studio</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="solo-studio-cost" class="block text-sm font-semibold text-brand-navy mb-2">
+                    <span id="solo-studio-cost-label">Monthly Chair Rental Cost</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="solo-studio-cost" class="input" value="800" min="0">
+                </div>
+
+                <div>
+                  <label for="solo-supplies-per-session" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Supplies Per Session
+                    <span class="text-text-tertiary font-normal">(£10-£25)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="solo-supplies-per-session" class="input" value="15" min="0">
+                </div>
+
+                <div>
+                  <label for="solo-equipment-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Equipment Maintenance (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="solo-equipment-monthly" class="input" value="50" min="0">
+                </div>
+
+                <div>
+                  <label for="solo-sterilisation-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Sterilisation & Compliance (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="solo-sterilisation-monthly" class="input" value="40" min="0">
+                </div>
+
+                <div>
+                  <label for="solo-insurance-annual" class="block text-sm font-semibold text-brand-navy mb-2">Professional Insurance (Annual)</label>
+                  <input type="number" inputmode="numeric" id="solo-insurance-annual" class="input" value="600" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="solo-accountant-annual" class="block text-sm font-semibold text-brand-navy mb-2">Accountant Fees (Annual)</label>
+                  <input type="number" inputmode="numeric" id="solo-accountant-annual" class="input" value="400" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="solo-licensing-annual" class="block text-sm font-semibold text-brand-navy mb-2">Licensing & Registration (Annual)</label>
+                  <input type="number" inputmode="numeric" id="solo-licensing-annual" class="input" value="200" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="solo-marketing-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Marketing (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="solo-marketing-monthly" class="input" value="100" min="0">
+                </div>
+
+                <div>
+                  <label for="solo-professional-dev-annual" class="block text-sm font-semibold text-brand-navy mb-2">Professional Development (Annual)</label>
+                  <input type="number" inputmode="numeric" id="solo-professional-dev-annual" class="input" value="300" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Conventions, workshops, courses - will be converted to monthly</p>
+                </div>
+
+                <div>
+                  <label for="solo-software-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Software & Tools (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="solo-software-monthly" class="input" value="50" min="0">
+                </div>
+              </div>
+            </div>
+
+            <!-- Studio owner costs path -->
+            <div id="step-3-studio" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Studio Operating Costs</h2>
+              <p class="text-text-secondary mb-8">Enter all monthly operating expenses for your studio.</p>
+
+              <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-brand-navy">Facility Costs</h3>
+
+                <div>
+                  <label for="studio-rent" class="block text-sm font-semibold text-brand-navy mb-2">Monthly Rent / Lease</label>
+                  <input type="number" inputmode="numeric" id="studio-rent" class="input" value="2000" min="0">
+                </div>
+
+                <div>
+                  <label for="studio-rates" class="block text-sm font-semibold text-brand-navy mb-2">Business Rates (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="studio-rates" class="input" value="150" min="0">
+                </div>
+
+                <div>
+                  <label for="studio-utilities" class="block text-sm font-semibold text-brand-navy mb-2">Utilities (Electric, Gas, Water)</label>
+                  <input type="number" inputmode="numeric" id="studio-utilities" class="input" value="250" min="0">
+                </div>
+
+                <div>
+                  <label for="studio-facilities-insurance-annual" class="block text-sm font-semibold text-brand-navy mb-2">Facilities Insurance (Annual)</label>
+                  <input type="number" inputmode="numeric" id="studio-facilities-insurance-annual" class="input" value="1200" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="studio-maintenance" class="block text-sm font-semibold text-brand-navy mb-2">Maintenance & Repairs (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="studio-maintenance" class="input" value="150" min="0">
+                </div>
+
+                <h3 class="text-xl font-semibold text-brand-navy mt-8">Staff</h3>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h4 class="text-lg font-semibold text-brand-navy">Receptionist / Front Desk</h4>
+                      <p class="text-sm text-text-tertiary">Non-artist staff</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-reception" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="reception-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="reception-hours-weekly" class="block text-sm font-medium text-brand-navy mb-2">Hours Per Week</label>
+                      <input type="number" inputmode="numeric" id="reception-hours-weekly" class="input" value="30" min="0" max="80">
+                    </div>
+                    <div>
+                      <label for="reception-hourly-rate" class="block text-sm font-medium text-brand-navy mb-2">Hourly Rate</label>
+                      <input type="number" inputmode="numeric" id="reception-hourly-rate" class="input" value="12" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <h4 class="text-lg font-semibold text-brand-navy">Cleaner</h4>
+                      <p class="text-sm text-text-tertiary">Studio cleaning service</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="enable-cleaner" class="sr-only peer">
+                      <div class="toggle-switch"></div>
+                    </label>
+                  </div>
+                  <div id="cleaner-inputs" class="space-y-4 hidden">
+                    <div>
+                      <label for="cleaner-monthly" class="block text-sm font-medium text-brand-navy mb-2">Monthly Cleaning Cost</label>
+                      <input type="number" inputmode="numeric" id="cleaner-monthly" class="input" value="200" min="0">
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-brand-navy mt-8">Supplies & Equipment</h3>
+
+                <div>
+                  <label for="studio-supplies-per-session" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Supplies Per Session
+                    <span class="text-text-tertiary font-normal">(£10-£25)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="studio-supplies-per-session" class="input" value="15" min="0">
+                </div>
+
+                <div>
+                  <label for="supplies-paid-by" class="block text-sm font-semibold text-brand-navy mb-2">Supplies Paid By</label>
+                  <select id="supplies-paid-by" class="input">
+                    <option value="studio">Studio (included in commission)</option>
+                    <option value="artist">Artist (separate expense)</option>
+                    <option value="split">Split 50/50</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="studio-sterilisation-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Sterilisation & Compliance (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="studio-sterilisation-monthly" class="input" value="200" min="0">
+                </div>
+
+                <h3 class="text-xl font-semibold text-brand-navy mt-8">Insurance</h3>
+
+                <div>
+                  <label for="studio-public-insurance-annual" class="block text-sm font-semibold text-brand-navy mb-2">Public Liability Insurance (Annual)</label>
+                  <input type="number" inputmode="numeric" id="studio-public-insurance-annual" class="input" value="800" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="studio-employer-insurance-annual" class="block text-sm font-semibold text-brand-navy mb-2">Employer's Liability Insurance (Annual)</label>
+                  <input type="number" inputmode="numeric" id="studio-employer-insurance-annual" class="input" value="400" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="studio-professional-insurance-annual" class="block text-sm font-semibold text-brand-navy mb-2">Professional Indemnity Insurance (Annual)</label>
+                  <input type="number" inputmode="numeric" id="studio-professional-insurance-annual" class="input" value="600" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <h3 class="text-xl font-semibold text-brand-navy mt-8">Business Costs</h3>
+
+                <div>
+                  <label for="studio-marketing-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Marketing (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="studio-marketing-monthly" class="input" value="300" min="0">
+                </div>
+
+                <div>
+                  <label for="studio-accountant-annual" class="block text-sm font-semibold text-brand-navy mb-2">Accountant Fees (Annual)</label>
+                  <input type="number" inputmode="numeric" id="studio-accountant-annual" class="input" value="1200" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="studio-licensing-annual" class="block text-sm font-semibold text-brand-navy mb-2">Licensing & Registration (Annual)</label>
+                  <input type="number" inputmode="numeric" id="studio-licensing-annual" class="input" value="500" min="0">
+                  <p class="text-sm text-text-tertiary mt-1">Will be converted to monthly cost</p>
+                </div>
+
+                <div>
+                  <label for="studio-software-monthly" class="block text-sm font-semibold text-brand-navy mb-2">Software & Admin Tools (Monthly)</label>
+                  <input type="number" inputmode="numeric" id="studio-software-monthly" class="input" value="150" min="0">
+                </div>
+
+                <div>
+                  <label for="card-processing-pct" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Card Processing Fees (%)
+                    <span class="text-text-tertiary font-normal">(1.5-3.5%)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="card-processing-pct" class="input" value="2.5" min="0" max="5" step="0.5">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Growth & Goals (SHARED with conditionals) -->
+            <div id="step-4" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Growth & Goals</h2>
+              <p class="text-text-secondary mb-8">Project your studio's future revenue and growth trajectory.</p>
+
+              <div class="space-y-6">
+                <div>
+                  <label for="current-trend" class="block text-sm font-semibold text-brand-navy mb-2">Current Bookings Trend</label>
+                  <select id="current-trend" class="input">
+                    <option value="declining">Declining</option>
+                    <option value="flat">Flat / Stable</option>
+                    <option value="slow-growth" selected>Growing Slowly</option>
+                    <option value="fast-growth">Growing Fast</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="target-booking-rate" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Target Booking Rate in 12 Months (%)
+                    <span class="text-text-tertiary font-normal">(20-100%)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="target-booking-rate" class="input" value="80" min="20" max="100" step="5">
+                  <p class="text-sm text-text-tertiary mt-1">Aspirational but realistic booking rate goal</p>
+                </div>
+
+                <div>
+                  <label for="planned-rate-increase" class="block text-sm font-semibold text-brand-navy mb-2">
+                    Planned Rate Increase (%)
+                    <span class="text-text-tertiary font-normal">(0-30%)</span>
+                  </label>
+                  <input type="number" inputmode="numeric" id="planned-rate-increase" class="input" value="10" min="0" max="30" step="5">
+                  <p class="text-sm text-text-tertiary mt-1">Will be applied at midpoint of projection period</p>
+                </div>
+
+                <!-- Studio owner expansion fields -->
+                <div id="expansion-fields" class="hidden space-y-6 pt-6 border-t border-gray-200">
+                  <div>
+                    <label class="flex items-center">
+                      <input type="checkbox" id="planning-expansion" class="mr-3">
+                      <span class="font-medium text-brand-navy">Planning to Add Artists / Chairs</span>
+                    </label>
+                    <p class="text-sm text-text-tertiary mt-2">Check if you plan to expand during the projection period</p>
+                  </div>
+
+                  <div id="expansion-details" class="space-y-4 hidden">
+                    <div>
+                      <label for="additional-artists" class="block text-sm font-semibold text-brand-navy mb-2">
+                        Number of Additional Artists
+                        <span class="text-text-tertiary font-normal">(1-10)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="additional-artists" class="input" value="1" min="1" max="10">
+                    </div>
+                    <div>
+                      <label for="expansion-month" class="block text-sm font-semibold text-brand-navy mb-2">
+                        Expansion Month
+                        <span class="text-text-tertiary font-normal">(1-24)</span>
+                      </label>
+                      <input type="number" inputmode="numeric" id="expansion-month" class="input" value="6" min="1" max="24">
+                      <p class="text-sm text-text-tertiary mt-1">Month within projection period when expansion happens</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="projection-period" class="block text-sm font-semibold text-brand-navy mb-3">Projection Period</label>
+                  <div class="flex gap-3">
+                    <label class="flex-1 flex items-center justify-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="projection-period" value="6" class="mr-2">
+                      <span>6 months</span>
+                    </label>
+                    <label class="flex-1 flex items-center justify-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="projection-period" value="12" class="mr-2" checked>
+                      <span>12 months</span>
+                    </label>
+                    <label class="flex-1 flex items-center justify-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="projection-period" value="18" class="mr-2">
+                      <span>18 months</span>
+                    </label>
+                    <label class="flex-1 flex items-center justify-center p-3 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-brand-red transition-colors">
+                      <input type="radio" name="projection-period" value="24" class="mr-2">
+                      <span>24 months</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="seasonal-pattern" class="block text-sm font-semibold text-brand-navy mb-2">Seasonal Pattern</label>
+                  <select id="seasonal-pattern" class="input">
+                    <option value="none">No Seasonal Variation</option>
+                    <option value="uk-tattoo" selected>UK Tattoo Industry (Typical)</option>
+                    <option value="custom">Custom Monthly Adjustments</option>
+                  </select>
+                  <p class="text-sm text-text-tertiary mt-2">UK Typical: Spring/summer peak (+20-25%), December dip (-25%)</p>
+                </div>
+
+                <div id="custom-seasonal-fields" class="hidden space-y-4">
+                  <p class="text-sm text-text-secondary">Adjust each month's booking rate as a % of your baseline (100% = normal):</p>
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div>
+                      <label for="season-jan" class="block text-xs font-medium text-brand-navy mb-1">January (%)</label>
+                      <input type="number" inputmode="numeric" id="season-jan" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-feb" class="block text-xs font-medium text-brand-navy mb-1">February (%)</label>
+                      <input type="number" inputmode="numeric" id="season-feb" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-mar" class="block text-xs font-medium text-brand-navy mb-1">March (%)</label>
+                      <input type="number" inputmode="numeric" id="season-mar" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-apr" class="block text-xs font-medium text-brand-navy mb-1">April (%)</label>
+                      <input type="number" inputmode="numeric" id="season-apr" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-may" class="block text-xs font-medium text-brand-navy mb-1">May (%)</label>
+                      <input type="number" inputmode="numeric" id="season-may" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-jun" class="block text-xs font-medium text-brand-navy mb-1">June (%)</label>
+                      <input type="number" inputmode="numeric" id="season-jun" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-jul" class="block text-xs font-medium text-brand-navy mb-1">July (%)</label>
+                      <input type="number" inputmode="numeric" id="season-jul" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-aug" class="block text-xs font-medium text-brand-navy mb-1">August (%)</label>
+                      <input type="number" inputmode="numeric" id="season-aug" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-sep" class="block text-xs font-medium text-brand-navy mb-1">September (%)</label>
+                      <input type="number" inputmode="numeric" id="season-sep" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-oct" class="block text-xs font-medium text-brand-navy mb-1">October (%)</label>
+                      <input type="number" inputmode="numeric" id="season-oct" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-nov" class="block text-xs font-medium text-brand-navy mb-1">November (%)</label>
+                      <input type="number" inputmode="numeric" id="season-nov" class="input" value="100" min="50" max="150">
+                    </div>
+                    <div>
+                      <label for="season-dec" class="block text-xs font-medium text-brand-navy mb-1">December (%)</label>
+                      <input type="number" inputmode="numeric" id="season-dec" class="input" value="100" min="50" max="150">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5: Results Dashboard (10 PANELS - conditional by path) -->
+            <div id="step-5" class="calculator-step hidden">
+              <h2 class="text-3xl font-bold text-brand-navy mb-6">Your Financial Dashboard</h2>
+              <p class="text-text-secondary mb-8">Here's your complete financial picture based on the inputs provided.</p>
+
+              <div id="results-container" class="space-y-8">
+                <!-- Results will be dynamically generated here -->
+              </div>
+
+              <div class="flex gap-4 mt-10">
+                <button type="button" id="start-over-btn" class="btn-secondary flex-1">
+                  Start Over
+                </button>
+                <button type="button" id="download-pdf-btn" class="btn-primary flex-1">
+                  Download PDF (Coming Soon)
+                </button>
+              </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="flex justify-between items-center mt-10 pt-8 border-t border-gray-200">
+              <button type="button" id="back-btn" class="btn-secondary hidden">
+                ← Back
+              </button>
+              <div class="flex-1"></div>
+              <button type="button" id="next-btn" class="btn-primary">
+                Next Step →
+              </button>
+              <button type="button" id="calculate-btn" class="btn-primary hidden">
+                Calculate Results
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Below Calculator SEO Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose-custom">
+        <div class="bg-white rounded-xl shadow-sm p-8 md:p-12">
+          <h2 class="text-3xl font-bold text-brand-navy mb-6">How to Increase Your Tattoo Studio Revenue</h2>
+
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            The calculator shows you where you are—now let's talk about how to get where you want to be. Whether you're a solo artist or studio owner, revenue growth comes from three levers: <strong>raising rates</strong>, <strong>filling more hours</strong>, and <strong>adding revenue streams</strong>. Here's how to pull each lever effectively.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-8 mb-4">For Solo Artists</h3>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">1. Optimise Your Booking Rate</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            If you're running at 55% booking rate, every 10% improvement adds thousands annually. The gap between 55% and 75% booking at £120/hour is £20,000+ per year. Focus on reducing appointment gaps with <a href="/tattoo-scheduling-software/" class="text-brand-red hover:underline">automated scheduling software</a>, waitlist management for cancellations, and strategic marketing to fill slow periods. Track your booking rate monthly and set incremental targets.
+          </p>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">2. Implement Mandatory Deposits</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            If you're not requiring £50+ non-refundable deposits, you're likely losing 10-15% of your potential revenue to no-shows. The calculator shows you exactly what this costs. Modern <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">tattoo booking software</a> handles deposit collection automatically, reducing no-shows from 12% to under 3%. That's real money back in your pocket every month.
+          </p>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">3. Review Your Pricing Annually</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Your rate should increase as your skills, demand, and costs increase. If you haven't raised rates in 2+ years and you're booking 70%+, you're undercharging. A 10-15% rate increase at high booking rates typically has minimal client pushback but massive income impact. Test higher rates with new clients first, or implement tiered pricing where premium time slots cost more.
+          </p>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">4. Diversify Income Streams</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Flash days, guest spots, digital designs, and online courses provide revenue beyond chair time. Even small streams add up: one flash day per month at £400 is £4,800 annually. Merchandise like aftercare products has high margins and builds your brand. Consider teaching workshops or selling flash sets online—your expertise has value beyond tattooing.
+          </p>
+
+          <h3 class="text-2xl font-semibold text-brand-navy mt-10 mb-4">For Studio Owners</h3>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">1. Optimise Commission Structures</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            The calculator breaks down profitability by artist and commission model. If you have a high-performing artist on 50/50 who could handle 70/30, you're leaving money on the table. Conversely, struggling artists might need more studio support (marketing, mentoring) to justify their commission. Review structures annually and align them with performance, experience, and what the studio provides.
+          </p>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">2. Maximise Chair Utilisation</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Empty chairs are lost revenue. If you have 4 chairs but only 3 artists working 5 days a week, that fourth chair represents £50,000-£80,000+ in potential studio revenue annually. Fill empty chairs with part-time artists, guest spots, or piercers. Track utilisation per chair, not just per artist. Even adding one guest artist per week at 30% studio cut can add £8,000-£12,000 annually.
+          </p>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">3. Add High-Margin Services</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Piercings have fantastic economics: quick turnover (15-30 min vs 2-4 hour tattoos), high jewellery markup (75-100%), and attract younger clients who become future tattoo clients. At just 20 piercings/week, you're adding £2,000-£4,000 monthly with minimal overhead. Retail (aftercare, apparel, art prints) similarly has 50-80% margins and builds brand loyalty.
+          </p>
+
+          <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">4. Reduce Operational Inefficiencies</h4>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Studio profit margins are thin (15-30%), so small cost savings compound. Bulk ordering supplies, renegotiating rent after lease end, switching to energy-efficient equipment, and using <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">comprehensive studio management software</a> instead of multiple subscriptions all improve margins. Automate administrative tasks—reception time spent on phone booking is expensive compared to online booking systems.
+          </p>
+
+          <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Understanding Your Numbers</h2>
+
+          <p class="text-lg text-text-secondary leading-relaxed mb-6">
+            The calculator gives you 10 panels of financial insights. Here's how to interpret and act on them:
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">Effective Hourly Rate vs. Listed Rate</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Your effective hourly rate (total revenue ÷ available hours) is always lower than your listed rate due to gaps, consultation time, and no-shows. If you charge £120/hour but your effective rate is £65/hour, you're only capturing 54% of potential. This gap reveals your biggest opportunity: filling more hours is often more impactful than raising rates.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">Profit Margin Benchmarks</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Solo artists should target 40-60% profit margins (revenue minus all costs). Studio owners typically see 15-30% margins due to higher overhead. If you're below these ranges, your costs are too high relative to revenue. If you're significantly above, you might be underinvesting in growth (marketing, equipment, professional development).
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">Revenue per Artist (Studio Owners)</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Strong artists generate £60,000-£120,000+ gross annual revenue (£5,000-£10,000/month). At 60/40 split, that's £24,000-£48,000 retained by the studio per artist annually. If an artist is generating under £3,000/month gross, investigate why: are they new (expected), underbooked (fixable with marketing), or underperforming (needs addressing)? Your goal is to get every artist to strong productivity.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">Seasonal Cash Flow Planning</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Tattoo studios see 20-30% revenue swings seasonally. April-August is peak (people show more skin, plan for holidays), December is a dip (people save for Christmas, cover up for winter). Use strong months to build cash reserves for slow months. If December is 25% down, save an extra 25% in June-August to smooth cash flow. Consider running December promotions or gift certificates to boost revenue.
+          </p>
+
+          <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Common Pitfalls That Hurt Profitability</h2>
+
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Here are mistakes that quietly drain thousands from your studio every year:
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">1. Not Tracking Booking Rate</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Most artists work on feel: "I'm busy enough." But "busy enough" is often 50-60% booking rate when 75-85% is achievable. Without tracking, you can't optimise. Modern booking systems automatically calculate booking rates—if you're not tracking this monthly, you're flying blind.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">2. Inconsistent Pricing</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            Quoting £100/hour for one client and £120/hour for another based on feel creates revenue inconsistency and fairness issues. Set clear pricing tiers based on artist experience, piece complexity, and placement. Document your pricing structure and stick to it. Clients respect transparent, consistent pricing.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">3. Underestimating True Costs</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            It's not just rent and supplies. Insurance, licensing, sterilisation, equipment depreciation, professional development, software, card processing fees, and your own time on admin/marketing all cost money. Solo artists often forget to "pay themselves" for non-billable hours. Calculate your true fully-loaded cost per hour—you might be shocked how high it is.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">4. No-Deposit Booking</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            This is the easiest fix with the biggest impact. No-shows at 10-15% are costing you £2,000-£5,000+ monthly. Implementing £50 non-refundable deposits drops this to 2-5% within weeks. The deposit also pre-qualifies serious clients and provides cash flow for supplies before the appointment.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">5. Stagnant Rates</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            If your rate hasn't increased in 3+ years, you've taken a real-terms pay cut due to inflation. Costs have increased (rent, supplies, insurance), but your revenue hasn't. Successful artists review and increase rates every 12-24 months. A 10% increase annually just keeps pace with inflation and skill development.
+          </p>
+
+          <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">6. Over-Reliance on Single Revenue Stream</h3>
+          <p class="text-text-secondary leading-relaxed mb-4">
+            If 100% of your income is tattooing hours, you're one wrist injury away from zero income. Diversification provides both revenue upside and risk mitigation. Flash days, guest spots, retail, digital products, and teaching create income streams that don't depend on your chair time.
+          </p>
+
+          <p class="text-lg text-text-secondary leading-relaxed mt-10 mb-6">
+            Want to automate your bookings, reduce no-shows, and track your numbers in real-time? Learn how <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">tattoo studio software</a> can help you implement these improvements. See how the top studios use <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">modern booking systems</a> to increase revenue. Or read our complete guide on <a href="/blog/how-much-do-tattoo-artists-make/" class="text-brand-red hover:underline">tattoo artist earnings</a>.
+          </p>
+
+          <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg mt-8">
+            <h3 class="text-lg font-semibold text-brand-navy mb-2">Ready to Grow Your Studio?</h3>
+            <p class="text-text-secondary mb-4">
+              The calculator showed you the numbers—now it's time to act. Whether you're optimising booking rates, implementing deposits, raising prices, or expanding your studio, having the right systems in place makes all the difference.
+            </p>
+            <a href="/contact/" class="btn-primary inline-block">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-navy mb-8 text-center">Frequently Asked Questions</h2>
+
+        <div class="space-y-4">
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>How much do tattoo studios make per year?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>Average UK tattoo studios with 3-5 artists generate £150,000-£400,000 in annual revenue. Solo artists typically earn £15,000-£100,000+ depending on their experience, rates, and booking utilisation. Studio owners' profit margins typically range from 15-30% after covering all costs and artist commissions.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>What is a good booking rate for tattoo artists?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>A strong booking rate for tattoo artists is 70-85% of available hours. The industry average is 55-70%. Booking rates below 50% indicate significant revenue loss from empty chair time. Top artists in high demand can achieve 85%+ booking rates.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>How much should a tattoo artist charge per hour?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>UK tattoo artists typically charge £80-£150 per hour depending on experience and location. Beginner artists start at £60-£80/hour, established artists charge £100-£130/hour, and highly sought-after specialists command £150-£250+/hour. US rates in major cities range from $150-$300/hour.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>What is the average commission split in tattoo studios?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>The most common commission split is 60/40 (artist/studio) where artists keep 60% and the studio retains 40%. A 50/50 split typically means the studio supplies everything and does active marketing. Experienced artists with established clientele often negotiate 70/30 splits. Chair rental is an alternative model costing £100-£300/week in the UK.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>Is it more profitable to rent a chair or work on commission?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>This depends on your booking rate and revenue. Chair rental (£100-£300/week UK) is more profitable if you have high, consistent bookings. At 70%+ booking rates and £120+/hour, rental usually beats 60/40 commission. For newer artists or those with fluctuating bookings, commission provides more stability and lower risk.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>How many bookings does a tattoo artist need per week to make a living?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>To earn £30,000/year (£2,500/month) working 5 days/week at £100/hour on a 60/40 split, you need approximately 42 billable hours per month or 2-3 full-day sessions per week. This assumes 70% booking rate and accounts for consultation time. Higher rates or better booking utilisation reduce the required hours.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>What are typical tattoo studio operating costs?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>Monthly operating costs for UK tattoo studios typically include: rent (£800-£3,000 depending on location), utilities (£150-£300), insurance (£100-£300), supplies per session (£10-£25), sterilisation and compliance (£100-£200), marketing (3-8% of revenue), and software/admin (£50-£150). Solo artists renting chairs pay £400-£1,200/month for space plus their own supplies and insurance.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>How do seasonal patterns affect tattoo studio revenue?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>Tattoo studios experience strong seasonality. Spring and summer (April-August) see 15-25% higher booking rates as people show more skin and plan for holidays. December typically sees a 20-30% dip. January-February can be slow (10-15% below average) but valentines provides a small boost. Planning for this seasonality is crucial for cash flow management.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>How can no-shows impact my tattoo studio revenue?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>Without deposit requirements, studios experience 8-15% no-show rates, which can cost thousands in lost revenue monthly. A £50 non-refundable deposit typically reduces no-shows to 2-5%. For a busy artist doing 100 sessions/month at £300 average, implementing deposits could recover £2,500-£3,500 in lost revenue monthly.</p>
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-lg">
+            <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-brand-navy">
+              <span>Should I add piercings to my tattoo studio?</span>
+              <svg class="w-5 h-5 text-brand-red transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-text-secondary">
+              <p>Piercings can be highly profitable with low overhead. At £25-£40 per piercing plus 50-100% jewellery markup, a studio doing just 20 piercings per week can add £2,000-£4,000 monthly revenue. It diversifies income, attracts younger clients, and has faster turnover than tattooing. However, it requires separate training, licensing, and sterile setup.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<!-- Inline Styles -->
+<style>
+  .calculator-step {
+    display: none;
+  }
+
+  .calculator-step:not(.hidden) {
+    display: block;
+  }
+
+  .step-indicator {
+    transition: all 0.3s ease;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    font-weight: 600;
+    color: #9CA3AF;
+    background: white;
+  }
+
+  .step-label {
+    font-size: 0.875rem;
+    color: #9CA3AF;
+    font-weight: 500;
+  }
+
+  .step-indicator.active .step-number {
+    border-color: #E94560;
+    background: #E94560;
+    color: white;
+  }
+
+  .step-indicator.active .step-label {
+    color: #E94560;
+  }
+
+  .step-indicator.completed .step-number {
+    border-color: #10B981;
+    background: #10B981;
+    color: white;
+  }
+
+  .step-indicator.completed .step-label {
+    color: #10B981;
+  }
+
+  .input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .input:focus {
+    outline: none;
+    border-color: #E94560;
+    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+  }
+
+  .card {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  .toggle-switch {
+    width: 3rem;
+    height: 1.75rem;
+    background-color: #D1D5DB;
+    border-radius: 9999px;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+
+  input:checked + .toggle-switch {
+    background-color: #E94560;
+  }
+
+  input:checked + .toggle-switch::after {
+    transform: translateX(1.25rem);
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .artist-card {
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .artist-card:hover {
+    border-color: #E94560;
+  }
+
+  @media (max-width: 768px) {
+    .step-label {
+      font-size: 0.75rem;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      font-size: 0.875rem;
+    }
+
+    /* Mobile-optimized calculator container */
+    #calculator-app {
+      border-radius: 0;
+      margin: 0 -1rem;
+    }
+
+    .calculator-step {
+      padding: 0 !important;
+    }
+
+    /* Mobile-friendly inputs */
+    .input {
+      font-size: 16px; /* Prevents iOS zoom on focus */
+      padding: 0.875rem 1rem;
+    }
+
+    /* Mobile artist cards - single column, better spacing */
+    .artist-card {
+      margin-bottom: 1.5rem;
+    }
+
+    #artist-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Mobile buttons - full width, larger touch targets */
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      min-height: 48px; /* Minimum touch target */
+    }
+
+    #back-btn, #next-btn, #calculate-btn {
+      min-height: 48px;
+    }
+
+    /* Mobile cards - reduce padding */
+    .card {
+      padding: 1rem;
+    }
+
+    /* Mobile results - ensure readability */
+    .prose {
+      font-size: 0.9375rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    /* Mobile toggle switches - larger for touch */
+    .toggle-switch {
+      width: 3.5rem;
+      height: 2rem;
+    }
+
+    .toggle-switch::after {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    input:checked + .toggle-switch::after {
+      transform: translateX(1.5rem);
+    }
+
+    /* Mobile step indicators - stack on very small screens */
+    @media (max-width: 480px) {
+      .flex.justify-between.items-center.mb-8 {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
+    /* Mobile navigation buttons container */
+    .flex.justify-between.items-center.mt-10 {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .flex.justify-between.items-center.mt-10 > button {
+      width: 100%;
+    }
+  }
+
+  /* Extra small mobile optimization */
+  @media (max-width: 480px) {
+    .container-custom {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Smaller text on very small screens */
+    h1 {
+      font-size: 1.875rem;
+    }
+
+    .text-3xl {
+      font-size: 1.5rem;
+    }
+
+    .text-2xl {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Landscape mobile optimization */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+</style>
+
+<!-- Inline TypeScript -->
+<script is:inline>
+  // Global state
+  let currentStep = 1;
+  const totalSteps = 5;
+  let studioType = 'solo'; // 'solo' or 'studio-owner'
+  let currencySymbol = '£';
+  let calculatedResults = null;
+
+  // UK tattoo seasonality pattern (% of baseline)
+  const UK_TATTOO_SEASONALITY = [85, 90, 100, 105, 115, 120, 125, 120, 110, 105, 95, 75];
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeCalculator();
+  });
+
+  function initializeCalculator() {
+    // Set up event listeners
+    setupNavigationListeners();
+    setupStudioTypeListener();
+    setupCurrencyListener();
+    setupToggleListeners();
+    setupPricingModelListener();
+    setupStudioCostModelListener();
+    setupSeasonalPatternListener();
+    setupExpansionListener();
+    setupRangeInputListeners();
+
+    // Initialize first step
+    showStep(1);
+  }
+
+  function setupNavigationListeners() {
+    const backBtn = document.getElementById('back-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const calculateBtn = document.getElementById('calculate-btn');
+    const startOverBtn = document.getElementById('start-over-btn');
+
+    backBtn?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        showStep(currentStep - 1);
+      }
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        showStep(currentStep + 1);
+      }
+    });
+
+    calculateBtn?.addEventListener('click', () => {
+      calculateResults();
+    });
+
+    startOverBtn?.addEventListener('click', () => {
+      if (confirm('This will reset all your inputs. Continue?')) {
+        location.reload();
+      }
+    });
+  }
+
+  function setupStudioTypeListener() {
+    const studioTypeRadios = document.querySelectorAll('input[name="studio-type"]');
+    studioTypeRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        studioType = e.target.value;
+        const studioOwnerFields = document.getElementById('studio-owner-fields');
+        if (studioType === 'studio-owner') {
+          studioOwnerFields?.classList.remove('hidden');
+          generateArtistCards();
+        } else {
+          studioOwnerFields?.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  function setupCurrencyListener() {
+    const currencySelect = document.getElementById('currency');
+    currencySelect?.addEventListener('change', (e) => {
+      currencySymbol = (e.target).value;
+      updateCurrencyLabels();
+    });
+  }
+
+  function updateCurrencyLabels() {
+    // Update all currency range labels
+    const rateRange = document.getElementById('rate-range');
+    if (rateRange) {
+      rateRange.textContent = `(${currencySymbol}50-${currencySymbol}300)`;
+    }
+    // Add more currency label updates as needed
+  }
+
+  function setupToggleListeners() {
+    // Setup all toggle switches
+    const toggles = [
+      { toggle: 'enable-deposits', content: 'deposit-inputs' },
+      { toggle: 'enable-tips', content: 'tips-inputs' },
+      { toggle: 'enable-flash', content: 'flash-inputs' },
+      { toggle: 'enable-merch-solo', content: 'merch-solo-inputs' },
+      { toggle: 'enable-guest-spots', content: 'guest-spots-inputs' },
+      { toggle: 'enable-online', content: 'online-inputs' },
+      { toggle: 'enable-walkins', content: 'walkins-inputs' },
+      { toggle: 'enable-guests', content: 'guests-inputs' },
+      { toggle: 'enable-piercings', content: 'piercings-inputs' },
+      { toggle: 'enable-retail', content: 'retail-inputs' },
+      { toggle: 'enable-reception', content: 'reception-inputs' },
+      { toggle: 'enable-cleaner', content: 'cleaner-inputs' },
+    ];
+
+    toggles.forEach(({ toggle, content }) => {
+      const toggleEl = document.getElementById(toggle);
+      const contentEl = document.getElementById(content);
+      toggleEl?.addEventListener('change', (e) => {
+        if ((e.target).checked) {
+          contentEl?.classList.remove('hidden');
+        } else {
+          contentEl?.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  function setupPricingModelListener() {
+    const pricingModelRadios = document.querySelectorAll('input[name="pricing-model"]');
+    pricingModelRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        const value = (e.target).value;
+        const hourlyField = document.getElementById('hourly-rate-field');
+        const perPieceFields = document.getElementById('per-piece-fields');
+        const rateLabel = document.getElementById('rate-label');
+        const rateRange = document.getElementById('rate-range');
+
+        if (value === 'hourly') {
+          hourlyField?.classList.remove('hidden');
+          perPieceFields?.classList.add('hidden');
+          if (rateLabel) rateLabel.textContent = 'Hourly Rate';
+          if (rateRange) rateRange.textContent = `(${currencySymbol}50-${currencySymbol}300)`;
+        } else if (value === 'day-rate') {
+          hourlyField?.classList.remove('hidden');
+          perPieceFields?.classList.add('hidden');
+          if (rateLabel) rateLabel.textContent = 'Day Rate';
+          if (rateRange) rateRange.textContent = `(${currencySymbol}300-${currencySymbol}1500)`;
+        } else if (value === 'per-piece') {
+          hourlyField?.classList.remove('hidden');
+          perPieceFields?.classList.remove('hidden');
+          if (rateLabel) rateLabel.textContent = 'Average Piece Price';
+          if (rateRange) rateRange.textContent = `(${currencySymbol}50-${currencySymbol}500)`;
+        }
+      });
+    });
+  }
+
+  function setupStudioCostModelListener() {
+    const costModelSelect = document.getElementById('solo-studio-cost-model');
+    costModelSelect?.addEventListener('change', (e) => {
+      const value = (e.target).value;
+      const label = document.getElementById('solo-studio-cost-label');
+      if (label) {
+        if (value === 'rental') {
+          label.textContent = 'Monthly Chair Rental Cost';
+        } else if (value === 'own-studio') {
+          label.textContent = 'Monthly Rent / Facility Cost';
+        } else if (value === 'home-studio') {
+          label.textContent = 'Monthly Home Studio Allocation';
+        }
+      }
+    });
+  }
+
+  function setupSeasonalPatternListener() {
+    const seasonalSelect = document.getElementById('seasonal-pattern');
+    seasonalSelect?.addEventListener('change', (e) => {
+      const value = (e.target).value;
+      const customFields = document.getElementById('custom-seasonal-fields');
+      if (value === 'custom') {
+        customFields?.classList.remove('hidden');
+      } else {
+        customFields?.classList.add('hidden');
+      }
+    });
+  }
+
+  function setupExpansionListener() {
+    const expansionCheckbox = document.getElementById('planning-expansion');
+    expansionCheckbox?.addEventListener('change', (e) => {
+      const details = document.getElementById('expansion-details');
+      if ((e.target).checked) {
+        details?.classList.remove('hidden');
+      } else {
+        details?.classList.add('hidden');
+      }
+    });
+  }
+
+  function setupRangeInputListeners() {
+    // Solo booking rate
+    const soloBookingRate = document.getElementById('solo-booking-rate');
+    const soloBookingRateDisplay = document.getElementById('solo-booking-rate-display');
+    soloBookingRate?.addEventListener('input', (e) => {
+      if (soloBookingRateDisplay) {
+        soloBookingRateDisplay.textContent = `${(e.target).value}%`;
+      }
+    });
+
+    // Consultation percentage
+    const consultationPct = document.getElementById('consultation-pct');
+    const consultationPctDisplay = document.getElementById('consultation-pct-display');
+    consultationPct?.addEventListener('input', (e) => {
+      if (consultationPctDisplay) {
+        consultationPctDisplay.textContent = `${(e.target).value}%`;
+      }
+    });
+  }
+
+  function showStep(step) {
+    currentStep = step;
+
+    // Hide all steps
+    for (let i = 1; i <= totalSteps; i++) {
+      const stepEl = document.getElementById(`step-${i}`);
+      const soloStepEl = document.getElementById(`step-${i}-solo`);
+      const studioStepEl = document.getElementById(`step-${i}-studio`);
+
+      stepEl?.classList.add('hidden');
+      soloStepEl?.classList.add('hidden');
+      studioStepEl?.classList.add('hidden');
+    }
+
+    // Show current step based on path
+    if (step === 1) {
+      document.getElementById('step-1')?.classList.remove('hidden');
+    } else if (step === 2) {
+      if (studioType === 'solo') {
+        document.getElementById('step-2-solo')?.classList.remove('hidden');
+      } else {
+        document.getElementById('step-2-studio')?.classList.remove('hidden');
+        generateArtistCards(); // Regenerate in case num-artists changed
+      }
+    } else if (step === 3) {
+      if (studioType === 'solo') {
+        document.getElementById('step-3-solo')?.classList.remove('hidden');
+      } else {
+        document.getElementById('step-3-studio')?.classList.remove('hidden');
+      }
+    } else if (step === 4) {
+      document.getElementById('step-4')?.classList.remove('hidden');
+      // Show/hide expansion fields for studio owners
+      const expansionFields = document.getElementById('expansion-fields');
+      if (studioType === 'studio-owner') {
+        expansionFields?.classList.remove('hidden');
+      } else {
+        expansionFields?.classList.add('hidden');
+      }
+    } else if (step === 5) {
+      document.getElementById('step-5')?.classList.remove('hidden');
+    }
+
+    // Update step indicators
+    const indicators = document.querySelectorAll('.step-indicator');
+    indicators.forEach((indicator, index) => {
+      const stepNum = index + 1;
+      indicator.classList.remove('active', 'completed');
+      if (stepNum === currentStep) {
+        indicator.classList.add('active');
+      } else if (stepNum < currentStep) {
+        indicator.classList.add('completed');
+      }
+    });
+
+    // Update progress bar
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      const progress = (currentStep / totalSteps) * 100;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    // Update navigation buttons
+    const backBtn = document.getElementById('back-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const calculateBtn = document.getElementById('calculate-btn');
+
+    if (currentStep === 1) {
+      backBtn?.classList.add('hidden');
+    } else {
+      backBtn?.classList.remove('hidden');
+    }
+
+    if (currentStep === totalSteps - 1) {
+      nextBtn?.classList.add('hidden');
+      calculateBtn?.classList.remove('hidden');
+    } else {
+      nextBtn?.classList.remove('hidden');
+      calculateBtn?.classList.add('hidden');
+    }
+
+    if (currentStep === totalSteps) {
+      backBtn?.classList.add('hidden');
+      nextBtn?.classList.add('hidden');
+      calculateBtn?.classList.add('hidden');
+    }
+
+    // Scroll to top of calculator
+    document.getElementById('calculator-app')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function generateArtistCards() {
+    const numArtists = parseInt((document.getElementById('num-artists'))?.value || '3');
+    const container = document.getElementById('artist-cards-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    for (let i = 1; i <= numArtists; i++) {
+      const cardHTML = `
+        <div class="artist-card" data-artist="${i}">
+          <h4 class="text-lg font-bold text-brand-navy mb-4">Artist ${i}</h4>
+          <div class="space-y-4">
+            <div>
+              <label for="artist-${i}-name" class="block text-sm font-medium text-brand-navy mb-2">Name (optional)</label>
+              <input type="text" id="artist-${i}-name" class="input" placeholder="Artist ${i}">
+            </div>
+            <div>
+              <label for="artist-${i}-commission-model" class="block text-sm font-medium text-brand-navy mb-2">Commission Model</label>
+              <select id="artist-${i}-commission-model" class="input artist-commission-select" data-artist="${i}">
+                <option value="percentage">Percentage Split</option>
+                <option value="rental">Chair Rental</option>
+                <option value="salary">Salary + Bonus</option>
+              </select>
+            </div>
+            <div id="artist-${i}-percentage-fields" class="commission-fields space-y-4">
+              <div>
+                <label for="artist-${i}-split-pct" class="block text-sm font-medium text-brand-navy mb-2">
+                  Artist's Split (%)
+                  <span class="text-text-tertiary font-normal">(40-80%)</span>
+                </label>
+                <input type="number" inputmode="numeric" id="artist-${i}-split-pct" class="input" value="60" min="40" max="80" step="5">
+              </div>
+            </div>
+            <div id="artist-${i}-rental-fields" class="commission-fields space-y-4 hidden">
+              <div>
+                <label for="artist-${i}-weekly-rent" class="block text-sm font-medium text-brand-navy mb-2">Weekly Rent</label>
+                <input type="number" inputmode="numeric" id="artist-${i}-weekly-rent" class="input" value="200" min="50" max="500">
+              </div>
+            </div>
+            <div id="artist-${i}-salary-fields" class="commission-fields space-y-4 hidden">
+              <div>
+                <label for="artist-${i}-annual-salary" class="block text-sm font-medium text-brand-navy mb-2">Annual Salary</label>
+                <input type="number" inputmode="numeric" id="artist-${i}-annual-salary" class="input" value="28000" min="15000" max="80000">
+              </div>
+              <div>
+                <label for="artist-${i}-bonus-pct" class="block text-sm font-medium text-brand-navy mb-2">
+                  Bonus (% of Revenue Above Salary)
+                  <span class="text-text-tertiary font-normal">(0-20%)</span>
+                </label>
+                <input type="number" inputmode="numeric" id="artist-${i}-bonus-pct" class="input" value="10" min="0" max="20" step="5">
+              </div>
+            </div>
+            <div>
+              <label for="artist-${i}-hourly-rate" class="block text-sm font-medium text-brand-navy mb-2">
+                Hourly Rate Charged
+                <span class="text-text-tertiary font-normal">(${currencySymbol}50-${currencySymbol}300)</span>
+              </label>
+              <input type="number" inputmode="numeric" id="artist-${i}-hourly-rate" class="input" value="120" min="50" max="300">
+            </div>
+            <div>
+              <label for="artist-${i}-booking-rate" class="block text-sm font-medium text-brand-navy mb-2">
+                Booking Rate (%)
+                <span class="text-text-tertiary font-normal">(20-100%)</span>
+              </label>
+              <input type="number" inputmode="numeric" id="artist-${i}-booking-rate" class="input" value="65" min="20" max="100" step="5">
+            </div>
+            <div>
+              <label for="artist-${i}-hours-per-day" class="block text-sm font-medium text-brand-navy mb-2">
+                Working Hours Per Day
+                <span class="text-text-tertiary font-normal">(3-8)</span>
+              </label>
+              <input type="number" inputmode="numeric" id="artist-${i}-hours-per-day" class="input" value="5" min="3" max="8">
+            </div>
+          </div>
+        </div>
+      `;
+      container.innerHTML += cardHTML;
+    }
+
+    // Attach event listeners to commission model selects
+    const commissionSelects = document.querySelectorAll('.artist-commission-select');
+    commissionSelects.forEach(select => {
+      select.addEventListener('change', (e) => {
+        const artistIndex = e.target.dataset.artist;
+        const model = e.target.value;
+        updateArtistCommissionFields(parseInt(artistIndex || '1'), model);
+      });
+    });
+  }
+
+  function updateArtistCommissionFields(artistIndex, model) {
+    // Hide all commission field groups for this artist
+    document.getElementById(`artist-${artistIndex}-percentage-fields`)?.classList.add('hidden');
+    document.getElementById(`artist-${artistIndex}-rental-fields`)?.classList.add('hidden');
+    document.getElementById(`artist-${artistIndex}-salary-fields`)?.classList.add('hidden');
+
+    // Show the selected one
+    if (model === 'percentage') {
+      document.getElementById(`artist-${artistIndex}-percentage-fields`)?.classList.remove('hidden');
+    } else if (model === 'rental') {
+      document.getElementById(`artist-${artistIndex}-rental-fields`)?.classList.remove('hidden');
+    } else if (model === 'salary') {
+      document.getElementById(`artist-${artistIndex}-salary-fields`)?.classList.remove('hidden');
+    }
+  }
+
+  // Setup the refresh artists button
+  document.getElementById('refresh-artists-btn')?.addEventListener('click', () => {
+    generateArtistCards();
+  });
+
+  // Calculate Results
+  function calculateResults() {
+    if (studioType === 'solo') {
+      calculatedResults = calculateSoloResults();
+    } else {
+      calculatedResults = calculateStudioResults();
+    }
+
+    renderResults();
+    showStep(5);
+  }
+
+  function calculateSoloResults() {
+    // Gather all inputs
+    const operatingDays = parseInt((document.getElementById('operating-days')).value);
+    const workingHours = parseInt((document.getElementById('working-hours')).value);
+    const pricingModel = (document.querySelector('input[name="pricing-model"]:checked'))?.value || 'hourly';
+    const rate = parseFloat((document.getElementById('solo-hourly-rate')).value);
+    const bookingRatePct = parseFloat((document.getElementById('solo-booking-rate')).value);
+    const consultationPct = parseFloat((document.getElementById('consultation-pct')).value);
+
+    // Calculate available and booked hours
+    const availableHoursPerMonth = operatingDays * workingHours * 4.33;
+    const bookedHours = availableHoursPerMonth * (bookingRatePct / 100);
+    const consultationHours = bookedHours * (consultationPct / 100);
+    const tattooingHours = bookedHours - consultationHours;
+
+    // Calculate revenue based on pricing model
+    let tattooingRevenue = 0;
+    if (pricingModel === 'hourly') {
+      tattooingRevenue = tattooingHours * rate;
+    } else if (pricingModel === 'day-rate') {
+      const bookedDays = bookedHours / workingHours;
+      tattooingRevenue = bookedDays * rate;
+    } else if (pricingModel === 'per-piece') {
+      const piecesPerDay = parseFloat((document.getElementById('pieces-per-day')).value);
+      const hoursPerPiece = parseFloat((document.getElementById('hours-per-piece')).value);
+      const bookedDays = bookedHours / workingHours;
+      tattooingRevenue = bookedDays * piecesPerDay * rate;
+    }
+
+    // Additional revenue streams
+    let tipsRevenue = 0;
+    if ((document.getElementById('enable-tips')).checked) {
+      const tipsPct = parseFloat((document.getElementById('tips-pct')).value);
+      const clientsWhoTipPct = parseFloat((document.getElementById('clients-who-tip-pct')).value);
+      tipsRevenue = tattooingRevenue * (tipsPct / 100) * (clientsWhoTipPct / 100);
+    }
+
+    let flashRevenue = 0;
+    if ((document.getElementById('enable-flash')).checked) {
+      const flashPerMonth = parseFloat((document.getElementById('flash-per-month')).value);
+      const flashRev = parseFloat((document.getElementById('flash-revenue')).value);
+      flashRevenue = flashPerMonth * flashRev;
+    }
+
+    let merchRevenue = 0;
+    if ((document.getElementById('enable-merch-solo')).checked) {
+      merchRevenue = parseFloat((document.getElementById('merch-monthly-solo')).value);
+    }
+
+    let guestSpotsRevenue = 0;
+    if ((document.getElementById('enable-guest-spots')).checked) {
+      guestSpotsRevenue = parseFloat((document.getElementById('guest-spots-monthly')).value);
+    }
+
+    let onlineRevenue = 0;
+    if ((document.getElementById('enable-online')).checked) {
+      onlineRevenue = parseFloat((document.getElementById('online-monthly')).value);
+    }
+
+    const additionalRevenue = flashRevenue + merchRevenue + guestSpotsRevenue + onlineRevenue;
+    const totalGrossRevenue = tattooingRevenue + tipsRevenue + additionalRevenue;
+
+    // Calculate costs
+    const studioCost = parseFloat((document.getElementById('solo-studio-cost')).value);
+    const suppliesPerSession = parseFloat((document.getElementById('solo-supplies-per-session')).value);
+    const avgSessionLength = 2; // hours - assumption
+    const sessions = tattooingHours / avgSessionLength;
+    const suppliesCost = sessions * suppliesPerSession;
+
+    const equipmentMaintenance = parseFloat((document.getElementById('solo-equipment-monthly')).value);
+    const sterilisation = parseFloat((document.getElementById('solo-sterilisation-monthly')).value);
+    const insuranceAnnual = parseFloat((document.getElementById('solo-insurance-annual')).value);
+    const accountantAnnual = parseFloat((document.getElementById('solo-accountant-annual')).value);
+    const licensingAnnual = parseFloat((document.getElementById('solo-licensing-annual')).value);
+    const marketing = parseFloat((document.getElementById('solo-marketing-monthly')).value);
+    const professionalDevAnnual = parseFloat((document.getElementById('solo-professional-dev-annual')).value);
+    const software = parseFloat((document.getElementById('solo-software-monthly')).value);
+
+    const totalMonthlyCosts = studioCost + suppliesCost + equipmentMaintenance + sterilisation +
+      (insuranceAnnual / 12) + (accountantAnnual / 12) + (licensingAnnual / 12) + marketing +
+      (professionalDevAnnual / 12) + software;
+
+    const monthlyProfit = totalGrossRevenue - totalMonthlyCosts;
+    const annualProfit = monthlyProfit * 12;
+    const profitMargin = (monthlyProfit / totalGrossRevenue) * 100;
+    const effectiveHourlyRate = totalGrossRevenue / availableHoursPerMonth;
+    const takeHomePerWorkingHour = monthlyProfit / bookedHours;
+
+    // No-show analysis
+    let noshowImpact = { lostRevenue: 0, depositIncome: 0, netCost: 0, rate: 0 };
+    if ((document.getElementById('enable-deposits')).checked) {
+      const depositAmount = parseFloat((document.getElementById('deposit-amount')).value);
+      const noshowRate = parseFloat((document.getElementById('noshow-rate')).value);
+      const avgSessionRevenue = tattooingRevenue / sessions;
+      const noshowSessions = sessions * (noshowRate / 100);
+      const lostRevenue = noshowSessions * avgSessionRevenue;
+      const depositIncome = noshowSessions * depositAmount;
+      noshowImpact = {
+        lostRevenue,
+        depositIncome,
+        netCost: lostRevenue - depositIncome,
+        rate: noshowRate
+      };
+    }
+
+    // Booking utilisation
+    const utilisation = {
+      total: availableHoursPerMonth,
+      booked: bookedHours,
+      tattooing: tattooingHours,
+      consultation: consultationHours,
+      empty: availableHoursPerMonth - bookedHours,
+      bookingRatePct,
+      emptyHoursCost: (availableHoursPerMonth - bookedHours) * rate
+    };
+
+    return {
+      revenue: {
+        tattooing: tattooingRevenue,
+        tips: tipsRevenue,
+        flash: flashRevenue,
+        merchandise: merchRevenue,
+        guestSpots: guestSpotsRevenue,
+        online: onlineRevenue,
+        additional: additionalRevenue,
+        total: totalGrossRevenue,
+        monthly: totalGrossRevenue,
+        annual: totalGrossRevenue * 12,
+        effectiveHourlyRate
+      },
+      costs: {
+        studio: studioCost,
+        supplies: suppliesCost,
+        equipment: equipmentMaintenance,
+        sterilisation,
+        insurance: insuranceAnnual / 12,
+        accountant: accountantAnnual / 12,
+        licensing: licensingAnnual / 12,
+        marketing,
+        professionalDev: professionalDevAnnual / 12,
+        software,
+        total: totalMonthlyCosts
+      },
+      profit: {
+        monthly: monthlyProfit,
+        annual: annualProfit,
+        margin: profitMargin,
+        takeHomePerWorkingHour
+      },
+      utilisation,
+      noshowImpact,
+      type: 'solo'
+    };
+  }
+
+  function calculateStudioResults() {
+    // Gather studio-level inputs
+    const operatingDays = parseInt((document.getElementById('operating-days')).value);
+    const numArtists = parseInt((document.getElementById('num-artists')).value);
+
+    // Calculate per-artist revenue and costs
+    const artistsData = [];
+    let totalArtistGrossRevenue = 0;
+    let totalStudioRetained = 0;
+
+    for (let i = 1; i <= numArtists; i++) {
+      const name = (document.getElementById(`artist-${i}-name`))?.value || `Artist ${i}`;
+      const commissionModel = (document.getElementById(`artist-${i}-commission-model`))?.value || 'percentage';
+      const hourlyRate = parseFloat((document.getElementById(`artist-${i}-hourly-rate`))?.value || '120');
+      const bookingRate = parseFloat((document.getElementById(`artist-${i}-booking-rate`))?.value || '65');
+      const hoursPerDay = parseFloat((document.getElementById(`artist-${i}-hours-per-day`))?.value || '5');
+
+      // Calculate monthly hours
+      const availableHoursPerMonth = operatingDays * hoursPerDay * 4.33;
+      const bookedHours = availableHoursPerMonth * (bookingRate / 100);
+      const grossRevenue = bookedHours * hourlyRate;
+
+      let artistTakeHome = 0;
+      let studioRetained = 0;
+
+      // Calculate split based on commission model
+      if (commissionModel === 'percentage') {
+        const splitPct = parseFloat((document.getElementById(`artist-${i}-split-pct`))?.value || '60');
+        artistTakeHome = grossRevenue * (splitPct / 100);
+        studioRetained = grossRevenue * ((100 - splitPct) / 100);
+      } else if (commissionModel === 'rental') {
+        const weeklyRent = parseFloat((document.getElementById(`artist-${i}-weekly-rent`))?.value || '200');
+        studioRetained = weeklyRent * 4.33;
+        artistTakeHome = grossRevenue - studioRetained;
+      } else if (commissionModel === 'salary') {
+        const annualSalary = parseFloat((document.getElementById(`artist-${i}-annual-salary`))?.value || '28000');
+        const bonusPct = parseFloat((document.getElementById(`artist-${i}-bonus-pct`))?.value || '10');
+        const monthlySalary = annualSalary / 12;
+        const excessRevenue = Math.max(0, grossRevenue - monthlySalary);
+        const bonus = excessRevenue * (bonusPct / 100);
+        artistTakeHome = monthlySalary + bonus;
+        studioRetained = grossRevenue - artistTakeHome;
+      }
+
+      totalArtistGrossRevenue += grossRevenue;
+      totalStudioRetained += studioRetained;
+
+      artistsData.push({
+        name,
+        commissionModel,
+        hourlyRate,
+        bookingRate,
+        hoursPerDay,
+        availableHours: availableHoursPerMonth,
+        bookedHours,
+        grossRevenue,
+        artistTakeHome,
+        studioRetained,
+        utilisation: bookingRate
+      });
+    }
+
+    // Studio-level revenue streams
+    let walkinRevenue = 0;
+    if ((document.getElementById('enable-walkins'))?.checked) {
+      const walkinsPerWeek = parseFloat((document.getElementById('walkins-per-week'))?.value || '8');
+      const walkinAvgSpend = parseFloat((document.getElementById('walkin-avg-spend'))?.value || '80');
+      walkinRevenue = walkinsPerWeek * 4.33 * walkinAvgSpend;
+    }
+
+    let guestRevenue = 0;
+    if ((document.getElementById('enable-guests'))?.checked) {
+      const guestSlots = parseInt((document.getElementById('guest-slots'))?.value || '1');
+      const guestStudioCut = parseFloat((document.getElementById('guest-studio-cut'))?.value || '30');
+      const guestDailyRevenue = parseFloat((document.getElementById('guest-daily-revenue'))?.value || '600');
+      guestRevenue = guestSlots * 4 * 4.33 * guestDailyRevenue * (guestStudioCut / 100);
+    }
+
+    let piercingRevenue = 0;
+    if ((document.getElementById('enable-piercings'))?.checked) {
+      const piercingsPerWeek = parseFloat((document.getElementById('piercings-per-week'))?.value || '20');
+      const piercingPrice = parseFloat((document.getElementById('piercing-price'))?.value || '30');
+      const jewelleryMarkup = parseFloat((document.getElementById('jewellery-markup'))?.value || '75');
+      const baseRevenue = piercingsPerWeek * 4.33 * piercingPrice;
+      piercingRevenue = baseRevenue * (1 + jewelleryMarkup / 100);
+    }
+
+    let retailRevenue = 0;
+    if ((document.getElementById('enable-retail'))?.checked) {
+      retailRevenue = parseFloat((document.getElementById('retail-monthly'))?.value || '400');
+    }
+
+    const totalGrossRevenue = totalArtistGrossRevenue + walkinRevenue + guestRevenue + piercingRevenue + retailRevenue;
+    const totalStudioRevenue = totalStudioRetained + walkinRevenue + guestRevenue + piercingRevenue + retailRevenue;
+
+    // Calculate studio costs
+    const rent = parseFloat((document.getElementById('studio-rent'))?.value || '2000');
+    const rates = parseFloat((document.getElementById('studio-rates'))?.value || '150');
+    const utilities = parseFloat((document.getElementById('studio-utilities'))?.value || '250');
+    const facilitiesInsuranceAnnual = parseFloat((document.getElementById('studio-facilities-insurance-annual'))?.value || '1200');
+    const maintenance = parseFloat((document.getElementById('studio-maintenance'))?.value || '150');
+
+    let receptionCost = 0;
+    if ((document.getElementById('enable-reception'))?.checked) {
+      const receptionHours = parseFloat((document.getElementById('reception-hours-weekly'))?.value || '30');
+      const receptionRate = parseFloat((document.getElementById('reception-hourly-rate'))?.value || '12');
+      receptionCost = receptionHours * 4.33 * receptionRate;
+    }
+
+    let cleanerCost = 0;
+    if ((document.getElementById('enable-cleaner'))?.checked) {
+      cleanerCost = parseFloat((document.getElementById('cleaner-monthly'))?.value || '200');
+    }
+
+    const suppliesPerSession = parseFloat((document.getElementById('studio-supplies-per-session'))?.value || '15');
+    const suppliesPaidBy = (document.getElementById('supplies-paid-by'))?.value || 'studio';
+
+    // Calculate total sessions
+    const totalSessions = artistsData.reduce((sum, artist) => {
+      const avgSessionLength = 2;
+      return sum + (artist.bookedHours / avgSessionLength);
+    }, 0);
+
+    let suppliesCost = 0;
+    if (suppliesPaidBy === 'studio') {
+      suppliesCost = totalSessions * suppliesPerSession;
+    } else if (suppliesPaidBy === 'split') {
+      suppliesCost = (totalSessions * suppliesPerSession) / 2;
+    }
+
+    const sterilisation = parseFloat((document.getElementById('studio-sterilisation-monthly'))?.value || '200');
+    const publicInsuranceAnnual = parseFloat((document.getElementById('studio-public-insurance-annual'))?.value || '800');
+    const employerInsuranceAnnual = parseFloat((document.getElementById('studio-employer-insurance-annual'))?.value || '400');
+    const professionalInsuranceAnnual = parseFloat((document.getElementById('studio-professional-insurance-annual'))?.value || '600');
+    const marketing = parseFloat((document.getElementById('studio-marketing-monthly'))?.value || '300');
+    const accountantAnnual = parseFloat((document.getElementById('studio-accountant-annual'))?.value || '1200');
+    const licensingAnnual = parseFloat((document.getElementById('studio-licensing-annual'))?.value || '500');
+    const software = parseFloat((document.getElementById('studio-software-monthly'))?.value || '150');
+    const cardProcessingPct = parseFloat((document.getElementById('card-processing-pct'))?.value || '2.5');
+    const cardProcessingCost = totalGrossRevenue * (cardProcessingPct / 100);
+
+    const totalMonthlyCosts = rent + rates + utilities + (facilitiesInsuranceAnnual / 12) + maintenance +
+      receptionCost + cleanerCost + suppliesCost + sterilisation +
+      (publicInsuranceAnnual / 12) + (employerInsuranceAnnual / 12) + (professionalInsuranceAnnual / 12) +
+      marketing + (accountantAnnual / 12) + (licensingAnnual / 12) + software + cardProcessingCost;
+
+    const monthlyProfit = totalStudioRevenue - totalMonthlyCosts;
+    const annualProfit = monthlyProfit * 12;
+    const profitMargin = totalStudioRevenue > 0 ? (monthlyProfit / totalStudioRevenue) * 100 : 0;
+
+    const avgUtilisation = artistsData.reduce((sum, a) => sum + a.utilisation, 0) / artistsData.length;
+    const sortedByRevenue = [...artistsData].sort((a, b) => b.grossRevenue - a.grossRevenue);
+    const sortedByRetention = [...artistsData].sort((a, b) => b.studioRetained - a.studioRetained);
+
+    return {
+      revenue: {
+        artists: artistsData,
+        artistGross: totalArtistGrossRevenue,
+        walkins: walkinRevenue,
+        guests: guestRevenue,
+        piercings: piercingRevenue,
+        retail: retailRevenue,
+        total: totalGrossRevenue,
+        studioRetained: totalStudioRevenue,
+        monthly: totalStudioRevenue,
+        annual: totalStudioRevenue * 12
+      },
+      costs: {
+        rent,
+        rates,
+        utilities,
+        facilitiesInsurance: facilitiesInsuranceAnnual / 12,
+        maintenance,
+        reception: receptionCost,
+        cleaner: cleanerCost,
+        supplies: suppliesCost,
+        sterilisation,
+        publicInsurance: publicInsuranceAnnual / 12,
+        employerInsurance: employerInsuranceAnnual / 12,
+        professionalInsurance: professionalInsuranceAnnual / 12,
+        marketing,
+        accountant: accountantAnnual / 12,
+        licensing: licensingAnnual / 12,
+        software,
+        cardProcessing: cardProcessingCost,
+        total: totalMonthlyCosts
+      },
+      profit: {
+        monthly: monthlyProfit,
+        annual: annualProfit,
+        margin: profitMargin
+      },
+      utilisation: {
+        average: avgUtilisation,
+        artists: artistsData.map(a => ({ name: a.name, utilisation: a.utilisation, bookedHours: a.bookedHours }))
+      },
+      insights: {
+        mostProfitableArtist: sortedByRetention[0],
+        leastProfitableArtist: sortedByRetention[sortedByRetention.length - 1],
+        highestRevenue: sortedByRevenue[0],
+        lowestRevenue: sortedByRevenue[sortedByRevenue.length - 1]
+      },
+      type: 'studio'
+    };
+  }
+
+  function calculateGrowthProjections(baseResults) {
+    // Get growth parameters
+    const projectionPeriod = parseInt((document.querySelector('input[name="projection-period"]:checked'))?.value || '12');
+    const currentBookingRate = studioType === 'solo'
+      ? parseFloat((document.getElementById('solo-booking-rate'))?.value || '70')
+      : baseResults.utilisation?.average || 65;
+    const targetBookingRate = parseFloat((document.getElementById('target-booking-rate'))?.value || '80');
+    const plannedRateIncrease = parseFloat((document.getElementById('planned-rate-increase'))?.value || '10');
+    const seasonalPattern = (document.getElementById('seasonal-pattern'))?.value || 'uk-tattoo';
+
+    // Get seasonal multipliers
+    let seasonalMultipliers = [];
+    if (seasonalPattern === 'uk-tattoo') {
+      seasonalMultipliers = UK_TATTOO_SEASONALITY;
+    } else if (seasonalPattern === 'custom') {
+      seasonalMultipliers = [
+        parseFloat((document.getElementById('season-jan'))?.value || '100'),
+        parseFloat((document.getElementById('season-feb'))?.value || '100'),
+        parseFloat((document.getElementById('season-mar'))?.value || '100'),
+        parseFloat((document.getElementById('season-apr'))?.value || '100'),
+        parseFloat((document.getElementById('season-may'))?.value || '100'),
+        parseFloat((document.getElementById('season-jun'))?.value || '100'),
+        parseFloat((document.getElementById('season-jul'))?.value || '100'),
+        parseFloat((document.getElementById('season-aug'))?.value || '100'),
+        parseFloat((document.getElementById('season-sep'))?.value || '100'),
+        parseFloat((document.getElementById('season-oct'))?.value || '100'),
+        parseFloat((document.getElementById('season-nov'))?.value || '100'),
+        parseFloat((document.getElementById('season-dec'))?.value || '100'),
+      ];
+    } else {
+      seasonalMultipliers = Array(12).fill(100);
+    }
+
+    // Check for studio expansion
+    const planningExpansion = studioType === 'studio-owner' && (document.getElementById('planning-expansion'))?.checked;
+    let expansionMonth = 999;
+    let additionalArtists = 0;
+    if (planningExpansion) {
+      expansionMonth = parseInt((document.getElementById('expansion-month'))?.value || '6');
+      additionalArtists = parseInt((document.getElementById('additional-artists'))?.value || '1');
+    }
+
+    // Calculate month-by-month projections
+    const projections = [];
+    const bookingRateGrowthPerMonth = (targetBookingRate - currentBookingRate) / projectionPeriod;
+    const rateIncreaseMonth = Math.floor(projectionPeriod / 2);
+
+    let currentRate = 1.0; // Multiplier for rate increase
+    let currentMonthlyRevenue = baseResults.revenue.monthly;
+    let currentMonthlyCosts = baseResults.costs.total;
+
+    for (let month = 0; month <= projectionPeriod; month++) {
+      // Calculate booking rate for this month (linear growth)
+      const monthBookingRate = Math.min(100, currentBookingRate + (bookingRateGrowthPerMonth * month));
+      const bookingRateMultiplier = monthBookingRate / currentBookingRate;
+
+      // Apply rate increase at midpoint
+      if (month === rateIncreaseMonth && plannedRateIncrease > 0) {
+        currentRate = 1 + (plannedRateIncrease / 100);
+      }
+
+      // Get seasonal multiplier for this month
+      const seasonalIndex = month % 12;
+      const seasonalMultiplier = seasonalMultipliers[seasonalIndex] / 100;
+
+      // Calculate revenue for this month
+      let monthRevenue = currentMonthlyRevenue * bookingRateMultiplier * currentRate * seasonalMultiplier;
+
+      // If expansion happens this month, add revenue from new artists
+      if (planningExpansion && month === expansionMonth && studioType === 'studio-owner') {
+        // Estimate new artist revenue (conservative: 50% booking rate initially)
+        const avgArtistRevenue = baseResults.revenue.artistGross / baseResults.revenue.artists.length;
+        const newArtistsRevenue = avgArtistRevenue * additionalArtists * 0.5 * 0.4; // 50% booking, 40% studio cut
+        monthRevenue += newArtistsRevenue;
+
+        // Increase base costs slightly for new artists (supplies, utilities up ~15%)
+        currentMonthlyCosts *= 1.15;
+      }
+
+      const monthProfit = monthRevenue - currentMonthlyCosts;
+
+      projections.push({
+        month,
+        revenue: monthRevenue,
+        profit: monthProfit,
+        bookingRate: monthBookingRate,
+        costs: currentMonthlyCosts
+      });
+    }
+
+    return {
+      projections,
+      summary: {
+        startRevenue: projections[0].revenue,
+        endRevenue: projections[projections.length - 1].revenue,
+        startProfit: projections[0].profit,
+        endProfit: projections[projections.length - 1].profit,
+        totalRevenue: projections.reduce((sum, p) => sum + p.revenue, 0),
+        totalProfit: projections.reduce((sum, p) => sum + p.profit, 0),
+        avgMonthlyRevenue: projections.reduce((sum, p) => sum + p.revenue, 0) / projections.length,
+        avgMonthlyProfit: projections.reduce((sum, p) => sum + p.profit, 0) / projections.length
+      }
+    };
+  }
+
+  function renderResults() {
+    const container = document.getElementById('results-container');
+    if (!container || !calculatedResults) return;
+
+    let html = '';
+
+    if (calculatedResults.type === 'solo') {
+      html = renderSoloResults(calculatedResults);
+    } else {
+      html = renderStudioResults(calculatedResults);
+    }
+
+    container.innerHTML = html;
+  }
+
+  function renderSoloResults(results) {
+    const rev = results.revenue;
+    const costs = results.costs;
+    const profit = results.profit;
+    const util = results.utilisation;
+
+    return `
+      <!-- Panel 1: Revenue Summary -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Revenue Summary</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-sm text-text-tertiary mb-2">Tattooing Income</p>
+            <p class="text-3xl font-bold text-brand-red">${currencySymbol}${formatNumber(rev.tattooing)}</p>
+            <p class="text-xs text-text-tertiary mt-1">per month</p>
+          </div>
+          <div>
+            <p class="text-sm text-text-tertiary mb-2">Tips & Additional Revenue</p>
+            <p class="text-3xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.additional + rev.tips)}</p>
+            <p class="text-xs text-text-tertiary mt-1">per month</p>
+          </div>
+          <div>
+            <p class="text-sm text-text-tertiary mb-2">Total Gross Monthly</p>
+            <p class="text-3xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.monthly)}</p>
+          </div>
+          <div>
+            <p class="text-sm text-text-tertiary mb-2">Annual Revenue</p>
+            <p class="text-3xl font-bold text-brand-red">${currencySymbol}${formatNumber(rev.annual)}</p>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-brand-red-light rounded-lg">
+          <p class="text-sm font-semibold text-brand-navy">Effective Hourly Rate</p>
+          <p class="text-2xl font-bold text-brand-red">${currencySymbol}${formatNumber(rev.effectiveHourlyRate)}/hour</p>
+          <p class="text-xs text-text-tertiary mt-1">Actual revenue per available hour (including gaps)</p>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-brand-red-light to-white border-l-4 border-brand-red p-6 rounded-lg">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0">
+              <svg class="w-10 h-10 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="text-lg font-bold text-brand-navy mb-2">Track Every Booking Automatically</h4>
+              <p class="text-text-secondary mb-4">Stop losing revenue to missed appointments and manual admin. See how <a href="/tattoo-booking-software/" class="text-brand-red hover:underline font-semibold">tattoo booking software</a> can automate your scheduling and capture every opportunity.</p>
+              <a href="/contact/" class="btn-primary inline-block">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Booking Utilisation -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Booking Utilisation</h3>
+        <div class="mb-6">
+          ${generateUtilisationBarChart(util)}
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 mt-6">
+          <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Utilisation Rate</p>
+            <p class="text-3xl font-bold ${util.bookingRatePct >= 70 ? 'text-green-600' : 'text-amber-600'}">${formatNumber(util.bookingRatePct)}%</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Empty Hours/Month</p>
+            <p class="text-3xl font-bold text-brand-red">${formatNumber(util.empty)}</p>
+          </div>
+          <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Lost Revenue</p>
+            <p class="text-3xl font-bold text-brand-red">${currencySymbol}${formatNumber(util.emptyHoursCost)}</p>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+          <p class="text-sm font-semibold text-blue-900 mb-2">💡 Opportunity</p>
+          <p class="text-sm text-blue-800">Filling just ${formatNumber(util.empty * 0.5)} more hours per month (half your empty time) would add <strong>${currencySymbol}${formatNumber(util.emptyHoursCost * 0.5)}/month</strong> (${currencySymbol}${formatNumber(util.emptyHoursCost * 0.5 * 12)}/year) to your revenue.</p>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-brand-red-light to-white border-l-4 border-brand-red p-6 rounded-lg">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0">
+              <svg class="w-10 h-10 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="text-lg font-bold text-brand-navy mb-2">Fill Your Chair Time</h4>
+              <p class="text-text-secondary mb-4">Smart scheduling and waitlist management can increase your booking rate by 15-20%. Learn how <a href="/tattoo-artist-software/" class="text-brand-red hover:underline font-semibold">artist software</a> helps you maximize every available hour.</p>
+              <a href="/tattoo-scheduling-software/" class="btn-primary inline-block">Optimize Scheduling</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Cost Summary -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Cost Breakdown</h3>
+        <div class="space-y-3">
+          ${renderCostItem('Studio / Rent', costs.studio)}
+          ${renderCostItem('Supplies', costs.supplies)}
+          ${renderCostItem('Equipment & Maintenance', costs.equipment)}
+          ${renderCostItem('Sterilisation & Compliance', costs.sterilisation)}
+          ${renderCostItem('Insurance', costs.insurance)}
+          ${renderCostItem('Accountant', costs.accountant)}
+          ${renderCostItem('Licensing', costs.licensing)}
+          ${renderCostItem('Marketing', costs.marketing)}
+          ${renderCostItem('Professional Development', costs.professionalDev)}
+          ${renderCostItem('Software & Tools', costs.software)}
+        </div>
+        <div class="mt-6 pt-6 border-t-2 border-gray-200">
+          <div class="flex justify-between items-center">
+            <p class="text-lg font-semibold text-brand-navy">Total Monthly Costs</p>
+            <p class="text-3xl font-bold text-brand-red">${currencySymbol}${formatNumber(costs.total)}</p>
+          </div>
+          <p class="text-sm text-text-tertiary mt-2">Costs represent ${formatNumber((costs.total / rev.monthly) * 100)}% of monthly revenue</p>
+        </div>
+      </div>
+
+      <!-- Panel 4: Profitability -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Profitability</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 bg-gradient-to-br ${profit.monthly > 0 ? 'from-green-50 to-green-100 border-green-300' : 'from-red-50 to-red-100 border-red-300'} border-2 rounded-xl">
+            <p class="text-sm font-semibold ${profit.monthly > 0 ? 'text-green-900' : 'text-red-900'} mb-2">Monthly Profit</p>
+            <p class="text-4xl font-bold ${profit.monthly > 0 ? 'text-green-600' : 'text-red-600'}">${currencySymbol}${formatNumber(profit.monthly)}</p>
+            <p class="text-sm ${profit.monthly > 0 ? 'text-green-700' : 'text-red-700'} mt-1">${profit.monthly > 0 ? '+' : ''}${formatNumber(profit.margin)}% margin</p>
+          </div>
+          <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl">
+            <p class="text-sm font-semibold text-blue-900 mb-2">Annual Profit</p>
+            <p class="text-4xl font-bold text-blue-600">${currencySymbol}${formatNumber(profit.annual)}</p>
+            <p class="text-sm text-blue-700 mt-1">Projected earnings</p>
+          </div>
+        </div>
+        <div class="mt-6 p-6 bg-brand-red-light rounded-xl">
+          <p class="text-sm font-semibold text-brand-navy mb-2">Take-Home Per Working Hour</p>
+          <p class="text-4xl font-bold text-brand-red">${currencySymbol}${formatNumber(profit.takeHomePerWorkingHour)}/hour</p>
+          <p class="text-sm text-text-tertiary mt-2">This is your <strong>actual</strong> hourly earnings after all costs</p>
+        </div>
+        <div class="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-lg">
+          <p class="text-sm font-semibold text-gray-900 mb-2">📊 Industry Benchmark</p>
+          <p class="text-sm text-gray-700">Target profit margin for solo artists: <strong>40-60%</strong>. You're at <strong>${formatNumber(profit.margin)}%</strong>. ${profit.margin >= 40 ? '✓ On track!' : 'Consider optimizing costs or increasing rates.'}</p>
+        </div>
+      </div>
+
+      <!-- Panel 5: Growth Projection -->
+      ${renderGrowthProjectionPanel(results)}
+    `;
+  }
+
+  function renderGrowthProjectionPanel(results) {
+    const growthData = calculateGrowthProjections(results);
+    const projections = growthData.projections;
+    const summary = growthData.summary;
+
+    return `
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Growth Projection</h3>
+        <div class="mb-6">
+          ${generateGrowthChart(projections)}
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="p-4 bg-white rounded-lg border-2 border-blue-200">
+            <p class="text-sm text-text-tertiary mb-1">Projected Revenue (End of Period)</p>
+            <p class="text-3xl font-bold text-blue-600">${currencySymbol}${formatNumber(summary.endRevenue)}</p>
+            <p class="text-sm text-green-600 mt-1">+${formatNumber(((summary.endRevenue - summary.startRevenue) / summary.startRevenue) * 100)}% growth</p>
+          </div>
+          <div class="p-4 bg-white rounded-lg border-2 border-green-200">
+            <p class="text-sm text-text-tertiary mb-1">Projected Profit (End of Period)</p>
+            <p class="text-3xl font-bold text-green-600">${currencySymbol}${formatNumber(summary.endProfit)}</p>
+            <p class="text-sm ${summary.endProfit > summary.startProfit ? 'text-green-600' : 'text-red-600'} mt-1">${summary.endProfit > summary.startProfit ? '+' : ''}${formatNumber(((summary.endProfit - summary.startProfit) / Math.abs(summary.startProfit)) * 100)}% growth</p>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+          <p class="text-sm font-semibold text-blue-900 mb-2">💡 Projection Insights</p>
+          <ul class="text-sm text-blue-800 space-y-1">
+            <li>• Average monthly revenue over period: <strong>${currencySymbol}${formatNumber(summary.avgMonthlyRevenue)}</strong></li>
+            <li>• Average monthly profit over period: <strong>${currencySymbol}${formatNumber(summary.avgMonthlyProfit)}</strong></li>
+            <li>• Total projected profit over period: <strong>${currencySymbol}${formatNumber(summary.totalProfit)}</strong></li>
+          </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  function generateGrowthChart(projections) {
+    const maxRevenue = Math.max(...projections.map(p => p.revenue));
+    const minProfit = Math.min(...projections.map(p => p.profit), 0);
+    const maxProfit = Math.max(...projections.map(p => p.profit));
+    const range = Math.max(maxRevenue, maxProfit) - Math.min(minProfit, 0);
+
+    // Mobile detection
+    const isMobile = window.innerWidth < 768;
+    const fontSize = isMobile ? 10 : 12;
+    const labelInterval = isMobile ? 4 : 3; // Show fewer labels on mobile
+
+    const width = 800;
+    const height = 300;
+    const padding = { top: 20, right: 20, bottom: 40, left: 60 };
+    const chartWidth = width - padding.left - padding.right;
+    const chartHeight = height - padding.top - padding.bottom;
+
+    const points = projections.map((p, i) => {
+      const x = padding.left + (i / (projections.length - 1)) * chartWidth;
+      const yRevenue = padding.top + chartHeight - ((p.revenue - Math.min(minProfit, 0)) / range) * chartHeight;
+      const yProfit = padding.top + chartHeight - ((p.profit - Math.min(minProfit, 0)) / range) * chartHeight;
+      return { x, yRevenue, yProfit, month: p.month };
+    });
+
+    const revenueLine = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.yRevenue}`).join(' ');
+    const profitLine = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.yProfit}`).join(' ');
+
+    const zeroLine = padding.top + chartHeight - ((0 - Math.min(minProfit, 0)) / range) * chartHeight;
+
+    return `
+      <svg viewBox="0 0 ${width} ${height}" class="w-full" style="max-height: 400px;">
+        <!-- Grid lines -->
+        <line x1="${padding.left}" y1="${padding.top}" x2="${padding.left}" y2="${padding.top + chartHeight}" stroke="#E5E7EB" stroke-width="2"/>
+        <line x1="${padding.left}" y1="${padding.top + chartHeight}" x2="${width - padding.right}" y2="${padding.top + chartHeight}" stroke="#E5E7EB" stroke-width="2"/>
+
+        <!-- Zero line if needed -->
+        ${minProfit < 0 ? `<line x1="${padding.left}" y1="${zeroLine}" x2="${width - padding.right}" y2="${zeroLine}" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4 4"/>` : ''}
+
+        <!-- Revenue line -->
+        <path d="${revenueLine}" fill="none" stroke="#E94560" stroke-width="3"/>
+
+        <!-- Profit line -->
+        <path d="${profitLine}" fill="none" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="8 4"/>
+
+        <!-- Data points -->
+        ${points.filter((_, i) => i % labelInterval === 0 || i === points.length - 1).map(p => `
+          <circle cx="${p.x}" cy="${p.yRevenue}" r="4" fill="#E94560"/>
+          <circle cx="${p.x}" cy="${p.yProfit}" r="4" fill="#1A1A2E"/>
+        `).join('')}
+
+        <!-- X-axis labels -->
+        ${points.filter((_, i) => i % labelInterval === 0 || i === points.length - 1).map(p => `
+          <text x="${p.x}" y="${padding.top + chartHeight + 25}" text-anchor="middle" font-size="${fontSize}" fill="#6B7280">M${p.month}</text>
+        `).join('')}
+
+        <!-- Legend -->
+        <g transform="translate(${padding.left + 10}, ${padding.top + 10})">
+          <line x1="0" y1="0" x2="30" y2="0" stroke="#E94560" stroke-width="3"/>
+          <text x="35" y="5" font-size="${fontSize}" fill="#1A1A2E">Revenue</text>
+
+          <line x1="${isMobile ? 100 : 120}" y1="0" x2="${isMobile ? 130 : 150}" y2="0" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="8 4"/>
+          <text x="${isMobile ? 135 : 155}" y="5" font-size="${fontSize}" fill="#1A1A2E">Profit</text>
+        </g>
+      </svg>
+    `;
+  }
+
+  function renderStudioResults(results) {
+    const rev = results.revenue;
+    const costs = results.costs;
+    const profit = results.profit;
+
+    return `
+      <!-- Panel 1: Revenue Summary (Studio) -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Studio Revenue Summary</h3>
+
+        <!-- Per-Artist Revenue Table -->
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b-2 border-gray-200">
+                <th class="text-left p-2 font-semibold text-brand-navy">Artist</th>
+                <th class="text-right p-2 font-semibold text-brand-navy">Model</th>
+                <th class="text-right p-2 font-semibold text-brand-navy">Gross Revenue</th>
+                <th class="text-right p-2 font-semibold text-brand-navy">Artist Take-Home</th>
+                <th class="text-right p-2 font-semibold text-brand-navy">Studio Retained</th>
+                <th class="text-right p-2 font-semibold text-brand-navy">Utilisation</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rev.artists.map(artist => `
+                <tr class="border-b border-gray-100">
+                  <td class="p-2 font-medium">${artist.name}</td>
+                  <td class="p-2 text-right text-xs">${artist.commissionModel}</td>
+                  <td class="p-2 text-right font-semibold">${currencySymbol}${formatNumber(artist.grossRevenue)}</td>
+                  <td class="p-2 text-right text-green-600">${currencySymbol}${formatNumber(artist.artistTakeHome)}</td>
+                  <td class="p-2 text-right text-brand-red font-semibold">${currencySymbol}${formatNumber(artist.studioRetained)}</td>
+                  <td class="p-2 text-right ${artist.utilisation >= 70 ? 'text-green-600' : artist.utilisation >= 50 ? 'text-amber-600' : 'text-red-600'} font-semibold">${formatNumber(artist.utilisation)}%</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-4 mt-6">
+          <div class="p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Total Artist Revenue</p>
+            <p class="text-2xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.artistGross)}</p>
+          </div>
+          ${rev.walkins > 0 ? `
+          <div class="p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Walk-Ins</p>
+            <p class="text-2xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.walkins)}</p>
+          </div>` : ''}
+          ${rev.guests > 0 ? `
+          <div class="p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Guest Artists</p>
+            <p class="text-2xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.guests)}</p>
+          </div>` : ''}
+          ${rev.piercings > 0 ? `
+          <div class="p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Piercings</p>
+            <p class="text-2xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.piercings)}</p>
+          </div>` : ''}
+          ${rev.retail > 0 ? `
+          <div class="p-4 bg-white rounded-lg border border-gray-200">
+            <p class="text-sm text-text-tertiary mb-1">Retail</p>
+            <p class="text-2xl font-bold text-brand-navy">${currencySymbol}${formatNumber(rev.retail)}</p>
+          </div>` : ''}
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mt-6">
+          <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl">
+            <p class="text-sm font-semibold text-blue-900 mb-2">Total Gross Revenue</p>
+            <p class="text-4xl font-bold text-blue-600">${currencySymbol}${formatNumber(rev.total)}</p>
+            <p class="text-sm text-blue-700 mt-1">All revenue streams</p>
+          </div>
+          <div class="p-6 bg-gradient-to-br from-brand-red-light to-white border-2 border-brand-red rounded-xl">
+            <p class="text-sm font-semibold text-brand-navy mb-2">Studio Retained</p>
+            <p class="text-4xl font-bold text-brand-red">${currencySymbol}${formatNumber(rev.studioRetained)}</p>
+            <p class="text-sm text-text-tertiary mt-1">After artist commissions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Studio Profitability -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Studio Profitability</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 bg-gradient-to-br ${profit.monthly > 0 ? 'from-green-50 to-green-100 border-green-300' : 'from-red-50 to-red-100 border-red-300'} border-2 rounded-xl">
+            <p class="text-sm font-semibold ${profit.monthly > 0 ? 'text-green-900' : 'text-red-900'} mb-2">Monthly Profit</p>
+            <p class="text-4xl font-bold ${profit.monthly > 0 ? 'text-green-600' : 'text-red-600'}">${currencySymbol}${formatNumber(profit.monthly)}</p>
+            <p class="text-sm ${profit.monthly > 0 ? 'text-green-700' : 'text-red-700'} mt-1">${profit.monthly > 0 ? '+' : ''}${formatNumber(profit.margin)}% margin</p>
+          </div>
+          <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl">
+            <p class="text-sm font-semibold text-blue-900 mb-2">Annual Profit</p>
+            <p class="text-4xl font-bold text-blue-600">${currencySymbol}${formatNumber(profit.annual)}</p>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-lg">
+          <p class="text-sm font-semibold text-gray-900 mb-2">📊 Industry Benchmark</p>
+          <p class="text-sm text-gray-700">Target profit margin for studios: <strong>15-30%</strong>. You're at <strong>${formatNumber(profit.margin)}%</strong>. ${profit.margin >= 15 ? '✓ Within range!' : 'Review costs and commission structures.'}</p>
+        </div>
+        <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+          <p class="text-sm font-semibold text-blue-900 mb-2">💡 Key Insights</p>
+          <ul class="text-sm text-blue-800 space-y-1">
+            <li>• Most profitable artist: <strong>${results.insights.mostProfitableArtist.name}</strong> (${currencySymbol}${formatNumber(results.insights.mostProfitableArtist.studioRetained)}/month retained)</li>
+            <li>• Highest revenue artist: <strong>${results.insights.highestRevenue.name}</strong> (${currencySymbol}${formatNumber(results.insights.highestRevenue.grossRevenue)}/month)</li>
+            <li>• Average artist utilisation: <strong>${formatNumber(results.utilisation.average)}%</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Panel 3: Cost Summary -->
+      <div class="card">
+        <h3 class="text-2xl font-bold text-brand-navy mb-6">Cost Breakdown</h3>
+        <div class="space-y-3">
+          ${renderCostItem('Rent & Rates', costs.rent + costs.rates)}
+          ${renderCostItem('Utilities', costs.utilities)}
+          ${renderCostItem('Facility Insurance', costs.facilitiesInsurance)}
+          ${renderCostItem('Maintenance', costs.maintenance)}
+          ${costs.reception > 0 ? renderCostItem('Reception Staff', costs.reception) : ''}
+          ${costs.cleaner > 0 ? renderCostItem('Cleaning', costs.cleaner) : ''}
+          ${renderCostItem('Supplies', costs.supplies)}
+          ${renderCostItem('Sterilisation & Compliance', costs.sterilisation)}
+          ${renderCostItem('Insurance (Public/Employer/Professional)', costs.publicInsurance + costs.employerInsurance + costs.professionalInsurance)}
+          ${renderCostItem('Marketing', costs.marketing)}
+          ${renderCostItem('Accountant', costs.accountant)}
+          ${renderCostItem('Licensing', costs.licensing)}
+          ${renderCostItem('Software & Admin', costs.software)}
+          ${renderCostItem('Card Processing Fees', costs.cardProcessing)}
+        </div>
+        <div class="mt-6 pt-6 border-t-2 border-gray-200">
+          <div class="flex justify-between items-center">
+            <p class="text-lg font-semibold text-brand-navy">Total Monthly Costs</p>
+            <p class="text-3xl font-bold text-brand-red">${currencySymbol}${formatNumber(costs.total)}</p>
+          </div>
+          <p class="text-sm text-text-tertiary mt-2">Costs represent ${formatNumber((costs.total / rev.studioRetained) * 100)}% of studio revenue</p>
+        </div>
+      </div>
+
+      <!-- Panel 4: Growth Projection -->
+      ${renderGrowthProjectionPanel(results)}
+    `;
+  }
+
+  function renderCostItem(label, amount) {
+    return `
+      <div class="flex justify-between items-center p-3 bg-white rounded-lg border border-gray-200">
+        <span class="text-sm font-medium text-brand-navy">${label}</span>
+        <span class="text-sm font-bold text-brand-red">${currencySymbol}${formatNumber(amount)}</span>
+      </div>
+    `;
+  }
+
+  function generateUtilisationBarChart(util) {
+    const tattooingPct = (util.tattooing / util.total) * 100;
+    const consultationPct = (util.consultation / util.total) * 100;
+    const emptyPct = (util.empty / util.total) * 100;
+
+    return `
+      <div class="w-full">
+        <div class="flex h-12 rounded-lg overflow-hidden">
+          <div class="bg-brand-red flex items-center justify-center text-white text-sm font-semibold" style="width: ${tattooingPct}%">
+            ${tattooingPct > 15 ? `${formatNumber(util.tattooing)}h` : ''}
+          </div>
+          <div class="bg-pink-400 flex items-center justify-center text-white text-sm font-semibold" style="width: ${consultationPct}%">
+            ${consultationPct > 8 ? `${formatNumber(util.consultation)}h` : ''}
+          </div>
+          <div class="bg-gray-300 flex items-center justify-center text-gray-700 text-sm font-semibold" style="width: ${emptyPct}%">
+            ${emptyPct > 15 ? `${formatNumber(util.empty)}h` : ''}
+          </div>
+        </div>
+        <div class="flex justify-between mt-3 text-xs">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 bg-brand-red rounded"></div>
+            <span>Tattooing (${formatNumber(tattooingPct)}%)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 bg-pink-400 rounded"></div>
+            <span>Consultation (${formatNumber(consultationPct)}%)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 bg-gray-300 rounded"></div>
+            <span>Empty (${formatNumber(emptyPct)}%)</span>
+          </div>
+        </div>
+        <p class="text-xs text-text-tertiary mt-2 text-center">Total available: ${formatNumber(util.total)} hours/month</p>
+      </div>
+    `;
+  }
+
+  function formatNumber(num) {
+    return Math.round(num).toLocaleString();
+  }
+
+  // Mobile enhancements
+  function initializeMobileEnhancements() {
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      // Add scroll-to-top button
+      addScrollToTopButton();
+
+      // Add mobile results navigation when results are shown
+      const resultsContainer = document.getElementById('results-container');
+      if (resultsContainer) {
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.target.children.length > 0) {
+              addMobileResultsNav();
+            }
+          });
+        });
+        observer.observe(resultsContainer, { childList: true });
+      }
+    }
+  }
+
+  function addScrollToTopButton() {
+    const button = document.createElement('button');
+    button.id = 'scroll-to-top-btn';
+    button.innerHTML = `
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    `;
+    button.style.cssText = `
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #E94560;
+      color: white;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      transition: opacity 0.3s;
+    `;
+
+    button.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    document.body.appendChild(button);
+
+    // Show/hide on scroll
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        button.style.display = 'flex';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  }
+
+  function addMobileResultsNav() {
+    const resultsContainer = document.getElementById('results-container');
+    if (!resultsContainer || document.getElementById('mobile-results-nav')) {
+      return; // Already exists
+    }
+
+    const panels = resultsContainer.querySelectorAll('.card');
+    if (panels.length === 0) return;
+
+    const nav = document.createElement('div');
+    nav.id = 'mobile-results-nav';
+    nav.style.cssText = `
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 2px solid #E5E7EB;
+      padding: 0.75rem 1rem;
+      z-index: 100;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 1rem;
+    `;
+
+    const panelTitles = Array.from(panels).map(panel => {
+      const heading = panel.querySelector('h3');
+      return heading ? heading.textContent : '';
+    });
+
+    panelTitles.forEach((title, index) => {
+      const btn = document.createElement('button');
+      btn.textContent = title;
+      btn.style.cssText = `
+        display: inline-block;
+        padding: 0.5rem 0.875rem;
+        margin-right: 0.5rem;
+        background: #F3F4F6;
+        color: #1A1A2E;
+        border: none;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+      `;
+
+      btn.onclick = function() {
+        panels[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Update active state
+        nav.querySelectorAll('button').forEach(b => {
+          b.style.background = '#F3F4F6';
+          b.style.color = '#1A1A2E';
+        });
+        btn.style.background = '#E94560';
+        btn.style.color = 'white';
+      };
+
+      nav.appendChild(btn);
+    });
+
+    resultsContainer.insertBefore(nav, resultsContainer.firstChild);
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeMobileEnhancements);
+  } else {
+    initializeMobileEnhancements();
+  }
+</script>
