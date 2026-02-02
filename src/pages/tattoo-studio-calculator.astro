@@ -144,6 +144,29 @@ const faqSchema = {
     }
   ]
 };
+
+// Software Application schema
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Tattoo Studio Revenue Calculator",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP"
+  },
+  "description": "Free calculator for tattoo studio owners and artists to model revenue, booking rates, commission structures, and profit margins with industry benchmarks.",
+  "operatingSystem": "Web Browser",
+  "featureList": [
+    "Artist revenue modeling",
+    "Booking rate analysis",
+    "Commission vs rental comparison",
+    "Operating cost breakdown",
+    "Growth projections",
+    "Seasonal revenue patterns"
+  ]
+};
 ---
 
 <BaseLayout
@@ -155,6 +178,7 @@ const faqSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
 
   <!-- jsPDF Library for PDF Generation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" is:inline></script>
@@ -241,7 +265,7 @@ const faqSchema = {
 
           <div class="mt-8 text-center">
             <p class="text-sm text-text-tertiary mb-4">
-              Interested in automating your studio? Learn about <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">tattoo studio software</a>, <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">tattoo booking software</a>, and <a href="/tattoo-scheduling-software/" class="text-brand-red hover:underline">tattoo scheduling software</a>. Understand the full financial picture with our guide on <a href="/blog/how-much-do-tattoo-artists-make/" class="text-brand-red hover:underline">how much tattoo artists make</a>.
+              Interested in automating your studio? Learn about <a href="/tattoo-studio-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-studio" class="text-brand-red hover:underline">tattoo studio software</a>, <a href="/tattoo-booking-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-booking" class="text-brand-red hover:underline">tattoo booking software</a>, and <a href="/tattoo-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-scheduling" class="text-brand-red hover:underline">tattoo scheduling software</a>. Understand the full financial picture with our guide on <a href="/blog/how-much-do-tattoo-artists-make/" class="text-brand-red hover:underline">how much tattoo artists make</a>.
             </p>
           </div>
         </div>
@@ -1151,12 +1175,12 @@ const faqSchema = {
 
           <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">1. Optimise Your Booking Rate</h4>
           <p class="text-text-secondary leading-relaxed mb-4">
-            If you're running at 55% booking rate, every 10% improvement adds thousands annually. The gap between 55% and 75% booking at £120/hour is £20,000+ per year. Focus on reducing appointment gaps with <a href="/tattoo-scheduling-software/" class="text-brand-red hover:underline">automated scheduling software</a>, waitlist management for cancellations, and strategic marketing to fill slow periods. Track your booking rate monthly and set incremental targets.
+            If you're running at 55% booking rate, every 10% improvement adds thousands annually. The gap between 55% and 75% booking at £120/hour is £20,000+ per year. Focus on reducing appointment gaps with <a href="/tattoo-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-scheduling" class="text-brand-red hover:underline">automated scheduling software</a>, waitlist management for cancellations, and strategic marketing to fill slow periods. Track your booking rate monthly and set incremental targets.
           </p>
 
           <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">2. Implement Mandatory Deposits</h4>
           <p class="text-text-secondary leading-relaxed mb-4">
-            If you're not requiring £50+ non-refundable deposits, you're likely losing 10-15% of your potential revenue to no-shows. The calculator shows you exactly what this costs. Modern <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">tattoo booking software</a> handles deposit collection automatically, reducing no-shows from 12% to under 3%. That's real money back in your pocket every month.
+            If you're not requiring £50+ non-refundable deposits, you're likely losing 10-15% of your potential revenue to no-shows. The calculator shows you exactly what this costs. Modern <a href="/tattoo-booking-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-booking" class="text-brand-red hover:underline">tattoo booking software</a> handles deposit collection automatically, reducing no-shows from 12% to under 3%. That's real money back in your pocket every month.
           </p>
 
           <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">3. Review Your Pricing Annually</h4>
@@ -1188,7 +1212,7 @@ const faqSchema = {
 
           <h4 class="text-xl font-semibold text-brand-navy mt-6 mb-3">4. Reduce Operational Inefficiencies</h4>
           <p class="text-text-secondary leading-relaxed mb-4">
-            Studio profit margins are thin (15-30%), so small cost savings compound. Bulk ordering supplies, renegotiating rent after lease end, switching to energy-efficient equipment, and using <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">comprehensive studio management software</a> instead of multiple subscriptions all improve margins. Automate administrative tasks—reception time spent on phone booking is expensive compared to online booking systems.
+            Studio profit margins are thin (15-30%), so small cost savings compound. Bulk ordering supplies, renegotiating rent after lease end, switching to energy-efficient equipment, and using <a href="/tattoo-studio-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-studio" class="text-brand-red hover:underline">comprehensive studio management software</a> instead of multiple subscriptions all improve margins. Automate administrative tasks—reception time spent on phone booking is expensive compared to online booking systems.
           </p>
 
           <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Understanding Your Numbers</h2>
@@ -1209,7 +1233,12 @@ const faqSchema = {
 
           <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">Revenue per Artist (Studio Owners)</h3>
           <p class="text-text-secondary leading-relaxed mb-4">
-            Strong artists generate £60,000-£120,000+ gross annual revenue (£5,000-£10,000/month). At 60/40 split, that's £24,000-£48,000 retained by the studio per artist annually. If an artist is generating under £3,000/month gross, investigate why: are they new (expected), underbooked (fixable with marketing), or underperforming (needs addressing)? Your goal is to get every artist to strong productivity.
+            Strong artists generate £60,000-£120,000+ gross annual revenue (£5,000-£10,000/month). At 60/40 split, that's £24,000-£48,000 retained by the studio per artist annually. If an artist is generating under £3,000/month gross, investigate why: are they new (expected), underbooked (fixable with marketing), or underperforming (needs addressing)? Your goal is to get every artist to strong productivity. Similar recurring revenue models exist in
+            <a href="https://mydojo.software/dojo-revenue-calculator/"
+               rel="external"
+               class="text-brand-red hover:underline">
+              membership-based fitness and martial arts studios
+            </a>, where consistent monthly income and retention directly impact profitability.
           </p>
 
           <h3 class="text-xl font-semibold text-brand-navy mt-6 mb-3">Seasonal Cash Flow Planning</h3>
@@ -1254,7 +1283,7 @@ const faqSchema = {
           </p>
 
           <p class="text-lg text-text-secondary leading-relaxed mt-10 mb-6">
-            Want to automate your bookings, reduce no-shows, and track your numbers in real-time? Learn how <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">tattoo studio software</a> can help you implement these improvements. See how the top studios use <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">modern booking systems</a> to increase revenue. Or read our complete guide on <a href="/blog/how-much-do-tattoo-artists-make/" class="text-brand-red hover:underline">tattoo artist earnings</a>.
+            Want to automate your bookings, reduce no-shows, and track your numbers in real-time? Learn how <a href="/tattoo-studio-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-studio" class="text-brand-red hover:underline">tattoo studio software</a> can help you implement these improvements. See how the top studios use <a href="/tattoo-booking-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-booking" class="text-brand-red hover:underline">modern booking systems</a> to increase revenue. Or read our complete guide on <a href="/blog/how-much-do-tattoo-artists-make/" class="text-brand-red hover:underline">tattoo artist earnings</a>.
           </p>
 
           <div class="bg-brand-red-light border-l-4 border-brand-red p-6 rounded-lg mt-8">
@@ -1262,7 +1291,7 @@ const faqSchema = {
             <p class="text-text-secondary mb-4">
               The calculator showed you the numbers—now it's time to act. Whether you're optimising booking rates, implementing deposits, raising prices, or expanding your studio, having the right systems in place makes all the difference.
             </p>
-            <a href="/contact/" class="btn-primary inline-block">Get in Touch</a>
+            <a href="/contact/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=contact-cta" class="btn-primary inline-block">Get in Touch</a>
           </div>
         </div>
       </div>
@@ -2616,8 +2645,8 @@ const faqSchema = {
             </div>
             <div class="flex-1">
               <h4 class="text-lg font-bold text-brand-navy mb-2">Track Every Booking Automatically</h4>
-              <p class="text-text-secondary mb-4">Stop losing revenue to missed appointments and manual admin. See how <a href="/tattoo-booking-software/" class="text-brand-red hover:underline font-semibold">tattoo booking software</a> can automate your scheduling and capture every opportunity.</p>
-              <a href="/contact/" class="btn-primary inline-block">Get Started</a>
+              <p class="text-text-secondary mb-4">Stop losing revenue to missed appointments and manual admin. See how <a href="/tattoo-booking-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-booking" class="text-brand-red hover:underline font-semibold">tattoo booking software</a> can automate your scheduling and capture every opportunity.</p>
+              <a href="/contact/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=contact-cta" class="btn-primary inline-block">Get Started</a>
             </div>
           </div>
         </div>
@@ -2657,8 +2686,8 @@ const faqSchema = {
             </div>
             <div class="flex-1">
               <h4 class="text-lg font-bold text-brand-navy mb-2">Fill Your Chair Time</h4>
-              <p class="text-text-secondary mb-4">Smart scheduling and waitlist management can increase your booking rate by 15-20%. Learn how <a href="/tattoo-artist-software/" class="text-brand-red hover:underline font-semibold">artist software</a> helps you maximize every available hour.</p>
-              <a href="/tattoo-scheduling-software/" class="btn-primary inline-block">Optimize Scheduling</a>
+              <p class="text-text-secondary mb-4">Smart scheduling and waitlist management can increase your booking rate by 15-20%. Learn how <a href="/tattoo-artist-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-artist" class="text-brand-red hover:underline font-semibold">artist software</a> helps you maximize every available hour.</p>
+              <a href="/tattoo-scheduling-software/?utm_source=calculator&utm_medium=tool&utm_campaign=tattoo-revenue&utm_content=pillar-link-scheduling" class="btn-primary inline-block">Optimize Scheduling</a>
             </div>
           </div>
         </div>
