@@ -18,7 +18,7 @@ Your clients expect to book online. Look for software that offers:
 - 24/7 availability for bookings
 - Artist-specific calendars
 - Automatic conflict prevention
-- Integration with your website
+- Integration with your website Learn more about [Tattoo Artist Software](/tattoo-artist-software/). Check out [Tattoo Booking App](/tattoo-booking-app/). Explore [Tattoo Booking Software](/tattoo-booking-software/) solutions. Explore [Tattoo Scheduling Software](/tattoo-scheduling-software/) solutions. See how [Tattoo Studio Software](/tattoo-studio-software/) can help.
 
 ### 2. Deposit Management
 

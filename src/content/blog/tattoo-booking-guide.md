@@ -110,7 +110,7 @@ Effective booking provides:
 
 **Best for:** Studios wanting efficiency and growth.
 
-[Tattoo booking software](/tattoo-booking-software/) provides these capabilities while integrating with overall studio management.
+[Tattoo booking software](/tattoo-booking-software/) provides these capabilities while integrating with overall studio management. Check out [Tattoo Booking App](/tattoo-booking-app/). See how [Tattoo Scheduling Software](/tattoo-scheduling-software/) can help.
 
 ### Hybrid Approaches
 
@@ -361,7 +361,7 @@ Complex assessment needed:
 - Time off and vacations
 - Chair rental arrangements
 
-[Studio management software](/tattoo-studio-software/) handles multiple artist schedules while maintaining consistency.
+[Studio management software](/tattoo-studio-software/) handles multiple artist schedules while maintaining consistency. See how [Tattoo Artist Software](/tattoo-artist-software/) can help.
 
 ## Booking Metrics to Track
 

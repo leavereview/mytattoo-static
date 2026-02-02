@@ -364,6 +364,6 @@ Keep forms focused, professional, and client-friendly. The right information upf
 
 ## Simplify Your Booking Process
 
-[MyTattoo.Software](/tattoo-booking-software/) includes customisable booking forms that collect exactly the information you need, integrated with scheduling, payments, and client management.
+[MyTattoo.Software](/tattoo-booking-software/) includes customisable booking forms that collect exactly the information you need, integrated with scheduling, payments, and client management. Explore [Tattoo Artist Software](/tattoo-artist-software/) solutions. See how [Tattoo Booking App](/tattoo-booking-app/) can help. Learn more about [Tattoo Scheduling Software](/tattoo-scheduling-software/). See how [Tattoo Studio Software](/tattoo-studio-software/) can help.
 
 [Start your free trial](/contact/) and see how streamlined booking improves your studio.

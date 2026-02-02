@@ -196,7 +196,7 @@ Clear policies prevent disputes:
 1. **Give notice**: Tell existing clients prices are increasing next month
 2. **Honor existing quotes**: Don't change prices mid-project
 3. **Raise incrementally**: 10-20% at a time feels more acceptable
-4. **Update everywhere**: Website, social media, booking page
+4. **Update everywhere**: Website, social media, booking page Explore [Tattoo Booking Software](/tattoo-booking-software/) solutions. Explore [Tattoo Studio Software](/tattoo-studio-software/) solutions.
 
 ### Handling Pushback
 

@@ -65,7 +65,7 @@ Purpose-built for tattoo and piercing studios with features like:
 - Tattoo-specific service categories
 - Artist portfolio integration
 - Aftercare instruction automation
-- Deposit management with automatic reminders
+- Deposit management with automatic reminders Explore [Tattoo Artist Software](/tattoo-artist-software/) solutions. Explore [Tattoo Booking App](/tattoo-booking-app/) solutions. Explore [Tattoo Scheduling Software](/tattoo-scheduling-software/) solutions.
 
 ### Other Options
 

@@ -44,7 +44,7 @@ Your artist is creating permanent art on your body. That's intimate work requiri
 
 ### It's Expected
 
-Like tipping waitstaff, tipping tattoo artists is part of the industry culture. Most artists budget expecting tips as part of their income.
+Like tipping waitstaff, tipping tattoo artists is part of the industry culture. Most artists budget expecting tips as part of their income. Learn more about [Tattoo Artist Software](/tattoo-artist-software/).
 
 ## When to Tip More
 

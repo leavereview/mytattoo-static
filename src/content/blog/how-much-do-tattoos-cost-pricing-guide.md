@@ -92,7 +92,7 @@ A profitable rate typically ensures 40-60% goes to the artist after expenses.
 - **Cancellation policy:** 24-48 hour notice required
 - **Large piece payment plans:** Consider installment options
 
-Using [tattoo booking software](/tattoo-booking-software/) streamlines deposit collection and payment processing.
+Using [tattoo booking software](/tattoo-booking-software/) streamlines deposit collection and payment processing. Check out [Tattoo Booking App](/tattoo-booking-app/). Learn more about [Tattoo Scheduling Software](/tattoo-scheduling-software/).
 
 ## Special Pricing Considerations
 
@@ -129,7 +129,7 @@ Most artists offer consultations to assess your design and provide accurate esti
 
 ## Ready to Streamline Your Pricing?
 
-[MyTattoo.Software](/tattoo-studio-software/) helps artists and shop owners manage pricing, bookings, and client relationships efficiently.
+[MyTattoo.Software](/tattoo-studio-software/) helps artists and shop owners manage pricing, bookings, and client relationships efficiently. See how [Tattoo Artist Software](/tattoo-artist-software/) can help.
 
 **Related Articles:**
 - [Do You Tip Tattoo Artists?](/blog/do-you-tip-tattoo-artists/)

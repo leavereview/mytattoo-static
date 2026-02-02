@@ -111,7 +111,7 @@ While some basics can be self-taught, professional apprenticeship is strongly re
 
 ## Ready to Start Your Journey?
 
-As you build your career, professional tools become essential. [MyTattoo.Software](/tattoo-artist-software/) helps new artists manage bookings, build client relationships, and establish professional practices from day one.
+As you build your career, professional tools become essential. [MyTattoo.Software](/tattoo-artist-software/) helps new artists manage bookings, build client relationships, and establish professional practices from day one. Learn more about [Tattoo Booking App](/tattoo-booking-app/). Learn more about [Tattoo Booking Software](/tattoo-booking-software/). Learn more about [Tattoo Scheduling Software](/tattoo-scheduling-software/). See how [Tattoo Studio Software](/tattoo-studio-software/) can help.
 
 **Related Articles:**
 - [How Much Do Tattoo Artists Make?](/blog/how-much-do-tattoo-artists-make/)

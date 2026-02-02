@@ -255,7 +255,7 @@ Not knowing which version of your form a client signed creates problems if your 
 | Easy to search and retrieve | No technology required |
 | Automatic backup | Physical security needed |
 | Integration with [booking software](/tattoo-booking-software/) | Filing system required |
-| Requires device/system | Familiar process |
+| Requires device/system | Familiar process | Learn more about [Tattoo Artist Software](/tattoo-artist-software/).
 
 ### Using Tattoo Software for Forms
 

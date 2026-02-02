@@ -318,7 +318,7 @@ Studios can enhance appointment experiences through:
 - [Online scheduling](/tattoo-booking-software/) convenience
 - Clear deposit processes
 - Automated reminders
-- Easy rescheduling options
+- Easy rescheduling options Check out [Tattoo Artist Software](/tattoo-artist-software/). Learn more about [Tattoo Booking App](/tattoo-booking-app/). Explore [Tattoo Scheduling Software](/tattoo-scheduling-software/) solutions.
 
 **Client communication:**
 - Pre-appointment preparation guides
@@ -346,6 +346,6 @@ Understanding the full process helps you get the best tattoo possible while enjo
 
 ## Streamline Your Studio's Booking
 
-For studios looking to improve client experience, [MyTattoo.Software](/tattoo-booking-software/) provides online booking, automated reminders, and client management that makes every appointment run smoothly.
+For studios looking to improve client experience, [MyTattoo.Software](/tattoo-booking-software/) provides online booking, automated reminders, and client management that makes every appointment run smoothly. Check out [Tattoo Studio Software](/tattoo-studio-software/).
 
 [Start your free trial](/contact/) and see how better systems create better experiences.

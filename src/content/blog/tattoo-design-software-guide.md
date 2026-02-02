@@ -436,6 +436,6 @@ Start with Procreate on iPad for the best balance of capability, portability, an
 
 ## Managing Your Tattoo Business
 
-While design software handles the creative side, [MyTattoo.Software](/tattoo-studio-software/) manages the business side—bookings, client records, and studio operations.
+While design software handles the creative side, [MyTattoo.Software](/tattoo-studio-software/) manages the business side—bookings, client records, and studio operations. Check out [Tattoo Booking Software](/tattoo-booking-software/).
 
 [Start your free trial](/contact/) and focus more on your art, less on administration.

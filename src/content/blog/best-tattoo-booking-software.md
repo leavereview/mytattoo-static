@@ -117,7 +117,7 @@ Generic booking tools (Calendly, Acuity) work for basic scheduling but miss crit
 - Tattoo-specific booking
 - Consent form management
 - Portfolio integration
-- Studio management
+- Studio management Explore [Tattoo Artist Software](/tattoo-artist-software/) solutions. Learn more about [Tattoo Booking App](/tattoo-booking-app/). Learn more about [Tattoo Scheduling Software](/tattoo-scheduling-software/).
 
 **Pricing**: Varies by plan
 
