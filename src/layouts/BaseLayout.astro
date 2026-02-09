@@ -32,7 +32,14 @@ const {
 const resolvedSchemaType = schemaType || (type === 'article' ? 'Article' : 'WebPage');
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title === 'Home' ? 'MyTattoo.Software - Tattoo Studio Management Software' : `${title} | MyTattoo.Software`;
+
+// Dynamic title suffix: skip for long titles, use shorter brand name
+const getTitleSuffix = (pageTitle: string): string => {
+  if (pageTitle === 'Home') return 'MyTattoo.Software - Tattoo Studio Management Software';
+  if (pageTitle.length > 50) return pageTitle; // No suffix for long titles
+  return `${pageTitle} | MyTattoo`;
+};
+const fullTitle = getTitleSuffix(title);
 
 const schemaOrg = {
   "@context": "https://schema.org",
@@ -42,7 +49,27 @@ const schemaOrg = {
       "@id": "https://mytattoo.software/#organization",
       "name": "MyTattoo.Software",
       "url": "https://mytattoo.software",
-      "logo": { "@type": "ImageObject", "url": "https://mytattoo.software/logo.svg" }
+      "logo": { "@type": "ImageObject", "url": "https://mytattoo.software/logo.svg" },
+      "sameAs": [
+        "https://twitter.com/mytattoosoftware",
+        "https://www.linkedin.com/company/mytattoo-software",
+        "https://www.facebook.com/mytattoosoftware"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@mytattoo.software",
+        "url": "https://mytattoo.software/contact/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "124 City Road",
+        "addressLocality": "London",
+        "postalCode": "EC1V 2NX",
+        "addressCountry": "GB"
+      },
+      "foundingDate": "2024",
+      "description": "Complete tattoo studio management software for booking appointments, managing clients, handling consent forms, and collecting deposits."
     },
     {
       "@type": "WebSite",
@@ -86,6 +113,7 @@ const schemaOrg = {
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
   <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
   <meta name="description" content={description} />
   {noindex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={canonicalURL} />

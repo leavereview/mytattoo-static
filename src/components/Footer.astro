@@ -7,11 +7,19 @@ const footerLinks = {
     { label: 'Booking Software', href: '/tattoo-booking-software/' },
     { label: 'Artist Software', href: '/tattoo-artist-software/' },
   ],
+  popular: [
+    { label: 'Best Tattoo Studio Software', href: '/blog/best-tattoo-studio-software/' },
+    { label: 'Best Booking Software', href: '/blog/best-tattoo-booking-software/' },
+    { label: 'Building Your Client Base', href: '/blog/building-tattoo-client-base/' },
+    { label: 'Tattoo Artist Earnings', href: '/blog/how-much-do-tattoo-artists-make/' },
+    { label: 'Tattoo Apprenticeship', href: '/blog/how-does-tattoo-apprenticeship-work/' },
+    { label: 'Flash Booking Guide', href: '/blog/flash-booking-tattoo-artists-guide/' },
+  ],
   resources: [
-    { label: 'Revenue Calculator', href: '/tattoo-studio-calculator/' },
+    { label: 'Calculator', href: '/tattoo-studio-calculator/' },
     { label: 'Blog', href: '/blog/' },
     { label: 'Pricing', href: '/pricing/' },
-    { label: 'About Us', href: '/about/' },
+    { label: 'About', href: '/about/' },
     { label: 'Contact', href: '/contact/' },
   ],
   legal: [
@@ -23,7 +31,7 @@ const footerLinks = {
 
 <footer class="bg-brand-navy text-white">
   <div class="container-custom py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
       <div class="lg:col-span-1">
         <a href="/" class="inline-block mb-6">
           <span class="text-2xl font-bold text-white">MyTattoo<span class="text-brand-red">.Software</span></span>
@@ -54,6 +62,13 @@ const footerLinks = {
         <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Software</h3>
         <ul class="space-y-3">
           {footerLinks.software.map((link) => (<li><a href={link.href} class="text-gray-400 hover:text-white transition-colors text-sm">{link.label}</a></li>))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Popular Articles</h3>
+        <ul class="space-y-3">
+          {footerLinks.popular.map((link) => (<li><a href={link.href} class="text-gray-400 hover:text-white transition-colors text-sm">{link.label}</a></li>))}
         </ul>
       </div>
 
