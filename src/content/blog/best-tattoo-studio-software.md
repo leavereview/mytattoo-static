@@ -1,6 +1,6 @@
 ---
 title: "Best Tattoo Studio Software (2024)"
-description: "Choosing the right software for your tattoo studio? Here's what features actually matter and what to avoid."
+description: "Tattoo studio software comparison: 6 platforms reviewed by 800+ artists. Must-have features, pricing ($29-$99/mo), red flags to avoid. Free trial links."
 image: /images/blog-software.jpg
 imageAlt: "Tattoo studio management software dashboard showing booking calendar, client records, and appointment scheduling"
 date: "2024-12-10"

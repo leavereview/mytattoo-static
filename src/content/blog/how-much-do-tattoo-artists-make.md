@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Artist Income Guide (2024)"
-description: "Discover how much tattoo artists make in 2024, including factors affecting income, hourly rates, and proven strategies to maximize earnings."
+description: "Tattoo artist salary breakdown: £25K-£65K annually depending on experience and location. Hourly rates, booth rent vs commission, and income maximization strategies."
 image: /images/blog-pricing.jpg
 date: "2026-01-12"
 tags: ["Career", "Pricing"]

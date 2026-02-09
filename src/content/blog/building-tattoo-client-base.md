@@ -1,6 +1,6 @@
 ---
 title: "Building Your Tattoo Client Base"
-description: "Starting out as a tattoo artist? Learn how to build a loyal client base from scratch with these proven strategies."
+description: "Build your tattoo client base from zero: Instagram strategies, portfolio tips, networking tactics, and referral systems. 2-3 years to full client roster."
 image: /images/blog-client.jpg
 imageAlt: "Tattoo artist consulting with client, building relationships to establish loyal customer base"
 date: "2024-12-05"

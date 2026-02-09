@@ -1,6 +1,6 @@
 ---
 title: "Become a Tattoo Artist (2024)"
-description: "Learn how to become a tattoo artist with our step-by-step guide. From apprenticeships to licensing, discover what it takes to start your tattoo career."
+description: "How to become a tattoo artist: apprenticeship requirements, 2-4 year timeline, licensing costs, portfolio building, and landing your first shop position."
 image: /images/blog-career.jpg
 date: "2026-01-12"
 tags: ["Career"]
