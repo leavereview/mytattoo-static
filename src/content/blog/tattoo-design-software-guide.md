@@ -434,8 +434,14 @@ Tattoo design software serves multiple purposes:
 
 Start with Procreate on iPad for the best balance of capability, portability, and value. Add specialised tools as your workflow demands.
 
-## Managing Your Tattoo Business
+## Running a Tattoo Studio?
 
-While design software handles the creative side, [MyTattoo.Software](/tattoo-studio-software/) manages the business side—bookings, client records, and studio operations. Check out [Tattoo Booking Software](/tattoo-booking-software/).
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
 [Start your free trial](/contact/) and focus more on your art, less on administration.

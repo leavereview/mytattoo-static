@@ -378,8 +378,14 @@ A proper tattoo consent form should include:
 
 Invest in getting this right. A solid consent form protects your business, demonstrates professionalism, and ensures clients make informed decisions.
 
-## Streamline Your Studio Administration
+## Running a Tattoo Studio?
 
-Managing consent forms, appointments, and client records takes time. [MyTattoo.Software](/tattoo-studio-software/) handles digital consent forms, booking, and studio management in one platform.
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
 [Start your free trial](/contact/) and see how much easier running a tattoo studio can be.

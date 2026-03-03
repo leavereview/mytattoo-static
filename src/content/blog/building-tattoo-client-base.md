@@ -63,7 +63,7 @@ The tattoo community is surprisingly supportive. Build relationships with:
 
 ## Make Booking Easy
 
-You'd be surprised how many potential clients you lose because booking is difficult. [Tattoo booking software](/blog/best-tattoo-booking-software/) can help streamline this process. Ensure:
+You'd be surprised how many potential clients you lose because booking is difficult. [Tattoo booking software](/tattoo-booking-software/) can help streamline this process. Ensure:
 
 - Your contact info is easy to find
 - You respond quickly to enquiries
@@ -91,4 +91,16 @@ Building a solid client base takes 2-3 years of consistent effort. Don't get dis
 
 Success in tattooing isn't just about artistic skill - it's about business fundamentals. Keep improving, keep showing up, and the clients will come. Every established artist you admire went through the same journey.
 
-Managing a growing client base efficiently? [Tattoo studio software](/blog/best-tattoo-studio-software/) helps you track bookings, deposits, and client history so you can focus on your art.
+Managing a growing client base efficiently? [Tattoo studio software](/tattoo-studio-software/) helps you track bookings, deposits, and client history so you can focus on your art.
+
+---
+
+## Running a Tattoo Studio?
+
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists

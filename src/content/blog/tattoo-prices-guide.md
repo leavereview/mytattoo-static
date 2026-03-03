@@ -273,6 +273,8 @@ Your pricing should:
 
 Don't race to the bottom on price. Clients who choose solely on price are rarely your best clients. Build a reputation for quality work, and price-conscious clients will be replaced by value-conscious ones.
 
+Looking to manage pricing, bookings, and client records in one place? [Tattoo booking software](/tattoo-booking-software/) makes it easy.
+
 ---
 
 **Related**: [How Much Do Tattoo Artists Make](/blog/how-much-do-tattoo-artists-make/) | [Building Your Tattoo Client Base](/blog/building-tattoo-client-base/)

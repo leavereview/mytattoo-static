@@ -447,8 +447,14 @@ Effective tattoo booking requires:
 
 The right systems free artists to focus on tattooing while providing professional client experiences.
 
-## Ready to Streamline Your Booking?
+## Running a Tattoo Studio?
 
-Managing appointments, deposits, and client communication shouldn't consume your day. [MyTattoo.Software](/tattoo-booking-software/) handles booking, reminders, and client management so you can focus on art.
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
 [Start your free trial](/contact/) and see how much easier studio management can be.

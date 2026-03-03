@@ -127,9 +127,7 @@ Extremely low prices often indicate inexperience or unsafe practices. Quality ta
 
 Most artists offer consultations to assess your design and provide accurate estimates. Many charge consultation fees that apply toward the final cost.
 
-## Ready to Streamline Your Pricing?
-
-[MyTattoo.Software](/tattoo-studio-software/) helps artists and shop owners manage pricing, bookings, and client relationships efficiently. See how [Tattoo Artist Software](/tattoo-artist-software/) can help.
+Managing your studio's pricing, bookings, and client records? [Tattoo studio software](/tattoo-studio-software/) brings it all together.
 
 **Related Articles:**
 - [Do You Tip Tattoo Artists?](/blog/do-you-tip-tattoo-artists/)

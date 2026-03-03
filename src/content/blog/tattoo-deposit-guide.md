@@ -326,8 +326,14 @@ Tattoo deposits:
 
 Understanding deposits helps create clear expectations between clients and studios, leading to better experiences for everyone.
 
-## Streamline Your Deposit Management
+## Running a Tattoo Studio?
 
-Tracking deposits, managing cancellations, and maintaining clear records takes time. [MyTattoo.Software](/tattoo-booking-software/) handles deposit collection, booking management, and client communication automatically.
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
 [Start your free trial](/contact/) and see how much easier studio management can be.

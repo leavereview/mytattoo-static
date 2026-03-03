@@ -202,6 +202,8 @@ Your tip is part of this relationship. A generous tipper who's pleasant to work 
 
 Your tattoo artist creates permanent art on your body. Their skill, time, and personal investment deserve recognition. When budgeting for a tattoo, factor in the tip as part of the total cost—not an afterthought.
 
+Are you a tattoo artist looking to manage bookings and client relationships more efficiently? [Tattoo artist software](/tattoo-artist-software/) is purpose-built for independent artists.
+
 ---
 
 **Related**: [Do You Tip Tattoo Artists?](/blog/do-you-tip-tattoo-artists/) | [How Much Do Tattoos Cost?](/blog/how-much-do-tattoos-cost-pricing-guide/)

@@ -109,10 +109,16 @@ Some apprenticeships are paid, some are unpaid, and some charge fees ($5,000-$15
 
 While some basics can be self-taught, professional apprenticeship is strongly recommended for safety, technique, and industry connections.
 
-## Ready to Start Your Journey?
+## Running a Tattoo Studio?
 
-As you build your career, professional tools become essential. [MyTattoo.Software](/tattoo-artist-software/) helps new artists manage bookings, build client relationships, and establish professional practices from day one. Learn more about [Tattoo Booking App](/tattoo-booking-app/). Learn more about [Tattoo Booking Software](/tattoo-booking-software/). Learn more about [Tattoo Scheduling Software](/tattoo-scheduling-software/). See how [Tattoo Studio Software](/tattoo-studio-software/) can help.
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
 **Related Articles:**
 - [How Much Do Tattoo Artists Make?](/blog/how-much-do-tattoo-artists-make/)
-- [Tattoo Artist Software](/tattoo-artist-software/)
+- [Tattoo Apprenticeship Guide](/blog/tattoo-apprenticeship-guide/)

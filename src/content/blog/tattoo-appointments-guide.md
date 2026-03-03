@@ -344,8 +344,14 @@ A great tattoo appointment involves:
 
 Understanding the full process helps you get the best tattoo possible while enjoying the experience.
 
-## Streamline Your Studio's Booking
+## Running a Tattoo Studio?
 
-For studios looking to improve client experience, [MyTattoo.Software](/tattoo-booking-software/) provides online booking, automated reminders, and client management that makes every appointment run smoothly. Check out [Tattoo Studio Software](/tattoo-studio-software/).
+If you manage a studio, the right software saves hours every week:
+
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
+- **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
 [Start your free trial](/contact/) and see how better systems create better experiences.

@@ -101,5 +101,4 @@ Understanding proper tipping etiquette helps create positive experiences for eve
 
 **Related Articles:**
 - [How Much Do Tattoos Cost?](/blog/how-much-do-tattoos-cost-pricing-guide/)
-- [Tattoo Booking Software](/tattoo-booking-software/)
- Learn more about [Tattoo Booking App](/tattoo-booking-app/).
+- [How Much to Tip a Tattoo Artist?](/blog/how-much-to-tip-tattoo-artist/)
