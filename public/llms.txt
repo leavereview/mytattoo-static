@@ -1,0 +1,33 @@
+# MyTattoo
+
+> Tattoo studio management software for artists and studios — online booking, digital consent forms, client management, and deposit collection in one platform.
+
+MyTattoo helps independent tattoo artists and studio owners automate bookings, collect deposits upfront, handle digital consent forms, and build a client database. Used by 800+ artists. Reduces no-shows by 40%. 14-day free trial, no credit card required.
+
+## Core Pages
+
+- [Home](https://mytattoo.software/): Product overview, features, testimonials, and free trial
+- [Tattoo Studio Software](https://mytattoo.software/tattoo-studio-software/): Full product overview — booking, consent forms, client management, deposits, and billing
+- [Pricing](https://mytattoo.software/pricing/): Solo Artist plan for independent tattooists; Studio plan for multi-artist studios
+- [About](https://mytattoo.software/about/): Product story and mission
+- [Contact](https://mytattoo.software/contact/): Start free trial or ask a question
+
+## Feature Pages
+
+- [Tattoo Booking Software](https://mytattoo.software/tattoo-booking-software/): Online booking system with deposit collection, availability management, and automatic confirmation emails
+- [Tattoo Booking App](https://mytattoo.software/tattoo-booking-app/): Mobile app for managing appointments, client messages, and session details on the go
+- [Tattoo Artist Software](https://mytattoo.software/tattoo-artist-software/): Tools for independent tattoo artists — portfolio management, client cards, and booking links
+- [Tattoo Scheduling Software](https://mytattoo.software/tattoo-scheduling-software/): Studio-wide session scheduling with multi-artist calendar views and conflict detection
+
+## Tools
+
+- [Tattoo Studio Revenue Calculator](https://mytattoo.software/tattoo-studio-calculator/): Free calculator to model studio revenue, session pricing, utilisation rates, and profitability projections
+
+## Blog
+
+- [Blog](https://mytattoo.software/blog/): 22 guides covering tattoo studio management, pricing strategy, client care, aftercare advice, and design trends
+
+## Legal
+
+- [Privacy Policy](https://mytattoo.software/privacy-policy/)
+- [Terms of Service](https://mytattoo.software/terms/)
