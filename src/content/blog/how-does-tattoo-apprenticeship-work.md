@@ -224,4 +224,8 @@ If you manage a studio, the right software saves hours every week:
 - **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
 - **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
-**Related**: [How to Become a Tattoo Artist](/blog/how-to-become-a-tattoo-artist/) | [Piercing Apprenticeship Guide](/blog/piercing-apprenticeship-guide/)
+## Related Articles
+
+- [Tattoo Artist Software: Tools for Independent Artists](/tattoo-artist-software/)
+- [How to Become a Tattoo Artist](/blog/how-to-become-a-tattoo-artist/)
+- [Piercing Apprenticeship Guide](/blog/piercing-apprenticeship-guide/)

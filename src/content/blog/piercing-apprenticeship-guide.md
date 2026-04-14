@@ -213,4 +213,8 @@ A piercing apprenticeship is an investment in your future. The training takes ti
 
 ---
 
-**Related**: [How to Become a Tattoo Artist](/blog/how-to-become-a-tattoo-artist/) | [Tattoo Apprenticeship Guide](/blog/how-does-tattoo-apprenticeship-work/)
+## Related Articles
+
+- [Tattoo Artist Software: Tools for Independent Artists](/tattoo-artist-software/)
+- [How to Become a Tattoo Artist](/blog/how-to-become-a-tattoo-artist/)
+- [Tattoo Apprenticeship: Complete UK Guide](/blog/tattoo-apprenticeship-guide/)
