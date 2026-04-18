@@ -58,14 +58,14 @@ function isActive(href: string): boolean {
         <a href="/contact/" class="btn-primary text-sm">Start Free Trial</a>
       </div>
 
-      <button type="button" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" id="mobile-menu-btn" aria-label="Open menu">
+      <button type="button" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
       </button>
     </div>
   </div>
 
   <div class="md:hidden hidden" id="mobile-menu">
-    <div class="px-4 py-4 bg-white border-t border-gray-100 shadow-lg">
+    <div class="px-4 py-4 bg-white border-t border-gray-100 shadow-lg overflow-y-auto overscroll-contain max-h-[calc(100dvh-4rem)]">
       {navLinks.map((link) => (
         <div>
           <a href={link.href} class:list={['block px-4 py-3 rounded-lg font-medium', isActive(link.href) ? 'text-brand-red bg-brand-red-light' : 'text-gray-600 hover:bg-gray-50']}>{link.label}</a>
@@ -81,5 +81,32 @@ function isActive(href: string): boolean {
 <script>
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  mobileBtn?.addEventListener('click', () => { mobileMenu?.classList.toggle('hidden'); });
+
+  let isOpen = false;
+
+  function openMenu() {
+    isOpen = true;
+    mobileMenu?.classList.remove('hidden');
+    mobileBtn?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    isOpen = false;
+    mobileMenu?.classList.add('hidden');
+    mobileBtn?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  mobileBtn?.addEventListener('click', () => {
+    if (isOpen) closeMenu();
+    else openMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isOpen) {
+      closeMenu();
+      (mobileBtn as HTMLElement)?.focus();
+    }
+  });
 </script>
