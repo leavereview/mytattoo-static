@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Design Software Guide"
-description: "Explore tattoo design software options for creating and presenting designs. From iPad apps to desktop programs, find the right digital tools for your artwork."
+description: "Best tattoo design tools compared: Procreate, Adobe Fresco, Inkscape and others — strengths, learning curves, and what working artists actually use."
 image: /images/blog-designs.jpg
 date: "2026-02-06"
 tags: ["Software"]

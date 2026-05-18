@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Studio Software Guide"
-description: "Everything you need to know about tattoo studio software. Compare features, pricing, and find the right solution for your shop."
+description: "Tattoo studio software in 2026: what to look for (booking, deposits, consent), platforms compared by price (£29-£99/mo), and the features worth paying for."
 image: /images/blog-software.jpg
 date: "2026-01-14"
 tags: ["Software", "Business"]

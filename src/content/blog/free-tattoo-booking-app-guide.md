@@ -1,6 +1,6 @@
 ---
 title: "Free Tattoo Booking App Guide"
-description: "Discover the best free tattoo booking apps for your studio. Compare features, benefits, and find the perfect solution to streamline your appointments."
+description: "Free tattoo booking apps compared: hidden limits on bookings, deposits, and clients. Which work for solo artists, which to avoid, and when free stops being free."
 image: /images/blog-booking.jpg
 date: "2026-01-15"
 tags: ["Software"]

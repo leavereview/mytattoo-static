@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Deposits: Complete Guide"
-description: "Understand tattoo deposits: why studios charge them, typical amounts, refund policies, and how they protect both artists and clients."
+description: "Tattoo deposits explained: typical 20-30% non-refundable rate, rescheduling rules, and the policy wording that prevents disputes and reduces no-shows."
 image: /images/blog-consultation.jpg
 date: "2026-02-06"
 tags: ["Booking", "Pricing"]

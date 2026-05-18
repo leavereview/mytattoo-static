@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Appointment Guide"
-description: "Complete guide to tattoo appointments. Learn what happens during your session, how to prepare, aftercare essentials, and what makes a great tattoo experience."
+description: "What to expect from your tattoo appointment: session timeline, pre-tattoo prep checklist, and the 14-day aftercare schedule that protects ink quality."
 image: /images/blog-client.jpg
 date: "2026-01-23"
 tags: ["Client Care"]

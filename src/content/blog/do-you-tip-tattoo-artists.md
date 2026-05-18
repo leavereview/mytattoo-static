@@ -1,6 +1,6 @@
 ---
 title: "Tipping Tattoo Artists Guide"
-description: "Learn proper tipping etiquette for tattoo artists. Discover when, how much, and why tipping matters in tattoo shops."
+description: "How much should you tip a tattoo artist? UK custom is 10-20% of the final price — when to tip more, when it's optional, and why deposit-paying clients still tip."
 image: /images/blog-tips.jpg
 date: "2026-01-12"
 tags: ["Pricing", "Client Care"]
@@ -29,7 +29,7 @@ The tipping question is more culturally loaded in the UK than in the US. British
 
 ### Building Long-Term Relationships
 
-Consistent, generous tippers often find themselves with practical advantages over time:
+Studios that use [tattoo studio software](/tattoo-studio-software/) with built-in tip prompts make this easier — clients see a clear tip option at checkout rather than fumbling for cash. Consistent, generous tippers often find themselves with practical advantages over time:
 - Priority booking access when the artist has high demand
 - More flexibility if you need to reschedule
 - Extra attention on detailed or challenging elements

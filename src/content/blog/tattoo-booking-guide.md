@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Booking Guide (2026)"
-description: "Master tattoo appointment booking for your studio. Learn about booking systems, deposits, consultations, and workflow management."
+description: "Build a tattoo booking system that cuts no-shows and protects your time. Deposit policies, consultation workflows, and self-serve online booking — what works in 2026."
 image: /images/blog-booking.jpg
 date: "2026-01-30"
 tags: ["Booking", "Business"]

@@ -1,6 +1,6 @@
 ---
 title: "Best Tattoo Booking Software for Studios"
-description: "Compare the top tattoo booking software options. Features, pricing, and honest reviews to help you choose the right platform for your studio."
+description: "Compare tattoo booking platforms by price (£29-£99/mo), no-show reduction, and deposit handling. Honest reviews to help you pick the right one in under 5 minutes."
 image: /images/blog-booking.jpg
 date: "2026-01-12"
 tags: ["Software"]

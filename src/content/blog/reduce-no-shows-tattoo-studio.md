@@ -1,6 +1,6 @@
 ---
 title: "Reduce Tattoo Studio No-Shows"
-description: "No-shows cost tattoo artists time and money. Learn proven strategies to reduce missed appointments and protect your income."
+description: "Cut tattoo no-shows by up to 70%. Deposit policies, automated reminders, and rebooking tactics that protect your time and revenue."
 image: /images/blog-consultation.jpg
 date: "2024-12-15"
 tags: ["Business", "Booking"]

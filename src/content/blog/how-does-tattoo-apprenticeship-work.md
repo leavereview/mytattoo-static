@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Apprenticeship Guide"
-description: "Everything you need to know about tattoo apprenticeships. Find out what to expect, how long it takes, costs, and how to land an apprenticeship."
+description: "Tattoo apprenticeships explained: typical 2-4 year timeline, what you'll do day-to-day, costs to expect, and how to approach shops without being ignored."
 image: /images/blog-apprentice.jpg
 date: "2026-01-10"
 tags: ["Career"]

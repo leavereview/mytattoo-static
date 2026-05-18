@@ -1,6 +1,6 @@
 ---
 title: "Tattoo Pricing Strategy Guide"
-description: "How to price your tattoo work profitably. Learn about hourly rates, flat fees, minimum charges, and pricing strategies that work."
+description: "Set tattoo prices that pay you fairly: UK hourly rates (£80-£200), when to use flat fees, why minimums filter out time-wasters, and how to defend pricing."
 image: /images/blog-pricing.jpg
 date: "2026-01-11"
 tags: ["Pricing", "Business"]

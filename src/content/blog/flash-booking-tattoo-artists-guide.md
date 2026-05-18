@@ -1,6 +1,6 @@
 ---
 title: "Flash Booking Guide for Artists"
-description: "Master flash booking to fill cancellations and boost revenue. Learn pricing, promotion, and management strategies that successful tattoo artists use."
+description: "Fill cancellations with flash booking. Pricing approach (£60-£250), Instagram promotion tactics, and the booking flow that converts views to deposits."
 image: /images/blog-flash.jpg
 date: "2026-01-15"
 tags: ["Booking", "Business"]

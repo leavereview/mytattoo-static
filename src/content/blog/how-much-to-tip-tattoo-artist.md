@@ -1,6 +1,6 @@
 ---
 title: "How Much to Tip Tattoo Artists"
-description: "Tattoo tipping etiquette explained. Learn how much to tip, when to tip, and what factors affect the appropriate tip amount."
+description: "How much to tip a tattoo artist — UK and US standards (10-25%), when 20%+ is expected, when tipping isn't customary, and cash vs card etiquette."
 image: /images/blog-tips.jpg
 date: "2026-01-09"
 tags: ["Pricing"]

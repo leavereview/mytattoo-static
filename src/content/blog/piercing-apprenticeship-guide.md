@@ -1,6 +1,6 @@
 ---
 title: "Piercing Apprenticeship Guide"
-description: "Complete guide to becoming a professional piercer. Learn about apprenticeships, certifications, costs, and what to expect from training."
+description: "Become a professional piercer: typical apprenticeship length, startup costs, bloodborne pathogen certification, and how to land a first studio placement."
 image: /images/blog-piercing.jpg
 date: "2026-01-13"
 tags: ["Career"]
