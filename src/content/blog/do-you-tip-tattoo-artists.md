@@ -9,7 +9,7 @@ author: "MyTattoo Team"
 
 Picture this: you've just finished a stunning tattoo session, your artist puts down their machine, and you're admiring your fresh ink in the mirror. Then comes that moment of uncertainty — do you tip tattoo artists?
 
-The short answer is yes, tipping tattoo artists is standard practice and genuinely appreciated. Here's everything you need to know, including the nuances that vary by country, session type, and scenario.
+The short answer is yes, tipping tattoo artists is standard practice and genuinely appreciated. Here's everything you need to know, including the nuances that vary by country, session type, and scenario — plus how the right [tattoo studio software](/tattoo-studio-software/) makes leaving (and collecting) a tip effortless.
 
 ## Why Tipping Tattoo Artists Matters
 

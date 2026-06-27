@@ -34,8 +34,8 @@ function formatTagForDisplay(tag: string): string {
 
 const displayTag = formatTagForDisplay(tag);
 
-// noindex sparse tags (fewer than 5 posts) to avoid thin content penalties
-const shouldNoindex = posts.length < 5;
+// noindex all tag pages — thin archive pages dilute topical authority
+const shouldNoindex = true;
 
 // Tag descriptions for SEO
 const tagDescriptions: Record<string, string> = {

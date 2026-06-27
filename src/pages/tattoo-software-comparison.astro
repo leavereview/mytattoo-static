@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+// Feature-by-feature comparison across the main platforms tattoo artists actually consider.
+// Columns: Feature | MyTattoo | Booksy | Mindbody | Square Appointments
+const comparisonData = [
+  { label: 'Built specifically for tattoo studios', values: [true, false, false, false], highlight: true },
+  { label: 'Tattoo consent & medical-history forms', values: [true, false, false, false], highlight: true },
+  { label: 'Reference image upload at booking', values: [true, false, false, false], highlight: true },
+  { label: 'Automatic deposit collection', values: [true, true, true, true] },
+  { label: 'Custom deposit & cancellation policies', values: [true, true, true, true] },
+  { label: 'SMS & email reminders', values: [true, true, true, true] },
+  { label: '24/7 online booking', values: [true, true, true, true] },
+  { label: 'Instagram bio booking link', values: [true, true, true, true] },
+  { label: 'Multi-artist studio calendars', values: [true, true, true, true] },
+  { label: 'No marketplace commission on new-client bookings', values: [true, false, false, true], highlight: true },
+  { label: 'Free entry tier', values: [false, false, false, true] },
+];
+
+const faqItems = [
+  {
+    question: "What is the best tattoo studio software?",
+    answer: "The best tattoo software depends on your studio, but the key question is whether a platform is built for tattooing or adapted from generic salon booking. MyTattoo.Software is purpose-built for tattoo studios — it handles digital consent forms, reference image uploads, multi-hour sessions, and tattoo-specific deposit policies out of the box. Booksy, Mindbody, and Square Appointments are capable general booking tools, but you bolt tattoo-specific workflows on yourself.",
+    links: [
+      { text: 'Tattoo studio software guide', url: '/tattoo-studio-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "How does MyTattoo compare to Booksy for tattoo artists?",
+    answer: "Booksy is a booking marketplace popular with barbers and beauty professionals, and many tattoo artists use it for its discovery features. The trade-off is that Booksy is built around the beauty industry and its Boost feature takes a commission (around 30%) on the first booking from a new client who finds you through its marketplace — and it has no tattoo consent forms or reference image collection. MyTattoo.Software charges a flat monthly fee with no marketplace commission and includes tattoo-specific features Booksy doesn't.",
+    links: [
+      { text: 'Tattoo booking software', url: '/tattoo-booking-software/' }
+    ]
+  },
+  {
+    question: "Is Mindbody good for tattoo studios?",
+    answer: "Mindbody is a powerful platform, but it's designed for fitness studios, spas, and wellness businesses. It's one of the most expensive options, the feature set is heavy for a tattoo studio, and it lacks tattoo-specific workflows like consent forms and reference uploads. For most tattoo studios it's more software than you need at a higher price than you'd want to pay.",
+    links: [
+      { text: 'Tattoo studio software', url: '/tattoo-studio-software/' }
+    ]
+  },
+  {
+    question: "Can I just use Square Appointments for my tattoo studio?",
+    answer: "You can, and Square Appointments has a genuinely free tier plus solid payment processing. It works for basic scheduling and deposits, but it's a generic appointment tool — there's no tattoo consent form workflow and no reference image collection, and features like no-show protection sit on its paid tiers. It's a reasonable starting point, but you'll outgrow it as your studio's admin needs grow.",
+    links: [
+      { text: 'Compare features', url: '/tattoo-booking-software/' }
+    ]
+  },
+  {
+    question: "Why use tattoo-specific software instead of a generic booking tool?",
+    answer: "Generic tools handle the calendar, but they don't understand how tattoo studios work. Tattoo-specific software collects reference images at booking, captures signed digital consent and medical-history forms, handles half-day and full-day sessions properly, and sets deposit policies that match industry norms. That removes the manual DM chains and paper forms that generic tools leave you managing yourself.",
+    links: [
+      { text: 'Tattoo studio software guide', url: '/tattoo-studio-software/' }
+    ]
+  },
+  {
+    question: "How much does tattoo software cost?",
+    answer: "Tattoo and booking platforms range from free to well over £150 per month. Square Appointments has a genuinely free tier; Booksy starts around £40/month for a solo artist plus marketplace commission on new-client bookings; Mindbody plans start around $99/month and commonly run higher. MyTattoo.Software is £29/month for solo artists and £79/month for studios up to five artists, with unlimited bookings and no per-booking or marketplace fees.",
+    links: [
+      { text: 'Full pricing details', url: '/pricing/' },
+      { text: 'Start free trial', url: '/contact/' }
+    ]
+  },
+  {
+    question: "Which tattoo software is best for a solo artist?",
+    answer: "For a solo artist, the priority is low cost, fast setup, and the tattoo-specific essentials: deposits, reminders, consent forms, and reference uploads. MyTattoo.Software's £29/month Solo Artist plan covers all of these with unlimited bookings. Square Appointments' free tier is a viable budget option if you're happy to manage consent forms and references separately.",
+    links: [
+      { text: 'Tattoo artist software', url: '/tattoo-artist-software/' },
+      { text: 'See pricing', url: '/pricing/' }
+    ]
+  },
+  {
+    question: "Does switching tattoo software lose my existing bookings?",
+    answer: "No. You can run the new system alongside your current one during the transition, pointing your Instagram bio link to the new booking page while existing appointments play out. Most studios switch over a single quiet week. MyTattoo.Software is designed to be set up in around 15 minutes so the changeover is low-risk.",
+    links: [
+      { text: 'Start free trial', url: '/contact/' }
+    ]
+  }
+];
+
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tattoo Software Comparison: MyTattoo vs Booksy vs Mindbody vs Square",
+  "description": "An honest, feature-by-feature comparison of tattoo studio software. Compare MyTattoo, Booksy, Mindbody, and Square Appointments on consent forms, deposits, reference uploads, pricing, and which suits solo artists and studios best.",
+  "author": { "@type": "Organization", "name": "MyTattoo" },
+  "publisher": { "@type": "Organization", "name": "MyTattoo" },
+  "datePublished": "2026-06-17",
+  "dateModified": "2026-06-17"
+};
+---
+
+<BaseLayout
+  title="Tattoo Software Comparison: MyTattoo vs Booksy, Mindbody & Square | MyTattoo"
+  description="Compare the best tattoo studio software side by side. MyTattoo vs Booksy vs Mindbody vs Square Appointments on consent forms, deposits, reference uploads, pricing, and which is best for solo artists and studios."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+  <!-- Breadcrumbs with Schema -->
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Software Comparison', href: '/tattoo-software-comparison/' }
+    ]}
+  />
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Comparison</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Software Comparison</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          An honest, feature-by-feature comparison of the platforms tattoo artists actually consider — <strong>MyTattoo</strong>, Booksy, Mindbody, and Square Appointments. See which handles consent forms, deposits, and multi-hour sessions, and which is best value for solo artists and studios.
+        </p>
+        <p class="text-gray-400 mb-8">Last updated: June 2026 | Reading time: 7 minutes</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="#comparison" class="btn-secondary text-lg px-8 py-4">See Feature Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Answer -->
+  <FeaturedAnswer question="What is the best tattoo software?">
+    The best tattoo software is a platform built specifically for tattoo studios rather than adapted from generic salon booking. MyTattoo.Software handles digital consent forms, reference image uploads, multi-hour sessions, and tattoo-specific deposit policies out of the box. Booksy, Mindbody, and Square Appointments are capable general booking tools, but you add the tattoo-specific workflows yourself.
+  </FeaturedAnswer>
+
+  <!-- Comparison Table -->
+  <section id="comparison" class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-5xl mx-auto">
+        <ComparisonTable
+          title="Tattoo Software Compared, Feature by Feature"
+          description="MyTattoo is purpose-built for tattoo studios. Booksy, Mindbody, and Square are general booking platforms used across many industries."
+          headers={['Feature', 'MyTattoo', 'Booksy', 'Mindbody', 'Square']}
+          rows={comparisonData}
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto prose prose-lg">
+
+        <h2 class="text-3xl font-bold text-brand-navy mb-6">How We Compared Tattoo Software</h2>
+
+        <p>Most "tattoo software" lists rank generic booking tools that happen to be used by some tattoo artists. That misses the point. A tattoo studio has needs a hair salon doesn't: signed consent and medical-history forms, reference images attached to each booking, multi-hour and full-day sessions, and deposit policies built around expensive, time-intensive work.</p>
+
+        <p>So this comparison judges each platform on two things — the <strong>booking fundamentals</strong> every studio needs (online booking, deposits, reminders, multi-artist calendars) and the <strong>tattoo-specific workflows</strong> that separate purpose-built software from a generic calendar.</p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">MyTattoo.Software</h2>
+
+        <p><strong>Best for:</strong> tattoo studios and serious solo artists who want everything in one place.</p>
+
+        <p>MyTattoo.Software is built specifically for tattoo studios. Online booking, automatic deposit collection, SMS and email reminders, digital consent forms, reference image upload, and multi-artist calendars all come as standard — there's nothing to bolt on. Pricing is a flat £29/month for solo artists and £79/month for studios up to five artists, with unlimited bookings and no cut taken on individual appointments.</p>
+
+        <p>The trade-off: there's no free tier and no public marketplace to discover new clients the way Booksy has. If you already drive bookings through Instagram and your own following, that's not a problem; if you rely on a marketplace to find new clients, factor that in.</p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Booksy</h2>
+
+        <p><strong>Best for:</strong> artists who want a discovery marketplace and are happy in a beauty-industry tool.</p>
+
+        <p>Booksy is a booking marketplace popular with barbers and beauty professionals, and plenty of tattoo artists use it for its client-discovery features and polished mobile app. It handles deposits, reminders, and Instagram links well.</p>
+
+        <p>The limitations are that it's designed for the beauty industry, not tattooing — there are no tattoo consent forms and no reference image collection at booking. It also runs a discovery marketplace: when a new client finds you through Booksy and books, its "Boost" feature takes a commission on that first appointment (around 30%) on top of your monthly subscription, which starts at roughly £40/month for a solo artist.</p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Mindbody</h2>
+
+        <p><strong>Best for:</strong> larger multi-service businesses that already live in the wellness ecosystem.</p>
+
+        <p>Mindbody is a heavyweight platform built for fitness studios, spas, and wellness businesses. It's powerful and well-established, with deep scheduling, memberships, and reporting. For a tattoo studio, though, it's usually the wrong shape: it's one of the most expensive options — plans start around $99/month and real-world costs commonly run higher — it also charges a marketplace commission on bookings sourced through its app, the feature set is heavy for what a tattoo studio needs, and it has no tattoo-specific workflows like consent forms or reference uploads.</p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Square Appointments</h2>
+
+        <p><strong>Best for:</strong> budget-conscious solo artists getting started.</p>
+
+        <p>Square Appointments has a genuinely useful free tier and excellent, reliable payment processing through the wider Square ecosystem. For a solo artist who just needs an online calendar and a way to take deposits, it's a sensible starting point.</p>
+
+        <p>But it's a generic appointments tool. There's no tattoo consent form workflow and no reference image collection, and several scheduling features — no-show protection, waitlists, confirmations — sit on the paid Plus and Premium tiers rather than the free plan. Many artists start on Square and move to tattoo-specific software once the manual admin around consent forms and references starts eating their time. See our <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">tattoo booking software guide</a> for how that workflow should actually work.</p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Which Should You Choose?</h2>
+
+        <ul class="space-y-3">
+          <li><strong>Running a studio with multiple artists?</strong> MyTattoo.Software — consent forms, references, and multi-artist calendars without per-booking fees.</li>
+          <li><strong>Solo artist on a tight budget?</strong> Start with Square Appointments' free tier, or go straight to MyTattoo's £29/month plan to avoid outgrowing it.</li>
+          <li><strong>Rely on a marketplace for new clients?</strong> Booksy's discovery features may justify its model, but you'll manage consent and references separately.</li>
+          <li><strong>Already a multi-service wellness business?</strong> Mindbody can work, but it's overkill and overpriced for a pure tattoo studio.</li>
+        </ul>
+
+        <p>For a full breakdown of what tattoo-specific software should include, read our <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">complete tattoo studio software guide</a>, or work out the revenue impact of deposits with our <a href="/tattoo-studio-calculator/" class="text-brand-red hover:underline">studio revenue calculator</a>.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <FAQEnhanced
+      site="tattoo"
+      pageUrl="https://mytattoo.software/tattoo-software-comparison/"
+      title="Tattoo Software Comparison — Common Questions"
+      faqs={faqItems}
+    />
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Try the Software Built for Tattoo Studios</h2>
+      <p class="text-xl mb-8 opacity-90">Consent forms, reference uploads, deposits, and multi-artist calendars — all in one place, with no per-booking fees. See why studios switch to MyTattoo.Software.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
+      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+    </div>
+  </section>
+
+  <!-- Related Content -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-studio-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Studio Software Guide</h3>
+          <p class="text-gray-600 text-sm">The complete platform for tattoo shops and studios</p>
+        </a>
+        <a href="/tattoo-booking-software/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Booking Software Guide</h3>
+          <p class="text-gray-600 text-sm">Online booking, deposits, and reducing no-shows</p>
+        </a>
+        <a href="/pricing/" class="card p-6 hover:shadow-lg transition-shadow">
+          <h3 class="font-bold text-brand-navy mb-2">Pricing</h3>
+          <p class="text-gray-600 text-sm">Flat monthly plans with no per-booking fees</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
