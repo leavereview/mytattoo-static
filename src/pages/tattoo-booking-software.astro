@@ -6,40 +6,32 @@ import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-// Tattoo Booking Industry Statistics
+// MyTattoo.Software product facts (honest — the product is in early access)
 const bookingStats = [
   {
-    label: 'UK Tattoo Studios',
-    value: '2,000+',
-    change: { value: 12, direction: 'up' as const, period: 'since 2020' },
-    context: 'Licensed tattoo parlours and studios'
+    label: 'Client Account',
+    value: 'None needed',
+    context: 'Clients book with just their contact details'
   },
   {
-    label: 'No-Show Rate (No Deposit)',
-    value: '25%',
-    context: 'Average appointment no-show without deposits'
+    label: 'Deposit',
+    value: 'Required to confirm',
+    context: 'The appointment lands on your calendar only once the deposit clears'
   },
   {
-    label: 'No-Show Reduction',
-    value: '70%',
-    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
-    context: 'When deposits and reminders are used'
+    label: 'Platform Fee',
+    value: '£0',
+    context: 'You keep your deposit'
   },
   {
-    label: 'Admin Time Saved',
-    value: '10+ hrs',
-    change: { value: 10, direction: 'up' as const, period: 'weekly' },
-    context: 'With automated booking and reminders'
+    label: 'Payments',
+    value: 'Stripe',
+    context: 'Card details never touch our servers'
   },
   {
-    label: 'Instagram Booking Link Conversion',
-    value: '40%',
-    context: 'Bio link to booking vs 15% for DM booking'
-  },
-  {
-    label: 'Average Deposit Amount',
-    value: '£50-100',
-    context: 'Typical deposit for tattoo session booking'
+    label: 'Access',
+    value: 'Early access',
+    context: 'Onboarding independent tattoo artists by invitation'
   }
 ];
 
@@ -56,7 +48,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'SMS & Email Reminders',
+    label: 'Email Notifications',
     values: [true, false, false]
   },
   {
@@ -68,7 +60,7 @@ const comparisonData = [
     values: [true, true, false]
   },
   {
-    label: 'Digital Consent Forms',
+    label: 'No Client Account Needed',
     values: [true, false, false]
   },
   {
@@ -80,11 +72,11 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Calendar Sync (Google/iCal)',
-    values: [true, true, false]
+    label: 'Deposit-Gated Calendar',
+    values: [true, false, false]
   },
   {
-    label: 'Booking Analytics',
+    label: 'Deposits Received List',
     values: [true, false, false]
   }
 ];
@@ -93,39 +85,39 @@ const comparisonData = [
 const faqItems = [
   {
     question: "What is tattoo booking software?",
-    answer: "Tattoo booking software lets clients book appointments online 24/7, pay deposits, and receive automatic confirmations. It replaces DMs, phone calls, and manual scheduling with an automated system that works while you sleep. Modern platforms integrate with Instagram, collect deposits at booking, and send automated SMS reminders.",
+    answer: "Tattoo booking software lets clients request an appointment online, attach reference images, and pay a deposit — without DMs, phone calls, or manual scheduling. MyTattoo.Software turns your Instagram bio link into a branded booking page: the client leaves their details and references, you send back a quote and time slot, and the appointment is confirmed once they pay the deposit.",
     links: [
-      { text: 'View all features', url: '/features/' },
+      { text: 'See how it works', url: '/tattoo-artist-software/' },
       { text: 'See pricing', url: '/pricing/' }
     ]
   },
   {
     question: "How much does tattoo booking software cost?",
-    answer: "Tattoo booking software typically costs £20-80 per month. MyTattoo.Software offers flat monthly pricing (Solo Artist £29, Studio £79) with unlimited bookings—no per-booking fees that punish your success. All plans include deposit collection, automated reminders, and Instagram integration.",
+    answer: "Tattoo booking software typically costs £20-80 per month across the market. MyTattoo.Software is currently in early access, with pricing confirmed when you get in touch — the goal is flat, predictable pricing rather than per-booking fees that punish your success.",
     links: [
       { text: 'Full pricing details', url: '/pricing/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get early access', url: '/contact/' }
     ]
   },
   {
     question: "Can clients pay deposits when booking?",
-    answer: "Yes, good tattoo booking software collects deposits automatically at the time of booking. This dramatically reduces no-shows by 70% because clients have financial commitment from the start. You can set custom deposit amounts (flat £50 or percentage like 20%) and define your cancellation policy.",
+    answer: "Yes — with MyTattoo.Software, the appointment only lands on your calendar once the client has paid the deposit you set. That gives clients real financial commitment from the start, which is exactly what cuts down no-shows. You set the deposit amount as part of the quote you send back, along with your cancellation terms.",
     links: [
-      { text: 'Deposit management features', url: '/features/' }
+      { text: 'How deposits work', url: '/blog/tattoo-deposit-guide/' }
     ]
   },
   {
     question: "Will booking software reduce no-shows?",
-    answer: "Yes, deposit collection combined with automated SMS reminders reduces no-shows by 70% or more. A £50 deposit makes clients much more likely to show up or properly cancel. The system sends reminders 48 hours, 24 hours, and 2 hours before appointments, giving clients multiple chances to confirm or reschedule.",
+    answer: "Deposits give clients financial commitment, which is the main lever for reducing no-shows — a client who has paid to hold a slot is far more likely to turn up or give proper notice. MyTattoo.Software also sends email confirmations at every step (request received, offer sent, deposit paid), so nothing gets missed in a DM thread.",
     links: [
-      { text: 'Reminder features', url: '/features/' }
+      { text: 'Reducing no-shows guide', url: '/blog/reduce-no-shows-tattoo-studio/' }
     ]
   },
   {
     question: "Can I use booking software with Instagram?",
-    answer: "Absolutely. Put your booking link in your Instagram bio and link stickers. Clients tap the link, see your real-time availability, and book instantly without DM back-and-forth. Instagram bio link bookings convert at 40% vs 15% for DM-based booking.",
+    answer: "Yes — that's the core of how MyTattoo.Software works. Put your booking link in your Instagram bio and link stickers. Clients tap the link, land on your branded booking page, and leave their details and references without any DM back-and-forth.",
     links: [
-      { text: 'Instagram integration', url: '/features/' }
+      { text: 'Booking page details', url: '/tattoo-artist-software/' }
     ]
   },
   {
@@ -144,24 +136,23 @@ const faqItems = [
   },
   {
     question: "Is there booking software for tattoo studios with multiple artists?",
-    answer: "Yes. Studio plans support multiple artists with individual calendars, booking pages, and deposit settings. Clients select their preferred artist (or choose 'first available') when booking. The Studio Plan (£79/month) handles up to 5 artists.",
+    answer: "Not currently — MyTattoo.Software today is built for the independent artist working solo: one calendar, one booking page, deposit-secured from request to confirmed appointment. If you run a multi-artist studio, our studio software guide covers what to look for in the meantime.",
     links: [
-      { text: 'Studio plan details', url: '/pricing/' },
-      { text: 'Multi-artist features', url: '/tattoo-studio-software/' }
+      { text: 'Studio software guide', url: '/tattoo-studio-software/' }
     ]
   },
   {
     question: "What happens if a client cancels?",
-    answer: "You define the cancellation policy. Typically: free cancellation with 48+ hours notice, deposit forfeit with 24-48 hours notice, full deposit forfeit for no-shows. The software applies your policy automatically and tracks no-shows for repeat offenders.",
+    answer: "You define the cancellation policy when you send the offer. Typically: free cancellation with plenty of notice, deposit forfeit for late cancellations or no-shows. MyTattoo.Software applies whatever policy you've agreed with the client.",
     links: [
-      { text: 'Cancellation policy features', url: '/features/' }
+      { text: 'Cancellation policy guidance', url: '/blog/tattoo-deposit-guide/' }
     ]
   },
   {
     question: "How does tattoo booking software compare to Calendly or Square?",
-    answer: "Generic booking tools lack tattoo-specific features: reference image collection, digital consent forms, proper multi-hour session handling, and deposit policies that match industry norms. Tattoo-specific software is built for how artists actually work, not generic appointments.",
+    answer: "Generic booking tools lack tattoo-specific features: reference image collection at booking and deposit policies that match how tattoo artists actually quote and confirm work. Tattoo-specific software is built for how artists actually work, not generic appointments.",
     links: [
-      { text: 'Compare features', url: '/pricing/' },
+      { text: 'Compare features', url: '/tattoo-software-comparison/' },
       { text: 'Tattoo studio software guide', url: '/tattoo-studio-software/' }
     ]
   }
@@ -183,7 +174,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Booking Software | 24/7 Online Booking & Automatic Deposits | MyTattoo"
-  description="Let clients book online 24/7, collect deposits automatically, and send reminders that cut no-shows by 70%. Built for tattoo studios and independent artists. Try free."
+  description="Let clients book online 24/7 and pay a deposit before the appointment is confirmed. Built for independent tattoo artists. Get early access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -210,7 +201,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -219,7 +210,7 @@ const schemaMarkup = {
 
   <!-- Featured Answer -->
   <FeaturedAnswer question="What is tattoo booking software?">
-    Tattoo booking software lets clients schedule appointments online 24/7, pay deposits automatically, and receive confirmations without DM management. Modern platforms integrate with Instagram, collect deposits at booking, send automated SMS reminders, and reduce no-shows by 70%. Artists save 10+ hours weekly by eliminating phone tag and manual calendar management.
+    Tattoo booking software lets clients request an appointment online and attach reference images, without DM management. MyTattoo.Software turns your Instagram bio link into a branded booking page: clients leave their details, you send back a quote and time slot, and the appointment is confirmed only once they pay the deposit — so it never lands on your calendar unpaid.
   </FeaturedAnswer>
 
   <!-- Statistics Section -->
@@ -283,8 +274,8 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits of Booking Software</h3>
 
         <ul class="space-y-2">
-          <li><strong>24/7 booking</strong> — wake up to confirmed, paid appointments</li>
-          <li><strong>70% fewer no-shows</strong> — deposits and reminders work</li>
+          <li><strong>24/7 booking</strong> — wake up to booking requests, ready to quote</li>
+          <li><strong>Fewer no-shows</strong> — a paid deposit means clients have skin in the game</li>
           <li><strong>Zero scheduling conflicts</strong> — real-time availability updates</li>
           <li><strong>More time for art</strong> — stop being a full-time administrator</li>
         </ul>
@@ -301,13 +292,13 @@ const schemaMarkup = {
           <li><strong>3. Picks available time</strong> — sees your real-time availability, no guessing</li>
           <li><strong>4. Enters their info</strong> — contact details, tattoo description, reference images</li>
           <li><strong>5. Pays deposit</strong> — secure card payment processed instantly</li>
-          <li><strong>6. Receives confirmation</strong> — email and SMS with all appointment details</li>
+          <li><strong>6. Receives confirmation</strong> — an email with all appointment details</li>
         </ol>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What You See</h3>
 
         <ul class="space-y-2">
-          <li>New booking notification (email, SMS, or app)</li>
+          <li>New booking notification by email</li>
           <li>Deposit automatically in your account</li>
           <li>Client info and reference images stored</li>
           <li>Calendar updated with no conflicts</li>
@@ -362,15 +353,15 @@ const schemaMarkup = {
 
         <p>Booking software attacks no-shows from multiple angles—not just deposits.</p>
 
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Automated Reminders</h3>
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Email Notifications</h3>
 
         <ul class="space-y-2">
-          <li><strong>48 hours before:</strong> Email reminder with appointment details</li>
-          <li><strong>24 hours before:</strong> SMS reminder with confirmation request</li>
-          <li><strong>2 hours before:</strong> Final SMS with address and parking info</li>
+          <li><strong>New request:</strong> You're notified the moment a client submits a booking request</li>
+          <li><strong>Offer sent:</strong> The client gets an email with your quote, time slot, and deposit link</li>
+          <li><strong>Deposit paid:</strong> You and the client both get confirmation once the deposit clears</li>
         </ul>
 
-        <p>Studies show that SMS reminders alone reduce no-shows by 30-40%. Combined with deposits, you can cut no-shows by 70% or more.</p>
+        <p>Combined with a deposit requirement, clear communication at every step is what keeps no-shows down — clients know exactly where they stand, and nothing sits unconfirmed in a DM thread.</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Easy Rescheduling</h3>
 
@@ -384,8 +375,8 @@ const schemaMarkup = {
             <p class="text-gray-700 text-sm">Collect payments at booking time. If software doesn't do this, keep looking.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">SMS Reminders</h3>
-            <p class="text-gray-700 text-sm">Email isn't enough. SMS gets opened. Automated reminders reduce no-shows dramatically.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Email Notifications</h3>
+            <p class="text-gray-700 text-sm">Automatic emails on every step — new request, offer sent, deposit paid — for you and the client.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Custom Booking Types</h3>
@@ -396,8 +387,8 @@ const schemaMarkup = {
             <p class="text-gray-700 text-sm">Let clients share inspiration images at booking time, not through separate DMs.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Calendar Sync</h3>
-            <p class="text-gray-700 text-sm">Sync with Google Calendar or iCal. See everything in one place.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Deposit-Gated Calendar</h3>
+            <p class="text-gray-700 text-sm">The appointment only appears on your calendar once the deposit has cleared.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Mobile Friendly</h3>
@@ -415,7 +406,7 @@ const schemaMarkup = {
 
         <ul class="space-y-2">
           <li>Reference image collection at booking</li>
-          <li>Digital consent forms integrated with appointments</li>
+          <li>No client account required to book</li>
           <li>Proper handling of multi-hour sessions</li>
           <li>Deposit policies that match industry norms</li>
         </ul>
@@ -425,7 +416,7 @@ const schemaMarkup = {
         <ul class="space-y-2">
           <li><strong>Per-booking fees:</strong> Punishes success. Flat monthly is better.</li>
           <li><strong>No deposit collection:</strong> The most important feature. Non-negotiable.</li>
-          <li><strong>No SMS reminders:</strong> Email-only reminders get ignored.</li>
+          <li><strong>No confirmation emails:</strong> Clients and artists should both know where a booking stands.</li>
           <li><strong>Complicated setup:</strong> If it takes more than an hour to configure, it's too complex.</li>
         </ul>
 
@@ -464,9 +455,9 @@ const schemaMarkup = {
   <section class="section bg-gradient-to-r from-brand-red to-blood-deep text-white">
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Stop Chasing Bookings?</h2>
-      <p class="text-xl mb-8 opacity-90">MyTattoo.Software lets clients book 24/7 with automatic deposits. Wake up to confirmed appointments instead of full DM inboxes.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
-      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+      <p class="text-xl mb-8 opacity-90">MyTattoo.Software lets clients book 24/7 and pay a deposit before it's confirmed. Wake up to booking requests instead of full DM inboxes.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
     </div>
   </section>
 

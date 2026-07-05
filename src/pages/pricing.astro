@@ -1,98 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-
-// Pricing tiers
-const pricingTiers = [
-  { name: 'Solo Artist Plan', description: 'For independent tattoo artists', monthlyPrice: 29, popular: false },
-  { name: 'Studio Plan', description: 'For tattoo studios', monthlyPrice: 79, popular: true }
-];
-
-// Offer schemas
-const offerSchemas = pricingTiers.map((tier) => ({
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": `https://mytattoo.software/pricing/#${tier.name.toLowerCase().replace(/\s+/g, '-')}`,
-  "name": tier.name,
-  "description": `${tier.description}. All features included.`,
-  "price": tier.monthlyPrice,
-  "priceCurrency": "GBP",
-  "priceSpecification": {
-    "@type": "UnitPriceSpecification",
-    "price": tier.monthlyPrice,
-    "priceCurrency": "GBP",
-    "unitText": "month",
-    "billingIncrement": 1
-  },
-  "priceValidUntil": "2026-12-31",
-  "availability": "https://schema.org/InStock",
-  "url": "https://mytattoo.software/contact/",
-  "seller": {
-    "@type": "Organization",
-    "name": "MyTattoo.Software"
-  },
-  "itemOffered": {
-    "@type": "SoftwareApplication",
-    "name": "MyTattoo.Software",
-    "applicationCategory": "BusinessApplication"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Free Trial",
-      "value": "14 days"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Setup Fee",
-      "value": "No"
-    }
-  ]
-}));
-
-// Free trial schema
-const freeTrialSchema = {
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://mytattoo.software/pricing/#free-trial",
-  "name": "14-Day Free Trial",
-  "description": "Try MyTattoo.Software free for 14 days. No credit card required.",
-  "price": "0",
-  "priceCurrency": "GBP",
-  "priceValidUntil": "2026-12-31",
-  "availability": "https://schema.org/InStock",
-  "url": "https://mytattoo.software/contact/",
-  "eligibleRegion": {
-    "@type": "Place",
-    "name": "United Kingdom"
-  },
-  "itemOffered": {
-    "@type": "SoftwareApplication",
-    "name": "MyTattoo.Software",
-    "applicationCategory": "BusinessApplication"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Trial Duration",
-      "value": "14 days"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Credit Card Required",
-      "value": "No"
-    }
-  ]
-};
 ---
 
-<BaseLayout title="Pricing Plans for Tattoo Software" description="Tattoo studio software from £29/month. All plans include online booking, deposit collection, and unlimited clients. Free 14-day trial, cancel anytime.">
-  <!-- Offer Schemas -->
-  {offerSchemas.map(offerSchema => (
-    <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
-  ))}
-  <script type="application/ld+json" set:html={JSON.stringify(freeTrialSchema)} />
-
+<BaseLayout title="Pricing | MyTattoo.Software" description="MyTattoo.Software is in early access for independent tattoo artists. Get in touch to find out about pricing and access.">
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-3">
     <div class="container-custom">
@@ -110,55 +21,34 @@ const freeTrialSchema = {
     <div class="container-custom relative">
       <div class="max-w-3xl text-center mx-auto">
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Pricing</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h1>
-        <p class="text-xl text-gray-300">All features included. No setup fees. No contracts. Just powerful tattoo studio software.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Pricing</h1>
+        <p class="text-xl text-gray-300">MyTattoo is in early access for independent tattoo artists.</p>
       </div>
     </div>
   </section>
 
   <section class="section bg-white">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="sr-only">Pricing Plans</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="card border-2 border-gray-200">
-            <h3 class="text-xl font-bold text-brand-navy mb-2">Solo Artist</h3>
-            <p class="text-gray-600 mb-4">For independent tattoo artists</p>
-            <div class="text-4xl font-bold text-brand-navy mb-4">£29<span class="text-lg font-normal text-gray-500">/month</span></div>
-            <ul class="text-left space-y-2 mb-6 text-sm">
-              <li>✓ Unlimited clients</li>
-              <li>✓ Online booking</li>
-              <li>✓ Automated reminders</li>
-              <li>✓ Portfolio showcase</li>
-            </ul>
-            <a href="/contact/" class="btn-outline w-full">Start Free Trial</a>
-          </div>
-          <div class="card border-2 border-brand-red">
-            <span class="badge-primary mb-2">Most Popular</span>
-            <h3 class="text-xl font-bold text-brand-navy mb-2">Studio</h3>
-            <p class="text-gray-600 mb-4">For tattoo studios</p>
-            <div class="text-4xl font-bold text-brand-navy mb-4">£79<span class="text-lg font-normal text-gray-500">/month</span></div>
-            <ul class="text-left space-y-2 mb-6 text-sm">
-              <li>✓ Everything in Solo Artist</li>
-              <li>✓ Up to 5 artists</li>
-              <li>✓ Deposit management</li>
-              <li>✓ Business analytics</li>
-            </ul>
-            <a href="/contact/" class="btn-primary w-full">Start Free Trial</a>
-          </div>
-          <div class="card border-2 border-gray-200">
-            <h3 class="text-xl font-bold text-brand-navy mb-2">Enterprise</h3>
-            <p class="text-gray-600 mb-4">For large studios</p>
-            <div class="text-4xl font-bold text-brand-navy mb-4">Custom</div>
-            <ul class="text-left space-y-2 mb-6 text-sm">
-              <li>✓ Everything in Studio</li>
-              <li>✓ Unlimited artists</li>
-              <li>✓ Multi-location support</li>
-              <li>✓ Dedicated support</li>
-            </ul>
-            <a href="/contact/" class="btn-outline w-full">Contact Us</a>
-          </div>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Early access — pricing to follow</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          MyTattoo.Software is in early access, so we're onboarding independent tattoo artists by hand rather than running self-serve plans yet. <a href="/contact/" class="text-brand-red hover:underline">Get in touch</a> and we'll walk you through what's available and what it'll cost.
+        </p>
+        <div class="card border-2 border-brand-red text-left max-w-md mx-auto mb-8">
+          <h3 class="text-xl font-bold text-brand-navy mb-4">What's included</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>✓ Instagram bio-link booking page</li>
+            <li>✓ Reference images + intake form</li>
+            <li>✓ Deposit collection via Stripe</li>
+            <li>✓ Deposit-gated calendar — no booking without a paid deposit</li>
+            <li>✓ Email notifications on request, offer, and paid deposit</li>
+            <li>✓ £0 platform fee — you keep your deposit</li>
+          </ul>
         </div>
+        <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+        <p class="mt-8 text-sm text-gray-500">
+          Read more about the <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">booking software</a>, see it built for <a href="/tattoo-artist-software/" class="text-brand-red hover:underline">independent artists</a>, or browse the <a href="/tattoo-software-comparison/" class="text-brand-red hover:underline">software comparison</a>.
+        </p>
       </div>
     </div>
   </section>

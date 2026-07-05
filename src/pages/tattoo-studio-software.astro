@@ -7,41 +7,11 @@ import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
 const studioStats = [
-  {
-    label: 'UK Tattoo Studios',
-    value: '2,000+',
-    change: { value: 12, direction: 'up' as const, period: 'since 2020' },
-    context: 'Licensed tattoo parlours and studios'
-  },
-  {
-    label: 'Multi-Artist Revenue Increase',
-    value: '35%',
-    change: { value: 35, direction: 'up' as const, period: 'with software' },
-    context: 'Studios with 3+ artists using management software'
-  },
-  {
-    label: 'No-Show Reduction',
-    value: '70%',
-    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
-    context: 'When deposits and reminders are used'
-  },
-  {
-    label: 'Client Retention Rate',
-    value: '68%',
-    change: { value: 23, direction: 'up' as const, period: 'vs industry avg' },
-    context: 'Studios using client management systems'
-  },
-  {
-    label: 'Time Saved Weekly',
-    value: '12+ hrs',
-    change: { value: 65, direction: 'up' as const, period: 'vs manual' },
-    context: 'With digital forms and automated booking'
-  },
-  {
-    label: 'Instagram Bio Link Conversion',
-    value: '40%',
-    context: 'Bio link to booking vs 15% for DM booking'
-  }
+  { label: 'Client Account', value: 'None needed', context: 'Clients book with just their contact details' },
+  { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
+  { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
+  { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
+  { label: 'Access', value: 'Early access', context: 'Onboarding independent tattoo artists by invitation' }
 ];
 
 const comparisonData = [
@@ -51,7 +21,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Digital Consent Forms',
+    label: 'No Client Account Needed',
     values: [true, false, false],
     highlight: true
   },
@@ -61,15 +31,15 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Multi-Artist Calendars',
+    label: 'Deposit-Gated Calendar',
     values: [true, false, false]
   },
   {
-    label: 'Automated Reminders (SMS/Email)',
+    label: 'Email Notifications',
     values: [true, false, false]
   },
   {
-    label: 'Client History & Photos',
+    label: 'Deposits Received List',
     values: [true, false, false]
   },
   {
@@ -77,7 +47,7 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Business Reporting',
+    label: '£0 Platform Fee',
     values: [true, false, false]
   },
   {
@@ -85,7 +55,7 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Aftercare Instructions',
+    label: 'Stripe Secure Payments',
     values: [true, false, false]
   }
 ];
@@ -93,7 +63,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "What is tattoo studio software?",
-    answer: "Tattoo studio software is an all-in-one platform that handles booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops. It replaces paper files, spreadsheets, and scattered DMs with one integrated system. Modern platforms include multi-artist calendar management, digital consent forms, reference image storage, and automated appointment reminders that reduce no-shows by 70%.",
+    answer: "Tattoo studio software is an all-in-one platform that can handle booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops — replacing paper files, spreadsheets, and scattered DMs with one integrated system. At the mature end of the market that includes multi-artist calendar management, digital consent forms, reference image storage, and automated reminders. MyTattoo.Software's own feature set today is more focused: a deposit-gated booking page, reference-image intake, and email notifications at each step — built for the independent artist working solo.",
     links: [
       { text: 'View all features', url: '/features/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -101,39 +71,39 @@ const faqItems = [
   },
   {
     question: "How much does tattoo studio software cost?",
-    answer: "Tattoo studio software typically costs £29-150 per month depending on features and studio size. MyTattoo.Software offers flat monthly pricing with all features included—no per-artist, per-booking, or per-client fees. Multi-artist studios save 35% more revenue compared to manual systems through better booking utilization and reduced no-shows. Most studios achieve positive ROI within the first month.",
+    answer: "Pricing across the market varies widely depending on features and studio size. MyTattoo.Software is currently in early access for independent tattoo artists, and we don't have published self-serve pricing yet — get in touch and we'll talk you through access for your situation.",
     links: [
       { text: 'View pricing plans', url: '/pricing/' },
-      { text: 'Calculate ROI', url: '/contact/' }
+      { text: 'Get in touch', url: '/contact/' }
     ]
   },
   {
     question: "Can clients book appointments online?",
-    answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services (consultation, small piece, large session, touch-up), and pay deposits—all without you lifting a finger. Instagram bio links to booking pages convert at 40% vs 15% for DM-only booking. Clients can book while you sleep, and wake up to confirmed appointments with deposits already collected.",
+    answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services (consultation, small piece, large session, touch-up), and pay deposits—all without you lifting a finger. Clients can book while you sleep, and wake up to confirmed appointments with deposits already collected.",
     links: [
       { text: 'Booking software guide', url: '/tattoo-booking-software/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get early access', url: '/contact/' }
     ]
   },
   {
     question: "Do I need separate software for consent forms?",
-    answer: "No, good tattoo studio software includes digital consent forms that clients sign electronically before appointments. Forms are stored securely in the cloud, linked to client profiles, and include timestamped signatures with IP address logging for legal protection. Digital forms save 2-3 hours weekly vs paper forms and can never be lost. Clients complete health questionnaires before arriving, saving valuable session time.",
+    answer: "Not yet — MyTattoo.Software doesn't have digital consent forms today, so consent still happens however you normally handle it outside the platform. What MyTattoo does collect digitally is the client's reference images and their answers to your intake questions at the time of booking.",
     links: [
-      { text: 'Digital forms guide', url: '/blog/digital-consent-forms/' },
+      { text: 'How digital consent forms work', url: '/blog/digital-consent-forms/' },
       { text: 'Legal compliance', url: '/blog/tattoo-studio-compliance/' }
     ]
   },
   {
     question: "Will this work for a multi-artist studio?",
-    answer: "Yes, tattoo studio software is designed for both solo artists and multi-artist shops. Each artist can have their own calendar, availability settings, service pricing, and client base while studio owners maintain oversight of the whole operation. Studios with 3+ artists using management software see 35% revenue increases through better calendar utilization, reduced scheduling conflicts, and improved client retention.",
+    answer: "Not yet — MyTattoo.Software today is built for the independent artist working solo, with one calendar and one booking page. If you run a multi-artist studio, look for software that gives each artist their own calendar and availability settings, lets the studio owner see all bookings at a glance, and applies consistent deposit and cancellation policies across every artist. We don't offer multi-artist calendar management yet, but it's worth checking for if you're shopping for studio software today.",
     links: [
-      { text: 'Multi-artist features', url: '/features/' },
+      { text: 'See current features', url: '/features/' },
       { text: 'Studio management guide', url: '/blog/managing-tattoo-studio/' }
     ]
   },
   {
     question: "How do deposits reduce no-shows?",
-    answer: "Deposits reduce no-shows by 70% because clients have financial commitment at booking. When deposits are collected automatically during online booking, clients are far less likely to forget or cancel last-minute. A studio doing 100 appointments monthly with 20% no-show rate loses £2,000+ monthly (assuming £100 average deposit). With deposit-based booking, that drops to £600—saving £1,400 monthly or £16,800 annually.",
+    answer: "Deposits reduce no-shows by giving clients financial commitment at the time of booking — once money has changed hands, clients are far less likely to forget or cancel at short notice than if the appointment cost them nothing to make. A studio that starts charging deposits instead of taking bookings with no financial commitment can generally expect to recover a meaningful share of the revenue otherwise lost to no-shows.",
     links: [
       { text: 'No-show reduction strategies', url: '/blog/reduce-no-shows/' },
       { text: 'Deposit best practices', url: '/blog/tattoo-deposits/' }
@@ -141,7 +111,7 @@ const faqItems = [
   },
   {
     question: "Can artists have separate calendars?",
-    answer: "Yes, each artist gets their own calendar with individual availability settings, time off management, and service offerings. Artists can block personal time, set different hourly rates for different services, and manage their own client bookings. Studio owners can view all calendars at once to monitor utilisation, identify gaps, and ensure optimal studio scheduling without micromanaging individual artists.",
+    answer: "Not currently — MyTattoo.Software manages one artist's calendar today. Multi-artist calendar management, with separate calendars per artist and studio-wide oversight, isn't available yet.",
     links: [
       { text: 'Calendar features', url: '/features/' },
       { text: 'Artist software guide', url: '/tattoo-artist-software/' }
@@ -149,18 +119,18 @@ const faqItems = [
   },
   {
     question: "What reports can studio owners access?",
-    answer: "Studio owners get comprehensive business reporting including revenue per artist, booking conversion rates, no-show patterns, popular service types, client retention metrics, and average session values. Reports help identify which artists are busiest, which services are most profitable, peak booking times, and revenue trends. This data-driven approach helps optimize pricing, artist scheduling, and marketing spend for maximum profitability.",
+    answer: "MyTattoo.Software today gives you a simple list of the deposits you've received — not a full reporting dashboard. If you need revenue-per-artist or conversion-rate reporting, that's not built yet.",
     links: [
-      { text: 'Business reporting features', url: '/features/' },
-      { text: 'Studio analytics guide', url: '/blog/tattoo-studio-analytics/' }
+      { text: 'See current features', url: '/features/' },
+      { text: 'Studio analytics: what to track', url: '/blog/tattoo-studio-analytics/' }
     ]
   },
   {
     question: "How long does setup take?",
-    answer: "Most tattoo studios complete setup in 15-30 minutes. You'll add artist profiles, set availability, customize services and pricing, upload your logo, and add the booking link to your Instagram bio. Clients can start booking immediately. For multi-artist studios, each artist spends 5-10 minutes setting their own availability and preferences. No technical skills required—if you can post on Instagram, you can set up MyTattoo.Software.",
+    answer: "Most independent artists complete setup in 15-30 minutes: set your availability, customise your services and pricing, upload your logo, and add the booking link to your Instagram bio. Clients can start submitting booking requests as soon as your page is live. No technical skills required — if you can post on Instagram, you can set up MyTattoo.Software.",
     links: [
       { text: 'Setup guide', url: '/blog/setup-tattoo-booking/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get early access', url: '/contact/' }
     ]
   },
   {
@@ -188,8 +158,8 @@ const schemaMarkup = {
 ---
 
 <BaseLayout
-  title="Tattoo Studio Software | Booking, Client Management & Consent Forms | MyTattoo"
-  description="Save 10+ hrs/week running your tattoo studio. Online booking, digital consent forms, and automatic deposit collection trusted by 800+ artists. Start free 14-day trial."
+  title="Tattoo Studio Software | Deposit-Secured Booking for Tattoo Artists | MyTattoo"
+  description="Deposit-secured online booking for independent tattoo artists. Turn your Instagram bio link into a booking page that's confirmed by a paid deposit. Get early access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -212,11 +182,11 @@ const schemaMarkup = {
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Complete Guide</span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Studio Software</h1>
         <p class="text-xl text-gray-300 mb-4">
-          <strong>Tattoo studio software</strong> brings booking, consent forms, client management, and payments into one platform. Stop juggling DMs, spreadsheets, and paper forms—focus on creating art instead.
+          <strong>Tattoo studio software</strong> brings booking, client intake, and deposit payments into one platform. MyTattoo.Software is built for the independent artist—stop juggling DMs, spreadsheets, and paper forms, and focus on creating art instead.
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 10 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -225,7 +195,7 @@ const schemaMarkup = {
 
   <!-- Featured Answer -->
   <FeaturedAnswer question="What is tattoo studio software?">
-    Tattoo studio software is an all-in-one platform that handles booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops. It replaces paper files and scattered DMs with one integrated system. Multi-artist studios see 35% revenue increases through better calendar utilization, while automated deposits reduce no-shows by 70%. Digital consent forms save 2-3 hours weekly and are never lost.
+    Tattoo studio software is an all-in-one platform that can handle booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops, replacing paper files and scattered DMs with one integrated system. MyTattoo.Software's own current feature set is deliberately narrower: a deposit-gated booking page for the independent artist, where the appointment only lands on your calendar once the client's deposit has cleared, and reference images and intake answers are collected digitally at the point of booking.
   </FeaturedAnswer>
 
   <!-- Statistics Section -->
@@ -277,7 +247,7 @@ const schemaMarkup = {
 
         <div class="bg-bone-hi border-l-4 border-brand-red p-4 my-6">
           <p class="font-bold text-brand-navy">No-shows cost money</p>
-          <p>A single no-show on a $500 session hurts. With a 20% no-show rate (common without deposits), a busy artist loses $2,000+ monthly. Proper booking software with deposits cuts no-shows by 70%.</p>
+          <p>Every no-show is a slot you could have filled with someone else. Taking a booking with no financial commitment from the client makes it easy for them to simply not turn up. Requiring a deposit before the appointment is confirmed gives clients a reason to keep it—or to cancel with enough notice for you to rebook the slot.</p>
         </div>
 
         <ul class="space-y-3">
@@ -290,9 +260,9 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits of Studio Software</h3>
 
         <ul class="space-y-2">
-          <li><strong>70% fewer no-shows</strong> — deposits and automated reminders work</li>
+          <li><strong>Fewer no-shows</strong> — a paid deposit means clients have skin in the game</li>
           <li><strong>24/7 booking</strong> — wake up to confirmed appointments</li>
-          <li><strong>Zero paperwork</strong> — digital consent forms, stored forever</li>
+          <li><strong>No client account needed</strong> — clients book with just their contact details</li>
           <li><strong>More time for art</strong> — automate the admin, focus on tattooing</li>
         </ul>
 
@@ -344,16 +314,16 @@ const schemaMarkup = {
             <p class="text-gray-700 text-sm">24/7 client booking with deposit collection, service selection, and instant confirmation.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Digital Consent Forms</h3>
-            <p class="text-gray-700 text-sm">Clients sign digitally before appointments. Forms stored securely, linked to profiles.</p>
+            <h3 class="font-bold text-brand-navy mb-2">No Client Account Needed</h3>
+            <p class="text-gray-700 text-sm">Clients book with just their contact details — nothing to sign up for.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Client Management</h3>
-            <p class="text-gray-700 text-sm">Contact info, tattoo history, reference images, allergies, and session notes.</p>
+            <p class="text-gray-700 text-sm">Contact info and the references clients share with you at booking, all in one place.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Automated Reminders</h3>
-            <p class="text-gray-700 text-sm">SMS and email reminders reduce no-shows and include prep instructions.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Email Notifications</h3>
+            <p class="text-gray-700 text-sm">Automatic emails at every step — new request, offer sent, deposit paid.</p>
           </div>
         </div>
 
@@ -365,31 +335,30 @@ const schemaMarkup = {
 
         <ol class="space-y-2">
           <li><strong>1. Client visits your booking page</strong> — linked from your Instagram bio, website, or Google listing</li>
-          <li><strong>2. Selects service and artist</strong> — consultation, small piece, large session, touch-up</li>
-          <li><strong>3. Chooses available time</strong> — sees real-time availability, picks what works</li>
-          <li><strong>4. Pays deposit</strong> — card payment collected instantly</li>
-          <li><strong>5. Receives confirmation</strong> — email and SMS with appointment details</li>
+          <li><strong>2. Leaves contact details and fills in your intake form</strong> — with reference images, no account needed</li>
+          <li><strong>3. You review and send an offer</strong> — a time slot, duration, and deposit amount</li>
+          <li><strong>4. Client pays the deposit</strong> — hosted Stripe checkout, card details never touch our servers</li>
+          <li><strong>5. Appointment confirmed</strong> — it lands on your calendar once the deposit clears, with an email confirmation sent</li>
         </ol>
 
         <p>Related: <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software: Complete Guide</a></p>
 
         <h2 id="consent-forms" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Digital Consent Forms</h2>
 
-        <p>Every tattoo requires informed consent. Paper forms work, but they're easy to lose and hard to search. Digital consent forms solve these problems.</p>
+        <p>Every tattoo requires informed consent. Paper forms work, but they're easy to lose and hard to search, which is why many studios eventually move consent digital. <strong>MyTattoo.Software doesn't have digital consent forms today</strong> — that part of your process still happens however you normally handle it outside the platform. What MyTattoo does collect digitally, at the point of booking, is the client's reference images and their answers to your intake questions.</p>
 
-        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits of Digital Forms</h3>
+        <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For in Digital Consent Forms</h3>
 
         <ul class="space-y-2">
-          <li><strong>Never lost:</strong> Forms stored securely in the cloud, accessible forever</li>
+          <li><strong>Never lost:</strong> Stored securely in the cloud instead of a drawer, accessible whenever you need them</li>
           <li><strong>Pre-appointment completion:</strong> Clients sign before arriving, saving session time</li>
-          <li><strong>Health questionnaires:</strong> Capture allergies, medications, conditions automatically</li>
-          <li><strong>Legal protection:</strong> Timestamped signatures with IP address logging</li>
-          <li><strong>Easy retrieval:</strong> Find any consent form in seconds</li>
+          <li><strong>Health questionnaires:</strong> Capture allergies, medications, and conditions in one place</li>
+          <li><strong>Legal protection:</strong> Timestamped signatures with an audit trail</li>
         </ul>
 
         <h2 id="client-management" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Client Management</h2>
 
-        <p>Build lasting client relationships with comprehensive profiles that remember everything.</p>
+        <p>Build lasting client relationships by keeping track of who your clients are and what they've asked for. MyTattoo.Software captures the contact details, reference images, and intake answers a client shares with you at the time of booking — that's what's kept today. It isn't a full client CRM: health info, session notes, and communication history aren't tracked as a dedicated feature. If you want to build a more complete picture of each client over time, here's what's generally worth tracking:</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Track</h3>
 
@@ -413,7 +382,7 @@ const schemaMarkup = {
           <li><strong>Mobile-friendly:</strong> You and your clients live on phones. The software should too.</li>
           <li><strong>Deposit collection:</strong> If it doesn't collect deposits at booking, no-shows will kill you.</li>
           <li><strong>Simple pricing:</strong> Avoid per-booking fees that punish success.</li>
-          <li><strong>Free trial:</strong> Test with real clients before committing.</li>
+          <li><strong>Clear onboarding:</strong> You should know exactly what setup involves and what support looks like before you commit.</li>
         </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Red Flags</h3>
@@ -423,7 +392,6 @@ const schemaMarkup = {
           <li>Per-booking or per-client fees</li>
           <li>No digital consent forms</li>
           <li>Can't store reference images</li>
-          <li>No SMS reminders (or they cost extra)</li>
         </ul>
 
         <h2 id="free" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Is There Free Tattoo Studio Software?</h2>
@@ -433,17 +401,17 @@ const schemaMarkup = {
         <p>The limitations show up fast. The most common deal-breakers with free tattoo software are:</p>
 
         <ul class="space-y-2">
-          <li><strong>No deposit collection:</strong> Most free tiers can't take a deposit at booking—and deposits are the single feature that cuts no-shows by around 70%. Without them, a "free" tool can cost you far more in empty chairs than a paid plan ever would.</li>
+          <li><strong>No deposit collection:</strong> Most free tiers can't take a deposit at booking—and a deposit is what gives a client real financial commitment to show up. Without one, a "free" tool can cost you far more in empty chairs than a paid plan ever would.</li>
           <li><strong>Client caps:</strong> Free plans frequently limit you to a handful of active clients or a small number of bookings per month, which a working studio outgrows almost immediately.</li>
           <li><strong>Per-booking fees:</strong> Many "free" platforms aren't really free—they take 3–5% of every booking. Once you're busy, that percentage quietly becomes more expensive than flat monthly pricing.</li>
           <li><strong>Missing essentials:</strong> Digital consent forms, reference-image storage, SMS reminders, and multi-artist calendars are typically locked behind paid tiers or absent entirely.</li>
         </ul>
 
-        <p>For a hobbyist doing the occasional piece, a free tool might be enough to start. But for any studio taking real bookings, the maths rarely works: one prevented £100 no-show usually covers a month of proper software, and proper software protects dozens of bookings a month. That's why the lowest-risk path isn't a permanently free tool—it's a free trial of software that actually does the job.</p>
+        <p>For a hobbyist doing the occasional piece, a free tool might be enough to start. But for any studio taking real bookings, the maths rarely works: one prevented no-show usually covers a meaningful chunk of a month of proper software, and proper software protects dozens of bookings a month. That's why the lowest-risk path isn't a permanently free tool—it's software built specifically for the realities of running a tattoo studio, even if that means paying for it once you're taking real bookings.</p>
 
-        <p>MyTattoo.Software offers a free 14-day trial with every feature unlocked and no credit card required, so you can set up your booking page, take real deposits, and send real reminders before you pay anything. You get the full picture of how the software performs with your own clients, then choose a simple flat-rate plan with no per-booking fees. It's the honest middle ground between "free but crippled" and "paying blind."</p>
+        <p>MyTattoo.Software is currently in early access for independent tattoo artists. There's no self-serve sign-up or free trial yet—get in touch and we'll talk you through access, so you can find out whether it's a fit before committing to anything.</p>
 
-        <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Works and What Doesn't</a> | <a href="/pricing/" class="text-brand-red hover:underline">See our pricing &amp; free trial</a> | <a href="/blog/best-tattoo-studio-software/" class="text-brand-red hover:underline">Best Tattoo Studio Software Comparison</a></p>
+        <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Works and What Doesn't</a> | <a href="/pricing/" class="text-brand-red hover:underline">See our pricing</a> | <a href="/blog/best-tattoo-studio-software/" class="text-brand-red hover:underline">Best Tattoo Studio Software Comparison</a></p>
 
       </div>
     </div>
@@ -461,9 +429,9 @@ const schemaMarkup = {
   <section class="section bg-gradient-to-r from-brand-red to-blood-deep text-white">
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Run Your Studio Without the Chaos?</h2>
-      <p class="text-xl mb-8 opacity-90">MyTattoo.Software brings booking, consent forms, and client management together in one platform built for tattoo artists.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
-      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 15 minutes.</p>
+      <p class="text-xl mb-8 opacity-90">MyTattoo.Software brings booking, client intake, and deposit payments together in one platform built for the independent tattoo artist.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
     </div>
   </section>
 

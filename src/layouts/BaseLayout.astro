@@ -18,7 +18,7 @@ interface Props {
 
 const {
   title,
-  description = 'MyTattoo.Software - The complete tattoo studio management platform. Booking, client management, consent forms, and deposits.',
+  description = 'MyTattoo.Software - Deposit-secured booking for independent tattoo artists. Turn your Instagram bio link into a reference-attached booking.',
   image = '/images/og-default.jpg',
   type = 'website',
   schemaType,
@@ -35,7 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Dynamic title suffix: skip for long titles, use shorter brand name
 const getTitleSuffix = (pageTitle: string): string => {
-  if (pageTitle === 'Home') return 'MyTattoo.Software - Tattoo Studio Management Software';
+  if (pageTitle === 'Home') return 'MyTattoo.Software - Deposit-Secured Tattoo Booking';
   if (pageTitle.length > 50) return pageTitle; // No suffix for long titles
   return `${pageTitle} | MyTattoo`;
 };
@@ -69,7 +69,7 @@ const schemaOrg = {
         "addressCountry": "GB"
       },
       "foundingDate": "2024",
-      "description": "Complete tattoo studio management software for booking appointments, managing clients, handling consent forms, and collecting deposits."
+      "description": "Deposit-secured booking software for independent tattoo artists — an Instagram bio-link booking page, reference intake, and deposit collection via Stripe."
     },
     {
       "@type": "WebSite",

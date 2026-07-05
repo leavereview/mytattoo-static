@@ -1,23 +1,23 @@
 # MyTattoo
 
-> Tattoo studio management software for artists and studios — online booking, digital consent forms, client management, and deposit collection in one platform.
+> Deposit-secured booking for independent tattoo artists — turn your Instagram bio link into a reference-attached booking that's confirmed by a deposit.
 
-MyTattoo helps independent tattoo artists and studio owners automate bookings, collect deposits upfront, handle digital consent forms, and build a client database. Used by 800+ artists. Reduces no-shows by 40%. 14-day free trial, no credit card required.
+MyTattoo helps independent tattoo artists turn their Instagram bio link into a branded booking page. Clients leave their contact details and reference images with no account needed; the artist reviews and offers a time and deposit; the appointment lands on the calendar only once the deposit clears via Stripe. MyTattoo.Software is currently in early access, onboarding independent tattoo artists by invitation.
 
 ## Core Pages
 
-- [Home](https://mytattoo.software/): Product overview, features, testimonials, and free trial
-- [Tattoo Studio Software](https://mytattoo.software/tattoo-studio-software/): Full product overview — booking, consent forms, client management, deposits, and billing
-- [Pricing](https://mytattoo.software/pricing/): Solo Artist plan for independent tattooists; Studio plan for multi-artist studios
+- [Home](https://mytattoo.software/): Product overview and how the deposit-secured booking flow works
+- [Tattoo Studio Software](https://mytattoo.software/tattoo-studio-software/): Product overview — booking, reference intake, and deposit collection
+- [Pricing](https://mytattoo.software/pricing/): Early access — get in touch for pricing
 - [About](https://mytattoo.software/about/): Product story and mission
-- [Contact](https://mytattoo.software/contact/): Start free trial or ask a question
+- [Contact](https://mytattoo.software/contact/): Get early access or ask a question
 
 ## Feature Pages
 
-- [Tattoo Booking Software](https://mytattoo.software/tattoo-booking-software/): Online booking system with deposit collection, availability management, and automatic confirmation emails
-- [Tattoo Booking App](https://mytattoo.software/tattoo-booking-app/): Mobile app for managing appointments, client messages, and session details on the go
-- [Tattoo Artist Software](https://mytattoo.software/tattoo-artist-software/): Tools for independent tattoo artists — portfolio management, client cards, and booking links
-- [Tattoo Scheduling Software](https://mytattoo.software/tattoo-scheduling-software/): Studio-wide session scheduling with multi-artist calendar views and conflict detection
+- [Tattoo Booking Software](https://mytattoo.software/tattoo-booking-software/): Online booking with deposit collection, reference image upload, and automatic confirmation emails
+- [Tattoo Booking App](https://mytattoo.software/tattoo-booking-app/): Mobile-friendly booking page for managing requests, offers, and deposits from your phone
+- [Tattoo Artist Software](https://mytattoo.software/tattoo-artist-software/): Tools for independent tattoo artists — booking links, reference intake, and deposit-gated calendar
+- [Tattoo Scheduling Software](https://mytattoo.software/tattoo-scheduling-software/): Deposit-gated appointment scheduling for the independent artist
 
 ## Tools
 
@@ -25,7 +25,7 @@ MyTattoo helps independent tattoo artists and studio owners automate bookings, c
 
 ## Blog
 
-- [Blog](https://mytattoo.software/blog/): 22 guides covering tattoo studio management, pricing strategy, client care, aftercare advice, and design trends
+- [Blog](https://mytattoo.software/blog/): Guides covering tattoo studio management, pricing strategy, client care, aftercare advice, and design trends
 
 ## Legal
 

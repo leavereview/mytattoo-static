@@ -101,7 +101,7 @@ Typical paid plans for tattoo-focused software range from £20-£60/month for so
 
 ### Purpose-Built Tattoo Software
 
-Software designed specifically for tattoo studios (like [MyTattoo.Software](/tattoo-studio-software/)) includes the industry-specific features most needed: consent forms, deposit handling, flash booking, and multi-artist calendars. These tools are built around how tattoo businesses actually operate.
+Software designed specifically for tattoo studios (like [MyTattoo.Software](/tattoo-studio-software/)) includes the industry-specific features most needed: deposit handling and reference image collection at the point of booking. These tools are built around how tattoo businesses actually operate.
 
 ### Generic Booking Tools
 
@@ -210,4 +210,4 @@ If you manage a studio, the right software saves hours every week:
 - **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
 - **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
-[Start your free trial](/contact/) and take bookings while you sleep.
+[Get early access](/contact/) and take bookings while you sleep.

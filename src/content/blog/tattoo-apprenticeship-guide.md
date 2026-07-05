@@ -300,11 +300,11 @@ A purpose-built system handles the operational side so you can focus on the work
 
 - **Online booking**: clients book when it suits them, not just during your shop hours
 - **Automated deposit collection**: remove the awkward "can I take a deposit?" conversation
-- **Digital consent forms**: sent in advance, signed before the client arrives
-- **Client records**: skin type notes, previous work, contact details, all in one place
-- **Automated reminders**: significant reduction in no-shows without manual chasing
+- **Reference image intake**: clients attach references and answer your questions before you quote
+- **Contact details and booking history**: kept in one place instead of scattered across DMs
+- **Email notifications**: at every step, so nothing gets missed in a DM thread
 
-[MyTattoo.Software](/tattoo-studio-software/) is built for exactly this — used by independent artists and studios to replace the DMs, PDFs, and spreadsheets that eat up time better spent tattooing. [Start a free 14-day trial](/contact/) when you're ready to run your bookings professionally.
+[MyTattoo.Software](/tattoo-studio-software/) is built for exactly this — for independent artists replacing the DMs, PDFs, and spreadsheets that eat up time better spent tattooing. [Get early access](/contact/) when you're ready to run your bookings professionally.
 
 ---
 

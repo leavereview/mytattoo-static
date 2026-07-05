@@ -7,41 +7,11 @@ import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
 const schedulingStats = [
-  {
-    label: 'Weekly Time Saved',
-    value: '10+ hrs',
-    change: { value: 60, direction: 'up' as const, period: 'vs manual' },
-    context: 'Less time managing bookings via phone/DM'
-  },
-  {
-    label: 'No-Show Reduction',
-    value: '65%',
-    change: { value: 65, direction: 'up' as const, period: 'with reminders' },
-    context: 'Automated SMS/email reminders and deposits'
-  },
-  {
-    label: 'Booking Phone Call Reduction',
-    value: '75%',
-    change: { value: 75, direction: 'up' as const, period: 'with online booking' },
-    context: 'Fewer interruptions during tattooing'
-  },
-  {
-    label: 'After-Hours Bookings',
-    value: '35%',
-    context: 'Of bookings happen outside business hours'
-  },
-  {
-    label: 'Calendar Utilization',
-    value: '92%',
-    change: { value: 18, direction: 'up' as const, period: 'vs manual' },
-    context: 'Better gap-filling and availability management'
-  },
-  {
-    label: 'Admin Time Saved',
-    value: '8+ hrs',
-    change: { value: 55, direction: 'up' as const, period: 'weekly' },
-    context: 'Automated confirmations, reminders, rescheduling'
-  }
+  { label: 'Client Account', value: 'None needed', context: 'Clients book with just their contact details' },
+  { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
+  { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
+  { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
+  { label: 'Access', value: 'Early access', context: 'Onboarding independent tattoo artists by invitation' }
 ];
 
 const comparisonData = [
@@ -51,7 +21,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Automated Reminders (SMS/Email)',
+    label: 'Email Notifications',
     values: [true, false, false],
     highlight: true
   },
@@ -61,7 +31,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Multi-Artist Calendar Management',
+    label: 'Deposit-Gated Calendar',
     values: [true, false, false]
   },
   {
@@ -77,15 +47,15 @@ const comparisonData = [
     values: [true, false, false]
   },
   {
-    label: 'Google Calendar Sync',
-    values: [true, true, false]
-  },
-  {
-    label: 'Waitlist Management',
+    label: 'No Client Account Needed',
     values: [true, false, false]
   },
   {
-    label: 'Mobile App Access',
+    label: 'Deposits Received List',
+    values: [true, false, false]
+  },
+  {
+    label: 'Mobile-Friendly Booking Page',
     values: [true, true, false]
   }
 ];
@@ -93,7 +63,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "What is tattoo scheduling software?",
-    answer: "Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles online booking, calendar management, automated reminders, deposit collection, and multi-artist coordination. Studios save 10+ hours weekly on booking admin and reduce no-shows by 65% with automated SMS reminders. The software prevents double-bookings, optimizes calendar utilization, and lets clients book 24/7.",
+    answer: "Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists, replacing paper diaries and DM-based booking with an online system. MyTattoo.Software's version is built around a simple flow: a client taps your Instagram bio link, lands on your branded booking page, and submits an intake form with reference images. You review the request, set a quote, and offer a time slot — the appointment only lands on your calendar once the client pays their deposit. Email notifications keep you and the client updated at every step.",
     links: [
       { text: 'View all features', url: '/features/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -101,34 +71,34 @@ const faqItems = [
   },
   {
     question: "How does scheduling software reduce no-shows?",
-    answer: "Scheduling software reduces no-shows by 65% through automated SMS and email reminders before appointments. Combined with deposit collection at booking time, clients have financial commitment and timely reminders. Studios can customize reminder timing (e.g., 48 hours + 24 hours + 2 hours before). Clients can confirm or reschedule via reminder links, giving you time to fill cancelled slots.",
+    answer: "No-shows drop when clients have real financial commitment. Requiring a paid deposit before an appointment is confirmed means the client has already put money down, so they're far less likely to skip. MyTattoo.Software sends email notifications at every step — new request, offer sent, deposit paid — so you and the client always have a clear record of what's booked, without you having to chase anyone.",
     links: [
       { text: 'No-show reduction guide', url: '/blog/reduce-no-shows-tattoo-studio/' },
-      { text: 'Reminder settings', url: '/features/' }
+      { text: 'See all features', url: '/features/' }
     ]
   },
   {
     question: "Can clients book appointments themselves?",
-    answer: "Yes, modern tattoo scheduling software includes online booking portals where clients view real-time availability, select services, choose their preferred artist, and book appointments 24/7 without calling or messaging. 35% of bookings happen outside business hours (evenings, weekends). Clients pay deposits at booking and receive instant confirmation. Your Instagram bio link, website, and Google listing all direct to your booking page.",
+    answer: "Yes. With MyTattoo.Software, clients tap your Instagram bio link, land on your branded booking page, and submit their contact details plus an intake form with reference images — no calling or messaging required. You review the request, set a quote, and offer a time slot; once the client pays the deposit, the appointment is confirmed and appears on your calendar. Your Instagram bio link, website, and Google listing can all point to the same booking page.",
     links: [
       { text: 'Booking software guide', url: '/tattoo-booking-software/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get early access', url: '/contact/' }
     ]
   },
   {
     question: "Does scheduling software work for multiple artists?",
-    answer: "Yes, good scheduling software manages individual calendars for each artist while providing studio owners unified oversight. Each artist sets their own availability, service pricing, and working hours. Clients can filter artists by specialty (realism, traditional, blackwork) and book with their preferred artist. The system prevents double-bookings across artists sharing workstations and provides studio-level reporting on utilization and revenue per artist.",
+    answer: "Not currently — MyTattoo.Software today is built for the independent artist working solo: one calendar, one booking page. If you run a multi-artist studio, our studio software guide covers what to look for in the meantime.",
     links: [
-      { text: 'Multi-artist features', url: '/features/' },
+      { text: 'See all features', url: '/features/' },
       { text: 'Studio software guide', url: '/tattoo-studio-software/' }
     ]
   },
   {
     question: "How much does tattoo scheduling software cost?",
-    answer: "Tattoo scheduling software typically costs £20-80 per month depending on features and studio size. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so costs stay predictable as you get busier. Avoid software with per-booking fees (2-5% per appointment) that punish success—these add up to hundreds monthly for busy studios. Most studios achieve positive ROI within 2-3 weeks through time savings and prevented no-shows.",
+    answer: "Tattoo scheduling software generally runs from roughly £20-80 a month depending on features, and some platforms charge per-booking fees instead of a flat rate — worth watching, since those add up as you get busier. MyTattoo.Software is currently in early access for independent tattoo artists: £0 platform fee, and no surcharge added to your client's deposit. Pricing is confirmed when you get in touch.",
     links: [
-      { text: 'View pricing plans', url: '/pricing/' },
-      { text: 'ROI calculator', url: '/contact/' }
+      { text: 'Pricing', url: '/pricing/' },
+      { text: 'Get in touch', url: '/contact/' }
     ]
   },
   {
@@ -141,9 +111,9 @@ const faqItems = [
   },
   {
     question: "What happens to cancelled appointments?",
-    answer: "When appointments are cancelled, the software can automatically notify waitlist clients about the opened slot. You control deposit refund policies (non-refundable, refundable with X days notice, transferable to new booking). The system tracks cancellation patterns to identify chronic cancellers. You can set minimum notice periods (e.g., 48 hours) and enforce deposit forfeiture for late cancellations. Calendar automatically updates and shows the slot as available.",
+    answer: "When an appointment is cancelled, you control the deposit policy — non-refundable, refundable with notice, or transferable to a new booking. You can set minimum notice periods (e.g., 48 hours) and enforce deposit forfeiture for late cancellations. The calendar updates automatically and shows the slot as available again.",
     links: [
-      { text: 'Waitlist features', url: '/features/' },
+      { text: 'See all features', url: '/features/' },
       { text: 'Deposit policies', url: '/blog/tattoo-deposit-guide/' }
     ]
   },
@@ -157,17 +127,17 @@ const faqItems = [
   },
   {
     question: "Does scheduling sync with Google Calendar?",
-    answer: "Yes, most professional scheduling software offers two-way Google Calendar sync. Appointments booked in your tattoo software appear in Google Calendar automatically, and personal events from Google Calendar can block availability in your booking page. This prevents double-bookings when you have personal commitments. Sync also works with Apple iCal and other calendar apps. Changes sync in real-time or within 15 minutes depending on the platform.",
+    answer: "Not currently — appointments live in MyTattoo's own deposit-gated calendar. Two-way sync with Google Calendar or iCal isn't available yet.",
     links: [
-      { text: 'Calendar sync features', url: '/features/' },
-      { text: 'Integration guide', url: '/features/' }
+      { text: 'See all features', url: '/features/' },
+      { text: 'How booking works', url: '/features/' }
     ]
   },
   {
     question: "Can I set different availability for each artist?",
-    answer: "Yes, each artist gets individual availability settings. One artist might work Tuesday-Saturday 12-8pm while another works Monday-Friday 10-6pm. Artists can block personal time off, set recurring unavailability (e.g., every Wednesday morning for therapy), and adjust availability by season. Studio owners can view all artist calendars in unified view to monitor utilization and identify busy/slow periods across the shop.",
+    answer: "MyTattoo.Software today manages one artist's calendar — there's no multi-artist availability management yet. If you're running a multi-artist studio, see our studio software guide for what to look for.",
     links: [
-      { text: 'Multi-artist calendar features', url: '/features/' },
+      { text: 'See all features', url: '/features/' },
       { text: 'Studio management guide', url: '/tattoo-studio-software/' }
     ]
   }
@@ -189,7 +159,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Scheduling Software (2026)"
-  description="Cut no-shows 70% with automated reminders, multi-artist calendars, and online deposits. Tattoo scheduling software used by 800+ UK studios. Start free trial today."
+  description="Let clients book online and pay a deposit before the appointment is confirmed. Built for independent tattoo artists. Get early access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -212,11 +182,11 @@ const schemaMarkup = {
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Appointment Management</span>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Scheduling Software</h1>
         <p class="text-xl text-gray-300 mb-4">
-          <strong>Tattoo scheduling software</strong> eliminates the chaos of manual booking. Let clients book online, send automatic reminders, manage multiple artist calendars, and protect your time with deposits—all from one system.
+          <strong>Tattoo scheduling software</strong> eliminates the chaos of manual booking. Let clients book online, send automatic reminders, and protect your time with deposits—all from one system.
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -225,7 +195,7 @@ const schemaMarkup = {
 
   <!-- Featured Answer -->
   <FeaturedAnswer question="What is tattoo scheduling software?">
-    Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles online booking, calendar management, automated reminders, deposit collection, and multi-artist coordination. Studios save 10+ hours weekly on booking admin and reduce no-shows by 65% with automated SMS reminders. The software prevents double-bookings, optimizes calendar utilization to 92%, and lets clients book 24/7.
+    Tattoo scheduling software is a digital system that manages appointments for tattoo studios and artists. It handles online booking, calendar management, reminders, and deposit collection. MyTattoo.Software's version is built for the independent artist: clients book via your Instagram bio link, submit an intake form, and pay a deposit before the appointment is confirmed — so the software prevents double-bookings and lets clients book 24/7, without you chasing anyone.
   </FeaturedAnswer>
 
   <!-- Statistics Section -->
@@ -280,8 +250,8 @@ const schemaMarkup = {
             <p class="text-gray-700 text-sm">Visual calendar showing all appointments, blocked time, and availability. Easy to reschedule by dragging appointments.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Automated Reminders</h3>
-            <p class="text-gray-700 text-sm">SMS and email reminders sent automatically at set intervals before appointments. Dramatically reduces no-shows.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Email Notifications</h3>
+            <p class="text-gray-700 text-sm">Automatic emails on every step — new request, offer sent, deposit paid.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Deposit Integration</h3>
@@ -311,7 +281,7 @@ const schemaMarkup = {
 
         <div class="bg-bone-hi border-l-4 border-brand-red p-4 my-6">
           <p class="font-bold text-brand-navy">Time is money</p>
-          <p>Studios using scheduling software report spending 60% less time on booking-related tasks. That's time you can spend tattooing, designing, or actually having a life outside the shop.</p>
+          <p>Every DM thread and phone call about availability is time not spent tattooing. Moving booking, quoting, and deposits into one online flow gives that time back.</p>
         </div>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Operational Benefits</h3>
@@ -341,7 +311,7 @@ const schemaMarkup = {
             </div>
             <div style="flex: 1;">
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #17120E; margin: 0 0 0.5rem 0;">Maximize Your Billable Hours</h3>
-              <p style="color: #241B14; margin: 0 0 1rem 0; line-height: 1.6;">See how schedule optimization impacts your revenue. Our calculator shows exactly how improving your booking rate from 55% to 75% translates to thousands in additional annual income.</p>
+              <p style="color: #241B14; margin: 0 0 1rem 0; line-height: 1.6;">See how schedule optimization impacts your revenue. Our calculator shows how improving your booking rate translates into additional annual income.</p>
               <a href="/tattoo-studio-calculator/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #A62B22; font-weight: 600; text-decoration: none;">
                 Calculate Your Booking Potential →
               </a>
@@ -351,25 +321,25 @@ const schemaMarkup = {
 
         <h2 id="multi-artist" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Multi-Artist Studio Management</h2>
         <p class="text-gray-600 mb-6">
-          For studios with multiple artists, scheduling software becomes even more valuable. Each artist needs their own calendar, availability settings, and booking preferences—but the studio needs unified management.
+          MyTattoo.Software today is built for the independent artist working solo — one calendar, one booking page, deposit-secured from request to confirmed appointment. There's no multi-artist studio management yet. If you're comparing options for a multi-artist studio, here's what to look for in scheduling software generally.
         </p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Individual Artist Features</h3>
         <ul class="space-y-2 mb-6">
-          <li><strong>Personal calendars:</strong> Each artist manages their own schedule</li>
-          <li><strong>Style-based booking:</strong> Clients can filter artists by specialty</li>
+          <li><strong>Personal calendars:</strong> Each artist should manage their own schedule</li>
+          <li><strong>Style-based booking:</strong> Clients should be able to filter artists by specialty</li>
           <li><strong>Custom availability:</strong> Different working hours for each artist</li>
-          <li><strong>Portfolio integration:</strong> Show artist work on booking page</li>
-          <li><strong>Individual pricing:</strong> Set rates per artist if they vary</li>
+          <li><strong>Portfolio integration:</strong> Each artist's work shown on the booking page</li>
+          <li><strong>Individual pricing:</strong> Rates set per artist where they vary</li>
         </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Studio-Level Management</h3>
         <ul class="space-y-2 mb-8">
-          <li><strong>Unified view:</strong> See all artist schedules in one place</li>
-          <li><strong>Workstation management:</strong> Prevent conflicts when sharing space</li>
-          <li><strong>Reporting:</strong> Track bookings and revenue by artist</li>
-          <li><strong>Consistent policies:</strong> Apply standard deposits and cancellation rules</li>
-          <li><strong>Guest artist support:</strong> Easily add temporary artists</li>
+          <li><strong>Unified view:</strong> All artist schedules visible in one place</li>
+          <li><strong>Workstation management:</strong> Conflict prevention when artists share space</li>
+          <li><strong>Reporting:</strong> Bookings and revenue tracked by artist</li>
+          <li><strong>Consistent policies:</strong> Standard deposits and cancellation rules across artists</li>
+          <li><strong>Guest artist support:</strong> Easy to add temporary artists</li>
         </ul>
 
       </div>
@@ -399,7 +369,7 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Must-Have Features</h3>
         <ul class="space-y-2 mb-6">
           <li><strong>Online booking:</strong> Clients should book without messaging you</li>
-          <li><strong>Automated reminders:</strong> SMS and email before appointments</li>
+          <li><strong>Automated reminders:</strong> Email before appointments</li>
           <li><strong>Deposit collection:</strong> Integrated payment at booking</li>
           <li><strong>Mobile access:</strong> Manage schedule from your phone</li>
           <li><strong>Calendar sync:</strong> Integrate with your personal calendar</li>
@@ -443,8 +413,8 @@ const schemaMarkup = {
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Take Control of Your Schedule?</h2>
       <p class="text-xl mb-8 opacity-90">Stop the DM chaos. Let clients book online, send automatic reminders, and protect your time with deposits—all in one system.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
-      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 10 minutes.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
     </div>
   </section>
 
