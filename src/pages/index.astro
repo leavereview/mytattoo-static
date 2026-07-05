@@ -197,6 +197,13 @@ const stats = [
   { number: '10+ hrs', label: 'Saved Weekly' },
   { number: '24/7', label: 'Support' }
 ];
+
+const screenshots = [
+  { src: '/images/app/booking-page.png', alt: 'MyTattoo client booking page shown on a mobile phone', caption: 'Your booking page' },
+  { src: '/images/app/offer-deposit.png', alt: 'Deposit-secured booking offer screen shown to a client', caption: 'Deposit-secured offer' },
+  { src: '/images/app/admin-inbox.png', alt: "Artist's inbox of incoming booking requests", caption: 'Your requests inbox' },
+  { src: '/images/app/admin-calendar.png', alt: "Artist's appointment calendar view", caption: 'Your calendar' }
+];
 ---
 
 <BaseLayout title="Tattoo Studio Software | Booking, Consent Forms & Deposits | MyTattoo" description="Never chase deposits again. Automate booking, consent forms & payments for tattoo studios. Reduce no-shows by 40%. Used by 800+ artists. Start free today.">
@@ -225,6 +232,33 @@ const stats = [
           <a href="/tattoo-studio-software/" class="btn-secondary text-lg px-8 py-4">See Features</a>
         </div>
         <p class="mt-6 text-sm text-gray-400">No credit card required • 14-day free trial</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bone">
+    <div class="container-custom">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="badge-primary mb-4">Product Tour</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">See it in action</h2>
+        <p class="text-lg text-text-secondary">From the first booking request to a paid deposit on the calendar — here's the real app, screen by screen.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+        {screenshots.map((shot) => (
+          <div>
+            <div class="aspect-[780/1688] rounded-2xl overflow-hidden bg-ink border border-paper-line shadow-lg">
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width="780"
+                height="1688"
+                loading="lazy"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <p class="mt-3 text-center font-mono text-xs md:text-sm uppercase tracking-wide text-sepia-deep">{shot.caption}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

@@ -2,17 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:focus-visible {
+  outline: 2px solid #A62B22;
+  outline-offset: 2px;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    @apply text-text-primary antialiased;
+    @apply bg-bone text-text-primary antialiased;
     font-feature-settings: "cv11", "ss01";
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1, h2 {
+    @apply font-display tracking-tight;
+  }
+
+  h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
 }
@@ -32,7 +41,7 @@
   }
   
   .btn-secondary {
-    @apply btn bg-white text-brand-navy border-2 border-gray-200;
+    @apply btn bg-bone-hi text-brand-navy border-2 border-gray-200;
     @apply hover:bg-gray-50 hover:border-gray-300 hover:-translate-y-0.5;
   }
   
@@ -42,7 +51,7 @@
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-sm p-6 transition-all duration-200;
+    @apply bg-bone-hi border border-paper-line rounded-xl shadow-sm p-6 transition-all duration-200;
     @apply hover:shadow-md hover:-translate-y-0.5;
   }
   

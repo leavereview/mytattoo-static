@@ -1465,13 +1465,13 @@ const softwareSchema = {
   }
 
   .step-indicator.active .step-number {
-    border-color: #E94560;
-    background: #E94560;
+    border-color: #A62B22;
+    background: #A62B22;
     color: white;
   }
 
   .step-indicator.active .step-label {
-    color: #E94560;
+    color: #A62B22;
   }
 
   .step-indicator.completed .step-number {
@@ -1495,8 +1495,8 @@ const softwareSchema = {
 
   .input:focus {
     outline: none;
-    border-color: #E94560;
-    box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+    border-color: #A62B22;
+    box-shadow: 0 0 0 3px rgba(166, 43, 34, 0.1);
   }
 
   .card {
@@ -1528,7 +1528,7 @@ const softwareSchema = {
   }
 
   input:checked + .toggle-switch {
-    background-color: #E94560;
+    background-color: #A62B22;
   }
 
   input:checked + .toggle-switch::after {
@@ -1548,7 +1548,7 @@ const softwareSchema = {
   }
 
   .artist-card:hover {
-    border-color: #E94560;
+    border-color: #A62B22;
   }
 
   @media (max-width: 768px) {
@@ -2672,9 +2672,9 @@ const softwareSchema = {
             <p class="text-3xl font-bold text-brand-red">${currencySymbol}${formatNumber(util.emptyHoursCost)}</p>
           </div>
         </div>
-        <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
-          <p class="text-sm font-semibold text-blue-900 mb-2">💡 Opportunity</p>
-          <p class="text-sm text-blue-800">Filling just ${formatNumber(util.empty * 0.5)} more hours per month (half your empty time) would add <strong>${currencySymbol}${formatNumber(util.emptyHoursCost * 0.5)}/month</strong> (${currencySymbol}${formatNumber(util.emptyHoursCost * 0.5 * 12)}/year) to your revenue.</p>
+        <div class="mt-6 p-4 bg-bone-hi border-l-4 border-blue-500 rounded-lg">
+          <p class="text-sm font-semibold text-ink mb-2">💡 Opportunity</p>
+          <p class="text-sm text-blood-deep">Filling just ${formatNumber(util.empty * 0.5)} more hours per month (half your empty time) would add <strong>${currencySymbol}${formatNumber(util.emptyHoursCost * 0.5)}/month</strong> (${currencySymbol}${formatNumber(util.emptyHoursCost * 0.5 * 12)}/year) to your revenue.</p>
         </div>
 
         <div class="mt-8 bg-gradient-to-r from-brand-red-light to-white border-l-4 border-brand-red p-6 rounded-lg">
@@ -2721,15 +2721,15 @@ const softwareSchema = {
       <div class="card">
         <h3 class="text-2xl font-bold text-brand-navy mb-6">Profitability</h3>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="p-6 bg-gradient-to-br ${profit.monthly > 0 ? 'from-green-50 to-green-100 border-green-300' : 'from-red-50 to-red-100 border-red-300'} border-2 rounded-xl">
+          <div class="p-6 bg-gradient-to-br ${profit.monthly > 0 ? 'from-green-50 to-green-100 border-green-300' : 'from-bone-hi to-bone-hi border-red-300'} border-2 rounded-xl">
             <p class="text-sm font-semibold ${profit.monthly > 0 ? 'text-green-900' : 'text-red-900'} mb-2">Monthly Profit</p>
-            <p class="text-4xl font-bold ${profit.monthly > 0 ? 'text-green-600' : 'text-red-600'}">${currencySymbol}${formatNumber(profit.monthly)}</p>
-            <p class="text-sm ${profit.monthly > 0 ? 'text-green-700' : 'text-red-700'} mt-1">${profit.monthly > 0 ? '+' : ''}${formatNumber(profit.margin)}% margin</p>
+            <p class="text-4xl font-bold ${profit.monthly > 0 ? 'text-green-600' : 'text-blood'}">${currencySymbol}${formatNumber(profit.monthly)}</p>
+            <p class="text-sm ${profit.monthly > 0 ? 'text-green-700' : 'text-blood-deep'} mt-1">${profit.monthly > 0 ? '+' : ''}${formatNumber(profit.margin)}% margin</p>
           </div>
-          <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl">
-            <p class="text-sm font-semibold text-blue-900 mb-2">Annual Profit</p>
-            <p class="text-4xl font-bold text-blue-600">${currencySymbol}${formatNumber(profit.annual)}</p>
-            <p class="text-sm text-blue-700 mt-1">Projected earnings</p>
+          <div class="p-6 bg-gradient-to-br from-bone-hi to-bone-hi border-2 border-blue-300 rounded-xl">
+            <p class="text-sm font-semibold text-ink mb-2">Annual Profit</p>
+            <p class="text-4xl font-bold text-blood">${currencySymbol}${formatNumber(profit.annual)}</p>
+            <p class="text-sm text-blood-deep mt-1">Projected earnings</p>
           </div>
         </div>
         <div class="mt-6 p-6 bg-brand-red-light rounded-xl">
@@ -2762,18 +2762,18 @@ const softwareSchema = {
         <div class="grid md:grid-cols-2 gap-6 mt-6">
           <div class="p-4 bg-white rounded-lg border-2 border-blue-200">
             <p class="text-sm text-text-tertiary mb-1">Projected Revenue (End of Period)</p>
-            <p class="text-3xl font-bold text-blue-600">${currencySymbol}${formatNumber(summary.endRevenue)}</p>
+            <p class="text-3xl font-bold text-blood">${currencySymbol}${formatNumber(summary.endRevenue)}</p>
             <p class="text-sm text-green-600 mt-1">+${formatNumber(((summary.endRevenue - summary.startRevenue) / summary.startRevenue) * 100)}% growth</p>
           </div>
           <div class="p-4 bg-white rounded-lg border-2 border-green-200">
             <p class="text-sm text-text-tertiary mb-1">Projected Profit (End of Period)</p>
             <p class="text-3xl font-bold text-green-600">${currencySymbol}${formatNumber(summary.endProfit)}</p>
-            <p class="text-sm ${summary.endProfit > summary.startProfit ? 'text-green-600' : 'text-red-600'} mt-1">${summary.endProfit > summary.startProfit ? '+' : ''}${formatNumber(((summary.endProfit - summary.startProfit) / Math.abs(summary.startProfit)) * 100)}% growth</p>
+            <p class="text-sm ${summary.endProfit > summary.startProfit ? 'text-green-600' : 'text-blood'} mt-1">${summary.endProfit > summary.startProfit ? '+' : ''}${formatNumber(((summary.endProfit - summary.startProfit) / Math.abs(summary.startProfit)) * 100)}% growth</p>
           </div>
         </div>
-        <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
-          <p class="text-sm font-semibold text-blue-900 mb-2">💡 Projection Insights</p>
-          <ul class="text-sm text-blue-800 space-y-1">
+        <div class="mt-6 p-4 bg-bone-hi border-l-4 border-blue-500 rounded-lg">
+          <p class="text-sm font-semibold text-ink mb-2">💡 Projection Insights</p>
+          <ul class="text-sm text-blood-deep space-y-1">
             <li>• Average monthly revenue over period: <strong>${currencySymbol}${formatNumber(summary.avgMonthlyRevenue)}</strong></li>
             <li>• Average monthly profit over period: <strong>${currencySymbol}${formatNumber(summary.avgMonthlyProfit)}</strong></li>
             <li>• Total projected profit over period: <strong>${currencySymbol}${formatNumber(summary.totalProfit)}</strong></li>
@@ -2822,15 +2822,15 @@ const softwareSchema = {
         ${minProfit < 0 ? `<line x1="${padding.left}" y1="${zeroLine}" x2="${width - padding.right}" y2="${zeroLine}" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4 4"/>` : ''}
 
         <!-- Revenue line -->
-        <path d="${revenueLine}" fill="none" stroke="#E94560" stroke-width="3"/>
+        <path d="${revenueLine}" fill="none" stroke="#A62B22" stroke-width="3"/>
 
         <!-- Profit line -->
-        <path d="${profitLine}" fill="none" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="8 4"/>
+        <path d="${profitLine}" fill="none" stroke="#17120E" stroke-width="3" stroke-dasharray="8 4"/>
 
         <!-- Data points -->
         ${points.filter((_, i) => i % labelInterval === 0 || i === points.length - 1).map(p => `
-          <circle cx="${p.x}" cy="${p.yRevenue}" r="4" fill="#E94560"/>
-          <circle cx="${p.x}" cy="${p.yProfit}" r="4" fill="#1A1A2E"/>
+          <circle cx="${p.x}" cy="${p.yRevenue}" r="4" fill="#A62B22"/>
+          <circle cx="${p.x}" cy="${p.yProfit}" r="4" fill="#17120E"/>
         `).join('')}
 
         <!-- X-axis labels -->
@@ -2840,11 +2840,11 @@ const softwareSchema = {
 
         <!-- Legend -->
         <g transform="translate(${padding.left + 10}, ${padding.top + 10})">
-          <line x1="0" y1="0" x2="30" y2="0" stroke="#E94560" stroke-width="3"/>
-          <text x="35" y="5" font-size="${fontSize}" fill="#1A1A2E">Revenue</text>
+          <line x1="0" y1="0" x2="30" y2="0" stroke="#A62B22" stroke-width="3"/>
+          <text x="35" y="5" font-size="${fontSize}" fill="#17120E">Revenue</text>
 
-          <line x1="${isMobile ? 100 : 120}" y1="0" x2="${isMobile ? 130 : 150}" y2="0" stroke="#1A1A2E" stroke-width="3" stroke-dasharray="8 4"/>
-          <text x="${isMobile ? 135 : 155}" y="5" font-size="${fontSize}" fill="#1A1A2E">Profit</text>
+          <line x1="${isMobile ? 100 : 120}" y1="0" x2="${isMobile ? 130 : 150}" y2="0" stroke="#17120E" stroke-width="3" stroke-dasharray="8 4"/>
+          <text x="${isMobile ? 135 : 155}" y="5" font-size="${fontSize}" fill="#17120E">Profit</text>
         </g>
       </svg>
     `;
@@ -2881,7 +2881,7 @@ const softwareSchema = {
                   <td class="p-2 text-right font-semibold">${currencySymbol}${formatNumber(artist.grossRevenue)}</td>
                   <td class="p-2 text-right text-green-600">${currencySymbol}${formatNumber(artist.artistTakeHome)}</td>
                   <td class="p-2 text-right text-brand-red font-semibold">${currencySymbol}${formatNumber(artist.studioRetained)}</td>
-                  <td class="p-2 text-right ${artist.utilisation >= 70 ? 'text-green-600' : artist.utilisation >= 50 ? 'text-amber-600' : 'text-red-600'} font-semibold">${formatNumber(artist.utilisation)}%</td>
+                  <td class="p-2 text-right ${artist.utilisation >= 70 ? 'text-green-600' : artist.utilisation >= 50 ? 'text-amber-600' : 'text-blood'} font-semibold">${formatNumber(artist.utilisation)}%</td>
                 </tr>
               `).join('')}
             </tbody>
@@ -2916,10 +2916,10 @@ const softwareSchema = {
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 mt-6">
-          <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl">
-            <p class="text-sm font-semibold text-blue-900 mb-2">Total Gross Revenue</p>
-            <p class="text-4xl font-bold text-blue-600">${currencySymbol}${formatNumber(rev.total)}</p>
-            <p class="text-sm text-blue-700 mt-1">All revenue streams</p>
+          <div class="p-6 bg-gradient-to-br from-bone-hi to-bone-hi border-2 border-blue-300 rounded-xl">
+            <p class="text-sm font-semibold text-ink mb-2">Total Gross Revenue</p>
+            <p class="text-4xl font-bold text-blood">${currencySymbol}${formatNumber(rev.total)}</p>
+            <p class="text-sm text-blood-deep mt-1">All revenue streams</p>
           </div>
           <div class="p-6 bg-gradient-to-br from-brand-red-light to-white border-2 border-brand-red rounded-xl">
             <p class="text-sm font-semibold text-brand-navy mb-2">Studio Retained</p>
@@ -2933,23 +2933,23 @@ const softwareSchema = {
       <div class="card">
         <h3 class="text-2xl font-bold text-brand-navy mb-6">Studio Profitability</h3>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="p-6 bg-gradient-to-br ${profit.monthly > 0 ? 'from-green-50 to-green-100 border-green-300' : 'from-red-50 to-red-100 border-red-300'} border-2 rounded-xl">
+          <div class="p-6 bg-gradient-to-br ${profit.monthly > 0 ? 'from-green-50 to-green-100 border-green-300' : 'from-bone-hi to-bone-hi border-red-300'} border-2 rounded-xl">
             <p class="text-sm font-semibold ${profit.monthly > 0 ? 'text-green-900' : 'text-red-900'} mb-2">Monthly Profit</p>
-            <p class="text-4xl font-bold ${profit.monthly > 0 ? 'text-green-600' : 'text-red-600'}">${currencySymbol}${formatNumber(profit.monthly)}</p>
-            <p class="text-sm ${profit.monthly > 0 ? 'text-green-700' : 'text-red-700'} mt-1">${profit.monthly > 0 ? '+' : ''}${formatNumber(profit.margin)}% margin</p>
+            <p class="text-4xl font-bold ${profit.monthly > 0 ? 'text-green-600' : 'text-blood'}">${currencySymbol}${formatNumber(profit.monthly)}</p>
+            <p class="text-sm ${profit.monthly > 0 ? 'text-green-700' : 'text-blood-deep'} mt-1">${profit.monthly > 0 ? '+' : ''}${formatNumber(profit.margin)}% margin</p>
           </div>
-          <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl">
-            <p class="text-sm font-semibold text-blue-900 mb-2">Annual Profit</p>
-            <p class="text-4xl font-bold text-blue-600">${currencySymbol}${formatNumber(profit.annual)}</p>
+          <div class="p-6 bg-gradient-to-br from-bone-hi to-bone-hi border-2 border-blue-300 rounded-xl">
+            <p class="text-sm font-semibold text-ink mb-2">Annual Profit</p>
+            <p class="text-4xl font-bold text-blood">${currencySymbol}${formatNumber(profit.annual)}</p>
           </div>
         </div>
         <div class="mt-6 p-4 bg-gray-50 border-l-4 border-gray-400 rounded-lg">
           <p class="text-sm font-semibold text-gray-900 mb-2">📊 Industry Benchmark</p>
           <p class="text-sm text-gray-700">Target profit margin for studios: <strong>15-30%</strong>. You're at <strong>${formatNumber(profit.margin)}%</strong>. ${profit.margin >= 15 ? '✓ Within range!' : 'Review costs and commission structures.'}</p>
         </div>
-        <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
-          <p class="text-sm font-semibold text-blue-900 mb-2">💡 Key Insights</p>
-          <ul class="text-sm text-blue-800 space-y-1">
+        <div class="mt-4 p-4 bg-bone-hi border-l-4 border-blue-500 rounded-lg">
+          <p class="text-sm font-semibold text-ink mb-2">💡 Key Insights</p>
+          <ul class="text-sm text-blood-deep space-y-1">
             <li>• Most profitable artist: <strong>${results.insights.mostProfitableArtist.name}</strong> (${currencySymbol}${formatNumber(results.insights.mostProfitableArtist.studioRetained)}/month retained)</li>
             <li>• Highest revenue artist: <strong>${results.insights.highestRevenue.name}</strong> (${currencySymbol}${formatNumber(results.insights.highestRevenue.grossRevenue)}/month)</li>
             <li>• Average artist utilisation: <strong>${formatNumber(results.utilisation.average)}%</strong></li>
@@ -3083,7 +3083,7 @@ const softwareSchema = {
     }
 
     // Header
-    doc.setFillColor(26, 26, 46); // Brand navy
+    doc.setFillColor(23, 18, 14); // Brand ink
     doc.rect(0, 0, pageWidth, 40, 'F');
 
     doc.setTextColor(255, 255, 255);
@@ -3100,7 +3100,7 @@ const softwareSchema = {
 
     // Studio Type
     checkPageBreak(15);
-    doc.setFillColor(233, 69, 96); // Brand red
+    doc.setFillColor(166, 43, 34); // Brand blood
     doc.rect(margin, yPos, contentWidth, 10, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(12);
@@ -3115,7 +3115,7 @@ const softwareSchema = {
 
       // Revenue Summary
       checkPageBreak(60);
-      addText('Revenue Summary', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+      addText('Revenue Summary', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
       yPos += 8;
 
       doc.setDrawColor(229, 231, 235);
@@ -3137,7 +3137,7 @@ const softwareSchema = {
         doc.setFont('helvetica', 'normal');
         doc.text(row[0], margin, yPos);
 
-        doc.setTextColor(233, 69, 96);
+        doc.setTextColor(166, 43, 34);
         doc.setFont('helvetica', 'bold');
         doc.text(row[1], pageWidth - margin, yPos, { align: 'right' });
         yPos += 7;
@@ -3147,7 +3147,7 @@ const softwareSchema = {
 
       // Booking Utilisation
       checkPageBreak(50);
-      addText('Booking Utilisation', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+      addText('Booking Utilisation', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
       yPos += 8;
 
       doc.line(margin, yPos, pageWidth - margin, yPos);
@@ -3166,7 +3166,7 @@ const softwareSchema = {
         doc.setFont('helvetica', 'normal');
         doc.text(row[0], margin, yPos);
 
-        doc.setTextColor(26, 26, 46);
+        doc.setTextColor(23, 18, 14);
         doc.setFont('helvetica', 'bold');
         doc.text(row[1], pageWidth - margin, yPos, { align: 'right' });
         yPos += 7;
@@ -3176,7 +3176,7 @@ const softwareSchema = {
 
       // Costs
       checkPageBreak(50);
-      addText('Operating Costs', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+      addText('Operating Costs', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
       yPos += 8;
 
       doc.line(margin, yPos, pageWidth - margin, yPos);
@@ -3185,7 +3185,7 @@ const softwareSchema = {
       doc.setTextColor(107, 114, 128);
       doc.setFont('helvetica', 'normal');
       doc.text('Total Monthly Costs', margin, yPos);
-      doc.setTextColor(233, 69, 96);
+      doc.setTextColor(166, 43, 34);
       doc.setFont('helvetica', 'bold');
       doc.text(currencySymbol + formatNumber(results.costs.total), pageWidth - margin, yPos, { align: 'right' });
       yPos += 7;
@@ -3193,13 +3193,13 @@ const softwareSchema = {
       doc.setTextColor(107, 114, 128);
       doc.setFont('helvetica', 'normal');
       doc.text('Cost per Client Session', margin, yPos);
-      doc.setTextColor(26, 26, 46);
+      doc.setTextColor(23, 18, 14);
       doc.text(currencySymbol + formatNumber(results.costs.perSession), pageWidth - margin, yPos, { align: 'right' });
       yPos += 10;
 
       // Profitability
       checkPageBreak(50);
-      addText('Profitability', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+      addText('Profitability', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
       yPos += 8;
 
       doc.line(margin, yPos, pageWidth - margin, yPos);
@@ -3229,7 +3229,7 @@ const softwareSchema = {
 
       // Revenue Summary
       checkPageBreak(60);
-      addText('Studio Revenue Summary', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+      addText('Studio Revenue Summary', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
       yPos += 8;
 
       doc.line(margin, yPos, pageWidth - margin, yPos);
@@ -3252,7 +3252,7 @@ const softwareSchema = {
           doc.setFont('helvetica', 'normal');
           doc.text(row[0], margin, yPos);
 
-          doc.setTextColor(233, 69, 96);
+          doc.setTextColor(166, 43, 34);
           doc.setFont('helvetica', 'bold');
           doc.text(row[1], pageWidth - margin, yPos, { align: 'right' });
           yPos += 7;
@@ -3264,14 +3264,14 @@ const softwareSchema = {
       // Per-Artist Performance
       if (results.revenue.artists && results.revenue.artists.length > 0) {
         checkPageBreak(40 + (results.revenue.artists.length * 7));
-        addText('Per-Artist Performance', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+        addText('Per-Artist Performance', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
         yPos += 8;
 
         doc.line(margin, yPos, pageWidth - margin, yPos);
         yPos += 8;
 
         results.revenue.artists.forEach((artist, index) => {
-          doc.setTextColor(26, 26, 46);
+          doc.setTextColor(23, 18, 14);
           doc.setFont('helvetica', 'bold');
           doc.text(`Artist ${index + 1}`, margin, yPos);
           yPos += 6;
@@ -3292,7 +3292,7 @@ const softwareSchema = {
 
       // Profitability
       checkPageBreak(50);
-      addText('Studio Profitability', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [26, 26, 46] });
+      addText('Studio Profitability', margin, yPos, { fontSize: 14, fontStyle: 'bold', color: [23, 18, 14] });
       yPos += 8;
 
       doc.line(margin, yPos, pageWidth - margin, yPos);
@@ -3310,7 +3310,7 @@ const softwareSchema = {
         doc.setFont('helvetica', 'normal');
         doc.text(row[0], margin, yPos);
 
-        const color = row[0].includes('Profit') && results.profit.monthly > 0 ? [16, 185, 129] : [26, 26, 46];
+        const color = row[0].includes('Profit') && results.profit.monthly > 0 ? [16, 185, 129] : [23, 18, 14];
         doc.setTextColor(color[0], color[1], color[2]);
         doc.setFont('helvetica', 'bold');
         doc.text(row[1], pageWidth - margin, yPos, { align: 'right' });
@@ -3372,7 +3372,7 @@ const softwareSchema = {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: #E94560;
+      background: #A62B22;
       color: white;
       border: none;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -3437,7 +3437,7 @@ const softwareSchema = {
         padding: 0.5rem 0.875rem;
         margin-right: 0.5rem;
         background: #F3F4F6;
-        color: #1A1A2E;
+        color: #17120E;
         border: none;
         border-radius: 0.375rem;
         font-size: 0.875rem;
@@ -3452,9 +3452,9 @@ const softwareSchema = {
         // Update active state
         nav.querySelectorAll('button').forEach(b => {
           b.style.background = '#F3F4F6';
-          b.style.color = '#1A1A2E';
+          b.style.color = '#17120E';
         });
-        btn.style.background = '#E94560';
+        btn.style.background = '#A62B22';
         btn.style.color = 'white';
       };
 
