@@ -30,7 +30,7 @@ Generic booking tools (Calendly, Acuity) work for basic scheduling but miss crit
 - Reference image upload at booking
 - Email notifications on request, offer, and paid deposit
 
-**Pricing**: Currently in early access — get in touch for pricing
+**Pricing**: Free while getting started — no platform fee, no per-booking fees
 
 **Pros**:
 - Built specifically for independent tattoo artists

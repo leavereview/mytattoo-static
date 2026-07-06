@@ -221,4 +221,4 @@ If you manage a studio, the right software saves hours every week:
 - **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
 - **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 
-[Get early access](/contact/) and manage pricing, deposits, and invoicing from one place.
+[Get started](https://app.mytattoo.software/signin) and manage pricing, deposits, and invoicing from one place.

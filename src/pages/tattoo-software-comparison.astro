@@ -32,7 +32,7 @@ const faqItems = [
   },
   {
     question: "How does MyTattoo compare to Booksy for tattoo artists?",
-    answer: "Booksy is a booking marketplace popular with barbers and beauty professionals, and many tattoo artists use it for its discovery features. The trade-off is that Booksy is built around the beauty industry and its Boost feature takes a commission (around 30%) on the first booking from a new client who finds you through its marketplace — and it has no tattoo consent forms or reference image collection. MyTattoo.Software is designed around a flat monthly fee, confirmed once you get in touch — early access pricing hasn't been finalised — with no marketplace commission, and includes reference image upload and no-account booking that Booksy doesn't.",
+    answer: "Booksy is a booking marketplace popular with barbers and beauty professionals, and many tattoo artists use it for its discovery features. The trade-off is that Booksy is built around the beauty industry and its Boost feature takes a commission (around 30%) on the first booking from a new client who finds you through its marketplace — and it has no tattoo consent forms or reference image collection. MyTattoo.Software is free while we're getting started — there's no platform fee and no marketplace commission — and it includes reference image upload and no-account booking that Booksy doesn't.",
     links: [
       { text: 'Tattoo booking software', url: '/tattoo-booking-software/' }
     ]
@@ -60,15 +60,15 @@ const faqItems = [
   },
   {
     question: "How much does tattoo software cost?",
-    answer: "Tattoo and booking platforms range from free to well over £150 per month. Square Appointments has a genuinely free tier; Booksy starts around £40/month for a solo artist plus marketplace commission on new-client bookings; Mindbody plans start around $99/month and commonly run higher. MyTattoo.Software is currently in early access, with pricing confirmed when you get in touch — the model is a flat monthly fee with no per-booking or marketplace fees, not a specific published price yet.",
+    answer: "Tattoo and booking platforms range from free to well over £150 per month. Square Appointments has a genuinely free tier; Booksy starts around £40/month for a solo artist plus marketplace commission on new-client bookings; Mindbody plans start around $99/month and commonly run higher. MyTattoo.Software is free while we're getting started — there's no platform fee, no per-booking fee, and no marketplace commission. You connect your own Stripe account, so each client's deposit goes straight to you, with only Stripe's standard card-processing fee applying.",
     links: [
       { text: 'Full pricing details', url: '/pricing/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
     question: "Which tattoo software is best for a solo artist?",
-    answer: "For a solo artist, the priority is low cost, fast setup, and the tattoo-specific essentials: deposits, reminders, consent forms, and reference uploads. MyTattoo.Software is built for exactly this — deposits, reference uploads, and no per-booking fees — with pricing confirmed once you get in touch (it's in early access). Square Appointments' free tier is a viable budget option if you're happy to manage consent forms and references separately.",
+    answer: "For a solo artist, the priority is low cost, fast setup, and the tattoo-specific essentials: deposits, reminders, consent forms, and reference uploads. MyTattoo.Software is built for exactly this — deposits, reference uploads, and no per-booking fees — and it's free while we're getting started, with no platform fee. Square Appointments' free tier is a viable budget option if you're happy to manage consent forms and references separately.",
     links: [
       { text: 'Tattoo artist software', url: '/tattoo-artist-software/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -78,7 +78,7 @@ const faqItems = [
     question: "Does switching tattoo software lose my existing bookings?",
     answer: "No. You can run the new system alongside your current one during the transition, pointing your Instagram bio link to the new booking page while existing appointments play out. Most studios switch over a single quiet week. MyTattoo.Software is designed to be set up in around 15 minutes so the changeover is low-risk.",
     links: [
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   }
 ];
@@ -121,7 +121,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: June 2026 | Reading time: 7 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
           <a href="#comparison" class="btn-secondary text-lg px-8 py-4">See Feature Table</a>
         </div>
       </div>
@@ -162,9 +162,9 @@ const schemaMarkup = {
 
         <p><strong>Best for:</strong> tattoo studios and serious solo artists who want everything in one place.</p>
 
-        <p>Online booking, automatic deposit collection via Stripe, email notifications, and reference image upload all come as standard. MyTattoo.Software today is built for the independent artist working solo — multi-artist studio calendars and digital consent forms aren't available yet. MyTattoo.Software is currently in early access; pricing is confirmed once you get in touch, with the goal of a flat monthly fee and no cut taken on individual appointments.</p>
+        <p>Online booking, automatic deposit collection via Stripe, email notifications, and reference image upload all come as standard. MyTattoo.Software today is built for the independent artist working solo — multi-artist studio calendars and digital consent forms aren't available yet. Signing up is open and self-serve, and MyTattoo.Software is free while we're getting started — no platform fee, and no cut taken on individual appointments. You connect your own Stripe account, so each client's deposit — which you set, and defaults to £50 — goes straight to you, with only Stripe's standard card-processing fee applying.</p>
 
-        <p>The trade-off: there's no free tier and no public marketplace to discover new clients the way Booksy has. If you already drive bookings through Instagram and your own following, that's not a problem; if you rely on a marketplace to find new clients, factor that in.</p>
+        <p>The trade-off: there's no public marketplace to discover new clients the way Booksy has. If you already drive bookings through Instagram and your own following, that's not a problem; if you rely on a marketplace to find new clients, factor that in.</p>
 
         <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Booksy</h2>
 
@@ -192,7 +192,7 @@ const schemaMarkup = {
 
         <ul class="space-y-3">
           <li><strong>Running a studio with multiple artists?</strong> MyTattoo.Software doesn't support multi-artist calendars yet — Booksy, Mindbody, or Square Appointments are the better fit today; check back as MyTattoo's studio features develop.</li>
-          <li><strong>Solo artist on a tight budget?</strong> Start with Square Appointments' free tier, or get in touch about MyTattoo's early-access pricing if you want deposits and reference uploads without per-booking fees.</li>
+          <li><strong>Solo artist on a tight budget?</strong> Start with Square Appointments' free tier, or sign up for MyTattoo — free while we're getting started — if you want deposits and reference uploads without per-booking fees.</li>
           <li><strong>Rely on a marketplace for new clients?</strong> Booksy's discovery features may justify its model, but you'll manage consent and references separately.</li>
           <li><strong>Already a multi-service wellness business?</strong> Mindbody can work, but it's overkill and overpriced for a pure tattoo studio.</li>
         </ul>
@@ -217,9 +217,9 @@ const schemaMarkup = {
   <section class="section bg-gradient-to-r from-brand-red to-blood-deep text-white">
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Try the Software Built for Tattoo Studios</h2>
-      <p class="text-xl mb-8 opacity-90">Reference uploads, deposit-gated bookings, and no per-booking fees — built for the independent tattoo artist. Get early access to MyTattoo.Software.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
-      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
+      <p class="text-xl mb-8 opacity-90">Reference uploads, deposit-gated bookings, and no per-booking fees — built for the independent tattoo artist. Start taking deposit-secured bookings today.</p>
+      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get started</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is deposit-secured booking for independent tattoo artists.</p>
     </div>
   </section>
 
@@ -238,7 +238,7 @@ const schemaMarkup = {
         </a>
         <a href="/pricing/" class="card p-6 hover:shadow-lg transition-shadow">
           <h3 class="font-bold text-brand-navy mb-2">Pricing</h3>
-          <p class="text-gray-600 text-sm">Flat monthly plans with no per-booking fees</p>
+          <p class="text-gray-600 text-sm">No platform fee, no per-booking fees</p>
         </a>
       </div>
     </div>

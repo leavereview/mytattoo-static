@@ -11,7 +11,7 @@ const appStats = [
   { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
   { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
   { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
-  { label: 'Access', value: 'Early access', context: 'Onboarding independent tattoo artists by invitation' }
+  { label: 'Access', value: 'Open now', context: 'Any independent tattoo artist can create an account and start today' }
 ];
 
 const comparisonData = [
@@ -74,7 +74,7 @@ const faqItems = [
     answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything from app stores, and you avoid Apple/Google fees (up to 30% commission on in-app payments). A responsive web-based booking page gives you all the benefits of an app—works on phones, can be added to home screen—without the complications. That's why MyTattoo.Software is built mobile-first as a booking page rather than a native app.",
     links: [
       { text: 'Mobile booking features', url: '/features/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
@@ -95,10 +95,10 @@ const faqItems = [
   },
   {
     question: "How much does a tattoo booking app cost?",
-    answer: "Tattoo booking software typically costs £20-80 per month for solo artists, £80-150 for studios, across the wider market. MyTattoo.Software is currently in early access for independent tattoo artists—pricing is confirmed when you get in touch, and the aim is flat, predictable monthly pricing with no per-booking fees, so costs don't rise as you get busier. Avoid platforms charging 3-5% per booking—these add up to hundreds monthly for busy artists.",
+    answer: "Tattoo booking software typically costs £20-80 per month for solo artists, £80-150 for studios, across the wider market. MyTattoo.Software charges independent tattoo artists nothing while we're getting started—no platform fee, no commission, no per-booking fee, and no monthly subscription. You connect your own Stripe account, so a client's deposit goes straight to you and only Stripe's standard card-processing fee applies. Avoid platforms charging 3-5% per booking—these add up to hundreds monthly for busy artists.",
     links: [
       { text: 'View pricing page', url: '/pricing/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
@@ -138,7 +138,7 @@ const faqItems = [
     answer: "No, tattoo booking apps are designed for artists, not developers. If you can post on Instagram, you can set up booking. Setup takes 10-20 minutes: enter your availability, add service types (consultation, small piece, half-day, full-day), set deposit amounts, upload your logo, get your booking link. Most platforms have onboarding guides with screenshots. You can manage everything from your phone's browser. No coding, no website hosting, no technical knowledge required.",
     links: [
       { text: 'Setup walkthrough', url: '/blog/setup-tattoo-booking/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   }
 ];
@@ -159,7 +159,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Booking App: Mobile Booking, Benefits & Pricing (2026)"
-  description="Let clients book, attach reference images, and pay a deposit—all from their phone. Built for independent tattoo artists. Get early access."
+  description="Let clients book, attach reference images, and pay a deposit—all from their phone. Built for independent tattoo artists. Get started."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -186,7 +186,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -508,7 +508,7 @@ const schemaMarkup = {
           The cheapest way to start is almost always a flat-rate plan with predictable monthly costs: you get full functionality, your costs stay predictable, and you avoid handing over a slice of every deposit. Watch for per-booking fees disguised as low headline pricing, "free" tiers that can't actually take deposits (the one feature that prevents no-shows), and tools that charge extra for SMS reminders.
         </p>
         <p class="text-gray-600 mb-8">
-          MyTattoo.Software is currently in early access for independent tattoo artists. Pricing is confirmed when you get in touch—the goal is simple, flat, predictable pricing with no per-booking fees, so your costs don't rise as you get busier. You can find out more on our <a href="/pricing/" class="text-brand-red hover:underline">pricing page</a>, and model the payback against your own no-show rate with the <a href="/tattoo-studio-calculator/" class="text-brand-red hover:underline">studio revenue calculator</a>.
+          MyTattoo.Software is open to independent tattoo artists, and right now there's no platform fee at all—no commission, no per-booking fee, and no monthly subscription while we're getting started. You connect your own Stripe account, so each deposit (you set the amount, £50 by default) goes straight to you and only Stripe's standard card-processing fee applies. You can find out more on our <a href="/pricing/" class="text-brand-red hover:underline">pricing page</a>, and model the payback against your own no-show rate with the <a href="/tattoo-studio-calculator/" class="text-brand-red hover:underline">studio revenue calculator</a>.
         </p>
 
         <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software</a> | <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software</a> | <a href="/blog/reduce-no-shows-tattoo-studio/" class="text-brand-red hover:underline">Reducing No-Shows Guide</a></p>
@@ -530,8 +530,8 @@ const schemaMarkup = {
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Booking?</h2>
       <p class="text-xl mb-8 opacity-90">Stop losing bookings in your DMs. Give clients the professional booking experience they expect—and protect your time with automatic deposits.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
-      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
+      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get started</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is deposit-secured booking for independent tattoo artists.</p>
     </div>
   </section>
 

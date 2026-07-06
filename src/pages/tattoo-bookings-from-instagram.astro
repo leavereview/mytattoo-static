@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
-import WaitlistForm from '../components/WaitlistForm.astro';
 
 const faqItems = [
   {
@@ -22,7 +21,7 @@ const faqItems = [
   },
   {
     question: "What's the best app for booking tattoo appointments on Instagram?",
-    answer: "The honest answer: most booking apps are built for salons — open slots, instant confirmation, no consult stage — which is exactly wrong for custom tattoo work. Whatever you use needs three things: an intake form that collects references and placement, an approval step so you decide who gets in the chair, and a deposit taken before the slot is confirmed. We're building a tattoo-first tool around exactly that pipeline; the founding cohort waitlist is on this page.",
+    answer: "The honest answer: most booking apps are built for salons — open slots, instant confirmation, no consult stage — which is exactly wrong for custom tattoo work. Whatever you use needs three things: an intake form that collects references and placement, an approval step so you decide who gets in the chair, and a deposit taken before the slot is confirmed. MyTattoo is a tattoo-first tool built around exactly that pipeline, and it's live now.",
     links: [{ text: 'Tattoo booking app guide', url: '/tattoo-booking-app/' }]
   },
   {
@@ -35,7 +34,7 @@ const faqItems = [
 
 <BaseLayout
   title="How to Take Tattoo Bookings from Instagram (Without the DM Chaos)"
-  description="Turn Instagram inquiries into deposited tattoo bookings — without living in your DMs. Intake forms, approval, deposits. Founding cohort waitlist open."
+  description="Turn Instagram inquiries into deposited tattoo bookings — without living in your DMs. Intake forms, approval, deposits. Live now — no platform fee."
 >
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
@@ -158,8 +157,8 @@ const faqItems = [
         </p>
 
         <div class="mt-10">
-          <p class="font-semibold text-brand-navy mb-3">Want the link that does all of this? We're building it — join the waitlist:</p>
-          <WaitlistForm id="waitlist-mid" />
+          <p class="font-semibold text-brand-navy mb-3">Want the link that does all of this? It's live — set yours up in minutes:</p>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary">Get started</a>
         </div>
 
         <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Why salon booking apps don't fix this</h2>
@@ -184,16 +183,16 @@ const faqItems = [
           than raw DMs. It's still three tools pretending to be a pipeline.
         </p>
 
-        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">We're building this — founding cohort open</h2>
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">The tool this page describes — it's live</h2>
         <p>
-          We're building exactly the tool this page describes: tattoo-first, built around the
+          MyTattoo is exactly the tool this page describes: tattoo-first, built around the
           approve-and-deposit pipeline — intake form in your bio link, you approve or decline every inquiry,
-          deposit taken before a slot exists. The first 20 artists get a founder rate locked for life and a
-          direct line to shape what gets built. If your DMs look like the ones at the top of this page,
-          put your email in:
+          deposit taken before a slot exists. It's free while we're getting started — no platform fee, and
+          deposits land straight in your own Stripe. If your DMs look like the ones at the top of this page,
+          set up your link now:
         </p>
         <div class="mt-6">
-          <WaitlistForm id="waitlist-bottom" />
+          <a href="https://app.mytattoo.software/signin" class="btn-primary">Get started</a>
         </div>
 
         <p class="mt-10 text-gray-600">

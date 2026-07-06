@@ -11,7 +11,7 @@ const studioStats = [
   { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
   { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
   { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
-  { label: 'Access', value: 'Early access', context: 'Onboarding independent tattoo artists by invitation' }
+  { label: 'Access', value: 'Open now', context: 'Self-serve sign-up is live for independent tattoo artists' }
 ];
 
 const comparisonData = [
@@ -71,7 +71,7 @@ const faqItems = [
   },
   {
     question: "How much does tattoo studio software cost?",
-    answer: "Pricing across the market varies widely depending on features and studio size. MyTattoo.Software is currently in early access for independent tattoo artists, and we don't have published self-serve pricing yet — get in touch and we'll talk you through access for your situation.",
+    answer: "Pricing across the market varies widely depending on features and studio size. MyTattoo.Software is free while we're getting started — there's no platform fee, no commission, and no monthly subscription. You connect your own Stripe account, your client's deposit goes straight to you, and only Stripe's standard card-processing fee applies. Sign up at app.mytattoo.software and set up your booking page in minutes.",
     links: [
       { text: 'View pricing plans', url: '/pricing/' },
       { text: 'Get in touch', url: '/contact/' }
@@ -82,7 +82,7 @@ const faqItems = [
     answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services (consultation, small piece, large session, touch-up), and pay deposits—all without you lifting a finger. Clients can book while you sleep, and wake up to confirmed appointments with deposits already collected.",
     links: [
       { text: 'Booking software guide', url: '/tattoo-booking-software/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
@@ -130,7 +130,7 @@ const faqItems = [
     answer: "Most independent artists complete setup in 15-30 minutes: set your availability, customise your services and pricing, upload your logo, and add the booking link to your Instagram bio. Clients can start submitting booking requests as soon as your page is live. No technical skills required — if you can post on Instagram, you can set up MyTattoo.Software.",
     links: [
       { text: 'Setup guide', url: '/blog/setup-tattoo-booking/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
@@ -159,7 +159,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Studio Software | Deposit-Secured Booking for Tattoo Artists | MyTattoo"
-  description="Deposit-secured online booking for independent tattoo artists. Turn your Instagram bio link into a booking page that's confirmed by a paid deposit. Get early access."
+  description="Deposit-secured online booking for independent tattoo artists. Turn your Instagram bio link into a booking page that's confirmed by a paid deposit. Get started."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -186,7 +186,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 10 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -409,7 +409,7 @@ const schemaMarkup = {
 
         <p>For a hobbyist doing the occasional piece, a free tool might be enough to start. But for any studio taking real bookings, the maths rarely works: one prevented no-show usually covers a meaningful chunk of a month of proper software, and proper software protects dozens of bookings a month. That's why the lowest-risk path isn't a permanently free tool—it's software built specifically for the realities of running a tattoo studio, even if that means paying for it once you're taking real bookings.</p>
 
-        <p>MyTattoo.Software is currently in early access for independent tattoo artists. There's no self-serve sign-up or free trial yet—get in touch and we'll talk you through access, so you can find out whether it's a fit before committing to anything.</p>
+        <p>MyTattoo.Software is built specifically for the independent tattoo artist — and it's free while we're getting started, with no platform fee, no commission, and no monthly subscription. You connect your own Stripe account so your client's deposit goes straight to you, with only Stripe's standard card-processing fee to pay. Sign up at app.mytattoo.software and set up your booking page in minutes.</p>
 
         <p>Related: <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">Free Tattoo Booking Apps: What Works and What Doesn't</a> | <a href="/pricing/" class="text-brand-red hover:underline">See our pricing</a> | <a href="/blog/best-tattoo-studio-software/" class="text-brand-red hover:underline">Best Tattoo Studio Software Comparison</a></p>
 
@@ -430,8 +430,8 @@ const schemaMarkup = {
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Run Your Studio Without the Chaos?</h2>
       <p class="text-xl mb-8 opacity-90">MyTattoo.Software brings booking, client intake, and deposit payments together in one platform built for the independent tattoo artist.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
-      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
+      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get started</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is deposit-secured booking for independent tattoo artists.</p>
     </div>
   </section>
 

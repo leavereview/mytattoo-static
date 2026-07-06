@@ -304,7 +304,7 @@ A purpose-built system handles the operational side so you can focus on the work
 - **Contact details and booking history**: kept in one place instead of scattered across DMs
 - **Email notifications**: at every step, so nothing gets missed in a DM thread
 
-[MyTattoo.Software](/tattoo-studio-software/) is built for exactly this — for independent artists replacing the DMs, PDFs, and spreadsheets that eat up time better spent tattooing. [Get early access](/contact/) when you're ready to run your bookings professionally.
+[MyTattoo.Software](/tattoo-studio-software/) is built for exactly this — for independent artists replacing the DMs, PDFs, and spreadsheets that eat up time better spent tattooing. [Get started](https://app.mytattoo.software/signin) when you're ready to run your bookings professionally.
 
 ---
 

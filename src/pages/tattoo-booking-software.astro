@@ -6,7 +6,7 @@ import StatisticsSection from '../components/seo/StatisticsSection.astro';
 import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
-// MyTattoo.Software product facts (honest — the product is in early access)
+// MyTattoo.Software product facts (honest — the product is live; sign-up is open and self-serve)
 const bookingStats = [
   {
     label: 'Client Account',
@@ -30,8 +30,8 @@ const bookingStats = [
   },
   {
     label: 'Access',
-    value: 'Early access',
-    context: 'Onboarding independent tattoo artists by invitation'
+    value: 'Open now',
+    context: 'Any independent tattoo artist can sign up now — self-serve'
   }
 ];
 
@@ -93,10 +93,10 @@ const faqItems = [
   },
   {
     question: "How much does tattoo booking software cost?",
-    answer: "Tattoo booking software typically costs £20-80 per month across the market. MyTattoo.Software is currently in early access, with pricing confirmed when you get in touch — the goal is flat, predictable pricing rather than per-booking fees that punish your success.",
+    answer: "Tattoo booking software typically costs £20-80 per month across the market. MyTattoo.Software is free while we're getting started — no platform fee, no commission, no per-booking fee and no monthly subscription right now. You connect your own Stripe account, so your client's deposit goes straight to you; only Stripe's standard card-processing fee applies, and that's Stripe's fee, not ours.",
     links: [
       { text: 'Full pricing details', url: '/pricing/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
@@ -174,7 +174,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Booking Software | 24/7 Online Booking & Automatic Deposits | MyTattoo"
-  description="Let clients book online 24/7 and pay a deposit before the appointment is confirmed. Built for independent tattoo artists. Get early access."
+  description="Let clients book online 24/7 and pay a deposit before the appointment is confirmed. Built for independent tattoo artists. Get started."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -201,7 +201,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -456,8 +456,8 @@ const schemaMarkup = {
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Stop Chasing Bookings?</h2>
       <p class="text-xl mb-8 opacity-90">MyTattoo.Software lets clients book 24/7 and pay a deposit before it's confirmed. Wake up to booking requests instead of full DM inboxes.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
-      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
+      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get started</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is deposit-secured booking for independent tattoo artists.</p>
     </div>
   </section>
 

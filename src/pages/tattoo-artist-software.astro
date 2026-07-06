@@ -29,8 +29,8 @@ const artistStats = [
   },
   {
     label: 'Access',
-    value: 'Early access',
-    context: 'Onboarding independent tattoo artists by invitation'
+    value: 'Open now',
+    context: 'Self-serve sign-up for independent tattoo artists'
   }
 ];
 
@@ -99,7 +99,7 @@ const faqItems = [
   },
   {
     question: "How much does tattoo artist software cost?",
-    answer: "Tattoo artist software typically costs £20-80 per month for solo artists. Look for flat monthly pricing with no per-booking fees—those add up quickly as you get busier. As a rough illustration, preventing even one no-show deposit can be enough to cover several months of a typical subscription. MyTattoo.Software is currently in early access—there's no public self-serve price yet, so get in touch and we'll talk you through it.",
+    answer: "Tattoo artist software typically costs £20-80 per month for solo artists. Look for flat monthly pricing with no per-booking fees—those add up quickly as you get busier. As a rough illustration, preventing even one no-show deposit can be enough to cover several months of a typical subscription. MyTattoo.Software is free while we're getting started—there's no platform fee, no commission, no per-booking fee, and no monthly subscription. You connect your own Stripe account, so each client's deposit (you set the amount—£50 by default) goes straight to you; only Stripe's standard card-processing fee applies. Sign-up is open and self-serve, so you can create your account and be taking bookings in minutes.",
     links: [
       { text: 'View pricing plans', url: '/pricing/' },
       { text: 'ROI calculator', url: '/contact/' }
@@ -117,7 +117,7 @@ const faqItems = [
     question: "Is there free tattoo artist software?",
     answer: "Free options exist but come with severe limitations—usually no deposit collection, limited clients, or no reminders at all. For serious artists, even a modest monthly investment can pay for itself with a single prevented no-show. Free software often charges per-booking fees (3-5%) that cost more than flat monthly pricing once you're busy.",
     links: [
-      { text: 'Get early access', url: '/contact/' },
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' },
       { text: 'Free vs paid comparison', url: '/blog/free-tattoo-booking-app-guide/' }
     ]
   },
@@ -126,7 +126,7 @@ const faqItems = [
     answer: "Most solo artists complete setup in 10-20 minutes. You'll set your availability, customize service types and pricing, upload your logo/banner, and add the booking link to your Instagram bio. Clients can start booking immediately. No technical skills required—if you can post on Instagram, you can set up MyTattoo.Software. You can manage everything from your phone's browser between clients.",
     links: [
       { text: 'Setup guide', url: '/blog/setup-tattoo-booking/' },
-      { text: 'Get early access', url: '/contact/' }
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
     ]
   },
   {
@@ -155,7 +155,7 @@ const faqItems = [
   },
   {
     question: "Can I export my client data?",
-    answer: "Your client data belongs to you, not the software vendor. When you're choosing tattoo software, it's worth checking what export options exist for your client list, appointment history, and contact details, so you're never locked in if you switch tools later. MyTattoo.Software is in early access—if you need your data in a particular format, get in touch and we'll sort it out directly.",
+    answer: "Your client data belongs to you, not the software vendor. When you're choosing tattoo software, it's worth checking what export options exist for your client list, appointment history, and contact details, so you're never locked in if you switch tools later. With MyTattoo.Software, if you need your data in a particular format, get in touch and we'll sort it out directly.",
     links: [
       { text: 'Data ownership policy', url: '/terms/' },
       { text: 'Get in touch about your data', url: '/contact/' }
@@ -179,7 +179,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Artist Software | Booking, Deposits & Client Intake | MyTattoo"
-  description="Stop chasing deposits over Instagram DMs. Automated booking, reference intake, and deposit-gated confirmation built for solo tattoo artists. Get early access."
+  description="Stop chasing deposits over Instagram DMs. Automated booking, reference intake, and deposit-gated confirmation built for solo tattoo artists. Get started."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -206,7 +206,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -485,8 +485,8 @@ const schemaMarkup = {
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Software Built for Artists Like You</h2>
       <p class="text-xl mb-8 opacity-90">MyTattoo.Software gives solo artists professional tools without enterprise complexity. Booking, deposits, and reference intake—all in one place.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
-      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
+      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get started</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is deposit-secured booking for independent tattoo artists.</p>
     </div>
   </section>
 
