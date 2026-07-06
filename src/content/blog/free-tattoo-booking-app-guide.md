@@ -154,7 +154,7 @@ Issues caught at this stage are invisible to clients. Issues discovered after la
 ### Promote It Actively
 
 Having a booking link nobody uses doesn't help. Put it everywhere:
-- Instagram bio link (use a link-in-bio page to combine your booking link with portfolio)
+- Instagram bio link (use a link-in-bio page to combine your booking link with portfolio — here's [how to set up Instagram bookings that actually convert](/tattoo-bookings-from-instagram/))
 - Google Business Profile — add your booking link here directly
 - Facebook page "Book Now" button
 - Your website (obvious, prominent placement)

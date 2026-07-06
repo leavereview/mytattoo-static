@@ -2,6 +2,7 @@
 // Contact Page
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import WaitlistForm from '../components/WaitlistForm.astro';
 
 // ContactPoint Schema
 const contactPointSchema = {
@@ -79,6 +80,22 @@ const contactPointSchema = {
         <p class="text-xl text-gray-300">
           Have questions about MyTattoo? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Early-access waitlist -->
+  <section class="section bg-bone">
+    <div class="container-custom">
+      <div class="max-w-xl mx-auto text-center">
+        <span class="badge-primary mb-4">Early access</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Join the early-access waitlist</h2>
+        <p class="text-lg text-text-secondary mb-8">
+          MyTattoo is onboarding independent artists by hand. Leave your details and we'll be in touch — the first 20 artists get the founder rate.
+        </p>
+        <div class="text-left">
+          <WaitlistForm id="contact-waitlist" />
+        </div>
       </div>
     </div>
   </section>
