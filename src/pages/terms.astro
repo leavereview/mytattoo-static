@@ -71,9 +71,12 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
         </ul>
 
         <h2>7. Fees and Payments</h2>
+        {/* Draft 2026-07 (reflects app implementation), pending legal review. LEGAL REVIEW: with Stripe destination charges, confirm merchant-of-record and chargeback-liability position and reflect it here. */}
         <ul>
           <li>MyTattoo.Software is currently provided free of charge: there is no platform fee, per-booking fee, or subscription.</li>
-          <li>Client deposits are collected through Stripe. You connect your own Stripe account, and deposits for your bookings are settled to that account under Stripe's terms.</li>
+          <li>Client deposits are collected through Stripe. You connect your own Stripe account, and deposits for your bookings are settled to that account under Stripe's terms — MyTattoo does not take any share of your deposits.</li>
+          <li><strong>Refunds and cancellations.</strong> Whether a deposit is refundable is determined by your own deposit and cancellation policy, which your client agrees to at the time of booking. MyTattoo does not automatically issue refunds; any refund is arranged manually by you. Any dispute about a booking or deposit is between you and your client.</li>
+          <li>You are responsible for your own tax on the deposits and payments you receive.</li>
           <li>We may introduce paid plans in future. If we do, we will give you at least 30 days' notice before any charges begin.</li>
         </ul>
 
