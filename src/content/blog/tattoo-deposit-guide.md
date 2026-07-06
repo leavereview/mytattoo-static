@@ -94,7 +94,7 @@ Deposits should be enough to deter no-shows without being prohibitive for genuin
 
 ### When You Book
 
-1. **Request appointment** - Through website, DM, or in person
+1. **Request appointment** - Through website, [Instagram booking link](/tattoo-bookings-from-instagram/), DM, or in person
 2. **Receive booking confirmation** - With deposit amount and payment instructions
 3. **Pay deposit** - Via card, transfer, or in person
 4. **Appointment confirmed** - Deposit acknowledged and date secured
