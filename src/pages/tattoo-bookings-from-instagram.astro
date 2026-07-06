@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+import WaitlistForm from '../components/WaitlistForm.astro';
+
+const faqItems = [
+  {
+    question: 'Can clients book tattoo appointments through Instagram?',
+    answer: "Not directly — Instagram has no native booking, deposits, or calendar for tattoo work. What works is a booking link in your bio: the client taps it, fills in an intake form (size, placement, references, budget, dates), you approve or decline, and a deposit confirms the slot. Instagram stays the shop window; the link does the booking.",
+    links: [{ text: 'What a booking app should do', url: '/tattoo-booking-app/' }]
+  },
+  {
+    question: 'How do I stop no-shows from Instagram bookings?',
+    answer: "Deposits, taken at booking, not promised in DMs. A slot should only exist once it's paid for. Someone who found you on Instagram at 11pm and paid £100 to hold a date shows up; someone who typed \"yeah book me in\" often doesn't. Pair the deposit with a stated reschedule policy on the booking page so there's nothing to argue about later.",
+    links: [{ text: 'Reducing no-shows guide', url: '/blog/reduce-no-shows-tattoo-studio/' }]
+  },
+  {
+    question: 'What should a tattoo booking form ask?',
+    answer: 'At minimum: placement and approximate size, style (flash or custom), reference images, budget band, general availability, and whether it covers or reworks an existing tattoo. That set answers the questions you currently ask five times a day in DMs, and gives you enough to quote or decline without a back-and-forth.',
+    links: [{ text: 'Booking form template', url: '/blog/tattoo-booking-form-template/' }]
+  },
+  {
+    question: "What's the best app for booking tattoo appointments on Instagram?",
+    answer: "The honest answer: most booking apps are built for salons — open slots, instant confirmation, no consult stage — which is exactly wrong for custom tattoo work. Whatever you use needs three things: an intake form that collects references and placement, an approval step so you decide who gets in the chair, and a deposit taken before the slot is confirmed. We're building a tattoo-first tool around exactly that pipeline; the founding cohort waitlist is on this page.",
+    links: [{ text: 'Tattoo booking app guide', url: '/tattoo-booking-app/' }]
+  },
+  {
+    question: 'Should I put a booking link in my Instagram bio?',
+    answer: "Yes — it's the one link every serious inquiry already looks for. It moves the size/placement/budget questions out of your DMs, works while you're tattooing or asleep, and lets you keep DMs for what they're good at: sharing work and talking to clients, not chasing deposits.",
+    links: []
+  }
+];
+---
+
+<BaseLayout
+  title="How to Take Tattoo Bookings from Instagram (Without the DM Chaos)"
+  description="Turn Instagram inquiries into deposited tattoo bookings — without living in your DMs. Intake forms, approval, deposits. Founding cohort waitlist open."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl">
+        <BreadcrumbsEnhanced
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Tattoo Bookings from Instagram' }
+          ]}
+          site="tattoo"
+        />
+        <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-6">
+          How to Take Tattoo Bookings from Instagram (Without the DM Chaos)
+        </h1>
+        <p class="text-xl text-gray-300">
+          Your DMs are where serious inquiries go to die. Here's how to get them out.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opening -->
+  <section class="section bg-white">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto prose-custom space-y-6 text-gray-700">
+        <p class="text-lg">
+          It's 11pm. You've cleaned your station, eaten something beige, and now you're doing the second
+          shift: the DMs. Fourteen unread. Three are "how much for a sleeve lol". One is someone arguing
+          about a deposit from March. And somewhere in there is a genuine client with references, a real
+          budget, and dates — sinking under the rest.
+        </p>
+        <p>
+          Every inquiry asks the same five things in a different order: how big, where on the body, how much,
+          when are you free, how do I pay the deposit. You answer them one thumb at a time, every night,
+          like it's your job. It's not your job. Your job is tattooing.
+        </p>
+        <p>
+          And the cost isn't just the hour a night. It's the £600 custom piece you lost because the client
+          messaged while you were mid-session, got no reply for two days, and booked with someone who
+          answered faster. The DM didn't say "I'm about to spend £600 with you." It said "hey, quick
+          question" — and it sank.
+        </p>
+        <p>
+          Instagram is the best portfolio tool the industry has ever had. It is also — and this is the whole
+          problem — not a <a href="/tattoo-booking-app/" class="text-brand-red hover:underline">booking system</a>.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Why your DMs aren't a booking system</h2>
+        <p>
+          A DM thread is a conversation tool doing a pipeline's job. There's no triage — the sleeve-lol
+          messages sit at the same priority as the deposited client confirming Thursday. There's no paper
+          trail — the placement you agreed on is forty messages up, next to a meme. There's no deposit
+          enforcement — "I'll send it tonight" is not money. And there's no calendar — your diary and your
+          DMs don't talk to each other, so double-booking is one scroll-fail away.
+        </p>
+        <p>
+          Because here's what a booking actually is for a tattoo artist: <strong>inquiry → consult →
+          deposit → confirmed slot</strong> (often multiple sessions, weeks apart). That's a pipeline with
+          stages and a gate — money — in the middle. Instagram gives you stage one and nothing else, then
+          leaves you to run the rest by memory.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">The fix: one link in your bio that does the triage for you</h2>
+        <p>
+          The pattern that works — regardless of which tool you use to build it — is a booking link in your
+          Instagram bio that front-loads the questions you're sick of asking. The client taps it and answers
+          everything up front: size, placement, style (flash or custom), reference images, budget band,
+          rough dates. Before they've reached your DMs, they've done the interview.
+        </p>
+        <p>
+          Two rules make this work for tattoo specifically. First: <strong>you approve or decline every
+          inquiry.</strong> No stranger auto-books your chair like it's a haircut. Custom work needs a human
+          look at the references before a date exists. Second: <strong>approval triggers a deposit request,
+          and the slot only exists once it's paid.</strong> Not "I'll transfer it Friday." Paid. The
+          tyre-kickers filter themselves out at the form; the almost-serious filter themselves out at the
+          deposit; what's left in your calendar is people who are actually getting tattooed.
+        </p>
+        <p>
+          Your DMs go back to being what Instagram is good at — showing work, answering the odd genuine
+          question — instead of being a free consultation service for people who were never going to book.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">What to put on your intake form (steal this)</h2>
+        <p>
+          Whether you build this with a form tool today or wait for something purpose-built, these are the
+          questions that kill the DM back-and-forth. Steal the list:
+        </p>
+        <ul class="list-disc pl-6 space-y-3">
+          <li><strong>Placement</strong> — where on the body, exactly. "Arm" isn't an answer; inner forearm vs outer bicep changes the quote and the session plan.</li>
+          <li><strong>Approximate size</strong> — in centimetres or against a reference ("palm-sized"). This is the single biggest driver of price and time.</li>
+          <li><strong>Flash or custom</strong> — if flash, which piece. If custom, a short description in their own words.</li>
+          <li><strong>Reference images</strong> — required upload, 2–5 images. References in a form field don't vanish the way they do in a DM thread.</li>
+          <li><strong>Budget band</strong> — ranges, not a blank box. It surfaces mismatches before anyone's invested an hour in a consult.</li>
+          <li><strong>Availability</strong> — general windows (weekdays/weekends, months), not specific slots. You're collecting intent, not letting them book your chair.</li>
+          <li><strong>Cover-up or rework?</strong> — with a photo of the existing tattoo if yes. Nobody wants to discover a cover-up at the consult.</li>
+          <li><strong>Anything relevant about skin or health</strong> — keloids, skin conditions, medications. The full medical stuff belongs on the <a href="/blog/tattoo-consent-form-guide/" class="text-brand-red hover:underline">consent form</a>, but flag the big things early.</li>
+          <li><strong>Age confirmation</strong> — an 18+ checkbox saves an awkward conversation later.</li>
+        </ul>
+        <p>
+          Nine questions, two minutes for a serious client, and an impossible hurdle for "how much for a
+          sleeve lol". That asymmetry is the point. There's a fuller breakdown in our
+          <a href="/blog/tattoo-booking-form-template/" class="text-brand-red hover:underline">booking form template</a>.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Setting a deposit policy clients actually respect</h2>
+        <p>
+          A deposit isn't a fee — it's the moment a maybe becomes a booking. For multi-hour custom work,
+          20–30% of the estimated session cost is the working standard; enough to hurt if forfeited, not
+          enough to scare off someone genuine. Flat £50–£100 works fine for smaller flash.
+        </p>
+        <p>
+          Two things make a policy respected rather than argued with. Make it <strong>non-refundable but
+          transferable</strong>: cancel and it's gone, reschedule with 48+ hours' notice and it moves with
+          you. That's firm without being hostile, and it covers you on a 5-hour session you can't refill at
+          short notice. And <strong>state it on the booking page, not in your DMs</strong>. A policy the
+          client read and agreed to before paying is a fact; a policy explained after the fact, in a message
+          thread, at 11pm, is a negotiation. Full numbers and wording are in the
+          <a href="/blog/tattoo-deposit-guide/" class="text-brand-red hover:underline">tattoo deposit guide</a>.
+        </p>
+
+        <div class="mt-10">
+          <p class="font-semibold text-brand-navy mb-3">Want the link that does all of this? We're building it — join the waitlist:</p>
+          <WaitlistForm id="waitlist-mid" />
+        </div>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">Why salon booking apps don't fix this</h2>
+        <p>
+          You've probably looked at booking apps before and bounced off. Fair. Most of them are built for
+          businesses that sell <em>slots</em>: a haircut is 45 minutes, anyone can book it, no questions
+          asked, see you Tuesday. Tattooing sells a <em>pipeline</em>: an inquiry that needs vetting, a
+          consult, a deposit, and then maybe three sessions across two months.
+        </p>
+        <p>
+          Slot-shaped software fails you in specific ways. There's no approval step — a stranger can book
+          your Saturday without you ever seeing their references. There's no consult stage — the system
+          thinks a booking is instant, so where does "let's talk about your half-sleeve first" live? There's
+          nowhere for reference images or placement to exist as part of the booking. And the whole thing
+          talks about "services" and "treatments" in a way that tells you — and your clients — it was built
+          for someone else's business.
+        </p>
+        <p>
+          The <a href="/blog/free-tattoo-booking-app-guide/" class="text-brand-red hover:underline">free booking
+          app guide</a> covers what generic tools can and can't do in more detail. The short version: you can
+          duct-tape a form tool, a payment link, and a calendar together, and many artists do. It's better
+          than raw DMs. It's still three tools pretending to be a pipeline.
+        </p>
+
+        <h2 class="text-3xl font-bold text-brand-navy mt-12 mb-6">We're building this — founding cohort open</h2>
+        <p>
+          We're building exactly the tool this page describes: tattoo-first, built around the
+          approve-and-deposit pipeline — intake form in your bio link, you approve or decline every inquiry,
+          deposit taken before a slot exists. The first 20 artists get a founder rate locked for life and a
+          direct line to shape what gets built. If your DMs look like the ones at the top of this page,
+          put your email in:
+        </p>
+        <div class="mt-6">
+          <WaitlistForm id="waitlist-bottom" />
+        </div>
+
+        <p class="mt-10 text-gray-600">
+          Related: <a href="/tattoo-booking-app/" class="text-brand-red hover:underline">Tattoo Booking App Guide</a> |
+          <a href="/blog/reduce-no-shows-tattoo-studio/" class="text-brand-red hover:underline">Reducing No-Shows</a> |
+          <a href="/blog/tattoo-deposit-guide/" class="text-brand-red hover:underline">Tattoo Deposit Guide</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FAQEnhanced
+          faqs={faqItems}
+          title="Instagram Tattoo Booking FAQ"
+          site="tattoo"
+          pageUrl="https://mytattoo.software/tattoo-bookings-from-instagram/"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

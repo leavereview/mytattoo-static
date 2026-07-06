@@ -66,7 +66,7 @@ Ambiguity invites dispute. Your cancellation policy should be:
 **Example policy wording:**
 *"Deposits are non-refundable if you cancel with less than 48 hours' notice. With more than 48 hours' notice, your deposit transfers to a rescheduled appointment. No-shows forfeit their deposit entirely."*
 
-Publish this on your booking page, your website, and in your booking confirmation email. Clients who have read and accepted the policy are far less likely to dispute deposit forfeitures.
+Publish this on your booking page, your website, and in your booking confirmation email. Clients who have read and accepted the policy are far less likely to dispute deposit forfeitures. This matters most for [bookings that come in via Instagram](/tattoo-bookings-from-instagram/), where the policy otherwise lives buried in a DM thread.
 
 ### 4. Make Rescheduling Easy
 
