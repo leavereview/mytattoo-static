@@ -7,39 +7,11 @@ import ComparisonTable from '../components/seo/ComparisonTable.astro';
 import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
 const appStats = [
-  {
-    label: 'Mobile Bookings',
-    value: '85%',
-    context: 'Of all tattoo bookings now come from mobile devices'
-  },
-  {
-    label: 'No-Show Reduction',
-    value: '70%',
-    change: { value: 70, direction: 'up' as const, period: 'with deposits' },
-    context: 'When deposits collected via mobile booking'
-  },
-  {
-    label: 'Weekly Time Saved',
-    value: '9+ hrs',
-    change: { value: 65, direction: 'up' as const, period: 'vs DM booking' },
-    context: 'Less time managing Instagram DMs and calls'
-  },
-  {
-    label: 'Client Satisfaction',
-    value: '94%',
-    context: 'Prefer online booking to messaging back and forth'
-  },
-  {
-    label: 'Average Booking Time',
-    value: '3 min',
-    context: 'For clients to complete entire booking process'
-  },
-  {
-    label: 'After-Hours Bookings',
-    value: '40%',
-    change: { value: 40, direction: 'up' as const, period: 'of total' },
-    context: 'Bookings made outside 9am-5pm business hours'
-  }
+  { label: 'Client Account', value: 'None needed', context: 'Clients book with just their contact details' },
+  { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
+  { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
+  { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
+  { label: 'Access', value: 'Early access', context: 'Onboarding independent tattoo artists by invitation' }
 ];
 
 const comparisonData = [
@@ -59,7 +31,7 @@ const comparisonData = [
     highlight: true
   },
   {
-    label: 'Automated Reminders (SMS/Email)',
+    label: 'Email Notifications',
     values: [true, false, false]
   },
   {
@@ -75,7 +47,7 @@ const comparisonData = [
     values: [true, true, false]
   },
   {
-    label: 'Digital Consent Forms',
+    label: 'No Client Account Needed',
     values: [true, false, false]
   },
   {
@@ -83,7 +55,7 @@ const comparisonData = [
     values: [true, true, false]
   },
   {
-    label: 'Portfolio/Artist Selection',
+    label: 'Deposit-Gated Calendar',
     values: [true, false, false]
   }
 ];
@@ -91,7 +63,7 @@ const comparisonData = [
 const faqItems = [
   {
     question: "What is a tattoo booking app?",
-    answer: "A tattoo booking app is a mobile-friendly system that lets clients book tattoo appointments online, view artist portfolios, submit design references, pay deposits, and manage their bookings—all from their phone. 85% of tattoo bookings now come from mobile devices, and clients complete the entire booking process in 3 minutes on average. Modern booking apps integrate deposit collection, automated reminders, and reference image uploads in one seamless flow.",
+    answer: "A tattoo booking app is a mobile-friendly system that lets clients book tattoo appointments online, submit design references, and pay deposits—all from their phone, instead of a back-and-forth in Instagram DMs. With MyTattoo.Software specifically, there's no account for the client to create: they leave their contact details, fill in an intake form with reference images, and the artist reviews the request and sends back a quote with a time slot. The client pays a deposit through Stripe to confirm, and the appointment is only added to the artist's calendar once that deposit clears.",
     links: [
       { text: 'View all features', url: '/features/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -99,10 +71,10 @@ const faqItems = [
   },
   {
     question: "Do I need a separate app or is a mobile website enough?",
-    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything from app stores, and you avoid Apple/Google fees (30% commission). A responsive web-based booking portal gives you all the benefits of an app—works on phones, can be added to home screen, sends notifications—without the complications. 94% of clients prefer this over messaging back and forth.",
+    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything from app stores, and you avoid Apple/Google fees (up to 30% commission on in-app payments). A responsive web-based booking page gives you all the benefits of an app—works on phones, can be added to home screen—without the complications. That's why MyTattoo.Software is built mobile-first as a booking page rather than a native app.",
     links: [
       { text: 'Mobile booking features', url: '/features/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get early access', url: '/contact/' }
     ]
   },
   {
@@ -115,7 +87,7 @@ const faqItems = [
   },
   {
     question: "How do booking apps handle deposits?",
-    answer: "Booking apps require deposits at time of booking, either as fixed amounts (£50, £100, £200) or percentages of estimated cost. Deposits are collected via integrated card payment and automatically tracked. You control refund policies: non-refundable for no-shows, refundable with X days notice, or transferable to rescheduled appointments. Deposits reduce no-shows by 70% because clients have financial commitment at booking time. Payment processing fees are typically 2.9% + 30p.",
+    answer: "Booking apps require deposits at time of booking, either as fixed amounts (£50, £100, £200) or percentages of estimated cost. Deposits are collected via integrated card payment and automatically tracked. You control refund policies: non-refundable for no-shows, refundable with X days notice, or transferable to rescheduled appointments. Requiring a deposit before a slot is confirmed gives clients real financial commitment at booking time, which is what protects your calendar from no-shows. Payment processing fees are typically 2.9% + 30p.",
     links: [
       { text: 'Deposit best practices', url: '/blog/tattoo-deposit-guide/' },
       { text: 'Payment processing', url: '/pricing/' }
@@ -123,10 +95,10 @@ const faqItems = [
   },
   {
     question: "How much does a tattoo booking app cost?",
-    answer: "Tattoo booking software typically costs £20-80 per month for solo artists, £80-150 for studios. MyTattoo.Software offers flat monthly pricing with no per-booking fees, so costs don't increase as you get busier. Avoid platforms charging 3-5% per booking—these add up to hundreds monthly for busy artists. Most artists save 9+ hours weekly managing bookings, making the ROI positive within 2-3 weeks through time savings and prevented no-shows.",
+    answer: "Tattoo booking software typically costs £20-80 per month for solo artists, £80-150 for studios, across the wider market. MyTattoo.Software is currently in early access for independent tattoo artists—pricing is confirmed when you get in touch, and the aim is flat, predictable monthly pricing with no per-booking fees, so costs don't rise as you get busier. Avoid platforms charging 3-5% per booking—these add up to hundreds monthly for busy artists.",
     links: [
-      { text: 'View pricing plans', url: '/pricing/' },
-      { text: 'ROI calculator', url: '/contact/' }
+      { text: 'View pricing page', url: '/pricing/' },
+      { text: 'Get early access', url: '/contact/' }
     ]
   },
   {
@@ -147,7 +119,7 @@ const faqItems = [
   },
   {
     question: "How do I add my booking link to Instagram?",
-    answer: "Add your booking link to your Instagram bio—this is prime real estate for converting followers to bookings. Go to Edit Profile > Website, paste your booking link. Consider using Linktree if you need multiple links (booking + portfolio site). 40% of bookings happen via Instagram bio links vs 15% for DM-only booking. Update your pinned story with booking instructions. You can also add booking links to posts and stories (Instagram allows link stickers for all accounts).",
+    answer: "Add your booking link to your Instagram bio—this is prime real estate for converting followers to bookings. Go to Edit Profile > Website, paste your booking link. Consider using Linktree if you need multiple links (booking + portfolio site). Update your pinned story with booking instructions. You can also add booking links to posts and stories (Instagram allows link stickers for all accounts).",
     links: [
       { text: 'Instagram booking guide', url: '/blog/tattoo-booking-guide/' },
       { text: 'Social media tips', url: '/blog/building-tattoo-client-base/' }
@@ -163,10 +135,10 @@ const faqItems = [
   },
   {
     question: "Do I need technical skills to set it up?",
-    answer: "No, tattoo booking apps are designed for artists, not developers. If you can post on Instagram, you can set up booking. Setup takes 10-20 minutes: enter your availability, add service types (consultation, small piece, half-day, full-day), set deposit amounts, upload your logo, get your booking link. Most platforms have onboarding guides with screenshots. Mobile apps let you manage everything from your phone. No coding, no website hosting, no technical knowledge required.",
+    answer: "No, tattoo booking apps are designed for artists, not developers. If you can post on Instagram, you can set up booking. Setup takes 10-20 minutes: enter your availability, add service types (consultation, small piece, half-day, full-day), set deposit amounts, upload your logo, get your booking link. Most platforms have onboarding guides with screenshots. You can manage everything from your phone's browser. No coding, no website hosting, no technical knowledge required.",
     links: [
       { text: 'Setup walkthrough', url: '/blog/setup-tattoo-booking/' },
-      { text: 'Start free trial', url: '/contact/' }
+      { text: 'Get early access', url: '/contact/' }
     ]
   }
 ];
@@ -175,7 +147,7 @@ const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Tattoo Booking App: Mobile Booking for Tattoo Studios and Artists",
-  "description": "Everything you need to know about tattoo booking apps. Online scheduling, deposit collection, client management, and portfolio integration for tattoo studios.",
+  "description": "Everything you need to know about tattoo booking apps. Online scheduling, deposit collection, and reference image intake for independent tattoo artists.",
   "author": {
     "@type": "Organization",
     "name": "MyTattoo.Software"
@@ -187,7 +159,7 @@ const schemaMarkup = {
 
 <BaseLayout
   title="Tattoo Booking App: Mobile Booking, Benefits & Pricing (2026)"
-  description="Let clients book consultations, send design ideas, and pay deposits 24/7. Tattoo booking app used by 800+ artists with 40% lower no-shows. Start free 14-day trial."
+  description="Let clients book, attach reference images, and pay a deposit—all from their phone. Built for independent tattoo artists. Get early access."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -214,7 +186,7 @@ const schemaMarkup = {
         </p>
         <p class="text-gray-400 mb-8">Last updated: January 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
           <a href="#what-is" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
         </div>
       </div>
@@ -223,7 +195,7 @@ const schemaMarkup = {
 
   <!-- Featured Answer -->
   <FeaturedAnswer question="What is a tattoo booking app?">
-    A tattoo booking app is a mobile-friendly system that lets clients book appointments online, view portfolios, submit design references, pay deposits, and manage bookings from their phone. 85% of tattoo bookings come from mobile devices, with clients completing the entire process in 3 minutes. Modern booking apps reduce no-shows by 70% with automated deposits and save artists 9+ hours weekly on admin.
+    A tattoo booking app lets clients book appointments, submit design references, and pay deposits from their phone, instead of a back-and-forth in Instagram DMs. With MyTattoo.Software, clients need no account: they leave their contact details, submit an intake form with reference images, and the artist reviews the request and offers a time slot with a deposit amount. Once the client pays that deposit through Stripe, the appointment is confirmed and added to the artist's calendar.
   </FeaturedAnswer>
 
   <!-- Statistics Section -->
@@ -285,12 +257,12 @@ const schemaMarkup = {
             <p class="text-gray-700 text-sm">Require deposits at booking to protect against no-shows. Set fixed amounts or percentages, with clear policies displayed.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Automated Reminders</h3>
-            <p class="text-gray-700 text-sm">SMS and email reminders sent before appointments. Dramatically reduces no-shows and last-minute cancellations.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Email Notifications</h3>
+            <p class="text-gray-700 text-sm">Automatic emails on every step — new request, offer sent, deposit paid — for you and the client.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Artist Selection</h3>
-            <p class="text-gray-700 text-sm">For studios with multiple artists, clients can choose their preferred artist based on style and availability.</p>
+            <h3 class="font-bold text-brand-navy mb-2">No Client Account Needed</h3>
+            <p class="text-gray-700 text-sm">Clients book with just their contact details — nothing to sign up for.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Service Configuration</h3>
@@ -300,17 +272,17 @@ const schemaMarkup = {
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Advanced Booking Features</h3>
         <ul class="space-y-2 mb-8">
-          <li><strong>Waitlist management:</strong> Capture interest when you're fully booked</li>
+          <li><strong>Flexible booking types:</strong> Set different durations, prices, and deposit amounts per appointment type</li>
           <li><strong>Flash booking:</strong> Special booking flow for flash events and available designs</li>
           <li><strong>Consultation scheduling:</strong> Separate booking type for initial consultations</li>
           <li><strong>Multi-session projects:</strong> Link appointments for large pieces requiring multiple sittings</li>
           <li><strong>Cancellation policies:</strong> Display and enforce your cancellation terms</li>
-          <li><strong>Custom intake forms:</strong> Collect health information, consent, and aftercare acknowledgment</li>
+          <li><strong>Custom intake forms:</strong> Collect the details and references you need before the appointment</li>
         </ul>
 
         <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Tattoo Artists</h2>
 
-        <div class="bg-red-50 border-l-4 border-brand-red p-4 my-6">
+        <div class="bg-bone-hi border-l-4 border-brand-red p-4 my-6">
           <p class="font-bold text-brand-navy">Your time is valuable</p>
           <p>Every hour spent managing DMs and chasing deposits is an hour you're not tattooing or creating. A booking app gives you that time back while actually improving the client experience.</p>
         </div>
@@ -325,26 +297,20 @@ const schemaMarkup = {
         </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">For Studios</h3>
-        <ul class="space-y-3 mb-6">
-          <li><strong>Unified booking:</strong> All artists bookable through one system with individual calendars</li>
-          <li><strong>Workstation management:</strong> Ensure rooms or stations aren't double-booked</li>
-          <li><strong>Revenue visibility:</strong> Track bookings and deposits across all artists</li>
-          <li><strong>Consistent policies:</strong> Same deposit and cancellation rules applied to everyone</li>
-          <li><strong>Reduced front desk burden:</strong> Fewer calls and walk-in booking requests</li>
-        </ul>
+        <p class="text-gray-600 mb-6">MyTattoo.Software today is built for the independent artist working solo. Multi-artist studio features—unified booking across artists, workstation management, and studio-wide revenue visibility—aren't part of the current product, though it's a direction we know studios will eventually need.</p>
 
         <!-- Calculator Callout -->
-        <div style="background: linear-gradient(135deg, #FFE7EC 0%, #FFF5F7 100%); border-left: 4px solid #E94560; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
+        <div style="background: linear-gradient(135deg, #F4E4E1 0%, #F3ECDD 100%); border-left: 4px solid #A62B22; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
           <div style="display: flex; align-items: start; gap: 1rem;">
-            <div style="flex-shrink: 0; width: 48px; height: 48px; background: #E94560; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+            <div style="flex-shrink: 0; width: 48px; height: 48px; background: #A62B22; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
               <svg style="width: 28px; height: 28px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
               </svg>
             </div>
             <div style="flex: 1;">
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1A1A2E; margin: 0 0 0.5rem 0;">Model Your Mobile Booking Revenue</h3>
-              <p style="color: #4A4A5E; margin: 0 0 1rem 0; line-height: 1.6;">Calculate how a booking app impacts your studio's revenue with automated deposits, reduced no-shows, and 24/7 availability. See the difference between DM-based booking and professional app-based booking.</p>
-              <a href="/tattoo-studio-calculator/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #E94560; font-weight: 600; text-decoration: none;">
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #17120E; margin: 0 0 0.5rem 0;">Model Your Mobile Booking Revenue</h3>
+              <p style="color: #241B14; margin: 0 0 1rem 0; line-height: 1.6;">Calculate how a booking app impacts your studio's revenue with automated deposits, reduced no-shows, and 24/7 availability. See the difference between DM-based booking and professional app-based booking.</p>
+              <a href="/tattoo-studio-calculator/" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #A62B22; font-weight: 600; text-decoration: none;">
                 Calculate Your App ROI →
               </a>
             </div>
@@ -447,7 +413,7 @@ const schemaMarkup = {
 
         <h2 id="benefits-of-app" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits of a Tattoo Booking App</h2>
         <p class="text-lg text-gray-600 mb-6">
-          The biggest benefits of a tattoo booking app are fewer no-shows, hours of admin time saved every week, and a smoother experience for the clients who already live on their phones. Because 85% of tattoo bookings now come from mobile devices, meeting clients where they actually are—on Instagram, on a phone screen, often outside business hours—directly translates into more confirmed appointments and fewer gaps in your calendar.
+          The biggest benefits of a tattoo booking app are fewer no-shows, less admin time spent chasing replies, and a smoother experience for clients who are used to booking everything else from their phone. Meeting clients where they actually are—on Instagram, on a phone screen, often outside business hours—directly translates into more confirmed appointments and fewer gaps in your calendar.
         </p>
         <p class="text-gray-600 mb-6">
           It helps to split the benefits into two groups, because a booking app has to work for two very different people: the artist running the business and the client trying to get tattooed.
@@ -455,22 +421,22 @@ const schemaMarkup = {
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits for the Artist</h3>
         <ul class="space-y-3 mb-6">
-          <li><strong>Fewer no-shows:</strong> Collecting a deposit at the moment of booking reduces no-shows by around 70%. A protected calendar is the single biggest financial benefit—one prevented £100 no-show often covers the software for months.</li>
-          <li><strong>Hours back every week:</strong> Pointing enquiries at a booking link instead of answering the same questions in dozens of DM threads saves most artists 9+ hours weekly—time you can spend tattooing, designing, or simply not working at midnight.</li>
-          <li><strong>Bookings while you sleep:</strong> Roughly 40% of bookings are made outside 9am–5pm. An app captures those evening and weekend decisions automatically, instead of losing them to a faster-replying competitor by the morning.</li>
+          <li><strong>Fewer no-shows:</strong> Collecting a deposit at the moment of booking gives clients real financial commitment before you block out time. A protected calendar is one of the biggest financial benefits—one prevented no-show can cover the software cost for months.</li>
+          <li><strong>Less time on admin:</strong> Pointing enquiries at a booking link instead of answering the same questions in dozens of DM threads frees up time you can spend tattooing, designing, or simply not working at midnight.</li>
+          <li><strong>Bookings while you sleep:</strong> A booking page captures evening and weekend enquiries automatically, instead of losing them to a faster-replying competitor by the morning.</li>
           <li><strong>Better-prepared sessions:</strong> Reference images, placement, size, and budget all arrive with the booking, so you walk into each appointment already knowing what you're drawing.</li>
           <li><strong>A more professional image:</strong> A clean, mobile booking flow signals that you run a serious studio—not a hobby you manage out of an inbox.</li>
         </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits for the Client</h3>
         <ul class="space-y-3 mb-6">
-          <li><strong>Booking in about 3 minutes:</strong> Clients complete the entire process—pick a service, choose a slot, upload references, pay the deposit—in roughly three minutes, with no waiting for a reply.</li>
+          <li><strong>A simple, guided process:</strong> Clients pick a service and upload their reference images in one straightforward form, instead of typing everything out across several DMs.</li>
           <li><strong>Book any time, from anywhere:</strong> No need to be awake during business hours or to remember to message you. They tap your link, see real availability, and lock in a time on the spot.</li>
           <li><strong>Clarity and confidence:</strong> Up-front pricing guidance, deposit policies, and instant confirmation emails remove the awkward back-and-forth and the worry that a DM got missed.</li>
           <li><strong>A smoother handover:</strong> Submitting their idea, placement, and inspiration in one structured form feels easier than typing it across several messages—and means their concept reaches you intact.</li>
         </ul>
         <p class="text-gray-600 mb-8">
-          Add these together and the appeal is obvious: 94% of clients say they prefer booking online to messaging back and forth. A booking app isn't just an admin tool—it's a better front door to your business for the people most likely to book.
+          Add these together and the appeal is obvious: booking online instead of messaging back and forth is simply less friction for clients. A booking app isn't just an admin tool—it's a better front door to your business for the people most likely to book.
         </p>
 
         <h2 id="app-vs-web" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Mobile App vs Mobile Booking Website</h2>
@@ -539,10 +505,10 @@ const schemaMarkup = {
           <li><strong>Payment processing:</strong> separate from the software, card fees of roughly 2.9% + 30p per transaction are standard whichever platform you choose.</li>
         </ul>
         <p class="text-gray-600 mb-6">
-          The cheapest way to start is almost always a flat-rate plan with a free trial: you get full functionality, your costs stay predictable, and you avoid handing over a slice of every deposit. Watch for per-booking fees disguised as low headline pricing, "free" tiers that can't actually take deposits (the one feature that prevents no-shows), and tools that charge extra for SMS reminders.
+          The cheapest way to start is almost always a flat-rate plan with predictable monthly costs: you get full functionality, your costs stay predictable, and you avoid handing over a slice of every deposit. Watch for per-booking fees disguised as low headline pricing, "free" tiers that can't actually take deposits (the one feature that prevents no-shows), and tools that charge extra for SMS reminders.
         </p>
         <p class="text-gray-600 mb-8">
-          MyTattoo.Software uses simple flat monthly pricing with no per-booking fees, so your costs don't rise as you get busier—and every plan starts with a free 14-day trial, no credit card required. You can see the exact current plans on our <a href="/pricing/" class="text-brand-red hover:underline">pricing page</a>, and model the payback against your own no-show rate with the <a href="/tattoo-studio-calculator/" class="text-brand-red hover:underline">studio revenue calculator</a>.
+          MyTattoo.Software is currently in early access for independent tattoo artists. Pricing is confirmed when you get in touch—the goal is simple, flat, predictable pricing with no per-booking fees, so your costs don't rise as you get busier. You can find out more on our <a href="/pricing/" class="text-brand-red hover:underline">pricing page</a>, and model the payback against your own no-show rate with the <a href="/tattoo-studio-calculator/" class="text-brand-red hover:underline">studio revenue calculator</a>.
         </p>
 
         <p>Related: <a href="/tattoo-studio-software/" class="text-brand-red hover:underline">Tattoo Studio Software</a> | <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">Tattoo Booking Software</a> | <a href="/blog/reduce-no-shows-tattoo-studio/" class="text-brand-red hover:underline">Reducing No-Shows Guide</a></p>
@@ -560,12 +526,12 @@ const schemaMarkup = {
   />
 
   <!-- CTA Section -->
-  <section class="section bg-gradient-to-r from-brand-red to-red-700 text-white">
+  <section class="section bg-gradient-to-r from-brand-red to-blood-deep text-white">
     <div class="container-custom text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Booking?</h2>
       <p class="text-xl mb-8 opacity-90">Stop losing bookings in your DMs. Give clients the professional booking experience they expect—and protect your time with automatic deposits.</p>
-      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Free 14-Day Trial</a>
-      <p class="text-sm mt-4 opacity-75">No credit card required. Set up in 10 minutes.</p>
+      <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
+      <p class="text-sm mt-4 opacity-75">MyTattoo is in early access for independent tattoo artists.</p>
     </div>
   </section>
 

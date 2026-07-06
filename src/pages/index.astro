@@ -1,211 +1,71 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Software Application Schema
+// Software Application Schema — honest to the current product (no fabricated
+// ratings/reviews, no fictional free trial). Access is early-access / invite.
 const softwareApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://mytattoo.software/#software",
   "name": "MyTattoo.Software",
   "alternateName": "MyTattoo",
-  "description": "Complete tattoo studio management software for tattoo artists and body art studios. Online booking, consent forms, client management, and deposit collection in one platform.",
+  "description": "Deposit-secured booking for independent tattoo artists. Turn your Instagram bio link into a reference-attached booking, confirmed by a deposit that lands the appointment on your calendar.",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web, iOS, Android",
-  "offers": {
-    "@type": "Offer",
-    "@id": "https://mytattoo.software/#free-trial",
-    "price": "0",
-    "priceCurrency": "GBP",
-    "name": "14-Day Free Trial",
-    "description": "Try MyTattoo.Software free for 14 days with full access",
-    "availability": "https://schema.org/InStock",
-    "url": "https://mytattoo.software/contact/",
-    "priceValidUntil": "2026-12-31"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "86",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
+  "operatingSystem": "Web",
   "featureList": [
-    "Online Booking & Consultations",
-    "Client Management & Profiles",
-    "Digital Consent Forms",
-    "Deposit Collection",
-    "Artist Portfolio Management",
-    "Appointment Scheduling",
-    "Automated Reminders (SMS & Email)",
-    "Aftercare Instructions",
-    "Payment Processing",
-    "Reports & Analytics",
-    "Mobile App",
-    "Instagram Integration"
+    "Instagram bio-link booking page",
+    "No client account required",
+    "Reference images + intake questions",
+    "Artist-set time-slot offers",
+    "Deposit collection via Stripe",
+    "Deposit-gated calendar (appointment only after the deposit clears)",
+    "Email notifications for request, offer and paid deposit",
+    "Cancel / reschedule",
+    "Deposits-received list"
   ],
   "url": "https://mytattoo.software",
-  "screenshot": "https://mytattoo.software/images/dashboard-screenshot.jpg",
-  "softwareVersion": "2.0",
-  "applicationSubCategory": "Tattoo Studio Management",
+  "applicationSubCategory": "Tattoo Booking",
   "audience": {
     "@type": "BusinessAudience",
-    "audienceType": "Tattoo Studios, Tattoo Artists, Body Art Studios, Piercing Studios"
+    "audienceType": "Independent Tattoo Artists"
   }
 };
 
-// Free Trial Offer Schema
-const offerSchema = {
-  "@context": "https://schema.org",
-  "@type": "Offer",
-  "@id": "https://mytattoo.software/#free-trial-offer",
-  "name": "14-Day Free Trial - MyTattoo.Software",
-  "description": "Try MyTattoo.Software free for 14 days with complete access to all features including online booking, consent forms, and deposit collection. No credit card required.",
-  "price": "0",
-  "priceCurrency": "GBP",
-  "priceValidUntil": "2026-12-31",
-  "availability": "https://schema.org/InStock",
-  "url": "https://mytattoo.software/contact/",
-  "seller": {
-    "@type": "Organization",
-    "name": "MyTattoo.Software"
-  },
-  "itemOffered": {
-    "@type": "SoftwareApplication",
-    "name": "MyTattoo.Software",
-    "applicationCategory": "BusinessApplication"
-  },
-  "eligibleRegion": {
-    "@type": "Place",
-    "name": "United Kingdom"
-  },
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Trial Duration",
-      "value": "14 days"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Credit Card Required",
-      "value": "No"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Full Feature Access",
-      "value": "Yes"
-    }
-  ]
-};
-
-// Review Schemas from testimonials
-const reviewSchemas = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": "https://mytattoo.software/#review-1",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "@id": "https://mytattoo.software/#software",
-      "name": "MyTattoo.Software"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Jake Morrison"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviewBody": "MyTattoo cut my admin time in half. Clients book online, deposits come in automatically, and I can focus on creating art.",
-    "publisher": {
-      "@type": "Person",
-      "name": "Jake Morrison"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": "https://mytattoo.software/#review-2",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "@id": "https://mytattoo.software/#software",
-      "name": "MyTattoo.Software"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Lisa Chen"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviewBody": "The consent form system alone is worth it. Digital signatures, stored securely, and clients can fill them before arriving.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Ink & Iron"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "@id": "https://mytattoo.software/#review-3",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "@id": "https://mytattoo.software/#software",
-      "name": "MyTattoo.Software"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Marcus Webb"
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "reviewBody": "Our no-show rate dropped 70% with deposits and reminders. That's real money back in our pockets.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Webb's Tattoo Studio"
-    }
-  }
-];
-
+// Real product features (what the app does today).
 const features = [
-  { icon: 'calendar', title: 'Online Booking', description: 'Let clients book consultations and appointments 24/7. Deposits collected automatically.' },
-  { icon: 'users', title: 'Client Management', description: 'Store client info, reference images, consent forms, and aftercare details in one place.' },
-  { icon: 'credit-card', title: 'Deposits & Payments', description: 'Collect deposits at booking. Process payments via card or cash. Track everything.' },
-  { icon: 'chart', title: 'Business Analytics', description: 'Track bookings, revenue, popular styles, and identify your most profitable services.' },
-  { icon: 'bell', title: 'Automated Reminders', description: 'SMS and email reminders reduce no-shows. Aftercare instructions sent automatically.' },
-  { icon: 'mobile', title: 'Artist Portfolios', description: 'Showcase work with built-in galleries. Clients see your style before booking.' }
+  { icon: 'calendar', title: 'Bio-link booking', description: 'A branded page for your Instagram bio. Clients tap it and request a booking — no app to download, no account to create.' },
+  { icon: 'credit-card', title: 'Deposit-secured', description: 'The appointment only lands on your calendar once the deposit has cleared. Card details go straight to Stripe, never your servers.' },
+  { icon: 'users', title: 'References + intake', description: 'Clients attach reference images and answer your questions up front, so you have what you need before you quote.' },
+  { icon: 'bell', title: 'Kept in the loop', description: 'Automatic emails at every step — a new request, an offer sent, and a deposit paid — for you and the client.' },
+  { icon: 'mobile', title: 'Built for your phone', description: 'Review requests, offer times, and manage your calendar from the palm of your hand.' },
+  { icon: 'chart', title: 'Deposits at a glance', description: 'Every deposit you have taken in one simple list. No spreadsheets, no chasing.' }
 ];
 
-const testimonials = [
-  { quote: "MyTattoo cut my admin time in half. Clients book online, deposits come in automatically, and I can focus on creating art.", author: "Jake Morrison", role: "Solo Tattoo Artist" },
-  { quote: "The consent form system alone is worth it. Digital signatures, stored securely, and clients can fill them before arriving.", author: "Lisa Chen", role: "Studio Owner, Ink & Iron" },
-  { quote: "Our no-show rate dropped 70% with deposits and reminders. That's real money back in our pockets.", author: "Marcus Webb", role: "Owner, Webb's Tattoo Studio" }
+// Honest "why", not fabricated testimonials (the product is pre-launch).
+const reasons = [
+  { title: 'Stop chasing deposits', body: 'The deposit is paid before the appointment even exists — no awkward DMs, no "did you send it yet?".' },
+  { title: 'Cut the no-shows', body: 'A paid deposit is skin in the game. Fewer ghosted slots, more filled chairs.' },
+  { title: 'No friction for clients', body: 'They book from your link in seconds — nothing to install, no password to forget.' }
 ];
 
+// Honest product facts, not unverifiable vanity metrics.
 const stats = [
-  { number: 'Unlimited', label: 'Clients & Bookings' },
-  { number: '99.9%', label: 'Uptime Guarantee' },
-  { number: '10+ hrs', label: 'Saved Weekly' },
-  { number: '24/7', label: 'Support' }
+  { number: '£0', label: 'Platform fee — you keep your deposit' },
+  { number: 'No account', label: 'Clients just tap your link' },
+  { number: 'Deposit-first', label: 'No booking without a paid deposit' },
+  { number: 'Stripe', label: 'Secure card payments' }
+];
+
+const screenshots = [
+  { src: '/images/app/booking-page.png', alt: 'MyTattoo client booking page shown on a mobile phone', caption: 'Your booking page' },
+  { src: '/images/app/offer-deposit.png', alt: 'Deposit-secured booking offer screen shown to a client', caption: 'Deposit-secured offer' },
+  { src: '/images/app/admin-inbox.png', alt: "Artist's inbox of incoming booking requests", caption: 'Your requests inbox' },
+  { src: '/images/app/admin-calendar.png', alt: "Artist's appointment calendar of confirmed bookings", caption: 'Your calendar' }
 ];
 ---
 
-<BaseLayout title="Tattoo Studio Software | Booking, Consent Forms & Deposits | MyTattoo" description="Never chase deposits again. Automate booking, consent forms & payments for tattoo studios. Reduce no-shows by 40%. Used by 800+ artists. Start free today.">
-  <!-- Structured Data Schemas -->
+<BaseLayout title="Deposit-secured tattoo booking from your bio link | MyTattoo" description="Turn your Instagram bio link into a deposit-secured, reference-attached tattoo booking. Cut no-shows and stop chasing deposits — no client app, no account.">
   <script type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
-  {reviewSchemas.map(reviewSchema => (
-    <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
-  ))}
 
   <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy to-gray-900 text-white">
     <div class="absolute inset-0 opacity-10">
@@ -213,29 +73,56 @@ const stats = [
     </div>
     <div class="container-custom relative py-20 md:py-32">
       <div class="max-w-3xl">
-        <span class="badge-primary mb-6">#1 Tattoo Studio Software</span>
+        <span class="badge-primary mb-6">For independent tattoo artists</span>
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-          Run Your <span class="text-brand-red">Tattoo Studio</span> Like a Pro
+          Your bio link does the <span class="text-brand-red">booking</span> now
         </h1>
         <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          The all-in-one platform for tattoo artists and studios. Booking, client management, deposits, and consent forms.
+          Turn your Instagram bio link into a deposit-secured, reference-attached booking. No DMs, no chasing, no no-shows.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Start Free Trial</a>
-          <a href="/tattoo-studio-software/" class="btn-secondary text-lg px-8 py-4">See Features</a>
+          <a href="/contact/" class="btn-primary text-lg px-8 py-4">Get early access</a>
+          <a href="/tattoo-booking-software/" class="btn-secondary text-lg px-8 py-4">See how it works</a>
         </div>
-        <p class="mt-6 text-sm text-gray-400">No credit card required • 14-day free trial</p>
+        <p class="mt-6 text-sm text-gray-400">Deposit-secured · no client account · no surcharge</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-bone">
+    <div class="container-custom">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="badge-primary mb-4">Product tour</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">See it in action</h2>
+        <p class="text-lg text-text-secondary">From the first booking request to a paid deposit on the calendar — here's the real app, screen by screen.</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+        {screenshots.map((shot) => (
+          <div>
+            <div class="aspect-[780/1688] rounded-2xl overflow-hidden bg-ink border border-paper-line shadow-lg">
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                width="780"
+                height="1688"
+                loading="lazy"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <p class="mt-3 text-center font-mono text-xs md:text-sm uppercase tracking-wide text-sepia-deep">{shot.caption}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="py-12 bg-gray-50 border-b border-gray-100">
     <div class="container-custom">
-      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Built to scale with your studio</p>
+      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Booking, minus the chasing</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {stats.map((stat) => (
           <div>
-            <div class="text-3xl md:text-4xl font-bold text-brand-navy">{stat.number}</div>
+            <div class="text-2xl md:text-3xl font-bold text-brand-navy">{stat.number}</div>
             <div class="text-sm text-gray-600 mt-1">{stat.label}</div>
           </div>
         ))}
@@ -247,8 +134,8 @@ const stats = [
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="badge-primary mb-4">Features</span>
-        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">Everything You Need to Run Your Studio</h2>
-        <p class="text-xl text-gray-600">From online booking to consent forms, we've got you covered.</p>
+        <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">Everything the booking needs, nothing it doesn't</h2>
+        <p class="text-xl text-gray-600">From a tap on your bio link to a deposit-paid appointment on your calendar.</p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature) => (
@@ -275,41 +162,32 @@ const stats = [
     <div class="container-custom">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="badge-primary mb-4">For All Tattoo Artists</span>
+          <span class="badge-primary mb-4">How it works</span>
           <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
-            Built for Solo Artists and Studios
+            Three steps, and you're chasing nothing
           </h2>
-          <p class="text-lg text-gray-600 mb-6">
-            Whether you're a solo tattoo artist working from home or running a multi-artist studio, MyTattoo adapts to your workflow with flexible booking, artist schedules, and customizable services.
-          </p>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong class="text-brand-navy">Solo Artists:</strong> Simple booking, client management, and consent forms</span>
+          <ul class="space-y-6 mb-8">
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-red text-white font-bold flex items-center justify-center">1</span>
+              <span class="text-gray-700"><strong class="text-brand-navy">Share your link.</strong> Put your MyTattoo link in your Instagram bio. Clients tap it and land on your branded booking page — no app, no account.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong class="text-brand-navy">Multi-Artist Studios:</strong> Individual artist calendars, walk-in management, studio oversight</span>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-red text-white font-bold flex items-center justify-center">2</span>
+              <span class="text-gray-700"><strong class="text-brand-navy">They book + pay a deposit.</strong> They send references, pick a time you offered, and pay the deposit through Stripe.</span>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-brand-red flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              <span class="text-gray-700"><strong class="text-brand-navy">Guest Artists:</strong> Temporary booking pages, deposit collection, portfolio links</span>
+            <li class="flex items-start gap-4">
+              <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-red text-white font-bold flex items-center justify-center">3</span>
+              <span class="text-gray-700"><strong class="text-brand-navy">It lands on your calendar.</strong> Only once the deposit clears — so no-shows drop, and you never chase a payment again.</span>
             </li>
           </ul>
-          <a href="/tattoo-studio-software/" class="btn-primary">
-            Explore Studio Software
+          <a href="/tattoo-booking-software/" class="btn-primary">
+            See how it works
           </a>
         </div>
         <div class="relative">
           <img
             src="/images/feature-studio.jpg"
-            alt="Tattoo artist working in a professional studio"
+            alt="Independent tattoo artist at work"
             class="rounded-2xl shadow-2xl"
           />
           <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 hidden md:block">
@@ -320,8 +198,8 @@ const stats = [
                 </svg>
               </div>
               <div>
-                <div class="font-bold text-brand-navy">All Artists</div>
-                <div class="text-sm text-gray-500">One Platform</div>
+                <div class="font-bold text-brand-navy">Deposit paid</div>
+                <div class="text-sm text-gray-500">Booking confirmed</div>
               </div>
             </div>
           </div>
@@ -333,9 +211,9 @@ const stats = [
   <section class="section bg-gray-50">
     <div class="container-custom">
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="badge-primary mb-4">Specialist Tools</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Tools Built for Every Need</h2>
-        <p class="text-lg text-gray-600">Whether you need online booking, scheduling, or artist-specific tools — we have a solution.</p>
+        <span class="badge-primary mb-4">Explore</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Built for how artists actually book</h2>
+        <p class="text-lg text-gray-600">However people search for it — booking, scheduling, an app on your phone — it's the same deposit-secured flow.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <a href="/tattoo-booking-software/" class="card hover:shadow-lg transition-shadow group">
@@ -345,7 +223,7 @@ const stats = [
             </svg>
           </div>
           <h3 class="text-lg font-bold text-brand-navy mb-2">Tattoo Booking Software</h3>
-          <p class="text-gray-600 text-sm">Online booking your clients can use 24/7. Deposits collected automatically at checkout.</p>
+          <p class="text-gray-600 text-sm">Online booking your clients can use 24/7, with a deposit collected at checkout.</p>
         </a>
         <a href="/tattoo-scheduling-software/" class="card hover:shadow-lg transition-shadow group">
           <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-4 group-hover:bg-brand-red transition-colors">
@@ -354,7 +232,7 @@ const stats = [
             </svg>
           </div>
           <h3 class="text-lg font-bold text-brand-navy mb-2">Tattoo Scheduling Software</h3>
-          <p class="text-gray-600 text-sm">Smart appointment scheduling with waitlists, buffer times, and multi-artist calendars.</p>
+          <p class="text-gray-600 text-sm">You set the times on offer; the client picks one and secures it with a deposit.</p>
         </a>
         <a href="/tattoo-booking-app/" class="card hover:shadow-lg transition-shadow group">
           <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-4 group-hover:bg-brand-red transition-colors">
@@ -363,7 +241,7 @@ const stats = [
             </svg>
           </div>
           <h3 class="text-lg font-bold text-brand-navy mb-2">Tattoo Booking App</h3>
-          <p class="text-gray-600 text-sm">Mobile-first booking for on-the-go artists. Manage your schedule from anywhere.</p>
+          <p class="text-gray-600 text-sm">Mobile-first for on-the-go artists. Manage everything from your phone.</p>
         </a>
         <a href="/tattoo-artist-software/" class="card hover:shadow-lg transition-shadow group">
           <div class="w-10 h-10 rounded-lg bg-brand-red-light flex items-center justify-center mb-4 group-hover:bg-brand-red transition-colors">
@@ -372,7 +250,7 @@ const stats = [
             </svg>
           </div>
           <h3 class="text-lg font-bold text-brand-navy mb-2">Tattoo Artist Software</h3>
-          <p class="text-gray-600 text-sm">Purpose-built tools for independent artists. Portfolio, bookings, and client records in one place.</p>
+          <p class="text-gray-600 text-sm">Purpose-built for the independent artist — bookings, references, and deposits in one place.</p>
         </a>
       </div>
     </div>
@@ -381,17 +259,14 @@ const stats = [
   <section class="section bg-brand-navy text-white">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">Testimonials</span>
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Loved by Tattoo Artists</h2>
+        <span class="bg-white/10 text-white px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">Why MyTattoo</span>
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Built to end the deposit chase</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
-        {testimonials.map((testimonial) => (
+        {reasons.map((reason) => (
           <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <div class="flex gap-1 mb-4">
-              {[1,2,3,4,5].map(() => (<svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>))}
-            </div>
-            <p class="text-gray-300 mb-6 leading-relaxed">"{testimonial.quote}"</p>
-            <div><div class="font-semibold">{testimonial.author}</div><div class="text-sm text-gray-400">{testimonial.role}</div></div>
+            <h3 class="text-xl font-bold mb-3">{reason.title}</h3>
+            <p class="text-gray-300 leading-relaxed">{reason.body}</p>
           </div>
         ))}
       </div>
@@ -402,12 +277,12 @@ const stats = [
   <section class="section bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto text-center">
-        <span class="badge bg-brand-red-light text-brand-red mb-4">Free Planning Tool</span>
+        <span class="badge bg-brand-red-light text-brand-red mb-4">Free planning tool</span>
         <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
-          Calculate Your Studio Revenue
+          Work out what no-shows cost you
         </h2>
         <p class="text-xl text-text-secondary mb-8">
-          Model your tattoo studio's income, costs, and growth potential with industry benchmarks. Whether you're a solo artist or studio owner, see exactly how booking rates, deposit policies, and pricing strategies impact your bottom line.
+          Model your income, costs, and the price of an empty chair. See exactly how your booking rate, deposit policy, and pricing shape what you actually take home.
         </p>
         <div class="grid md:grid-cols-3 gap-6 mb-8">
           <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
@@ -416,8 +291,8 @@ const stats = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-brand-navy mb-2">Revenue Modeling</h3>
-            <p class="text-sm text-text-secondary">Calculate actual take-home after costs, commissions, and booking gaps</p>
+            <h3 class="font-bold text-brand-navy mb-2">Income modelling</h3>
+            <p class="text-sm text-text-secondary">Calculate your real take-home after costs, commissions, and booking gaps</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
             <div class="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -425,8 +300,8 @@ const stats = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-brand-navy mb-2">Booking Analysis</h3>
-            <p class="text-sm text-text-secondary">See how utilisation rates and no-shows impact your annual income</p>
+            <h3 class="font-bold text-brand-navy mb-2">No-show cost</h3>
+            <p class="text-sm text-text-secondary">See how utilisation rates and no-shows eat into your annual income</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
             <div class="w-12 h-12 bg-brand-red rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -434,12 +309,12 @@ const stats = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
               </svg>
             </div>
-            <h3 class="font-bold text-brand-navy mb-2">Growth Projections</h3>
-            <p class="text-sm text-text-secondary">Model revenue over 6-24 months with seasonality and expansion</p>
+            <h3 class="font-bold text-brand-navy mb-2">Growth projections</h3>
+            <p class="text-sm text-text-secondary">Model your income over 6–24 months with seasonality built in</p>
           </div>
         </div>
         <a href="/tattoo-studio-calculator/" class="btn-primary text-lg px-8 py-4">
-          Try the Free Revenue Calculator
+          Try the free calculator
         </a>
       </div>
     </div>
@@ -447,11 +322,11 @@ const stats = [
 
   <section class="section bg-gradient-to-r from-brand-red to-brand-red-dark text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Streamline Your Studio?</h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Start your free trial today and see how MyTattoo.Software can transform your business.</p>
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to stop chasing deposits?</h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">Put your link in your bio and let the deposits do the confirming.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Start Your Free Trial</a>
-        <a href="/pricing/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">View Pricing</a>
+        <a href="/contact/" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get early access</a>
+        <a href="/tattoo-booking-software/" class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-4">See how it works</a>
       </div>
     </div>
   </section>

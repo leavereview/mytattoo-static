@@ -18,7 +18,7 @@ interface Props {
 
 const {
   title,
-  description = 'MyTattoo.Software - The complete tattoo studio management platform. Booking, client management, consent forms, and deposits.',
+  description = 'MyTattoo.Software - Deposit-secured booking for independent tattoo artists. Turn your Instagram bio link into a reference-attached booking.',
   image = '/images/og-default.jpg',
   type = 'website',
   schemaType,
@@ -35,7 +35,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Dynamic title suffix: skip for long titles, use shorter brand name
 const getTitleSuffix = (pageTitle: string): string => {
-  if (pageTitle === 'Home') return 'MyTattoo.Software - Tattoo Studio Management Software';
+  if (pageTitle === 'Home') return 'MyTattoo.Software - Deposit-Secured Tattoo Booking';
   if (pageTitle.length > 50) return pageTitle; // No suffix for long titles
   return `${pageTitle} | MyTattoo`;
 };
@@ -69,7 +69,7 @@ const schemaOrg = {
         "addressCountry": "GB"
       },
       "foundingDate": "2024",
-      "description": "Complete tattoo studio management software for booking appointments, managing clients, handling consent forms, and collecting deposits."
+      "description": "Deposit-secured booking software for independent tattoo artists — an Instagram bio-link booking page, reference intake, and deposit collection via Stripe."
     },
     {
       "@type": "WebSite",
@@ -129,13 +129,13 @@ const schemaOrg = {
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={new URL(image, Astro.site)} />
   <!-- Mobile browser chrome colour -->
-  <meta name="theme-color" content="#1A1A2E" />
+  <meta name="theme-color" content="#17120E" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" /></noscript>
   <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
   <!-- Google Analytics - Conditional Loading Based on Cookie Consent -->

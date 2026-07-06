@@ -4,36 +4,41 @@ export default {
   theme: {
     extend: {
       colors: {
-        // PetCare Brand Colors
+        // MyTattoo "Flash-Sheet" brand (matches the app's design system)
+        ink: '#17120E',
+        'ink-soft': '#241B14',
+        bone: '#E7DECC',
+        'bone-hi': '#F3ECDD',
+        sepia: '#B4A184',
+        'sepia-deep': '#8C795D',
+        blood: '#A62B22',
+        'blood-deep': '#7C1E17',
+        'paper-line': '#D3C7AE',
+        // Back-compat: the site's existing brand.* tokens, remapped to Flash-Sheet
         brand: {
-          navy: '#1A1A2E',
-          red: '#E94560',
-          'red-dark': '#D13354',
-          'red-light': '#FFE7EC',
+          navy: '#17120E',
+          red: '#A62B22',
+          'red-dark': '#7C1E17',
+          'red-light': '#F4E4E1',
         },
-        // Text colors
         text: {
-          primary: 'rgb(17, 24, 39)',
-          secondary: 'rgb(75, 85, 99)',
-          tertiary: 'rgb(107, 114, 128)',
-        }
+          primary: '#17120E',
+          secondary: '#4A4034',
+          tertiary: '#7A6B54',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['Archivo', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        display: ['"Alfa Slab One"', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['"Space Mono"', 'ui-monospace', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
         'slide-up': 'slideUp 0.5s ease-out',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+        slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
       },
     },
   },

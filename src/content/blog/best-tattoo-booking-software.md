@@ -22,25 +22,24 @@ Generic booking tools (Calendly, Acuity) work for basic scheduling but miss crit
 
 ### MyTattoo.Software
 
-**Best for**: Studios wanting an all-in-one solution
+**Best for**: Independent artists wanting a deposit-secured booking flow
 
 **Key Features**:
+- Instagram bio-link booking page, no client account needed
 - Online booking with deposit collection
-- Digital consent forms
-- Client management with reference image storage
-- SMS and email reminders
-- Multi-artist support
+- Reference image upload at booking
+- Email notifications on request, offer, and paid deposit
 
-**Pricing**: Flat monthly fee, no per-booking charges
+**Pricing**: Currently in early access — get in touch for pricing
 
 **Pros**:
-- Built specifically for tattoo studios
+- Built specifically for independent tattoo artists
 - Simple, intuitive interface
-- Responsive customer support
-- Regular feature updates
+- No per-booking fees
 
 **Cons**:
 - Newer platform (less name recognition)
+- No multi-artist support yet — built for the independent artist
 
 ### Square Appointments
 
@@ -137,9 +136,9 @@ Generic booking tools (Calendly, Acuity) work for basic scheduling but miss crit
 |---------|----------|--------|--------|--------|-----------|
 | Online Booking | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Deposits | ✓ | Limited | ✓ | ✓ | ✓ |
-| Consent Forms | ✓ | ✗ | ✗ | ✗ | ✓ |
+| Consent Forms | ✗ | ✗ | ✗ | ✗ | ✓ |
 | Reference Images | ✓ | ✗ | ✗ | Limited | ✓ |
-| SMS Reminders | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Reminders | Email only | ✓ | ✓ | ✓ | ✓ |
 | Multi-Hour Booking | ✓ | Limited | ✓ | Limited | ✓ |
 | Tattoo-Specific | ✓ | ✗ | ✗ | ✗ | ✓ |
 
