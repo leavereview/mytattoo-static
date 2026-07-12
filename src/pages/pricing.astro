@@ -31,8 +31,13 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
     <div class="container-custom">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-brand-navy mb-4">No platform fee. Keep every deposit.</h2>
+        <p class="text-lg text-gray-600 mb-6">
+          MyTattoo is free while we're in early access — no platform fee, no per-booking fee, and no subscription. Connect your own Stripe, set your deposit, and it lands straight in your account (you just pay Stripe's standard card processing, like any checkout). <a href="/contact/" class="text-brand-red hover:underline">Get in touch</a> if you've any questions.
+        </p>
         <p class="text-lg text-gray-600 mb-8">
-          MyTattoo is free while we're getting started — no platform fee, no per-booking fee, and no subscription. Connect your own Stripe, set your deposit, and it lands straight in your account (you just pay Stripe's standard card processing, like any checkout). <a href="/contact/" class="text-brand-red hover:underline">Get in touch</a> if you've any questions.
+          Most booking platforms take a percentage of your work — typically 3–5% of every booking, and marketplaces
+          like Booksy take up to 30% of a new client's booking. On a £400 tattoo that's £12 to £120 out of your pocket.
+          MyTattoo takes <strong>nothing</strong>. Your client pays you for the tattoo; we never touch it.
         </p>
         <div class="card border-2 border-brand-red text-left max-w-md mx-auto mb-8">
           <h3 class="text-xl font-bold text-brand-navy mb-4">What's included</h3>
@@ -46,7 +51,14 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
           </ul>
         </div>
         <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
-        <p class="mt-8 text-sm text-gray-500">
+
+        <p class="mt-8 text-sm text-gray-500 max-w-lg mx-auto">
+          <strong class="text-brand-navy">Will this stay free?</strong> We'll introduce paid plans in future — we're
+          being upfront about that rather than springing it on you. If we do, you'll get
+          <a href="/terms/" class="text-brand-red hover:underline">at least 30 days' notice</a> before any charge.
+        </p>
+
+        <p class="mt-6 text-sm text-gray-500">
           Read more about the <a href="/tattoo-booking-software/" class="text-brand-red hover:underline">booking software</a>, see it built for <a href="/tattoo-artist-software/" class="text-brand-red hover:underline">independent artists</a>, or browse the <a href="/tattoo-software-comparison/" class="text-brand-red hover:underline">software comparison</a>.
         </p>
       </div>

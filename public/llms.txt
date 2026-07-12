@@ -8,7 +8,7 @@ MyTattoo helps independent tattoo artists turn their Instagram bio link into a b
 
 - [Home](https://mytattoo.software/): Product overview and how the deposit-secured booking flow works
 - [Tattoo Studio Software](https://mytattoo.software/tattoo-studio-software/): Product overview — booking, reference intake, and deposit collection
-- [Pricing](https://mytattoo.software/pricing/): Early access — get in touch for pricing
+- [Pricing](https://mytattoo.software/pricing/): Free while in early access — no platform fee, no per-booking fee, no subscription; artists connect their own Stripe and keep every deposit
 - [About](https://mytattoo.software/about/): Product story and mission
 - [Contact](https://mytattoo.software/contact/): Get early access or ask a question
 
