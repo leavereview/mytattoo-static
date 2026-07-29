@@ -7,18 +7,29 @@ import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
 // Feature-by-feature comparison across the main platforms tattoo artists actually consider.
 // Columns: Feature | MyTattoo | Booksy | Mindbody | Square Appointments
+// Columns: Feature | MyTattoo | Booksy | Mindbody | Square | Vagaro | Fresha
 const comparisonData = [
-  { label: 'Built specifically for tattoo studios', values: [true, false, false, false], highlight: true },
-  { label: 'No client account required to book', values: [true, false, false, false], highlight: true },
-  { label: 'Reference image upload at booking', values: [true, false, false, false], highlight: true },
-  { label: 'Automatic deposit collection', values: [true, true, true, true] },
-  { label: 'Custom deposit & cancellation policies', values: [true, true, true, true] },
-  { label: 'Email notifications', values: [true, true, true, true] },
-  { label: '24/7 online booking', values: [true, true, true, true] },
-  { label: 'Instagram bio booking link', values: [true, true, true, true] },
-  { label: 'Multi-artist studio calendars', values: [false, true, true, true] },
-  { label: 'No marketplace commission on new-client bookings', values: [true, false, false, true], highlight: true },
-  { label: 'Free entry tier', values: [true, false, false, true] },
+  { label: 'Built specifically for tattoo studios', values: [true, false, false, false, false, false], highlight: true },
+  { label: 'No client account required to book', values: [true, false, false, false, false, false], highlight: true },
+  { label: 'Reference image upload at booking', values: [true, false, false, false, false, false], highlight: true },
+  { label: 'Automatic deposit collection', values: [true, true, true, true, true, true] },
+  { label: 'Custom deposit & cancellation policies', values: [true, true, true, true, true, true] },
+  { label: 'Email notifications', values: [true, true, true, true, true, true] },
+  { label: '24/7 online booking', values: [true, true, true, true, true, true] },
+  { label: 'Instagram bio booking link', values: [true, true, true, true, true, true] },
+  { label: 'Multi-artist studio calendars', values: [false, true, true, true, true, true] },
+  { label: 'No marketplace commission on new-client bookings', values: [true, false, false, true, true, false], highlight: true },
+  { label: 'Free entry tier', values: [true, false, false, true, false, false] },
+];
+
+// Published subscription and commission figures, verified against vendor pricing pages July 2026.
+const pricingRows = [
+  { name: 'MyTattoo.Software', price: 'Free (early access)', commission: 'None', note: 'Deposits go straight to your own Stripe account' },
+  { name: 'Booksy', price: '~£40/mo solo (UK)', commission: '30% of first Boost booking (min £5)', note: 'Includes 500 SMS; extra texts ~5p' },
+  { name: 'Mindbody', price: 'From $99/mo', commission: '20% marketplace commission', note: 'Real-world costs commonly run higher' },
+  { name: 'Square Appointments', price: 'Free (single user)', commission: 'None', note: 'Processing charged separately' },
+  { name: 'Vagaro', price: 'From ~£20/mo (1 calendar)', commission: 'None stated', note: '+~$10/mo per extra calendar; add-ons priced separately' },
+  { name: 'Fresha', price: '$19.95/mo Independent', commission: '20% on new marketplace clients (min $6)', note: 'Ended its free model in 2025' },
 ];
 
 const faqItems = [
@@ -96,8 +107,8 @@ const schemaMarkup = {
 ---
 
 <BaseLayout
-  title="Tattoo Software Comparison: MyTattoo vs Booksy, Mindbody & Square | MyTattoo"
-  description="Compare the best tattoo studio software side by side. MyTattoo vs Booksy vs Mindbody vs Square Appointments on consent forms, deposits, reference uploads, pricing, and which is best for solo artists and studios."
+  title="Tattoo Software Comparison & Reviews: 6 Booking Platforms Compared (2026)"
+  description="Tattoo booking and scheduling software compared on real 2026 pricing and commission: MyTattoo, Booksy, Mindbody, Square, Vagaro and Fresha. Verified July 2026."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -139,10 +150,51 @@ const schemaMarkup = {
       <div class="max-w-5xl mx-auto">
         <ComparisonTable
           title="Tattoo Software Compared, Feature by Feature"
-          description="MyTattoo is purpose-built for tattoo studios. Booksy, Mindbody, and Square are general booking platforms used across many industries."
-          headers={['Feature', 'MyTattoo', 'Booksy', 'Mindbody', 'Square']}
+          description="MyTattoo is purpose-built for tattoo studios. Booksy, Mindbody, Square, Vagaro and Fresha are general booking platforms used across many industries."
+          headers={['Feature', 'MyTattoo', 'Booksy', 'Mindbody', 'Square', 'Vagaro', 'Fresha']}
           rows={comparisonData}
         />
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-16 mb-4">What Each Platform Costs</h2>
+        <p class="text-gray-600 mb-6">
+          Feature tables hide the number that decides most switches: the commission. Below is
+          what each platform charges as a subscription, and what it takes from your bookings.
+          Published figures, verified July 2026.
+        </p>
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-left border-collapse text-base">
+            <thead>
+              <tr class="border-b-2 border-gray-200">
+                <th class="py-3 pr-4 font-bold text-brand-navy">Platform</th>
+                <th class="py-3 pr-4 font-bold text-brand-navy">Subscription</th>
+                <th class="py-3 pr-4 font-bold text-brand-navy">Commission</th>
+                <th class="py-3 font-bold text-brand-navy">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              {pricingRows.map((row, i) => (
+                <tr class={i === 0 ? 'border-b border-gray-100 bg-brand-red-light/40' : 'border-b border-gray-100'}>
+                  <td class="py-3 pr-4 font-semibold">{row.name}</td>
+                  <td class="py-3 pr-4">{row.price}</td>
+                  <td class="py-3 pr-4">{row.commission}</td>
+                  <td class="py-3 text-sm text-gray-600">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mb-8">
+          Card processing is charged separately by every platform here. Vagaro, Fresha and
+          Mindbody list primarily in USD.
+        </p>
+        <p class="text-gray-700">
+          The commission column is where the real money is. A studio taking on four new
+          marketplace clients a month at a £350 first session pays roughly <strong>£420/month</strong>
+          in Booksy Boost commission — about ten times its subscription. We've worked that through
+          properly on our <a href="/booksy-alternative/" class="text-brand-red hover:underline">Booksy alternative</a>
+          page, and ranked the platforms by studio type in
+          <a href="/best-tattoo-studio-software/" class="text-brand-red hover:underline">best tattoo studio software</a>.
+        </p>
       </div>
     </div>
   </section>

@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const faqItems = [
+  {
+    question: 'What is the best Booksy alternative for tattoo studios?',
+    answer:
+      "It depends on what is driving you off Booksy. If it is the 30% Boost commission on new marketplace clients, you want a platform with no marketplace take — MyTattoo.Software charges no platform fee and no commission, and Square Appointments has a free tier with no marketplace cut. If it is the missing tattoo workflows — reference image uploads, consent forms, multi-hour sessions — you want tattoo-specific software rather than another beauty platform.",
+    links: [
+      { text: 'Full software comparison', url: '/tattoo-software-comparison/' },
+      { text: 'Tattoo booking software', url: '/tattoo-booking-software/' },
+    ],
+  },
+  {
+    question: 'How much does Booksy actually cost a tattoo artist?',
+    answer:
+      'Booksy is around £40/month for a solo artist in the UK, which covers the booking calendar, reminders, client management and 500 SMS. The cost most artists underestimate is Boost: when a brand-new client finds you through the Booksy marketplace, Booksy takes 30% of that first appointment, with a £5 minimum. On a £400 first session that is £120. Verified July 2026.',
+  },
+  {
+    question: 'Does Booksy take a commission on deposits?',
+    answer:
+      "Booksy's marketplace commission applies to the first booking from a new client acquired through Boost, not to your existing clients booking directly. That distinction matters: if all your work comes from Instagram and word of mouth, you may never pay it. If you rely on the marketplace for new clients, it becomes your largest software cost by a wide margin.",
+  },
+  {
+    question: 'Can I move my client list off Booksy?',
+    answer:
+      'Ask Booksy for an export before you commit to moving. The practical question with any booking platform is whether you can leave with your client contact details and appointment history intact. Confirm the export format in writing rather than assuming, and keep your own backup of client contacts independently of any platform.',
+  },
+  {
+    question: 'Is there a free alternative to Booksy?',
+    answer:
+      "Yes. MyTattoo.Software is free while we're in early access — no subscription, no platform fee and no commission on bookings or deposits. Square Appointments has a genuine free tier for a single user. Fresha moved off its free model in 2025 and now runs paid plans plus a 20% commission on new marketplace clients.",
+  },
+  {
+    question: 'Why do tattoo artists leave Booksy?',
+    answer:
+      'The two reasons that come up repeatedly are the Boost commission on new clients and the fact that Booksy is built for the beauty industry. There is no reference image upload at booking, no tattoo consent form, and the appointment model assumes short, repeatable services rather than multi-hour or multi-session tattoo work.',
+  },
+];
+
+const title = 'Booksy Alternative for Tattoo Artists: What It Actually Costs to Switch';
+const description =
+  "Booksy takes 30% of a new client's first booking through Boost. Compare the real costs of Booksy, Square, Fresha and MyTattoo for tattoo studios. Verified July 2026.";
+---
+
+<BaseLayout title={title} description={description} schemaType="WebPage" publishedDate="2026-07-29" modifiedDate="2026-07-29">
+  <div class="bg-gray-50 py-4">
+    <div class="container-custom">
+      <BreadcrumbsEnhanced
+        site="tattoo"
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Tattoo Software Comparison', href: '/tattoo-software-comparison/' },
+          { label: 'Booksy Alternative' },
+        ]}
+      />
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Looking for a Booksy Alternative?</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Booksy works. The question is what it costs you. When a new client finds you through
+          the Booksy marketplace, Boost takes <strong class="text-white">30% of that first
+          appointment</strong>. On a £400 session, that is £120 — for one booking.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Start Free — No Commission</a>
+          <a href="/tattoo-software-comparison/" class="btn-secondary text-lg px-8 py-4">Compare All Platforms</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FeaturedAnswer question="What is the best Booksy alternative for tattoo studios?">
+          <p>
+            If you are leaving because of the <strong>30% Boost commission</strong>, you want a
+            platform that takes nothing from your bookings — MyTattoo.Software charges no
+            platform fee and no commission, and Square Appointments has a free single-user tier
+            with no marketplace cut. If you are leaving because Booksy is
+            <strong>built for the beauty industry</strong>, you want tattoo-specific software
+            that handles reference images, consent forms and multi-hour sessions natively.
+          </p>
+        </FeaturedAnswer>
+
+        <div class="prose prose-lg max-w-none mt-12">
+          <h2>What Booksy costs a tattoo artist</h2>
+          <p>
+            Booksy runs about <strong>£40/month for a solo artist in the UK</strong>. That covers
+            the booking calendar, automated reminders, client management, marketing tools and 500
+            SMS per month, with extra texts at around 5p each. There is a 14-day trial. As a
+            subscription, it is competitive.
+          </p>
+          <p>
+            The number that catches people out is <strong>Boost</strong>. When a brand-new client
+            discovers your studio through the Booksy marketplace and books, Booksy takes
+            <strong>30% of that first appointment, with a £5 minimum</strong>. For a barber taking
+            £25 for a cut, that is £7.50 — irritating but survivable. For a tattoo artist whose
+            first session is £400, it is £120.
+          </p>
+          <p>
+            That is the structural mismatch. Booksy's commission model was designed around
+            high-frequency, low-ticket beauty services. Tattooing is the opposite: low frequency,
+            high ticket. A percentage that makes sense on a £25 haircut does not make sense on a
+            full-day session.
+          </p>
+
+          <h2>What each alternative actually costs</h2>
+          <p>Published pricing, verified July 2026.</p>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full text-left border-collapse text-base">
+              <thead>
+                <tr class="border-b-2 border-gray-200">
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Platform</th>
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Subscription</th>
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Marketplace commission</th>
+                  <th class="py-3 font-bold text-brand-navy">Built for tattooing?</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100 bg-brand-red-light/40">
+                  <td class="py-3 pr-4 font-semibold">MyTattoo.Software</td>
+                  <td class="py-3 pr-4">Free (early access)</td>
+                  <td class="py-3 pr-4"><strong>None</strong></td>
+                  <td class="py-3">Yes</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Booksy</td>
+                  <td class="py-3 pr-4">~£40/mo solo (UK)</td>
+                  <td class="py-3 pr-4">30% of first Boost booking (min £5)</td>
+                  <td class="py-3">No — beauty industry</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Fresha</td>
+                  <td class="py-3 pr-4">$19.95/mo Independent</td>
+                  <td class="py-3 pr-4">20% on new marketplace clients (min $6)</td>
+                  <td class="py-3">No — salon/spa</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Vagaro</td>
+                  <td class="py-3 pr-4">From £20/mo (1 calendar)</td>
+                  <td class="py-3 pr-4">None stated; add-ons priced separately</td>
+                  <td class="py-3">No — salon/spa</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-semibold">Square Appointments</td>
+                  <td class="py-3 pr-4">Free tier (single user)</td>
+                  <td class="py-3 pr-4">None</td>
+                  <td class="py-3">No — general booking</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500">
+            Subscription figures as published by each vendor, July 2026. Fresha and Vagaro list in
+            USD except where a UK price is published. Card processing is charged separately by all
+            of them.
+          </p>
+
+          <h2>The commission maths, worked through</h2>
+          <p>
+            Say you take on <strong>four new clients a month</strong> through a marketplace, and
+            your average first session is <strong>£350</strong>.
+          </p>
+          <ul>
+            <li><strong>Booksy Boost at 30%:</strong> £105 per client × 4 = <strong>£420/month</strong> in commission, plus the ~£40 subscription.</li>
+            <li><strong>Fresha at 20%:</strong> £70 per client × 4 = <strong>£280/month</strong>, plus the subscription.</li>
+            <li><strong>MyTattoo:</strong> £0 commission, £0 subscription during early access.</li>
+          </ul>
+          <p>
+            The commission is not the small print — at that volume it is five to ten times the
+            subscription. And it applies precisely when you are growing, which is exactly when you
+            can least afford it.
+          </p>
+          <p>
+            The honest counterpoint: <strong>you are paying for client acquisition</strong>. If
+            the Booksy marketplace genuinely brings you four clients a month you would not
+            otherwise have had, £420 to acquire £1,400 of first-session work is a defensible cost
+            of sale. The question worth asking is whether those clients found you on Booksy, or
+            found you on Instagram and then booked through the Booksy link in your bio. If it is
+            the second, you are paying an acquisition fee for clients you acquired yourself.
+          </p>
+
+          <h2>Where Booksy genuinely wins</h2>
+          <p>
+            We would rather you switched for the right reason than the wrong one, so here is the
+            case for staying.
+          </p>
+          <ul>
+            <li><strong>Marketplace discovery.</strong> Booksy has real search traffic. If you are new in a city with no following, that is worth something no self-hosted booking page can replicate.</li>
+            <li><strong>Multi-artist studios.</strong> Booksy handles multiple staff calendars, commission splits and shared front-desk workflows maturely.</li>
+            <li><strong>It is finished software.</strong> Booksy has been built out over years. MyTattoo is in early access and there are things it does not do yet.</li>
+          </ul>
+          <p>
+            If marketplace discovery is your main client source and you are happy with the cost of
+            sale, staying put is a rational decision.
+          </p>
+
+          <h2>Where a tattoo-specific platform wins</h2>
+          <p>
+            Booksy's appointment model assumes short, repeatable services. Tattooing does not work
+            that way, and the gaps show up in the details:
+          </p>
+          <ul>
+            <li><strong>Reference images at booking.</strong> Clients send inspiration pictures. On beauty platforms that happens in DMs, then gets lost.</li>
+            <li><strong>No account required to book.</strong> Forcing a client to create a marketplace account before they can enquire loses enquiries.</li>
+            <li><strong>Multi-hour and multi-session work.</strong> A sleeve booked across four sittings is not four independent appointments.</li>
+            <li><strong>Deposits that are actually yours.</strong> With MyTattoo you connect your own Stripe account and the client's deposit goes straight to you, less Stripe's standard processing. We never hold it and we take nothing from it.</li>
+          </ul>
+
+          <h2>Before you switch</h2>
+          <p>
+            <strong>Export your client list first.</strong> Ask Booksy for your client contacts and
+            appointment history before you cancel anything, and keep an independent backup from
+            now on regardless of which platform you use.
+          </p>
+          <p>
+            <strong>Run both for a month.</strong> Point your Instagram link at the new booking
+            page while leaving Booksy live. You will find out quickly whether the marketplace was
+            really sending you clients.
+          </p>
+          <p>
+            <strong>Check your deposit flow end to end.</strong> Take one real deposit through the
+            new system before you rely on it. Booking software fails in the payment step more than
+            anywhere else.
+          </p>
+
+          <p>
+            For the full side-by-side across every platform tattoo artists actually consider, see
+            our <a href="/tattoo-software-comparison/">tattoo software comparison</a>, or read up
+            on what <a href="/tattoo-studio-software/">tattoo studio software</a> should do before
+            you shortlist anything.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FAQEnhanced
+          site="tattoo"
+          pageUrl="https://mytattoo.software/booksy-alternative/"
+          title="Booksy Alternatives: Common Questions"
+          faqs={faqItems}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-bold mb-4">No Platform Fee. No Commission. No Catch.</h2>
+      <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+        MyTattoo.Software is free while we're in early access. Connect your own Stripe account
+        and every deposit goes straight to you.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Get Started Free</a>
+        <a href="/tattoo-booking-app/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">See How Booking Works</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-software-comparison/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Software Comparison</h3>
+          <p class="text-gray-600 text-sm">Every platform tattoo artists consider, compared on price and features</p>
+        </a>
+        <a href="/best-tattoo-studio-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Best Tattoo Studio Software</h3>
+          <p class="text-gray-600 text-sm">Ranked by what kind of studio you actually run</p>
+        </a>
+        <a href="/blog/tattoo-deposit-guide/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Deposit Guide</h3>
+          <p class="text-gray-600 text-sm">How much to take, when to take it, and how to keep it</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

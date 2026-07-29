@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const faqItems = [
+  {
+    question: 'What is the best tattoo studio software in 2026?',
+    answer:
+      'There is no single answer, because studios differ more than the marketing suggests. For a solo artist who wants no fees, MyTattoo.Software is free during early access with no commission. For a multi-artist studio needing mature staff calendars, Booksy or Vagaro are more complete. For a studio that wants a free general tool and will accept building tattoo workflows manually, Square Appointments has a genuine free tier.',
+    links: [
+      { text: 'Full comparison table', url: '/tattoo-software-comparison/' },
+      { text: 'Tattoo studio software guide', url: '/tattoo-studio-software/' },
+    ],
+  },
+  {
+    question: 'How much does tattoo studio software cost?',
+    answer:
+      'Published 2026 pricing runs from free to around £40/month for a solo artist. Square Appointments has a free single-user tier, Fresha starts at $19.95/month, Vagaro from about £20/month for one calendar, and Booksy around £40/month solo in the UK. MyTattoo.Software is free during early access. Marketplace commissions matter more than subscriptions: Booksy takes 30% of a first Boost booking and Fresha 20% of a new marketplace client.',
+  },
+  {
+    question: 'Is there free tattoo studio software?',
+    answer:
+      "Yes. MyTattoo.Software is free while we're in early access, with no subscription and no commission. Square Appointments has a permanently free tier for a single user. Fresha ended its free model in 2025. Most other platforms offer trials rather than free tiers.",
+  },
+  {
+    question: 'Do I need tattoo-specific software or will salon software do?',
+    answer:
+      'Salon software handles the booking, calendar and payments perfectly well. What it does not handle is the tattoo-specific part: reference image uploads at the point of booking, consent forms, multi-hour sessions and multi-session pieces. If you are happy managing those in DMs and on paper, general software is cheaper and more mature. If that admin is what is costing you evenings, tattoo-specific software is the point.',
+  },
+  {
+    question: 'What features matter most for a tattoo studio?',
+    answer:
+      'In rough order: taking a deposit reliably, collecting reference images at booking, not forcing clients to create an account, handling multi-hour and multi-session bookings, and keeping consent forms with the client record. Everything else — marketing automation, loyalty schemes, retail POS — is secondary for most studios.',
+  },
+  {
+    question: 'How do I choose between tattoo booking platforms?',
+    answer:
+      'Start with how you get clients. If they come from Instagram and word of mouth, pick on cost and workflow and ignore marketplace features entirely. If you rely on being discovered, a marketplace platform earns its commission. Then test the deposit flow with one real booking before you migrate anything.',
+  },
+];
+
+const title = 'Best Tattoo Studio Software 2026: Compared on Real Pricing';
+const description =
+  'Five tattoo studio platforms compared on published 2026 pricing, commission structure and tattoo-specific features. Includes the genuinely free options. Verified July 2026.';
+---
+
+<BaseLayout title={title} description={description} schemaType="WebPage" publishedDate="2026-07-29" modifiedDate="2026-07-29">
+  <div class="bg-gray-50 py-4">
+    <div class="container-custom">
+      <BreadcrumbsEnhanced
+        site="tattoo"
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Tattoo Studio Software', href: '/tattoo-studio-software/' },
+          { label: 'Best Tattoo Studio Software' },
+        ]}
+      />
+    </div>
+  </div>
+
+  <section class="bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Best Tattoo Studio Software 2026</h1>
+        <p class="text-xl text-gray-300 mb-8">
+          Five platforms, real published prices, and the commission structures most roundups
+          leave out. We build one of these, so we've said plainly where the others are better.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Try MyTattoo Free</a>
+          <a href="/tattoo-software-comparison/" class="btn-secondary text-lg px-8 py-4">Feature-by-Feature Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FeaturedAnswer question="What is the best tattoo studio software?">
+          <p>
+            For a <strong>solo artist who wants no fees</strong>, MyTattoo.Software is free during
+            early access with no commission. For a <strong>multi-artist studio</strong> that needs
+            mature staff calendars and front-desk workflows, Booksy and Vagaro are more complete
+            products. For a studio that wants <strong>free general-purpose booking</strong> and
+            will build the tattoo workflows manually, Square Appointments has a real free tier.
+          </p>
+        </FeaturedAnswer>
+
+        <div class="prose prose-lg max-w-none mt-12">
+          <p>
+            Most "best tattoo software" lists are affiliate pages that rank products by commission
+            rate. This one gives you the published price of each platform and the commission it
+            takes, because those two numbers decide the cost far more than any feature list.
+          </p>
+          <p>
+            Everything below was checked against vendor pricing pages in <strong>July 2026</strong>.
+            We make MyTattoo.Software, so weigh our entry accordingly — we've tried to be specific
+            about what it does not do.
+          </p>
+
+          <h2>Pricing and commission at a glance</h2>
+
+          <div class="overflow-x-auto my-8">
+            <table class="w-full text-left border-collapse text-base">
+              <thead>
+                <tr class="border-b-2 border-gray-200">
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Platform</th>
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Subscription</th>
+                  <th class="py-3 pr-4 font-bold text-brand-navy">Commission</th>
+                  <th class="py-3 font-bold text-brand-navy">Best for</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100 bg-brand-red-light/40">
+                  <td class="py-3 pr-4 font-semibold">MyTattoo.Software</td>
+                  <td class="py-3 pr-4">Free (early access)</td>
+                  <td class="py-3 pr-4">None</td>
+                  <td class="py-3">Solo artists, tattoo-native workflow</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Booksy</td>
+                  <td class="py-3 pr-4">~£40/mo solo (UK)</td>
+                  <td class="py-3 pr-4">30% first Boost booking</td>
+                  <td class="py-3">Studios relying on marketplace discovery</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Vagaro</td>
+                  <td class="py-3 pr-4">From ~£20/mo (1 calendar)</td>
+                  <td class="py-3 pr-4">None stated</td>
+                  <td class="py-3">Multi-artist studios on a budget</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 pr-4 font-semibold">Fresha</td>
+                  <td class="py-3 pr-4">$19.95/mo Independent</td>
+                  <td class="py-3 pr-4">20% new marketplace clients</td>
+                  <td class="py-3">Studios wanting marketplace at lower take</td>
+                </tr>
+                <tr>
+                  <td class="py-3 pr-4 font-semibold">Square Appointments</td>
+                  <td class="py-3 pr-4">Free (single user)</td>
+                  <td class="py-3 pr-4">None</td>
+                  <td class="py-3">Solo artists wanting free and established</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-500">
+            Published pricing verified July 2026. Card processing charged separately by all
+            platforms. Vagaro and Fresha list primarily in USD.
+          </p>
+
+          <h2>The five, reviewed</h2>
+
+          <h3>1. MyTattoo.Software — best for solo artists who want nothing taken</h3>
+          <p>
+            Free while we're in early access: no subscription, no platform fee, no commission on
+            bookings or deposits. You connect your own Stripe account, so a client's deposit goes
+            straight to you less Stripe's standard processing — we never hold it.
+          </p>
+          <p>
+            Built specifically for tattooing, so reference image upload at booking, no-account
+            booking and tattoo-appropriate deposit policies are standard rather than workarounds.
+          </p>
+          <p>
+            <strong>Where it falls short:</strong> multi-artist studio calendars are less developed
+            than Booksy's or Vagaro's, there is no marketplace to bring you new clients, and it is
+            newer than everything else here. If you run a six-artist shop with a front desk, the
+            established platforms currently do that better.
+          </p>
+
+          <h3>2. Booksy — best if the marketplace genuinely finds you clients</h3>
+          <p>
+            Around <strong>£40/month for a solo artist in the UK</strong>, including calendar,
+            reminders, client management and 500 SMS. Mature multi-artist support and a marketplace
+            with real search traffic.
+          </p>
+          <p>
+            <strong>The cost to understand:</strong> Boost takes <strong>30% of the first
+            appointment</strong> from a new marketplace client, minimum £5. On a £400 first session
+            that is £120. That model was built for £25 haircuts, not full-day tattoo sessions.
+          </p>
+          <p>
+            <strong>Where it falls short:</strong> no reference image collection, no tattoo consent
+            forms, and an appointment model that assumes short repeatable services. We've written
+            up the switching maths in detail on our
+            <a href="/booksy-alternative/">Booksy alternative</a> page.
+          </p>
+
+          <h3>3. Vagaro — best value for a small multi-artist studio</h3>
+          <p>
+            From about <strong>£20/month for one calendar</strong>, with additional artist calendars
+            at roughly $10/month each up to seven. No marketplace commission stated, which makes it
+            structurally cheaper than Booksy for a studio doing high-value work.
+          </p>
+          <p>
+            <strong>Where it falls short:</strong> the low headline price is misleading. Custom
+            forms, text marketing, branded apps and advanced reporting are priced separately, and a
+            three-to-four artist studio with the add-ons it actually needs commonly lands at
+            $80–100/month. It is salon software, so tattoo workflows are yours to build.
+          </p>
+
+          <h3>4. Fresha — lower marketplace take than Booksy</h3>
+          <p>
+            <strong>$19.95/month</strong> for the Independent plan, or $14.95 per bookable team
+            member on Team. New clients from the Fresha marketplace cost <strong>20% commission
+            (minimum $6)</strong> — returning clients and anyone booking via your own website,
+            Google or social channels are free.
+          </p>
+          <p>
+            <strong>Where it falls short:</strong> Fresha moved off its free model in 2025, so older
+            guides describing it as free are out of date. Like Booksy it is built for salons and
+            spas, so no tattoo-specific workflows.
+          </p>
+
+          <h3>5. Square Appointments — best free general-purpose option</h3>
+          <p>
+            A genuine <strong>free tier for a single user</strong>, no marketplace commission, and
+            the reliability of an established payments company. If you want free software from a
+            large vendor and are content to handle tattoo specifics yourself, this is the safe pick.
+          </p>
+          <p>
+            <strong>Where it falls short:</strong> it is generic booking software. No reference
+            images, no consent forms, no concept of a multi-session piece. Card processing rates
+            apply as normal.
+          </p>
+
+          <h2>How to choose in three questions</h2>
+          <p>
+            <strong>1. Where do your clients come from?</strong> If it's Instagram and word of
+            mouth, marketplace features are worth nothing to you and you should ignore Booksy and
+            Fresha's discovery pitch entirely. If you genuinely get found through a marketplace,
+            the commission is a cost of sale rather than a fee.
+          </p>
+          <p>
+            <strong>2. How many artists?</strong> Solo artists have the widest choice and the least
+            reason to pay. Multi-artist studios need real staff calendars and should weight that
+            heavily.
+          </p>
+          <p>
+            <strong>3. What is your admin actually costing you?</strong> If chasing reference images
+            through DMs and rewriting consent forms eats an evening a week, tattoo-specific software
+            pays for itself immediately. If your current process works, general software is cheaper.
+          </p>
+
+          <h2>The short version</h2>
+          <ul>
+            <li><strong>Solo, no budget, wants tattoo-native:</strong> MyTattoo.Software (free, early access)</li>
+            <li><strong>Solo, no budget, wants established:</strong> Square Appointments free tier</li>
+            <li><strong>Small multi-artist studio:</strong> Vagaro, once you've priced the add-ons</li>
+            <li><strong>Relies on being discovered:</strong> Booksy, accepting the 30% cost of sale</li>
+            <li><strong>Wants marketplace at a lower take:</strong> Fresha at 20%</li>
+          </ul>
+
+          <p>
+            For the full feature-by-feature table, see our
+            <a href="/tattoo-software-comparison/">tattoo software comparison</a>. For what this
+            category should do before you shortlist anything, start with
+            <a href="/tattoo-studio-software/">tattoo studio software</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        <FAQEnhanced
+          site="tattoo"
+          pageUrl="https://mytattoo.software/best-tattoo-studio-software/"
+          title="Choosing Tattoo Studio Software: Common Questions"
+          faqs={faqItems}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-brand-red text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-bold mb-4">Built for Tattooing, Free While We Build It</h2>
+      <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+        No subscription, no platform fee, no commission. Your deposits go straight to your own
+        Stripe account.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4 font-bold">Get Started Free</a>
+        <a href="/pricing/" class="btn border-2 border-white text-white hover:bg-white hover:text-brand-red text-lg px-8 py-4 font-bold">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-custom">
+      <h2 class="text-2xl font-bold text-brand-navy mb-8 text-center">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <a href="/tattoo-software-comparison/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Software Comparison</h3>
+          <p class="text-gray-600 text-sm">Feature-by-feature across every platform artists consider</p>
+        </a>
+        <a href="/booksy-alternative/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Booksy Alternative</h3>
+          <p class="text-gray-600 text-sm">What the 30% Boost commission really costs, and what to switch to</p>
+        </a>
+        <a href="/tattoo-scheduling-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Scheduling Software</h3>
+          <p class="text-gray-600 text-sm">Managing multi-hour sessions, gaps and multi-sitting pieces</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
