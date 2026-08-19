@@ -1,9 +1,18 @@
 ---
-title: "Flash Booking Guide for Artists"
+title: "Tattoo Flash Booking: Fill Gaps and Take Deposits"
 description: "Fill cancellations with flash booking. Pricing approach (£60-£250), Instagram promotion tactics, and the booking flow that converts views to deposits."
 image: /images/blog-flash.jpg
 date: "2026-01-15"
 tags: ["Booking", "Business"]
+faqs:
+  - question: "How often should I offer flash?"
+    answer: "Start with once or twice monthly. Adjust based on demand and how it affects your custom bookings."
+  - question: "Should I take deposits for flash?"
+    answer: "Yes. Even though flash is spontaneous, deposits protect your time from no-shows."
+  - question: "Can flash clients modify designs?"
+    answer: "Keep modifications minimal. Significant changes should be handled as custom consultations."
+  - question: "What if flash doesn't sell?"
+    answer: "Experiment with designs, pricing, timing, and promotion. Some designs resonate more than others."
 ---
 
 Flash booking has revolutionized how tattoo artists fill their schedules and maximize revenue. This guide covers everything you need to know about implementing a successful flash booking strategy. Learn more about [Tattoo Artist Software](/tattoo-artist-software/). Explore [Tattoo Booking App](/tattoo-booking-app/) solutions. Explore [Tattoo Scheduling Software](/tattoo-scheduling-software/) solutions.

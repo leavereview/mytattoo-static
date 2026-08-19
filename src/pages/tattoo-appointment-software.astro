@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BreadcrumbsEnhanced from '../components/seo/BreadcrumbsEnhanced.astro';
+import FeaturedAnswer from '../components/seo/FeaturedAnswer.astro';
+import ComparisonTable from '../components/seo/ComparisonTable.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
+
+const comparisonData = [
+  { label: 'Client books without creating an account', values: [true, false, false], highlight: true },
+  { label: 'Deposit taken before the slot is confirmed', values: [true, 'Sometimes', false], highlight: true },
+  { label: 'Reference images attached at booking', values: [true, false, false], highlight: true },
+  { label: 'Placement, size and budget captured up front', values: [true, false, false] },
+  { label: 'Platform commission on your deposit', values: ['£0', '20–30%', 'n/a'], highlight: true },
+  { label: 'Works from an Instagram bio link', values: [true, true, false] },
+  { label: 'Automatic buffer between appointments', values: [true, true, false] },
+  { label: 'Client can reschedule themselves', values: [true, true, false] },
+  { label: 'Aftercare and prep notes sent automatically', values: [true, false, false] },
+  { label: 'Built specifically for tattooing', values: [true, false, false] },
+];
+
+const faqItems = [
+  {
+    question: 'What is tattoo appointment software?',
+    answer:
+      'Tattoo appointment software manages the whole path from enquiry to confirmed booking: a public booking page, an intake form that captures the design idea, placement, size, budget and reference images, a deposit taken before the slot is held, and the calendar that stops two clients landing on the same afternoon. It differs from generic appointment software because a tattoo appointment is not a fixed 30-minute slot — it is a variable-length session that needs a brief before it can be priced or scheduled.',
+    links: [{ text: 'How booking works', url: '/tattoo-booking-app/' }],
+  },
+  {
+    question: 'What is the best app for booking tattoo appointments?',
+    answer:
+      'It depends on whether you want a marketplace or a booking system. Marketplace apps such as Booksy put you in front of new clients but take a commission on those bookings — Booksy\'s Boost takes 30% of a new client\'s first booking. A dedicated booking system such as MyTattoo takes no commission and no platform fee on your deposits, but it will not find you clients; that is still Instagram\'s job. If you already have the following and just need the admin to stop, a booking system is the cheaper answer.',
+    links: [{ text: 'Booksy alternative, with the maths', url: '/booksy-alternative/' }],
+  },
+  {
+    question: 'How do I manage tattoo appointments online?',
+    answer:
+      'Put a booking link in your Instagram bio, define your working hours and session lengths, set a deposit amount, and let the intake form do the qualifying. Clients pick a slot, describe the piece, upload references and pay the deposit; the appointment only lands on your calendar once that deposit clears. The practical effect is that DMs stop being your booking system, and the people who reach your calendar have already committed money.',
+    links: [{ text: 'Reduce no-shows', url: '/blog/reduce-no-shows-tattoo-studio/' }],
+  },
+  {
+    question: 'Should I take a deposit when someone books an appointment?',
+    answer:
+      'Yes, and take it at the moment of booking rather than afterwards. A deposit is the only thing that converts an intention into a commitment, and chasing one after the fact reintroduces exactly the admin you were trying to remove. Typical UK tattoo deposits run from £30 to £100 depending on session length, usually deducted from the final price. Set a clear notice period and state plainly whether it is refundable.',
+    links: [{ text: 'Tattoo deposit guide', url: '/blog/tattoo-deposit-guide/' }],
+  },
+  {
+    question: 'Can clients book a tattoo appointment without an account?',
+    answer:
+      'With MyTattoo, yes — clients book with their contact details, no account or password. This matters more than it sounds. Every account-creation step between an Instagram tap and a paid deposit loses people, and a client booking one tattoo a year has no reason to maintain a login. Marketplace apps generally require an account because the account is the product.',
+    links: [],
+  },
+  {
+    question: 'How much does tattoo appointment software cost?',
+    answer:
+      'The two models are a subscription or a commission. Subscription tools generally run from roughly £20 to £40 per month. Commission-based marketplaces charge nothing monthly but take a percentage of bookings — which is cheap on a £25 haircut and expensive on a £400 tattoo session. MyTattoo charges no platform fee and takes no commission on deposits; artists connect their own Stripe account and the deposit goes straight to them.',
+    links: [{ text: 'Pricing', url: '/pricing/' }],
+  },
+  {
+    question: 'Does it work for a multi-artist studio?',
+    answer:
+      'Not yet, honestly. MyTattoo.Software today manages one artist\'s calendar — there is no multi-artist availability management or studio-wide revenue view. If you run a shop with several artists, our studio software guide covers what to look for in a platform that does, and we would rather say so than sell you something that does not fit.',
+    links: [{ text: 'Tattoo studio software', url: '/tattoo-studio-software/' }],
+  },
+];
+
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Tattoo Appointment Software: Manage Bookings Online',
+  description:
+    'How tattoo appointment software works: online booking, intake forms, deposits, and managing tattoo appointments without living in your DMs.',
+  author: { '@type': 'Organization', name: 'MyTattoo.Software' },
+  datePublished: '2026-08-19',
+  dateModified: '2026-08-19',
+};
+---
+
+<BaseLayout
+  title="Tattoo Appointment Software: Manage Bookings Online"
+  description="Take tattoo appointments online with an intake form, reference images and a deposit before the slot is held. No commission on your deposits."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+  <BreadcrumbsEnhanced
+    site="tattoo"
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Tattoo Appointment Software', href: '/tattoo-appointment-software/' },
+    ]}
+  />
+
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-navy to-gray-900 text-white py-16">
+    <div class="container-custom relative">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Appointment Management</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Appointment Software</h1>
+        <p class="text-xl text-gray-300 mb-4">
+          <strong>Tattoo appointment software</strong> turns a scattered DM thread into a confirmed, deposit-backed booking with the brief already attached. Clients book from your Instagram link; you stop being a receptionist.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
+          <a href="#how-it-works" class="btn-secondary text-lg px-8 py-4">Read the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FeaturedAnswer question="What is tattoo appointment software?">
+    Tattoo appointment software manages the full path from enquiry to confirmed booking: a public booking page, an intake form capturing the design idea, placement, size, budget and reference images, a deposit collected before the slot is held, and a calendar that prevents double-bookings. It differs from generic appointment software because a tattoo appointment is not a fixed slot — it is a variable-length session that cannot be priced or scheduled until the brief exists. MyTattoo takes no platform fee and no commission on deposits.
+  </FeaturedAnswer>
+
+  <section class="section bg-white" id="how-it-works">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Why tattoo appointments break generic booking tools</h2>
+      <p class="text-gray-700 mb-4">
+        Most appointment software was designed for a salon: a named service, a fixed duration, a fixed price, book and go. A tattoo appointment fails every one of those assumptions. You cannot quote a price until you know what the piece is. You cannot set a duration until you know the size and placement. And you cannot sensibly hold a full day for someone you have never spoken to without money changing hands first.
+      </p>
+      <p class="text-gray-700 mb-4">
+        That mismatch is why so many artists end up running bookings out of Instagram DMs even after buying software. The tool asks the client to pick a 60-minute slot, the client picks one, and the artist still has to open a conversation to find out what they actually want. Nothing has been saved.
+      </p>
+      <p class="text-gray-700 mb-8">
+        Software built for tattooing inverts the order: qualify first, schedule second. The intake form arrives before the calendar does, so by the time a slot is held you already know the design, the placement, the rough size, the budget and what references they have in mind.
+      </p>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">How to manage tattoo appointments online</h2>
+      <ol class="space-y-4 mb-8 text-gray-700">
+        <li><strong>1. Put one booking link in your Instagram bio.</strong> This is the single highest-leverage change. One link replaces "DM me for bookings", which is what generates the thread you never escape.</li>
+        <li><strong>2. Define your real working pattern.</strong> Session lengths, days off, buffer time between clients for setup and breakdown, and how far ahead you will open the calendar. Most artists open two to three months out.</li>
+        <li><strong>3. Make the intake form do the qualifying.</strong> Design idea, placement, approximate size, budget range, reference images, and any relevant medical notes. A client unwilling to fill this in was never going to sit for six hours.</li>
+        <li><strong>4. Require a deposit to confirm.</strong> The slot stays unheld until the deposit clears. This is the mechanism, not a formality.</li>
+        <li><strong>5. Let the confirmations and prep notes go out on their own.</strong> Booking confirmation, pre-appointment prep, and aftercare afterwards — none of these need you awake.</li>
+      </ol>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">What to look for in a tattoo appointment app</h2>
+      <p class="text-gray-700 mb-4">
+        Five things separate software that helps from software you will abandon in a month.
+      </p>
+      <ul class="space-y-3 mb-8 text-gray-700">
+        <li><strong>Booking without an account.</strong> Every password between an Instagram tap and a paid deposit costs you bookings. Someone getting one tattoo a year will not maintain a login.</li>
+        <li><strong>Reference images at the point of booking.</strong> If the client cannot attach images in the booking flow, they will send them by DM, and you are back where you started.</li>
+        <li><strong>Deposit-gated confirmation.</strong> Not "deposit requested" — deposit required, before the slot is yours to lose.</li>
+        <li><strong>An honest fee model.</strong> A percentage on a £400 session is a very different proposition to a percentage on a £25 haircut. Work out the annual number before signing up.</li>
+        <li><strong>Mobile-first for the client, not just for you.</strong> Almost every tattoo booking starts on a phone, usually in the evening.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold text-brand-navy mb-6">Best practices for tattoo scheduling</h2>
+      <p class="text-gray-700 mb-4">
+        A few habits do most of the work. <strong>Buffer aggressively</strong> — the time between clients is stencil prep, breakdown and cleaning, and an unbuffered calendar makes you late by mid-afternoon. <strong>Batch consultations</strong> rather than scattering them; a consultation between two sessions costs more focus than it looks like it should. <strong>Open booking in windows</strong> rather than perpetually, so you can close the calendar for a guest spot without going dark. And <strong>keep your deposit policy written down and visible</strong>, because every dispute you will ever have is about the deposit.
+      </p>
+      <p class="text-gray-700 mb-8">
+        On no-shows: reminders help, but the deposit is what actually works. An appointment someone has paid toward is an appointment they turn up for, and the ones who do not turn up have at least covered your empty chair. Our guide to
+        <a href="/blog/reduce-no-shows-tattoo-studio/" class="text-brand-red hover:underline">reducing no-shows</a> goes through the policy wording in detail, and the
+        <a href="/blog/tattoo-deposit-guide/" class="text-brand-red hover:underline">tattoo deposit guide</a> covers typical UK amounts.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-gray-50">
+    <div class="container-custom max-w-4xl">
+      <ComparisonTable
+        title="Tattoo appointment software vs marketplace apps vs DMs"
+        description="How a dedicated booking system compares with commission-based marketplace apps and running bookings out of Instagram."
+        headers={['Feature', 'MyTattoo', 'Marketplace app', 'Instagram DMs']}
+        rows={comparisonData}
+      />
+      <p class="text-gray-500 text-sm mt-4">
+        Commission figures reflect published marketplace rates verified July 2026 — see the
+        <a href="/booksy-alternative/" class="text-brand-red hover:underline">Booksy comparison</a> and the
+        <a href="/tattoo-software-comparison/" class="text-brand-red hover:underline">full platform comparison</a> for the worked maths.
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-brand-navy text-white text-center">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold mb-3">Take Appointments Without the DM Backlog</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+        No platform fee. No commission on your deposits. Connect your own Stripe account and the money goes straight to you.
+      </p>
+      <a href="https://app.mytattoo.software/signin" class="inline-block bg-brand-red text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-red-700 transition-colors">
+        Get started &rarr;
+      </a>
+    </div>
+  </section>
+
+  <FAQEnhanced
+    faqs={faqItems}
+    title="Tattoo Appointment Software — Common Questions"
+    site="tattoo"
+    pageUrl="https://mytattoo.software/tattoo-appointment-software/"
+  />
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <h2 class="text-2xl font-bold text-brand-navy mb-6">Related Guides</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/tattoo-booking-app/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Booking App</h3>
+          <p class="text-gray-600 text-sm">Benefits, features and pricing for booking from a phone</p>
+        </a>
+        <a href="/tattoo-scheduling-software/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Scheduling Software</h3>
+          <p class="text-gray-600 text-sm">Calendar management, availability and deposit-gated slots</p>
+        </a>
+        <a href="/blog/tattoo-appointments-guide/" class="card p-6 hover:shadow-lg transition-shadow group">
+          <h3 class="font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">Tattoo Appointments Guide</h3>
+          <p class="text-gray-600 text-sm">What to expect and how to prepare, for artists and clients</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
