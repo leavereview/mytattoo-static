@@ -11,6 +11,7 @@ const navLinks = [
       { label: 'Booking Software', href: '/tattoo-booking-software/' },
       { label: 'Scheduling Software', href: '/tattoo-scheduling-software/' },
       { label: 'Booking App', href: '/tattoo-booking-app/' },
+      { label: 'Appointment Software', href: '/tattoo-appointment-software/' },
       { label: 'Artist Software', href: '/tattoo-artist-software/' },
       { label: 'Software Comparison', href: '/tattoo-software-comparison/' },
       { label: 'Revenue Calculator', href: '/tattoo-studio-calculator/' },
@@ -55,7 +56,8 @@ function isActive(href: string): boolean {
         ))}
       </div>
 
-      <div class="hidden md:block">
+      <div class="hidden md:flex items-center gap-2">
+        <a href="https://app.mytattoo.software/admin" class="px-4 py-2 rounded-lg font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200">Login</a>
         <a href="https://app.mytattoo.software/signin" class="btn-primary text-sm">Get started</a>
       </div>
 
@@ -79,6 +81,7 @@ function isActive(href: string): boolean {
           )}
         </div>
       ))}
+      <a href="https://app.mytattoo.software/admin" class="block px-4 py-3 rounded-lg font-medium text-gray-600 hover:bg-gray-50">Login</a>
       <div class="mt-4 px-4">
         <a href="https://app.mytattoo.software/signin" class="btn-primary w-full text-center">Get started</a>
       </div>
