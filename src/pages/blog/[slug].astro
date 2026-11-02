@@ -50,6 +50,7 @@ const relatedPosts = allPosts
   image={post.data.image}
   type="article"
   publishedDate={post.data.date}
+  modifiedDate={post.data.updatedDate}
 >
   {faqSchema && (
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
