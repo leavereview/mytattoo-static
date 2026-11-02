@@ -8,7 +8,7 @@ const faqItems = [
   {
     question: 'What is the best tattoo studio software in 2026?',
     answer:
-      'There is no single answer, because studios differ more than the marketing suggests. For a solo artist who wants no fees, MyTattoo.Software is free until 31 March 2027, during early access with no commission. For a multi-artist studio needing mature staff calendars, Booksy or Vagaro are more complete. For a studio that wants a free general tool and will accept building tattoo workflows manually, Square Appointments has a genuine free tier.',
+      'There is no single answer, because studios differ more than the marketing suggests. For a solo artist who wants no fees, MyTattoo.Software is free until 31 March 2027, during early access with no commission. It is built for one artist managing their own books, so a multi-artist studio needing shared staff calendars should look at Booksy or Vagaro. For a studio that wants a free general tool and will accept building tattoo workflows manually, Square Appointments has a genuine free plan.',
     links: [
       { text: 'Full comparison table', url: '/tattoo-software-comparison/' },
       { text: 'Tattoo studio software guide', url: '/tattoo-studio-software/' },
@@ -17,12 +17,12 @@ const faqItems = [
   {
     question: 'How much does tattoo studio software cost?',
     answer:
-      'Published 2026 pricing runs from free to around £40/month for a solo artist. Square Appointments has a free single-user tier, Fresha starts at $19.95/month, Vagaro from about £20/month for one calendar, and Booksy around £40/month solo in the UK. MyTattoo.Software is free until 31 March 2027, during early access. Marketplace commissions matter more than subscriptions: Booksy takes 30% of a first Boost booking and Fresha 20% of a new marketplace client.',
+      'Published UK pricing (checked November 2026) runs from free to £40/month plus VAT for a single artist. Square Appointments has a free plan for one location, Fresha starts at £14.95/month, Vagaro lists £20/month for one calendar, and Booksy is £40/month plus VAT. MyTattoo.Software is free until 31 March 2027, during early access. Marketplace commissions matter more than subscriptions: Booksy takes 30% of a first Boost booking (minimum £5) and Fresha 20% of a new marketplace client (minimum £4).',
   },
   {
     question: 'Is there free tattoo studio software?',
     answer:
-      "Yes. MyTattoo.Software is free while we're in early access, until 31 March 2027, with no subscription and no commission. Square Appointments has a permanently free tier for a single user. Fresha ended its free model in 2025. Most other platforms offer trials rather than free tiers.",
+      "Yes. MyTattoo.Software is free while we're in early access, until 31 March 2027, with no subscription and no commission. Square Appointments has a free plan for a single location. Fresha ended its free model in 2025. Most other platforms offer trials rather than free tiers.",
   },
   {
     question: 'Do I need tattoo-specific software or will salon software do?',
@@ -43,10 +43,10 @@ const faqItems = [
 
 const title = 'Best Tattoo Studio Software 2026: Compared on Real Pricing';
 const description =
-  'Five tattoo studio platforms compared on published 2026 pricing, commission structure and tattoo-specific features. Includes the genuinely free options. Verified July 2026.';
+  'Five tattoo studio platforms compared on published 2026 pricing, commission structure and tattoo-specific features. Includes the genuinely free options. Verified November 2026.';
 ---
 
-<BaseLayout title={title} description={description} schemaType="WebPage" publishedDate="2026-07-29" modifiedDate="2026-07-29">
+<BaseLayout title={title} description={description} schemaType="WebPage" publishedDate="2026-07-29" modifiedDate="2026-11-02">
   <div class="bg-gray-50 py-4">
     <div class="container-custom">
       <BreadcrumbsEnhanced
@@ -82,9 +82,9 @@ const description =
         <FeaturedAnswer question="What is the best tattoo studio software?">
           <p>
             For a <strong>solo artist who wants no fees</strong>, MyTattoo.Software is free until 31 March 2027,
-            during early access with no commission. For a <strong>multi-artist studio</strong> that needs
-            mature staff calendars and front-desk workflows, Booksy and Vagaro are more complete
-            products. For a studio that wants <strong>free general-purpose booking</strong> and
+            during early access with no commission. It is built for one artist managing their own
+            books, so a <strong>multi-artist studio</strong> that needs shared staff calendars and
+            front-desk workflows should look at Booksy or Vagaro. For a studio that wants <strong>free general-purpose booking</strong> and
             will build the tattoo workflows manually, Square Appointments has a real free tier.
           </p>
         </FeaturedAnswer>
@@ -96,7 +96,7 @@ const description =
             takes, because those two numbers decide the cost far more than any feature list.
           </p>
           <p>
-            Everything below was checked against vendor pricing pages in <strong>July 2026</strong>.
+            Everything below was checked against vendor pricing pages in <strong>November 2026</strong>.
             We make MyTattoo.Software, so weigh our entry accordingly — we've tried to be specific
             about what it does not do.
           </p>
@@ -122,25 +122,25 @@ const description =
                 </tr>
                 <tr class="border-b border-gray-100">
                   <td class="py-3 pr-4 font-semibold">Booksy</td>
-                  <td class="py-3 pr-4">~£40/mo solo (UK)</td>
-                  <td class="py-3 pr-4">30% first Boost booking</td>
+                  <td class="py-3 pr-4">£40/mo + VAT, +£5 per extra user</td>
+                  <td class="py-3 pr-4">30% first Boost booking (min £5)</td>
                   <td class="py-3">Studios relying on marketplace discovery</td>
                 </tr>
                 <tr class="border-b border-gray-100">
                   <td class="py-3 pr-4 font-semibold">Vagaro</td>
-                  <td class="py-3 pr-4">From ~£20/mo (1 calendar)</td>
+                  <td class="py-3 pr-4">£20/mo (1 calendar)</td>
                   <td class="py-3 pr-4">None stated</td>
                   <td class="py-3">Multi-artist studios on a budget</td>
                 </tr>
                 <tr class="border-b border-gray-100">
                   <td class="py-3 pr-4 font-semibold">Fresha</td>
-                  <td class="py-3 pr-4">$19.95/mo Independent</td>
-                  <td class="py-3 pr-4">20% new marketplace clients</td>
+                  <td class="py-3 pr-4">£14.95/mo Independent</td>
+                  <td class="py-3 pr-4">20% new marketplace clients (min £4)</td>
                   <td class="py-3">Studios wanting marketplace at lower take</td>
                 </tr>
                 <tr>
                   <td class="py-3 pr-4 font-semibold">Square Appointments</td>
-                  <td class="py-3 pr-4">Free (single user)</td>
+                  <td class="py-3 pr-4">Free (one location)</td>
                   <td class="py-3 pr-4">None</td>
                   <td class="py-3">Solo artists wanting free and established</td>
                 </tr>
@@ -148,8 +148,8 @@ const description =
             </table>
           </div>
           <p class="text-sm text-gray-500">
-            Published pricing verified July 2026. Card processing charged separately by all
-            platforms. Vagaro and Fresha list primarily in USD.
+            Published UK pricing verified November 2026. Card processing charged separately by all
+            platforms. Booksy prices exclude VAT.
           </p>
 
           <h2>The five, reviewed</h2>
@@ -165,16 +165,17 @@ const description =
             booking and tattoo-appropriate deposit policies are standard rather than workarounds.
           </p>
           <p>
-            <strong>Where it falls short:</strong> multi-artist studio calendars are less developed
-            than Booksy's or Vagaro's, there is no marketplace to bring you new clients, and it is
-            newer than everything else here. If you run a six-artist shop with a front desk, the
-            established platforms currently do that better.
+            <strong>Where it falls short:</strong> it is built for one artist managing their own
+            books. There are no multi-artist or shared studio calendars yet, there is no marketplace
+            to bring you new clients, and it is newer than everything else here. If you run a
+            multi-artist shop with a front desk, one of the established platforms below will suit you better.
           </p>
 
           <h3>2. Booksy — best if the marketplace genuinely finds you clients</h3>
           <p>
-            Around <strong>£40/month for a solo artist in the UK</strong>, including calendar,
-            reminders, client management and 500 SMS. Mature multi-artist support and a marketplace
+            <strong>£40/month plus VAT in the UK</strong>, with each extra user at £5/month,
+            including calendar, client management, free appointment reminders and 500 marketing SMS
+            a month. Mature multi-artist support and a marketplace
             with real search traffic.
           </p>
           <p>
@@ -191,22 +192,22 @@ const description =
 
           <h3>3. Vagaro — best value for a small multi-artist studio</h3>
           <p>
-            From about <strong>£20/month for one calendar</strong>, with additional artist calendars
-            at roughly $10/month each up to seven. No marketplace commission stated, which makes it
+            <strong>£20/month for one calendar</strong> on its UK pricing page, with additional
+            artist calendars listed at $10 (US) each, up to seven. No marketplace commission stated, which makes it
             structurally cheaper than Booksy for a studio doing high-value work.
           </p>
           <p>
             <strong>Where it falls short:</strong> the low headline price is misleading. Custom
-            forms, text marketing, branded apps and advanced reporting are priced separately, and a
-            three-to-four artist studio with the add-ons it actually needs commonly lands at
-            $80–100/month. It is salon software, so tattoo workflows are yours to build.
+            forms, text marketing, branded apps and advanced reporting are priced separately, so a
+            multi-artist studio with the add-ons it actually needs will pay well above the headline
+            price. It is salon software, so tattoo workflows are yours to build.
           </p>
 
           <h3>4. Fresha — lower marketplace take than Booksy</h3>
           <p>
-            <strong>$19.95/month</strong> for the Independent plan, or $14.95 per bookable team
-            member on Team. New clients from the Fresha marketplace cost <strong>20% commission
-            (minimum $6)</strong> — returning clients and anyone booking via your own website,
+            <strong>£14.95/month</strong> for the Independent plan, or £9.95 per team member a
+            month on Team. New clients from the Fresha marketplace cost <strong>20% commission
+            (minimum £4)</strong> — returning clients and anyone booking via your own website,
             Google or social channels are free.
           </p>
           <p>
@@ -217,7 +218,8 @@ const description =
 
           <h3>5. Square Appointments — best free general-purpose option</h3>
           <p>
-            A genuine <strong>free tier for a single user</strong>, no marketplace commission, and
+            A genuine <strong>free plan for a single location</strong>, with unlimited staff
+            calendars and no marketplace commission, and
             the reliability of an established payments company. If you want free software from a
             large vendor and are content to handle tattoo specifics yourself, this is the safe pick.
           </p>
