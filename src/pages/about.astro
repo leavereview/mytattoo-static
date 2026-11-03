@@ -62,34 +62,6 @@ const organizationSchema = {
   ]
 };
 
-const testimonials = [
-  {
-    quote: "We have a small but rapidly expanding facility... to have a supported software package that is constantly updated and kept in the cloud is a true asset to our business. Anyone can use the product with ease... Recently I asked for an enhancement and it was acknowledged quickly, developed and presented back to me within a very short time frame.",
-    author: "Tim S.",
-    role: "Business Owner (New Zealand)",
-    duration: "2+ years use",
-    source: "Capterra Verified Review"
-  },
-  {
-    quote: "After some frustrating conversations with other companies I chose RevelationPets, and I look forward to using it every day! My clients like it as they find it easy to use.",
-    author: "Sara V.",
-    role: "Business Owner",
-    source: "Capterra Verified Review"
-  },
-  {
-    quote: "Saved time. Allows us to track bookings so we can make business decisions. Allows customers to book online instead of calling us. It is amazing all around and has automated many of our processes that took hours in the past.",
-    author: "Emmily B.",
-    role: "Facility Manager",
-    source: "Capterra Verified Review"
-  },
-  {
-    quote: "All the data is in one place and is accessible to all my staff wherever they are. The fact that my facility has been able to grow with the software makes it very much a partnership.",
-    author: "Anna S.",
-    role: "Manager and Trainer",
-    duration: "1-2 years use",
-    source: "Capterra Verified Review"
-  }
-];
 ---
 
 <BaseLayout
@@ -282,43 +254,6 @@ const testimonials = [
           <div class="mt-6 p-4 bg-bone-hi rounded-xl border border-bone-hi">
             <p class="text-sm text-blood-deep">
               <strong>Why This Matters:</strong> JOHN POWELL LTD (previously named LEAVE.REVIEW LTD, and before that REVELATION MEDIA LTD) has been in continuous operation since 2005 - the company that built and operated RevelationPets.com. This 20-year track record demonstrates long-term business stability and genuine operational experience in the software industry.
-            </p>
-          </div>
-        </div>
-
-        <!-- Testimonials - Social Proof -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-brand-navy mb-4">Proven Track Record: RevelationPets.com Success</h2>
-          <p class="text-gray-600 mb-8">
-            John's business acumen and technical expertise are validated by the success of RevelationPets.com, which served hundreds of facilities across multiple countries. Verified customer reviews from Capterra highlight the real-world impact of his work:
-          </p>
-
-          <div class="space-y-6">
-            {testimonials.map((testimonial) => (
-              <blockquote class="card border-l-4 border-brand-red">
-                <div class="flex gap-1 mb-3">
-                  {[1,2,3,4,5].map(() => (
-                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p class="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
-                <footer class="flex flex-wrap items-center justify-between gap-2">
-                  <div>
-                    <cite class="font-semibold text-brand-navy not-italic">{testimonial.author}</cite>
-                    <span class="text-gray-500"> - {testimonial.role}</span>
-                    {testimonial.duration && <span class="text-gray-400 text-sm"> | {testimonial.duration}</span>}
-                  </div>
-                  <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">{testimonial.source}</span>
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-
-          <div class="mt-8 p-4 bg-brand-red-light rounded-xl">
-            <p class="text-sm text-gray-700">
-              <strong class="text-brand-navy">Why This Matters for Tattoo Studios:</strong> These verified reviews demonstrate John's ability to understand service business operations, build user-friendly booking systems, automate time-consuming administrative tasks, and create software that both staff and customers find intuitive. The same principles that made RevelationPets successful - automated reminders, online booking, efficient scheduling, and responsive development - now inform MyTattoo.Software's approach to appointment management and client relationships.
             </p>
           </div>
         </div>

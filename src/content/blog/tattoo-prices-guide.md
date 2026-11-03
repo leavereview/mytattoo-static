@@ -6,7 +6,7 @@ date: "2026-01-11"
 tags: ["Pricing", "Business"]
 ---
 
-Pricing tattoos correctly is one of the most challenging aspects of running a tattoo business. Charge too little and you can't sustain your career. Charge too much and clients go elsewhere. This guide helps you find the right balance. Pair your strategy with [tattoo studio software](/tattoo-studio-software/) to automate deposits and invoicing.
+Pricing tattoos correctly is one of the most challenging aspects of running a tattoo business. Charge too little and you can't sustain your career. Charge too much and clients go elsewhere. This guide helps you find the right balance. Pair your strategy with [tattoo studio software](/tattoo-studio-software/) to automate deposit collection.
 
 ## Tattoo Pricing Models
 

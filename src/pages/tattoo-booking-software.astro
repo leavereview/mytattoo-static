@@ -31,53 +31,53 @@ const bookingStats = [
   {
     label: 'Access',
     value: 'Open now',
-    context: 'Any independent tattoo artist can sign up now — self-serve'
+    context: 'Sign up yourself; we switch your booking page on after a quick check'
   }
 ];
 
 // Comparison Table Data
 const comparisonData = [
   {
-    label: '24/7 Online Booking',
-    values: [true, false, false],
+    label: '24/7 Online Booking Requests',
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Automatic Deposit Collection',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Email Notifications',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Reference Image Upload',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Instagram Bio Link',
-    values: [true, true, false]
+    values: [true, false]
   },
   {
     label: 'No Client Account Needed',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Multi-Hour Session Handling',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
-    label: 'Self-Service Rescheduling',
-    values: [true, false, false]
+    label: 'Client Can Cancel or Ask to Reschedule Online',
+    values: [true, false]
   },
   {
     label: 'Deposit-Gated Calendar',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Deposits Received List',
-    values: [true, false, false]
+    values: [true, false]
   }
 ];
 
@@ -108,7 +108,7 @@ const faqItems = [
   },
   {
     question: "Will booking software reduce no-shows?",
-    answer: "Deposits give clients financial commitment, which is the main lever for reducing no-shows — a client who has paid to hold a slot is far more likely to turn up or give proper notice. MyTattoo.Software also sends email confirmations at every step (request received, offer sent, deposit paid), so nothing gets missed in a DM thread.",
+    answer: "Deposits give clients financial commitment, which is the main lever for reducing no-shows — a client who has paid to hold a slot is far more likely to turn up or give proper notice. MyTattoo.Software also sends email confirmations at every step (request received, offer sent, deposit paid) and a reminder to the client 48 hours before the appointment, so nothing gets missed in a DM thread.",
     links: [
       { text: 'Reducing no-shows guide', url: '/blog/reduce-no-shows-tattoo-studio/' }
     ]
@@ -143,7 +143,7 @@ const faqItems = [
   },
   {
     question: "What happens if a client cancels?",
-    answer: "You define the cancellation policy when you send the offer. Typically: free cancellation with plenty of notice, deposit forfeit for late cancellations or no-shows. MyTattoo.Software applies whatever policy you've agreed with the client.",
+    answer: "You define the cancellation policy when you send the offer. Typically: free cancellation with plenty of notice, deposit forfeit for late cancellations or no-shows. With MyTattoo.Software your terms are shown with every offer, and any refund is your decision — refunds aren't issued automatically.",
     links: [
       { text: 'Cancellation policy guidance', url: '/blog/tattoo-deposit-guide/' }
     ]
@@ -276,7 +276,7 @@ const schemaMarkup = {
         <ul class="space-y-2">
           <li><strong>24/7 booking</strong> — wake up to booking requests, ready to quote</li>
           <li><strong>Fewer no-shows</strong> — a paid deposit means clients have skin in the game</li>
-          <li><strong>Zero scheduling conflicts</strong> — real-time availability updates</li>
+          <li><strong>Fewer scheduling mix-ups</strong> — every confirmed appointment in one calendar</li>
           <li><strong>More time for art</strong> — stop being a full-time administrator</li>
         </ul>
 
@@ -288,20 +288,19 @@ const schemaMarkup = {
 
         <ol class="space-y-2">
           <li><strong>1. Client clicks your booking link</strong> — from Instagram bio, website, or Google listing</li>
-          <li><strong>2. Selects appointment type</strong> — consultation, small piece, half-day session, touch-up</li>
-          <li><strong>3. Picks available time</strong> — sees your real-time availability, no guessing</li>
-          <li><strong>4. Enters their info</strong> — contact details, tattoo description, reference images</li>
-          <li><strong>5. Pays deposit</strong> — secure card payment processed instantly</li>
-          <li><strong>6. Receives confirmation</strong> — an email with all appointment details</li>
+          <li><strong>2. Enters their info</strong> — contact details, tattoo description, size, placement, budget, reference images</li>
+          <li><strong>3. Gets your offer</strong> — you review the request and send a quote with times to choose from</li>
+          <li><strong>4. Picks a time and pays the deposit</strong> — secure card payment through Stripe</li>
+          <li><strong>5. Receives confirmation</strong> — an email with all appointment details, then a reminder 48 hours before</li>
         </ol>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What You See</h3>
 
         <ul class="space-y-2">
-          <li>New booking notification by email</li>
-          <li>Deposit automatically in your account</li>
+          <li>New request notification by email</li>
+          <li>An email when the deposit is paid</li>
           <li>Client info and reference images stored</li>
-          <li>Calendar updated with no conflicts</li>
+          <li>The appointment on your calendar once the deposit is paid</li>
         </ul>
 
         <h2 id="deposits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Deposit Collection</h2>
@@ -402,13 +401,13 @@ const schemaMarkup = {
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Built for Tattoo vs. Generic</h3>
 
-        <p>Generic booking tools (Calendly, Acuity, Square Appointments) work for basic scheduling but lack tattoo-specific features:</p>
+        <p>Generic booking tools (Calendly, Acuity, Square Appointments) handle scheduling and deposits well, but they're built for fixed services rather than custom tattoo work. What they typically lack:</p>
 
         <ul class="space-y-2">
           <li>Reference image collection at booking</li>
-          <li>No client account required to book</li>
-          <li>Proper handling of multi-hour sessions</li>
-          <li>Deposit policies that match industry norms</li>
+          <li>A quote-and-offer step before any slot is held</li>
+          <li>Placement, size and budget captured up front</li>
+          <li>An 18+ consent record with ID checks</li>
         </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Avoid</h3>
@@ -428,8 +427,8 @@ const schemaMarkup = {
 
   <!-- Comparison Table -->
   <ComparisonTable
-    title="MyTattoo vs Generic Booking Tools vs Manual DM Booking"
-    headers={['MyTattoo', 'Generic Tools', 'Manual/DMs']}
+    title="MyTattoo vs Manual DM Booking"
+    headers={['Feature', 'MyTattoo', 'Manual/DMs']}
     rows={comparisonData}
   />
 
