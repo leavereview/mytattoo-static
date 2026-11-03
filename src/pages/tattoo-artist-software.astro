@@ -30,53 +30,53 @@ const artistStats = [
   {
     label: 'Access',
     value: 'Open now',
-    context: 'Self-serve sign-up for independent tattoo artists'
+    context: 'Sign up yourself; we switch your booking page on after a quick check'
   }
 ];
 
 const comparisonData = [
   {
-    label: 'Online Booking (24/7)',
-    values: [true, false, false],
+    label: '24/7 Online Booking Requests',
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Deposit Collection',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'No Client Account Needed',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Email Notifications',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Deposit-Gated Calendar',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Reference Image Storage',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Instagram Bio Link',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Mobile-Friendly Booking Page',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Deposits Received List',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: '£0 Platform Fee',
-    values: [true, false, false]
+    values: [true, false]
   }
 ];
 
@@ -296,8 +296,8 @@ const schemaMarkup = {
     <div class="container-custom">
       <div class="max-w-5xl mx-auto">
         <ComparisonTable
-          title="Why Solo Artists Choose MyTattoo.Software"
-          headers={['MyTattoo.Software', 'Generic Booking', 'Manual/DMs']}
+          title="MyTattoo.Software vs Manual DM Booking"
+          headers={['Feature', 'MyTattoo.Software', 'Manual/DMs']}
           rows={comparisonData}
         />
       </div>
@@ -358,16 +358,16 @@ const schemaMarkup = {
 
         <h2 id="booking" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Online Booking for Solo Artists</h2>
 
-        <p>Online booking is the single biggest time-saver for independent artists. Instead of DM tennis, clients see your availability and book themselves.</p>
+        <p>Online booking is the single biggest time-saver for independent artists. Instead of DM tennis, clients send a complete request from your link and you offer the times that suit you.</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">How It Works</h3>
 
         <ol class="space-y-2">
           <li><strong>1. Share your booking link</strong> — Instagram bio, website, Linktree, business cards</li>
-          <li><strong>2. Client selects appointment type</strong> — consultation, small piece, large session</li>
-          <li><strong>3. Picks from your available times</strong> — real-time availability, no conflicts</li>
-          <li><strong>4. Pays deposit</strong> — card payment, instantly in your account</li>
-          <li><strong>5. You get notified</strong> — by email</li>
+          <li><strong>2. Client sends a request</strong> — their idea, placement, size, budget and reference images</li>
+          <li><strong>3. You offer times</strong> — the client picks the one that suits them</li>
+          <li><strong>4. Client pays the deposit</strong> — by card, through Stripe</li>
+          <li><strong>5. It lands on your calendar</strong> — only once the deposit is paid, with an email to you both</li>
         </ol>
 
         <div class="bg-bone-hi border-l-4 border-brand-red p-4 my-6">
@@ -394,7 +394,7 @@ const schemaMarkup = {
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What MyTattoo Stores Today</h3>
 
-        <p>MyTattoo.Software is deliberately simple here: it keeps a record of each client's contact details, their booking history with you, and the reference images they submitted at intake. It isn't a full client CRM—there's no health-notes tracking, no session-by-session photo log, and no built-in marketing or client-segmentation tooling. If you rely on that level of record-keeping today, keep it going alongside your own notes for now.</p>
+        <p>MyTattoo.Software is deliberately simple here: it keeps a record of each client's contact details, their booking history with you, the reference images they submitted at intake, your own private notes and tags, and medical/allergy flags. It isn't a full client CRM—there's no session-by-session photo log and no built-in marketing tooling. If you rely on that level of record-keeping today, keep it going alongside your own notes for now.</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Your Data &amp; GDPR</h3>
 
@@ -406,16 +406,16 @@ const schemaMarkup = {
 
         <h2 id="consent-forms" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Digital Consent Forms</h2>
 
-        <p>Every tattoo needs informed consent. This isn't a feature MyTattoo.Software offers today—consent still happens however you normally handle it, on paper or through whatever process you already use. Plenty of artists do find digital consent forms useful, though, so here's what to look for if it's something you want from your software.</p>
+        <p>Every tattoo needs informed consent. MyTattoo.Software includes digital consent forms: you set your consent terms, the client signs on their own phone, the type of photo ID you checked is recorded, and each signed form can be downloaded as a PDF. Here's what digital consent gives you over paper.</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits Over Paper</h3>
 
         <ul class="space-y-2">
-          <li><strong>Clients sign before arriving:</strong> Saves time at the start of each appointment</li>
+          <li><strong>Clients sign on their own phone:</strong> No clipboard, no paper to file</li>
           <li><strong>Never lost:</strong> Cloud storage means forms are safe</li>
           <li><strong>Easy to search:</strong> Find any form quickly</li>
           <li><strong>Health screening:</strong> Can capture allergies, medications, and conditions automatically</li>
-          <li><strong>Legal protection:</strong> Timestamped signatures with IP logging</li>
+          <li><strong>Legal protection:</strong> Timestamped signatures, with a copy of exactly what the client agreed to</li>
         </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What Forms Should Include</h3>

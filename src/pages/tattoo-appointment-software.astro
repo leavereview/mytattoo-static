@@ -12,9 +12,8 @@ const comparisonData = [
   { label: 'Placement, size and budget captured up front', values: [true, false, false] },
   { label: 'Platform commission on your deposit', values: ['£0', '20–30%', 'n/a'], highlight: true },
   { label: 'Works from an Instagram bio link', values: [true, true, false] },
-  { label: 'Automatic buffer between appointments', values: [true, true, false] },
-  { label: 'Client can reschedule themselves', values: [true, true, false] },
-  { label: 'Aftercare and prep notes sent automatically', values: [true, false, false] },
+  { label: 'Client can cancel or ask to reschedule online', values: [true, true, false] },
+  { label: '48-hour reminder email to the client', values: [true, true, false] },
   { label: 'Built specifically for tattooing', values: [true, false, false] },
 ];
 
@@ -34,7 +33,7 @@ const faqItems = [
   {
     question: 'How do I manage tattoo appointments online?',
     answer:
-      'Put a booking link in your Instagram bio, define your working hours and session lengths, set a deposit amount, and let the intake form do the qualifying. Clients pick a slot, describe the piece, upload references and pay the deposit; the appointment only lands on your calendar once that deposit clears. The practical effect is that DMs stop being your booking system, and the people who reach your calendar have already committed money.',
+      'Put a booking link in your Instagram bio, define your working hours and session lengths, set a deposit amount, and let the intake form do the qualifying. Clients describe the piece and upload references, you offer times, and they pick one and pay the deposit; the appointment only lands on your calendar once that deposit clears. The practical effect is that DMs stop being your booking system, and the people who reach your calendar have already committed money.',
     links: [{ text: 'Reduce no-shows', url: '/blog/reduce-no-shows-tattoo-studio/' }],
   },
   {
@@ -125,10 +124,10 @@ const schemaMarkup = {
       <h2 class="text-3xl font-bold text-brand-navy mb-6">How to manage tattoo appointments online</h2>
       <ol class="space-y-4 mb-8 text-gray-700">
         <li><strong>1. Put one booking link in your Instagram bio.</strong> This is the single highest-leverage change. One link replaces "DM me for bookings", which is what generates the thread you never escape.</li>
-        <li><strong>2. Define your real working pattern.</strong> Session lengths, days off, buffer time between clients for setup and breakdown, and how far ahead you will open the calendar. Most artists open two to three months out.</li>
+        <li><strong>2. Define your real working pattern.</strong> Session lengths, days off, time between clients for setup and breakdown, and how far ahead you will open the calendar. Most artists open two to three months out.</li>
         <li><strong>3. Make the intake form do the qualifying.</strong> Design idea, placement, approximate size, budget range, reference images, and any relevant medical notes. A client unwilling to fill this in was never going to sit for six hours.</li>
         <li><strong>4. Require a deposit to confirm.</strong> The slot stays unheld until the deposit clears. This is the mechanism, not a formality.</li>
-        <li><strong>5. Let the confirmations and prep notes go out on their own.</strong> Booking confirmation, pre-appointment prep, and aftercare afterwards — none of these need you awake.</li>
+        <li><strong>5. Let the confirmations and reminders go out on their own.</strong> The booking confirmation and a reminder 48 hours before the appointment — none of these need you awake.</li>
       </ol>
 
       <h2 class="text-3xl font-bold text-brand-navy mb-6">What to look for in a tattoo appointment app</h2>

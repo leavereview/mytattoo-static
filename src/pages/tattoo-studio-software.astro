@@ -11,59 +11,59 @@ const studioStats = [
   { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
   { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
   { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
-  { label: 'Access', value: 'Open now', context: 'Self-serve sign-up is live for independent tattoo artists' }
+  { label: 'Access', value: 'Open now', context: 'Sign up yourself; we switch your booking page on after a quick check' }
 ];
 
 const comparisonData = [
   {
-    label: 'Online Booking (24/7)',
-    values: [true, false, false],
+    label: '24/7 Online Booking Requests',
+    values: [true, false],
     highlight: true
   },
   {
     label: 'No Client Account Needed',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Deposit Collection',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Deposit-Gated Calendar',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Email Notifications',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Deposits Received List',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Reference Image Storage',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: '£0 Platform Fee',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
-    label: 'Instagram Integration',
-    values: [true, false, false]
+    label: 'Instagram Bio Link',
+    values: [true, false]
   },
   {
     label: 'Stripe Secure Payments',
-    values: [true, false, false]
+    values: [true, false]
   }
 ];
 
 const faqItems = [
   {
     question: "What is tattoo studio software?",
-    answer: "Tattoo studio software is an all-in-one platform that can handle booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops — replacing paper files, spreadsheets, and scattered DMs with one integrated system. At the mature end of the market that includes multi-artist calendar management, digital consent forms, reference image storage, and automated reminders. MyTattoo.Software's own feature set today is more focused: a deposit-gated booking page, reference-image intake, and email notifications at each step — built for the independent artist working solo.",
+    answer: "Tattoo studio software is an all-in-one platform that can handle booking, client management, consent forms, deposits, reminders, and business reporting for tattoo shops — replacing paper files, spreadsheets, and scattered DMs with one integrated system. At the mature end of the market that includes multi-artist calendar management, digital consent forms, reference image storage, and automated reminders. MyTattoo.Software's own feature set today is more focused: a deposit-gated booking page, reference-image intake, digital consent forms signed on the client's phone, email notifications and a 48-hour reminder, and simple reports — built for the independent artist working solo.",
     links: [
       { text: 'View all features', url: '/' },
       { text: 'See pricing', url: '/pricing/' }
@@ -79,7 +79,7 @@ const faqItems = [
   },
   {
     question: "Can clients book appointments online?",
-    answer: "Yes, modern tattoo studio software lets clients book 24/7, view artist availability, select services (consultation, small piece, large session, touch-up), and pay deposits—all without you lifting a finger. Clients can book while you sleep, and wake up to confirmed appointments with deposits already collected.",
+    answer: "Yes. With MyTattoo.Software, clients send a booking request from your link 24/7 — their idea, placement, size, budget and reference images. You review it and offer times; the client picks one and pays the deposit online, and only then does the appointment land on your calendar. You wake up to requests ready to quote, not a DM backlog.",
     links: [
       { text: 'Booking software guide', url: '/tattoo-booking-software/' },
       { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
@@ -87,7 +87,7 @@ const faqItems = [
   },
   {
     question: "Do I need separate software for consent forms?",
-    answer: "Not yet — MyTattoo.Software doesn't have digital consent forms today, so consent still happens however you normally handle it outside the platform. What MyTattoo does collect digitally is the client's reference images and their answers to your intake questions at the time of booking.",
+    answer: "No — MyTattoo.Software includes digital consent forms. You set your consent terms, the client signs on their own phone (recording the type of photo ID you checked), and you can download each signed form as a PDF. It sits alongside the reference images and intake answers collected at booking.",
     links: [
       { text: 'How digital consent forms work', url: '/blog/tattoo-consent-form-guide/' },
       { text: 'Legal compliance', url: '/blog/tattoo-consent-form-guide/' }
@@ -119,7 +119,7 @@ const faqItems = [
   },
   {
     question: "What reports can studio owners access?",
-    answer: "MyTattoo.Software today gives you a simple list of the deposits you've received — not a full reporting dashboard. If you need revenue-per-artist or conversion-rate reporting, that's not built yet.",
+    answer: "MyTattoo.Software includes a list of the deposits you've received, earnings by UK tax year with CSV export, and reports on your no-show and cancellation rates. It's built for a solo artist, so there's no per-artist or studio-wide reporting.",
     links: [
       { text: 'See current features', url: '/' },
       { text: 'Studio analytics: what to track', url: '/blog/how-much-do-tattoo-artists-make/' }
@@ -293,8 +293,8 @@ const schemaMarkup = {
     <div class="container-custom">
       <div class="max-w-5xl mx-auto">
         <ComparisonTable
-          title="Why Studios Choose MyTattoo.Software"
-          headers={['MyTattoo.Software', 'Generic Booking', 'Manual/Spreadsheets']}
+          title="MyTattoo.Software vs Manual Booking"
+          headers={['Feature', 'MyTattoo.Software', 'Manual/Spreadsheets']}
           rows={comparisonData}
         />
       </div>
@@ -311,7 +311,7 @@ const schemaMarkup = {
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Online Booking</h3>
-            <p class="text-gray-700 text-sm">24/7 client booking with deposit collection, service selection, and instant confirmation.</p>
+            <p class="text-gray-700 text-sm">24/7 booking requests with references; you offer times, the client picks one and pays the deposit to confirm.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">No Client Account Needed</h3>
@@ -345,7 +345,7 @@ const schemaMarkup = {
 
         <h2 id="consent-forms" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Digital Consent Forms</h2>
 
-        <p>Every tattoo requires informed consent. Paper forms work, but they're easy to lose and hard to search, which is why many studios eventually move consent digital. <strong>MyTattoo.Software doesn't have digital consent forms today</strong> — that part of your process still happens however you normally handle it outside the platform. What MyTattoo does collect digitally, at the point of booking, is the client's reference images and their answers to your intake questions.</p>
+        <p>Every tattoo requires informed consent. Paper forms work, but they're easy to lose and hard to search, which is why many studios eventually move consent digital. <strong>MyTattoo.Software includes digital consent forms:</strong> you set your consent terms, the client signs on their own phone, the type of photo ID you checked is recorded, and each signed form can be downloaded as a PDF. Reference images and intake answers are collected digitally at the point of booking too.</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For in Digital Consent Forms</h3>
 
@@ -358,7 +358,7 @@ const schemaMarkup = {
 
         <h2 id="client-management" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Client Management</h2>
 
-        <p>Build lasting client relationships by keeping track of who your clients are and what they've asked for. MyTattoo.Software captures the contact details, reference images, and intake answers a client shares with you at the time of booking — that's what's kept today. It isn't a full client CRM: health info, session notes, and communication history aren't tracked as a dedicated feature. If you want to build a more complete picture of each client over time, here's what's generally worth tracking:</p>
+        <p>Build lasting client relationships by keeping track of who your clients are and what they've asked for. MyTattoo.Software captures the contact details, reference images, and intake answers a client shares with you at the time of booking — plus your own private notes, tags and medical/allergy flags on each client record, and their booking history with you. It isn't a full CRM: message history isn't tracked. If you want to build a more complete picture of each client over time, here's what's generally worth tracking:</p>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Track</h3>
 
@@ -378,7 +378,7 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">What to Look For</h3>
 
         <ul class="space-y-3">
-          <li><strong>Built for tattoo:</strong> Generic booking tools lack consent forms, deposits, and industry-specific features.</li>
+          <li><strong>Built for tattoo:</strong> General booking tools handle deposits, but not reference-image intake or an 18+ consent record with ID checks.</li>
           <li><strong>Mobile-friendly:</strong> You and your clients live on phones. The software should too.</li>
           <li><strong>Deposit collection:</strong> If it doesn't collect deposits at booking, no-shows will kill you.</li>
           <li><strong>Simple pricing:</strong> Avoid per-booking fees that punish success.</li>

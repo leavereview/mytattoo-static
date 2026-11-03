@@ -11,52 +11,48 @@ const schedulingStats = [
   { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
   { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
   { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
-  { label: 'Access', value: 'Open now', context: 'Self-serve sign-up for independent tattoo artists' }
+  { label: 'Access', value: 'Open now', context: 'Sign up yourself; we switch your booking page on after a quick check' }
 ];
 
 const comparisonData = [
   {
-    label: 'Online Booking (24/7)',
-    values: [true, false, false],
+    label: '24/7 Online Booking Requests',
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Email Notifications',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
-    label: 'Real-Time Availability',
-    values: [true, false, false],
+    label: 'You Offer Times, Client Picks One',
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Deposit-Gated Calendar',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Integrated Deposit Collection',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
-    label: 'Automatic Buffer Time',
-    values: [true, true, false]
-  },
-  {
-    label: 'Client Self-Rescheduling',
-    values: [true, false, false]
+    label: 'Client Can Cancel or Ask to Reschedule Online',
+    values: [true, false]
   },
   {
     label: 'No Client Account Needed',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Deposits Received List',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Mobile-Friendly Booking Page',
-    values: [true, true, false]
+    values: [true, false]
   }
 ];
 
@@ -103,7 +99,7 @@ const faqItems = [
   },
   {
     question: "Can clients reschedule their own appointments?",
-    answer: "Yes, good scheduling software lets clients reschedule within your policy limits (e.g., up to 48 hours before appointment). They click a reschedule link, see available alternative times, and select a new slot. You're notified automatically and the change appears in your calendar instantly. This saves back-and-forth messaging. You control whether deposits transfer to new appointments and how close to the appointment clients can reschedule.",
+    answer: "With MyTattoo.Software, clients get a link to manage their booking. From it they can cancel, or ask to move the appointment by suggesting a new time with a note. You're notified and decide whether to accept the change, so your calendar stays under your control. This saves back-and-forth messaging.",
     links: [
       { text: 'Rescheduling policies', url: '/' },
       { text: 'Cancellation policies', url: '/blog/tattoo-deposit-guide/' }
@@ -127,7 +123,7 @@ const faqItems = [
   },
   {
     question: "Does scheduling sync with Google Calendar?",
-    answer: "Not currently — appointments live in MyTattoo's own deposit-gated calendar. Two-way sync with Google Calendar or iCal isn't available yet.",
+    answer: "Not currently — appointments live in MyTattoo's own deposit-gated calendar, and there's no sync with Google Calendar or iCal. Clients can add their own appointment to their calendar with an add-to-calendar (.ics) file.",
     links: [
       { text: 'See all features', url: '/' },
       { text: 'How booking works', url: '/' }
@@ -243,11 +239,11 @@ const schemaMarkup = {
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Online Booking Portal</h3>
-            <p class="text-gray-700 text-sm">A branded booking page where clients see real availability, select services, and confirm appointments without calling or messaging.</p>
+            <p class="text-gray-700 text-sm">A branded booking page where clients send a request with their idea and references; you offer times, and they pick one and pay the deposit — without calling or messaging.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Calendar Management</h3>
-            <p class="text-gray-700 text-sm">Visual calendar showing all appointments, blocked time, and availability. Easy to reschedule by dragging appointments.</p>
+            <p class="text-gray-700 text-sm">A calendar of your confirmed appointments, with your working hours and blocked-out time set in one place.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Email Notifications</h3>
@@ -255,26 +251,24 @@ const schemaMarkup = {
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Deposit Integration</h3>
-            <p class="text-gray-700 text-sm">Collect deposits at time of booking to secure appointments and protect against last-minute cancellations.</p>
+            <p class="text-gray-700 text-sm">The client pays a deposit before the appointment is confirmed, to protect against no-shows and last-minute cancellations.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Service Configuration</h3>
             <p class="text-gray-700 text-sm">Set up different appointment types with custom durations, prices, and deposit requirements—consultations, small pieces, full sessions.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Buffer Time</h3>
-            <p class="text-gray-700 text-sm">Automatically add setup and cleanup time between appointments so you're never running behind.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Appointment Reminders</h3>
+            <p class="text-gray-700 text-sm">The client gets a reminder email 48 hours before their appointment, and can add it to their own calendar.</p>
           </div>
         </div>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Advanced Features</h3>
         <ul class="space-y-2 mb-8">
           <li><strong>Waitlist management:</strong> Capture interested clients when fully booked</li>
-          <li><strong>Recurring appointments:</strong> Set up regular sessions for large projects</li>
-          <li><strong>Calendar sync:</strong> Two-way sync with Google Calendar or iCal</li>
+          <li><strong>Add to calendar:</strong> Clients can add their appointment to their own calendar</li>
           <li><strong>Time-off management:</strong> Block holidays, conventions, or personal time</li>
-          <li><strong>Cancellation policies:</strong> Enforce and communicate your policies</li>
-          <li><strong>Confirmation workflows:</strong> Require client confirmation before appointments</li>
+          <li><strong>Cancellation policies:</strong> Show your terms with every offer</li>
         </ul>
 
         <h2 id="benefits" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Benefits for Tattoo Studios</h2>
@@ -287,7 +281,7 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Operational Benefits</h3>
         <ul class="space-y-3 mb-6">
           <li><strong>24/7 booking:</strong> Clients book when it's convenient for them, not just during shop hours</li>
-          <li><strong>Zero double-bookings:</strong> Real-time availability prevents scheduling conflicts</li>
+          <li><strong>Fewer double-bookings:</strong> Every confirmed appointment in one calendar</li>
           <li><strong>Reduced no-shows:</strong> Automated reminders and deposits protect your time</li>
           <li><strong>Less phone time:</strong> Fewer calls and messages about availability</li>
           <li><strong>Professional image:</strong> Modern booking experience impresses clients</li>
@@ -351,8 +345,8 @@ const schemaMarkup = {
     <div class="container-custom">
       <div class="max-w-5xl mx-auto">
         <ComparisonTable
-          title="Scheduling Software vs Generic Booking vs Manual Methods"
-          headers={['MyTattoo.Software', 'Generic Booking', 'Manual/DMs']}
+          title="Scheduling Software vs Manual Methods"
+          headers={['Feature', 'MyTattoo.Software', 'Manual/DMs']}
           rows={comparisonData}
         />
       </div>
@@ -372,9 +366,7 @@ const schemaMarkup = {
           <li><strong>Automated reminders:</strong> Email before appointments</li>
           <li><strong>Deposit collection:</strong> Integrated payment at booking</li>
           <li><strong>Mobile access:</strong> Manage schedule from your phone</li>
-          <li><strong>Calendar sync:</strong> Integrate with your personal calendar</li>
-          <li><strong>Buffer time:</strong> Automatic gaps between appointments</li>
-        </ul>
+                  </ul>
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Nice-to-Have Features</h3>
         <ul class="space-y-2 mb-6">

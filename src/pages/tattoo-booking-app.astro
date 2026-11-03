@@ -11,52 +11,52 @@ const appStats = [
   { label: 'Deposit', value: 'Required to confirm', context: 'The appointment lands on your calendar only once the deposit clears' },
   { label: 'Platform Fee', value: '£0', context: 'You keep your deposit' },
   { label: 'Payments', value: 'Stripe', context: 'Card details never touch our servers' },
-  { label: 'Access', value: 'Open now', context: 'Any independent tattoo artist can create an account and start today' }
+  { label: 'Access', value: 'Open now', context: 'Sign up yourself; we switch your booking page on after a quick check' }
 ];
 
 const comparisonData = [
   {
-    label: 'Online Booking (24/7)',
-    values: [true, false, false],
+    label: '24/7 Online Booking Requests',
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Design Reference Upload',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Integrated Deposit Collection',
-    values: [true, false, false],
+    values: [true, false],
     highlight: true
   },
   {
     label: 'Email Notifications',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
-    label: 'Real-Time Availability Calendar',
-    values: [true, true, false]
+    label: 'You Offer Times, Client Picks One',
+    values: [true, false]
   },
   {
-    label: 'Client Self-Rescheduling',
-    values: [true, false, false]
+    label: 'Client Can Cancel or Ask to Reschedule Online',
+    values: [true, false]
   },
   {
     label: 'Mobile-Optimized Experience',
-    values: [true, true, false]
+    values: [true, false]
   },
   {
     label: 'No Client Account Needed',
-    values: [true, false, false]
+    values: [true, false]
   },
   {
     label: 'Instagram Bio Link Integration',
-    values: [true, true, false]
+    values: [true, false]
   },
   {
     label: 'Deposit-Gated Calendar',
-    values: [true, false, false]
+    values: [true, false]
   }
 ];
 
@@ -103,7 +103,7 @@ const faqItems = [
   },
   {
     question: "Can clients reschedule through the app?",
-    answer: "Yes, clients can reschedule appointments within your policy limits (e.g., up to 48 hours before). They click a reschedule link from their confirmation email or reminder, see alternative available times, and select a new slot. You're notified automatically and your calendar updates instantly. This saves endless DM back-and-forth. You control whether deposits transfer to new appointments, how close to appointments clients can reschedule, and minimum notice requirements.",
+    answer: "With MyTattoo.Software, clients get a link to manage their booking. From it they can cancel, or ask to move the appointment by suggesting a new time with a note. You're notified, and you decide whether to accept the change. It saves the DM back-and-forth without handing your calendar over to the client.",
     links: [
       { text: 'Rescheduling features', url: '/' },
       { text: 'Scheduling guide', url: '/tattoo-scheduling-software/' }
@@ -113,7 +113,7 @@ const faqItems = [
     question: "What if I don't have a website?",
     answer: "You don't need a website to use booking apps. Most tattoo artists just add their booking link to Instagram bio, Linktree, or directly in their profile. The booking page itself serves as your online presence—clients see your portfolio, read your policies, and book appointments all in one place. Many successful artists operate Instagram-only with just a booking link. The booking page is mobile-friendly and can be customized with your logo and brand colors.",
     links: [
-      { text: 'Instagram integration', url: '/' },
+      { text: 'Instagram bio link', url: '/' },
       { text: 'Bio link best practices', url: '/blog/tattoo-booking-guide/' }
     ]
   },
@@ -238,15 +238,15 @@ const schemaMarkup = {
           A <strong>tattoo booking app</strong> is a mobile-optimized platform that lets clients schedule tattoo appointments online. Instead of messaging back and forth on Instagram or playing phone tag (see our guide to <a href="/tattoo-bookings-from-instagram/" class="text-brand-red hover:underline">turning Instagram inquiries into deposited bookings</a>), clients visit your booking page, choose an available slot, submit their design ideas, pay a deposit, and confirm—all in one seamless flow.
         </p>
         <p class="text-gray-600 mb-8">
-          The best tattoo booking apps integrate with your existing workflow. They sync with your calendar, collect the information you need upfront (design references, placement, size, budget), and protect your time with automatic deposits. At MyTattoo.Software, we've built booking tools specifically for the tattoo industry, understanding that a tattoo booking is very different from a haircut or spa appointment.
+          The best tattoo booking apps integrate with your existing workflow. They collect the information you need upfront (design references, placement, size, budget), and protect your time with automatic deposits. At MyTattoo.Software, we've built booking tools specifically for the tattoo industry, understanding that a tattoo booking is very different from a haircut or spa appointment.
         </p>
 
         <h2 id="features" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Essential Features for Tattoo Booking</h2>
 
         <div class="grid md:grid-cols-2 gap-6 my-8">
           <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="font-bold text-brand-navy mb-2">Online Appointment Scheduling</h3>
-            <p class="text-gray-700 text-sm">Clients see your real availability and book instantly. No more back-and-forth messages trying to find a time that works.</p>
+            <h3 class="font-bold text-brand-navy mb-2">Online Booking Requests</h3>
+            <p class="text-gray-700 text-sm">Clients send a request from your link; you offer times and they pick one. No more back-and-forth messages trying to find a time that works.</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="font-bold text-brand-navy mb-2">Design Reference Upload</h3>
@@ -273,10 +273,8 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Advanced Booking Features</h3>
         <ul class="space-y-2 mb-8">
           <li><strong>Flexible booking types:</strong> Set different durations, prices, and deposit amounts per appointment type</li>
-          <li><strong>Flash booking:</strong> Special booking flow for flash events and available designs</li>
-          <li><strong>Consultation scheduling:</strong> Separate booking type for initial consultations</li>
-          <li><strong>Multi-session projects:</strong> Link appointments for large pieces requiring multiple sittings</li>
-          <li><strong>Cancellation policies:</strong> Display and enforce your cancellation terms</li>
+          <li><strong>Flash or custom:</strong> Clients say whether they want a flash piece or a custom design when they enquire</li>
+                    <li><strong>Cancellation policies:</strong> Show your deposit and cancellation terms with every offer</li>
           <li><strong>Custom intake forms:</strong> Collect the details and references you need before the appointment</li>
         </ul>
 
@@ -334,28 +332,28 @@ const schemaMarkup = {
           <li class="flex gap-3">
             <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">2</span>
             <div>
-              <strong class="text-brand-navy">Choose service</strong>
-              <p class="text-gray-600">Select appointment type: consultation, small piece, half-day, full-day</p>
+              <strong class="text-brand-navy">Leave contact details</strong>
+              <p class="text-gray-600">Name, email and phone — no account to create</p>
             </div>
           </li>
           <li class="flex gap-3">
             <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">3</span>
             <div>
-              <strong class="text-brand-navy">Pick date and time</strong>
-              <p class="text-gray-600">See real availability and choose a slot that works</p>
+              <strong class="text-brand-navy">Describe the tattoo</strong>
+              <p class="text-gray-600">Flash or custom, size, placement, budget and reference images</p>
             </div>
           </li>
           <li class="flex gap-3">
             <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">4</span>
             <div>
-              <strong class="text-brand-navy">Submit design info</strong>
-              <p class="text-gray-600">Upload reference images, describe the concept, indicate size and placement</p>
+              <strong class="text-brand-navy">Get an offer</strong>
+              <p class="text-gray-600">The artist reviews the request and sends a quote with times to choose from</p>
             </div>
           </li>
           <li class="flex gap-3">
             <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">5</span>
             <div>
-              <strong class="text-brand-navy">Pay deposit</strong>
+              <strong class="text-brand-navy">Pick a time and pay the deposit</strong>
               <p class="text-gray-600">Secure the appointment with card payment</p>
             </div>
           </li>
@@ -363,7 +361,7 @@ const schemaMarkup = {
             <span class="flex-shrink-0 w-8 h-8 bg-brand-red text-white rounded-full flex items-center justify-center font-bold">6</span>
             <div>
               <strong class="text-brand-navy">Receive confirmation</strong>
-              <p class="text-gray-600">Instant confirmation email with appointment details and policies</p>
+              <p class="text-gray-600">Confirmation email with the appointment details, then a reminder 48 hours before</p>
             </div>
           </li>
         </ol>
@@ -377,8 +375,8 @@ const schemaMarkup = {
     <div class="container-custom">
       <div class="max-w-5xl mx-auto">
         <ComparisonTable
-          title="Booking App vs Generic Tools vs Instagram DMs"
-          headers={['MyTattoo.Software', 'Generic Booking', 'Instagram DMs']}
+          title="Booking App vs Instagram DMs"
+          headers={['Feature', 'MyTattoo.Software', 'Instagram DMs']}
           rows={comparisonData}
         />
       </div>
@@ -434,9 +432,9 @@ const schemaMarkup = {
 
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Benefits for the Client</h3>
         <ul class="space-y-3 mb-6">
-          <li><strong>A simple, guided process:</strong> Clients pick a service and upload their reference images in one straightforward form, instead of typing everything out across several DMs.</li>
-          <li><strong>Book any time, from anywhere:</strong> No need to be awake during business hours or to remember to message you. They tap your link, see real availability, and lock in a time on the spot.</li>
-          <li><strong>Clarity and confidence:</strong> Up-front pricing guidance, deposit policies, and instant confirmation emails remove the awkward back-and-forth and the worry that a DM got missed.</li>
+          <li><strong>A simple, guided process:</strong> Clients describe their idea and upload their reference images in one straightforward form, instead of typing everything out across several DMs.</li>
+          <li><strong>Book any time, from anywhere:</strong> No need to be awake during business hours or to remember to message you. They tap your link and send their request whenever suits them.</li>
+          <li><strong>Clarity and confidence:</strong> Up-front pricing guidance, deposit policies, and confirmation emails remove the awkward back-and-forth and the worry that a DM got missed.</li>
           <li><strong>A smoother handover:</strong> Submitting their idea, placement, and inspiration in one structured form feels easier than typing it across several messages—and means their concept reaches you intact.</li>
         </ul>
         <p class="text-gray-600 mb-8">
