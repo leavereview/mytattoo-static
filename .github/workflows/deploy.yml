@@ -11,7 +11,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Full history, not the default depth-1 clone: sitemap <lastmod> comes from each
+      # page's last git commit (../scripts/sitemap-lastmod.mjs). In a shallow clone every
+      # page reports the HEAD commit date — the DriveSchoolPro bug. (This workflow is
+      # disabled; deploys go through deploy.sh. Kept correct in case it is re-enabled.)
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

@@ -2,30 +2,53 @@
 
 > Deposit-secured booking for independent tattoo artists — turn your Instagram bio link into a reference-attached booking that's confirmed by a deposit.
 
-MyTattoo helps independent tattoo artists turn their Instagram bio link into a branded booking page. Clients leave their contact details and reference images with no account needed; the artist reviews and offers a time and deposit; the appointment lands on the calendar only once the deposit clears via Stripe. MyTattoo.Software is currently in early access, onboarding independent tattoo artists by invitation.
+MyTattoo (MyTattoo.Software) helps independent tattoo artists turn their Instagram bio link into a branded booking page. Clients send their idea, placement, size and reference images with no account needed; the artist reviews the request and offers a time and a deposit; the appointment lands on the calendar only once the deposit has been paid through Stripe. MyTattoo is a trading name of JOHN POWELL LTD, a company registered in England and Wales. The app runs at https://app.mytattoo.software and sign-up is self-serve (a booking page is switched on after a quick check).
+
+## Key facts
+
+- Who it's for: one independent tattoo artist managing their own books. It does not offer multi-artist or shared studio calendars yet.
+- Price: free until 31 March 2027 — no subscription, no platform fee, no commission on deposits. Stripe's standard card processing fee applies. Paid plans will follow with 90 days' notice.
+- Payments: deposits are paid by card through Stripe into the artist's own Stripe account. The artist sets a fixed or percentage deposit. The remaining balance can be collected on the day by card link, QR code or recorded as cash. Nothing is refunded automatically; the artist decides.
+- Scheduling: the artist sets weekly hours and offers specific times; the client picks one of the offered times and pays the deposit to secure it. Clients can ask for a different time or cancel online. There is no Google Calendar sync; clients can add their appointment to their own calendar.
+- Notifications: emails at each step (new request, offer, deposit paid) and an email reminder to the client 48 hours before the appointment. No SMS/text reminders.
+- Also included: digital consent forms signed on the client's phone, a client book with private notes and medical flags, a waitlist, a walk-in queue, an earnings list with CSV export by UK tax year, and reports including no-show and cancellation rates.
+- Not included: Instagram DM integration, marketplace/discovery listing, multi-artist studio management.
 
 ## Core Pages
 
-- [Home](https://mytattoo.software/): Product overview and how the deposit-secured booking flow works
+- [Home](https://mytattoo.software/): Product overview, how the deposit-secured booking flow works, and FAQs for UK tattoo artists
+- [Pricing](https://mytattoo.software/pricing/): Free until 31 March 2027 — no platform fee, no per-booking fee, no subscription
 - [Tattoo Studio Software](https://mytattoo.software/tattoo-studio-software/): Product overview — booking, reference intake, and deposit collection
-- [Pricing](https://mytattoo.software/pricing/): Free while in early access — no platform fee, no per-booking fee, no subscription; artists connect their own Stripe and keep every deposit
-- [About](https://mytattoo.software/about/): Product story and mission
-- [Contact](https://mytattoo.software/contact/): Get early access or ask a question
+- [About](https://mytattoo.software/about/): Product story and the company behind it
+- [Contact](https://mytattoo.software/contact/): Ask a question
 
 ## Feature Pages
 
-- [Tattoo Booking Software](https://mytattoo.software/tattoo-booking-software/): Online booking with deposit collection, reference image upload, and automatic confirmation emails
-- [Tattoo Booking App](https://mytattoo.software/tattoo-booking-app/): Mobile-friendly booking page for managing requests, offers, and deposits from your phone
-- [Tattoo Artist Software](https://mytattoo.software/tattoo-artist-software/): Tools for independent tattoo artists — booking links, reference intake, and deposit-gated calendar
-- [Tattoo Scheduling Software](https://mytattoo.software/tattoo-scheduling-software/): Deposit-gated appointment scheduling for the independent artist
+- [Tattoo Booking Software](https://mytattoo.software/tattoo-booking-software/): Booking requests 24/7, deposit collection, reference image upload, and email notifications
+- [Tattoo Appointment Software](https://mytattoo.software/tattoo-appointment-software/): Intake form, reference images and a deposit before the appointment is confirmed
+- [Tattoo Booking App](https://mytattoo.software/tattoo-booking-app/): Managing requests, offers, and deposits from your phone
+- [Tattoo Artist Software](https://mytattoo.software/tattoo-artist-software/): Tools for independent tattoo artists — booking link, reference intake, deposit-gated calendar
+- [Tattoo Scheduling Software](https://mytattoo.software/tattoo-scheduling-software/): Artist-offered time slots secured by a deposit
+- [Tattoo Bookings from Instagram](https://mytattoo.software/tattoo-bookings-from-instagram/): Replacing DM booking with a bio-link booking page
+
+## Comparisons
+
+- [Best Tattoo Studio Software](https://mytattoo.software/best-tattoo-studio-software/): Studio platforms compared on published UK pricing and commission
+- [Tattoo Software Comparison](https://mytattoo.software/tattoo-software-comparison/): MyTattoo, Booksy, Mindbody, Square, Vagaro and Fresha compared
+- [Booksy Alternative](https://mytattoo.software/booksy-alternative/): What Booksy's marketplace commission costs on tattoo-sized bookings
+- [Best Tattoo Booking Software guide](https://mytattoo.software/blog/best-tattoo-booking-software/): How to choose, with UK prices checked November 2026
+
+## Guides
+
+- [Tattoo Deposits UK](https://mytattoo.software/blog/tattoo-deposit-guide/): Typical amounts, refunds, and policy wording
+- [How to Reduce Tattoo No-Shows](https://mytattoo.software/blog/reduce-no-shows-tattoo-studio/): Deposits, reminders, and cancellation policy
+- [Tattoo Booking Form Template](https://mytattoo.software/blog/tattoo-booking-form-template/): What a booking form should ask
+- [Tattoo Consent Form Guide](https://mytattoo.software/blog/tattoo-consent-form-guide/): Clauses a consent form needs
+- [Blog](https://mytattoo.software/blog/): All guides on running a tattoo business
 
 ## Tools
 
-- [Tattoo Studio Revenue Calculator](https://mytattoo.software/tattoo-studio-calculator/): Free calculator to model studio revenue, session pricing, utilisation rates, and profitability projections
-
-## Blog
-
-- [Blog](https://mytattoo.software/blog/): Guides covering tattoo studio management, pricing strategy, client care, aftercare advice, and design trends
+- [Tattoo Studio Revenue Calculator](https://mytattoo.software/tattoo-studio-calculator/): Free calculator for session pricing, utilisation, no-show cost and take-home pay
 
 ## Legal
 

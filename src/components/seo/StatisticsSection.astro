@@ -2,9 +2,7 @@
 /**
  * Statistics Section Component
  *
- * Displays industry statistics and data with proper structured data markup.
- * AI systems heavily favor citing statistics, making this component crucial
- * for AI visibility.
+ * Displays a grid of facts or statistics. Emits no structured data (see below).
  *
  * Best Practices:
  * - Always include data source
@@ -20,8 +18,6 @@
  * />
  */
 
-import { createSchemaGenerator } from '../../utils/schema';
-import type { DatasetSchema } from '../../utils/schema/types';
 
 interface Statistic {
   label: string;
@@ -54,28 +50,14 @@ const {
   source,
   sourceUrl,
   datePublished,
-  site,
-  pageUrl,
   layout = 'grid'
 } = Astro.props;
 
-// Generate Dataset schema
-const schemaGen = createSchemaGenerator(site);
-const datasetData: DatasetSchema = {
-  name: title,
-  description: description || title,
-  url: pageUrl,
-  datePublished: datePublished,
-  creator: {
-    type: 'Organization',
-    name: source || `${site} Research Team`
-  }
-};
-
-const schemaMarkup = schemaGen.getDatasetSchema(datasetData, pageUrl);
+// No Dataset JSON-LD. On mytattoo these sections list product facts ("£0
+// platform fee", "Stripe"), not a published dataset, so Dataset markup credited to
+// a non-existent "Research Team" misdescribed the page to search engines and AI
+// crawlers. The visible section is unchanged.
 ---
-
-<script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
 <section class="statistics-section">
   <header class="stats-header">
