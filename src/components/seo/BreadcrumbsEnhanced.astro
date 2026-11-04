@@ -42,7 +42,10 @@ const breadcrumbItems: BreadcrumbItem[] = items.map((item, index) => ({
   position: index + 1
 }));
 
-const schemaMarkup = schemaGen.getBreadcrumbSchema(breadcrumbItems);
+// The generator's per-type methods are written for embedding in an @graph and omit
+// @context. Emitted standalone, a block without @context is not schema.org JSON-LD,
+// so Google and AI crawlers ignored every FAQ and breadcrumb block on these pages.
+const schemaMarkup = { "@context": "https://schema.org", ...schemaGen.getBreadcrumbSchema(breadcrumbItems) };
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />

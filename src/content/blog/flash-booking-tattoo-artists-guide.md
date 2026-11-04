@@ -6,11 +6,11 @@ date: "2026-01-15"
 tags: ["Booking", "Business"]
 faqs:
   - question: "How often should I offer flash?"
-    answer: "Start with once or twice monthly. Adjust based on demand and how it affects your custom bookings."
+    answer: "Start with once or twice monthly. Adjust based on demand and how it affects custom bookings."
   - question: "Should I take deposits for flash?"
     answer: "Yes. Even though flash is spontaneous, deposits protect your time from no-shows."
   - question: "Can flash clients modify designs?"
-    answer: "Keep modifications minimal. Significant changes should be handled as custom consultations."
+    answer: "Keep modifications minimal. Significant changes should be custom consultations."
   - question: "What if flash doesn't sell?"
     answer: "Experiment with designs, pricing, timing, and promotion. Some designs resonate more than others."
 ---

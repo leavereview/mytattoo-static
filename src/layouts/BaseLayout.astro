@@ -50,16 +50,20 @@ const schemaOrg = {
       "@id": "https://mytattoo.software/#organization",
       "name": "MyTattoo.Software",
       "url": "https://mytattoo.software",
-      "logo": { "@type": "ImageObject", "url": "https://mytattoo.software/logo.svg" },
-      "sameAs": [
-        "https://twitter.com/mytattoosoftware",
-        "https://www.linkedin.com/company/mytattoo-software",
-        "https://www.facebook.com/mytattoosoftware"
-      ],
+      // logo: /logo.svg never existed (404). sameAs: the Twitter/LinkedIn/Facebook
+      // company profiles listed here were unverified and the footer icons pointed at "#",
+      // so they are gone; the only verifiable identity is the Companies House record.
+      "logo": { "@type": "ImageObject", "url": "https://mytattoo.software/favicon.svg" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "JOHN POWELL LTD",
+        "sameAs": ["https://find-and-update.company-information.service.gov.uk/company/05408918"]
+      },
+      "areaServed": "GB",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
-        "email": "support@mytattoo.software",
+        "email": "info@mytattoo.software",
         "url": "https://mytattoo.software/contact/"
       },
       "address": {

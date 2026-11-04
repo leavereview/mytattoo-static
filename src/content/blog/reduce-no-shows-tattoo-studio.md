@@ -1,9 +1,21 @@
 ---
-title: "Reduce Tattoo Studio No-Shows"
-description: "Cut tattoo no-shows by up to 70%. Deposit policies, automated reminders, and rebooking tactics that protect your time and revenue."
+title: "How to Reduce Tattoo No-Shows: Deposits, Reminders, Policy"
+description: "Stop losing whole days to tattoo no-shows. UK deposit policy wording, reminder timing, cancellation windows, and what you can fairly keep when a client ghosts."
 image: /images/blog-consultation.jpg
 date: "2024-12-15"
+updatedDate: "2026-11-04"
 tags: ["Business", "Booking"]
+faqs:
+  - question: "Can I keep a tattoo deposit if the client doesn't turn up?"
+    answer: "Yes, if your deposit policy said so before they paid and the amount is reasonable. UK consumer law (the Consumer Rights Act 2015) expects terms to be fair, so a deposit that reflects your real loss — the design time and the slot you held — is easier to stand behind than a large one. Show the policy at the point of payment, not only in a DM. This is general information, not legal advice."
+  - question: "How much notice should a client give to cancel a tattoo?"
+    answer: "Most artists ask for between 48 hours and a week. Pick a window long enough for you to realistically refill the slot, write it into your policy, and say what happens to the deposit inside and outside that window — kept, or moved to a new date."
+  - question: "Can I charge a no-show fee on top of the deposit?"
+    answer: "Only if the client agreed to it in advance, and you would need a way to take the money. In practice most independent artists let the deposit be the no-show fee: it is already paid, so there is nothing to chase."
+  - question: "Do appointment reminders actually reduce tattoo no-shows?"
+    answer: "They help with the clients who simply forget, which is common when a session was booked weeks or months ahead. A reminder that restates the date, time, address and your cancellation policy also gives a client who can't make it a clear prompt to tell you in time."
+  - question: "What happens in MyTattoo when a client doesn't show up?"
+    answer: "The appointment only exists because a deposit was paid, so the slot was never unpaid. You mark the appointment as a no-show, the deposit stays with you, and no-shows are counted separately from cancellations in your reports. MyTattoo also emails the client a reminder 48 hours before every appointment."
 ---
 
 No-shows are one of the biggest frustrations for tattoo artists. When a client doesn't turn up for a session you've blocked out hours for, you lose income you can't recover. [Tattoo booking software](/tattoo-booking-software/) with automated reminders and deposit enforcement is the single most effective solution — but there are several strategies that work together to protect your schedule.
@@ -19,7 +31,7 @@ But the financial hit goes beyond the lost session fee:
 - **Emotional toll**: Repeated no-shows affect morale and motivation.
 - **Reputation risk**: Last-minute gaps in your schedule create pressure to fill them with less suitable bookings.
 
-Industry data suggests that studios without deposits experience no-show rates of 15-25%. With a structured deposit and reminder system, that typically drops below 5%.
+There is no reliable published figure for tattoo no-show rates in the UK, so be wary of any precise percentage. What artists consistently report is simpler: unpaid bookings get ghosted, and paid ones mostly don't.
 
 ## Proven Strategies to Reduce No-Shows
 
@@ -54,7 +66,7 @@ Each reminder should include:
 - Your cancellation/rescheduling policy
 - A direct way to contact you or reschedule
 
-SMS reminders have significantly higher open rates than email — aim for text for the day-before and day-of reminders, email for the earlier touchpoints. Modern [tattoo scheduling software](/tattoo-scheduling-software/) handles this automatically.
+Text messages tend to be seen faster than email, so if you send your own day-before reminder, a text is a good choice. [MyTattoo](/tattoo-scheduling-software/) emails every client a reminder 48 hours before their appointment automatically; it does not send texts.
 
 ### 3. Have a Crystal-Clear Cancellation Policy
 
@@ -160,7 +172,29 @@ The combination of automated deposits and reminder sequences is the minimum viab
 - [ ] No-show history tracked per client
 - [ ] Policy for repeat offenders in place
 
-No-shows will never completely disappear, but with the right systems in place you can cut them by 70% or more and protect thousands of pounds in annual revenue.
+No-shows will never completely disappear, but with a deposit taken up front, a clear policy and a reminder, the ones that do happen stop costing you the day.
+
+## Frequently asked questions
+
+### Can I keep a tattoo deposit if the client doesn't turn up?
+
+Yes, if your deposit policy said so before they paid and the amount is reasonable. UK consumer law (the Consumer Rights Act 2015) expects terms to be fair, so a deposit that reflects your real loss — the design time and the slot you held — is easier to stand behind than a large one. Show the policy at the point of payment, not only in a DM. This is general information, not legal advice.
+
+### How much notice should a client give to cancel a tattoo?
+
+Most artists ask for between 48 hours and a week. Pick a window long enough for you to realistically refill the slot, write it into your policy, and say what happens to the deposit inside and outside that window — kept, or moved to a new date.
+
+### Can I charge a no-show fee on top of the deposit?
+
+Only if the client agreed to it in advance, and you would need a way to take the money. In practice most independent artists let the deposit be the no-show fee: it is already paid, so there is nothing to chase.
+
+### Do appointment reminders actually reduce tattoo no-shows?
+
+They help with the clients who simply forget, which is common when a session was booked weeks or months ahead. A reminder that restates the date, time, address and your cancellation policy also gives a client who can't make it a clear prompt to tell you in time.
+
+### What happens in MyTattoo when a client doesn't show up?
+
+The appointment only exists because a deposit was paid, so the slot was never unpaid. You mark the appointment as a no-show, the deposit stays with you, and no-shows are counted separately from cancellations in your reports. MyTattoo also emails the client a reminder 48 hours before every appointment.
 
 ## Related Articles
 
@@ -170,11 +204,11 @@ No-shows will never completely disappear, but with the right systems in place yo
 
 ## Running a Tattoo Studio?
 
-If you manage a studio, the right software saves hours every week:
+If you take bookings, the right software takes the deposit-chasing off your plate:
 
-- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, client history, staff management
-- **[Tattoo Booking Software](/tattoo-booking-software/)** — online booking your clients can use 24/7
-- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — smart appointment and waitlist management
+- **[Tattoo Studio Software](/tattoo-studio-software/)** — bookings, deposits and client history in one place
+- **[Tattoo Booking Software](/tattoo-booking-software/)** — booking requests your clients can send 24/7
+- **[Tattoo Scheduling Software](/tattoo-scheduling-software/)** — you offer the times, the client secures one with a deposit
 - **[Tattoo Booking App](/tattoo-booking-app/)** — mobile-first booking for on-the-go artists
 - **[Tattoo Artist Software](/tattoo-artist-software/)** — purpose-built tools for independent artists
 

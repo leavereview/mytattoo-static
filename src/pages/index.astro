@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQEnhanced from '../components/seo/FAQEnhanced.astro';
 
 // Software Application Schema — honest to the current product (no fabricated
 // ratings/reviews, no fictional free trial). Access is open, self-serve signup.
@@ -26,6 +27,15 @@ const softwareApplicationSchema = {
     "Deposits-received list"
   ],
   "url": "https://mytattoo.software",
+  "publisher": { "@id": "https://mytattoo.software/#organization" },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "priceValidUntil": "2027-03-31",
+    "description": "Free until 31 March 2027. No platform fee and no commission on deposits; Stripe's standard card processing fee applies.",
+    "url": "https://mytattoo.software/pricing/"
+  },
   "applicationSubCategory": "Tattoo Booking",
   "audience": {
     "@type": "BusinessAudience",
@@ -56,6 +66,53 @@ const stats = [
   { number: 'No account', label: 'Clients just tap your link' },
   { number: 'Deposit-first', label: 'No booking without a paid deposit' },
   { number: 'Stripe', label: 'Secure card payments' }
+];
+
+// Homepage FAQ — the questions UK artists actually ask before switching booking
+// tools (booking software, deposits, no-shows). Every product statement here was
+// checked against leavereview/mytattoo main on 4 Nov 2026: single-artist, email
+// reminders only (no SMS), no automatic refunds, no Instagram API integration.
+const homeFaqs = [
+  {
+    question: 'What is the best booking software for a UK tattoo artist?',
+    answer: "It depends on how you work. If you're an independent artist whose clients find you on Instagram, look for four things: deposits taken before the slot is confirmed, reference images collected with the request, no account for the client to create, and no commission on your bookings. MyTattoo is built for exactly that. If you run a multi-artist studio or want marketplace exposure, a studio tool will suit you better — our guide compares the options on UK prices.",
+    links: [{ text: 'Best tattoo booking software compared', url: '/blog/best-tattoo-booking-software/' }]
+  },
+  {
+    question: 'How much does MyTattoo cost?',
+    answer: "Nothing until 31 March 2027: no subscription, no platform fee and no commission on deposits. Stripe's standard card processing fee applies, as it does with any card payment. Paid plans will follow with 90 days' notice, and you'll never be charged without opting in.",
+    links: [{ text: 'Pricing', url: '/pricing/' }]
+  },
+  {
+    question: 'How do tattoo deposits work with MyTattoo?',
+    answer: "You set your deposit as a fixed amount or a percentage of the quote. When you offer a client a time, they pay the deposit by card through Stripe, and it goes to your own Stripe account. The appointment only appears on your calendar once the deposit has been paid, and the deposit comes off the client's total; you collect the balance on the day by card link, QR code or cash.",
+    links: [{ text: 'UK tattoo deposit guide', url: '/blog/tattoo-deposit-guide/' }]
+  },
+  {
+    question: 'Does MyTattoo reduce no-shows?',
+    answer: "Every confirmed appointment has a paid deposit behind it, which is the biggest single deterrent to ghosting. Clients also get an email reminder 48 hours before. If someone still doesn't turn up, you mark it as a no-show and the deposit stays with you — MyTattoo never refunds anything automatically. Reminders are by email; there are no text reminders.",
+    links: [{ text: 'How to reduce tattoo no-shows', url: '/blog/reduce-no-shows-tattoo-studio/' }]
+  },
+  {
+    question: 'Can I keep the deposit if a client cancels?',
+    answer: "That's your policy to set, and clients see it before they pay. Refunds only happen when you choose to issue one. Under UK consumer law the policy should be fair — a deposit that reflects your design time and the slot you held is the easiest to stand behind.",
+    links: [{ text: 'Deposit policy wording', url: '/blog/tattoo-deposit-guide/' }]
+  },
+  {
+    question: 'Do my clients need an app or an account to book?',
+    answer: "No. They tap the link in your Instagram bio, fill in your booking form with their idea, placement, size and reference images, and leave their contact details. Offers, payment and their consent form all arrive as links on their phone.",
+    links: [{ text: 'Taking tattoo bookings from Instagram', url: '/tattoo-bookings-from-instagram/' }]
+  },
+  {
+    question: 'Does MyTattoo connect to Instagram DMs?',
+    answer: "No. MyTattoo doesn't read or send Instagram messages. It replaces the DM back-and-forth with one link in your bio, so the brief, the references and the deposit all arrive in one place instead of a message thread.",
+    links: [{ text: 'Tattoo appointment software', url: '/tattoo-appointment-software/' }]
+  },
+  {
+    question: 'Does it work for a studio with several artists?',
+    answer: "Not yet. MyTattoo is built for one artist managing their own books — one booking page, one calendar. If you need shared studio calendars today, our comparison covers the platforms that offer them.",
+    links: [{ text: 'Best tattoo studio software', url: '/best-tattoo-studio-software/' }]
+  }
 ];
 
 const screenshots = [
@@ -337,6 +394,17 @@ const screenshots = [
           Try the free calculator
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-custom max-w-4xl">
+      <FAQEnhanced
+        site="tattoo"
+        pageUrl="https://mytattoo.software/"
+        title="Questions UK tattoo artists ask"
+        faqs={homeFaqs}
+      />
     </div>
   </section>
 
