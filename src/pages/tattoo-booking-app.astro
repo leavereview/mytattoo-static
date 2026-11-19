@@ -62,6 +62,14 @@ const comparisonData = [
 
 const faqItems = [
   {
+    question: "What are the benefits of a tattoo booking app?",
+    answer: "For the artist: fewer no-shows because a deposit is paid before the time is held, less admin because size, placement, budget and reference images arrive in one request, bookings captured overnight and at weekends, and records kept in one place. For the client: one clear link to book from a phone, no account to create, and a confirmation and reminder by email. With MyTattoo.Software there is also no platform fee or commission; only Stripe's standard card-processing fee applies.",
+    links: [
+      { text: 'Compare the options', url: '/blog/best-tattoo-booking-software/' },
+      { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
+    ]
+  },
+  {
     question: "What is a tattoo booking app?",
     answer: "A tattoo booking app is a mobile-friendly system that lets clients book tattoo appointments online, submit design references, and pay deposits—all from their phone, instead of a back-and-forth in Instagram DMs. With MyTattoo.Software specifically, there's no account for the client to create: they leave their contact details, fill in an intake form with reference images, and the artist reviews the request and sends back a quote with a time slot. The client pays a deposit through Stripe to confirm, and the appointment is only added to the artist's calendar once that deposit clears.",
     links: [
@@ -146,8 +154,8 @@ const faqItems = [
 const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Tattoo Booking App: Benefits, Features & Pricing",
-  "description": "Everything you need to know about tattoo booking apps. Online scheduling, deposit collection, and reference image intake for independent tattoo artists.",
+  "headline": "Benefits of a Tattoo Booking App: What It Does for Artists and Clients",
+  "description": "The benefits of a tattoo booking app for artists and clients: deposits, reference intake, reminders and no commission, plus features and pricing.",
   "author": {
     "@type": "Organization",
     "name": "MyTattoo.Software"
@@ -158,8 +166,8 @@ const schemaMarkup = {
 ---
 
 <BaseLayout
-  title="Benefits of a Tattoo Booking App: Fewer No-Shows, £0 Fees"
-  description="Why tattoo artists switch to a booking app: deposits lock in every slot, fewer no-shows, no DM back-and-forth. £0 platform fee. See all the benefits."
+  title="Benefits of a Tattoo Booking App: 6 Ways It Saves You Time"
+  description="Benefits of a tattoo booking app: deposits before a slot is held, references in one request, 48-hour reminders, £0 platform fee. See all 6 and try it free."
 >
   <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
 
@@ -180,22 +188,31 @@ const schemaMarkup = {
     <div class="container-custom relative">
       <div class="max-w-3xl">
         <span class="inline-block bg-brand-red/20 text-brand-red-light px-3 py-1 rounded-full text-sm mb-4">Mobile Booking</span>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Tattoo Booking App: Benefits, Features &amp; Pricing</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Benefits of a Tattoo Booking App: Features &amp; Pricing</h1>
         <p class="text-xl text-gray-300 mb-4">
-          <strong>A tattoo booking app</strong> lets clients book appointments, submit design ideas, and pay deposits—all from their phone. Stop losing bookings to DM chaos and missed messages. Give clients the modern booking experience they expect.
+          The main benefits of <strong>a tattoo booking app</strong> are fewer no-shows, far less time spent in DMs, and clients who arrive with their ideas and references already sent. Here is what each one means in practice, what to look for, and what it costs.
         </p>
         <p class="text-gray-400 mb-8">Last updated: November 2026 | Reading time: 8 minutes</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Get started</a>
-          <a href="#benefits-of-app" class="btn-secondary text-lg px-8 py-4">See the benefits</a>
+          <a href="https://app.mytattoo.software/signin" class="btn-primary text-lg px-8 py-4">Try it free, no commission</a>
+          <a href="#benefits-of-app" class="btn-secondary text-lg px-8 py-4">Read the full benefits</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Featured Answer -->
-  <FeaturedAnswer question="What is a tattoo booking app?">
-    A tattoo booking app lets clients book appointments, submit design references, and pay deposits from their phone, instead of a back-and-forth in Instagram DMs. With MyTattoo.Software, clients need no account: they leave their contact details, submit an intake form with reference images, and the artist reviews the request and offers a time slot with a deposit amount. Once the client pays that deposit through Stripe, the appointment is confirmed and added to the artist's calendar.
+  <FeaturedAnswer question="What are the benefits of a tattoo booking app?">
+    <p>A tattoo booking app protects your time and gets you better-prepared clients. In short:</p>
+    <ul>
+      <li><strong>Fewer no-shows:</strong> the deposit is paid before the appointment goes on your calendar.</li>
+      <li><strong>Less admin:</strong> size, placement, budget and reference images arrive in one request, not a dozen DMs.</li>
+      <li><strong>Bookings while you sleep:</strong> enquiries sent at 11pm or on a Sunday are captured, not lost.</li>
+      <li><strong>Reminders on autopilot:</strong> clients get an email 48 hours before their appointment.</li>
+      <li><strong>An easier path for clients:</strong> one link, no account to create, works on a phone.</li>
+      <li><strong>No commission:</strong> a £0 platform fee with MyTattoo, so your deposits go straight to your own Stripe account (Stripe's card fee still applies).</li>
+    </ul>
+    <p>The <a href="#benefits-of-app">full list of benefits for artists and clients</a> is below, or <a href="https://app.mytattoo.software/signin">try MyTattoo free</a>.</p>
   </FeaturedAnswer>
 
   <!-- Statistics Section -->
@@ -213,10 +230,10 @@ const schemaMarkup = {
         <div class="bg-white p-6 rounded-lg shadow-sm">
           <h2 class="text-xl font-bold text-brand-navy mb-4">In This Guide</h2>
           <ul class="grid md:grid-cols-2 gap-2 text-gray-700">
+            <li><a href="#benefits-of-app" class="hover:text-brand-red">→ Benefits of a Tattoo Booking App</a></li>
             <li><a href="#what-is" class="hover:text-brand-red">→ What Is a Tattoo Booking App?</a></li>
             <li><a href="#features" class="hover:text-brand-red">→ Essential Features</a></li>
             <li><a href="#who-its-for" class="hover:text-brand-red">→ Is It Right for You?</a></li>
-            <li><a href="#benefits-of-app" class="hover:text-brand-red">→ Benefits of a Tattoo Booking App</a></li>
             <li><a href="#clients" class="hover:text-brand-red">→ Client Experience</a></li>
             <li><a href="#app-vs-web" class="hover:text-brand-red">→ Mobile App vs Mobile Website</a></li>
             <li><a href="#pricing" class="hover:text-brand-red">→ Pricing &amp; Affordable Options</a></li>
@@ -530,9 +547,9 @@ const schemaMarkup = {
   <!-- CTA Section -->
   <section class="section bg-gradient-to-r from-brand-red to-blood-deep text-white">
     <div class="container-custom text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Upgrade Your Booking?</h2>
-      <p class="text-xl mb-8 opacity-90">Stop losing bookings in your DMs. Give clients the professional booking experience they expect—and protect your time with automatic deposits.</p>
-      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Get started</a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Get these benefits on your own booking link</h2>
+      <p class="text-xl mb-8 opacity-90">Deposits before the slot is held, references in one request, no commission. Free for independent artists until 31 March 2027.</p>
+      <a href="https://app.mytattoo.software/signin" class="btn bg-white text-brand-red hover:bg-gray-100 text-lg px-8 py-4">Try it free</a>
       <p class="text-sm mt-4 opacity-75">MyTattoo is deposit-secured booking for independent tattoo artists.</p>
     </div>
   </section>
