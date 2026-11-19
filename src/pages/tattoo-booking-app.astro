@@ -79,7 +79,7 @@ const faqItems = [
   },
   {
     question: "Do I need a separate app or is a mobile website enough?",
-    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything from app stores, and you avoid Apple/Google fees (up to 30% commission on in-app payments). A responsive web-based booking page gives you all the benefits of an app—works on phones, can be added to home screen—without the complications. That's why MyTattoo.Software is built mobile-first as a booking page rather than a native app.",
+    answer: "For most tattoo studios, a mobile-optimized booking website works perfectly. Clients don't need to download anything from app stores, and you avoid app-store review and separate iOS and Android builds. A responsive web-based booking page gives you all the benefits of an app—works on phones, can be added to home screen—without the complications. That's why MyTattoo.Software is built mobile-first as a booking page rather than a native app.",
     links: [
       { text: 'Mobile booking features', url: '/' },
       { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
@@ -95,7 +95,7 @@ const faqItems = [
   },
   {
     question: "How do booking apps handle deposits?",
-    answer: "Booking apps require deposits at time of booking, either as fixed amounts (£50, £100, £200) or percentages of estimated cost. Deposits are collected via integrated card payment and automatically tracked. You control refund policies: non-refundable for no-shows, refundable with X days notice, or transferable to rescheduled appointments. Requiring a deposit before a slot is confirmed gives clients real financial commitment at booking time, which is what protects your calendar from no-shows. Payment processing fees are typically 2.9% + 30p.",
+    answer: "Booking apps require deposits at time of booking, either as fixed amounts (£50, £100, £200) or percentages of estimated cost. Deposits are collected via integrated card payment and automatically tracked. You control refund policies: non-refundable for no-shows, refundable with X days notice, or transferable to rescheduled appointments. Requiring a deposit before a slot is confirmed gives clients real financial commitment at booking time, which is what protects your calendar from no-shows. Card processing is separate: Stripe's UK fee for standard UK cards is 1.5% + 20p (stripe.com/gb/pricing, checked November 2026).",
     links: [
       { text: 'Deposit best practices', url: '/blog/tattoo-deposit-guide/' },
       { text: 'Payment processing', url: '/pricing/' }
@@ -103,7 +103,7 @@ const faqItems = [
   },
   {
     question: "How much does a tattoo booking app cost?",
-    answer: "Tattoo booking software typically costs £20-80 per month for solo artists, £80-150 for studios, across the wider market. MyTattoo.Software charges independent tattoo artists nothing while we're in early access—no platform fee, no commission, no per-booking fee, and no monthly subscription. You connect your own Stripe account, so a client's deposit goes straight to you and only Stripe's standard card-processing fee applies. Avoid platforms charging 3-5% per booking—these add up to hundreds monthly for busy artists.",
+    answer: "On UK prices checked in November 2026, tattoo and salon booking software runs from a £0 plan (Square Appointments) to £40 a month for one staff member (Booksy), with Fresha at £14.95 and Vagaro from £20. MyTattoo.Software charges independent tattoo artists nothing while we're in early access—no platform fee, no commission, no per-booking fee, and no monthly subscription. You connect your own Stripe account, so a client's deposit goes straight to you and only Stripe's standard card-processing fee applies. Watch marketplace commissions too: Booksy Boost takes 30% of a new client's first visit (minimum £5) and Fresha takes 20% of a new marketplace client (minimum £4).",
     links: [
       { text: 'View pricing page', url: '/pricing/' },
       { text: 'Get started', url: 'https://app.mytattoo.software/signin' }
@@ -161,7 +161,7 @@ const schemaMarkup = {
     "name": "MyTattoo.Software"
   },
   "datePublished": "2026-01-18",
-  "dateModified": "2026-11-02"
+  "dateModified": "2026-11-19"
 };
 ---
 
@@ -463,10 +463,10 @@ const schemaMarkup = {
           When artists ask for a "mobile app for tattoo bookings," what they usually want is the experience of an app—booking from a phone, in a few taps—rather than a literal native app downloaded from the App Store. That distinction matters, because for most tattoo studios a mobile-optimised booking website delivers the same result with far less friction and cost.
         </p>
         <p class="text-gray-600 mb-6">
-          A <strong>native app</strong> is software a client installs from the Apple App Store or Google Play. It can feel slick, but it carries real downsides for a booking workflow: clients have to find it, download it, and create an account before they can book—friction that loses casual Instagram visitors. Native apps also expose you to app-store rules and the platforms' commission (historically up to 30% on in-app payments), and they need separate iOS and Android builds to maintain.
+          A <strong>native app</strong> is software a client installs from the Apple App Store or Google Play. It can feel slick, but it carries real downsides for a booking workflow: clients have to find it, download it, and create an account before they can book—friction that loses casual Instagram visitors. Native apps also go through app-store review for every update, and they need separate iOS and Android builds to maintain.
         </p>
         <p class="text-gray-600 mb-6">
-          A <strong>mobile booking website</strong> (a responsive booking page, often delivered as a PWA—progressive web app) opens instantly from a link with nothing to install. Clients tap your Instagram bio link and book in the same session. There are no app-store fees eating into deposits, and modern booking pages can still be "added to home screen" so they sit on a phone like an app icon and even send notifications. For the vast majority of studios, that combination—zero download friction, no commission, app-like feel—wins.
+          A <strong>mobile booking website</strong> (a responsive booking page, often delivered as a PWA—progressive web app) opens instantly from a link with nothing to install. Clients tap your Instagram bio link and book in the same session. There is no app-store review between you and a change, and modern booking pages can still be "added to home screen" so they sit on a phone like an app icon and even send notifications. For the vast majority of studios, that combination—zero download friction, no commission, app-like feel—wins.
         </p>
         <div class="overflow-x-auto my-8">
           <table class="w-full text-left border-collapse">
@@ -484,9 +484,9 @@ const schemaMarkup = {
                 <td class="py-3 pl-4">No—opens from any link</td>
               </tr>
               <tr class="border-b border-gray-100">
-                <td class="py-3 pr-4 font-semibold">App-store commission</td>
-                <td class="py-3 px-4">Up to 30% on in-app payments</td>
-                <td class="py-3 pl-4">None</td>
+                <td class="py-3 pr-4 font-semibold">App-store review</td>
+                <td class="py-3 px-4">Every update is reviewed by Apple and Google</td>
+                <td class="py-3 pl-4">None—changes go live straight away</td>
               </tr>
               <tr class="border-b border-gray-100">
                 <td class="py-3 pr-4 font-semibold">Add to home screen</td>
@@ -507,7 +507,7 @@ const schemaMarkup = {
           </table>
         </div>
         <p class="text-gray-600 mb-8">
-          The exception is a busy multi-location studio whose regulars rebook constantly and would genuinely keep an icon on their phone—there, a native app can earn its keep. For everyone else, a mobile-first booking website gives clients the "app" they're picturing without the download wall or the platform tax. MyTattoo.Software is built mobile-first for exactly this reason, so your booking page works like an app the moment a client taps your link.
+          The exception is a busy multi-location studio whose regulars rebook constantly and would genuinely keep an icon on their phone—there, a native app can earn its keep. For everyone else, a mobile-first booking website gives clients the "app" they're picturing without the download wall or the app-store overhead. MyTattoo.Software is built mobile-first for exactly this reason, so your booking page works like an app the moment a client taps your link.
         </p>
 
         <h2 id="pricing" class="text-3xl font-bold text-brand-navy mt-12 mb-6">Tattoo Booking App Pricing &amp; Affordable Options</h2>
@@ -515,14 +515,16 @@ const schemaMarkup = {
           Tattoo booking app pricing generally falls into two models: a flat monthly subscription, or a "free" tool that takes a percentage of every booking. Understanding the difference is the key to keeping costs down as you get busier—because the cheapest option on day one can quietly become the most expensive once your calendar fills up.
         </p>
         <p class="text-gray-600 mb-6">
-          Across the wider market, typical cost ranges look roughly like this (these are general industry figures, not MyTattoo prices):
+          Here is what the main UK options charged when we checked their pricing pages in November 2026 (prices change, so check the vendor before you sign up):
         </p>
         <ul class="space-y-3 mb-6">
-          <li><strong>Solo-artist tools:</strong> commonly around £20–£40 per month for booking, deposits, and reminders on a single calendar.</li>
-          <li><strong>Studio/multi-artist plans:</strong> typically £80–£150 per month as you add artists, calendars, and reporting.</li>
-          <li><strong>Per-booking / commission models:</strong> often 3–5% of each booking. These advertise as "free" or low-cost but scale directly with your success—a busy artist taking £6,000 a month in bookings could pay £180–£300 monthly, far more than a flat plan.</li>
-          <li><strong>Payment processing:</strong> separate from the software, card fees of roughly 2.9% + 30p per transaction are standard whichever platform you choose.</li>
+          <li><strong>Subscriptions:</strong> Square Appointments has a £0 plan for one location (Plus £29 a month); Fresha's Independent plan is £14.95 a month; Vagaro starts at £20 a month for one calendar; Booksy is £40 a month for one staff member, plus VAT.</li>
+          <li><strong>Marketplace commissions:</strong> Booksy Boost takes 30% of a new client's first visit (minimum £5) and Fresha takes 20% of a new marketplace client (minimum £4). On a £400 first session, a 30% fee is £120—more than the monthly subscription.</li>
+          <li><strong>Payment processing:</strong> separate from the software. Stripe's UK fee for standard UK cards is 1.5% + 20p per transaction (<a href="https://stripe.com/gb/pricing" class="text-brand-red hover:underline" rel="nofollow noopener" target="_blank">Stripe pricing</a>).</li>
         </ul>
+        <p class="text-gray-600 mb-6">
+          The full side-by-side, with what each tool does for tattoo work, is in our <a href="/blog/best-tattoo-booking-software/" class="text-brand-red hover:underline">best tattoo booking software comparison</a>.
+        </p>
         <p class="text-gray-600 mb-6">
           The cheapest way to start is almost always a flat-rate plan with predictable monthly costs: you get full functionality, your costs stay predictable, and you avoid handing over a slice of every deposit. Watch for per-booking fees disguised as low headline pricing, "free" tiers that can't actually take deposits (the one feature that prevents no-shows), and tools that charge extra for SMS reminders.
         </p>
