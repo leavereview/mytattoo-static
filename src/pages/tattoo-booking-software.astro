@@ -142,6 +142,13 @@ const faqItems = [
     ]
   },
   {
+    question: "What are the best practices for tattoo scheduling?",
+    answer: "Book each piece for a realistic length, with time either side for setup, the stencil and cleaning down. Take a deposit before a slot counts as booked, and give each offer a deadline so an unpaid offer does not block your diary. Write down your notice period for moving or cancelling, and remind clients before the day. In MyTattoo.Software each service on your menu has its own length and deposit, an appointment only reaches your calendar once the deposit is paid, offers expire after a hold window you set (48 hours by default), clients can ask to move a booking once with at least 48 hours' notice, and the client gets an email reminder 48 hours before.",
+    links: [
+      { text: 'Reducing no-shows guide', url: '/blog/reduce-no-shows-tattoo-studio/' }
+    ]
+  },
+  {
     question: "Can I use booking software with Instagram?",
     answer: "Yes — that's the core of how MyTattoo.Software works. Put your booking link in your Instagram bio and link stickers. Clients tap the link, land on your branded booking page, and leave their details and references without any DM back-and-forth.",
     links: [
@@ -196,7 +203,7 @@ const schemaMarkup = {
     "name": "MyTattoo"
   },
   "datePublished": "2025-01-01",
-  "dateModified": "2026-11-24"
+  "dateModified": "2026-11-25"
 };
 ---
 
@@ -352,11 +359,14 @@ const schemaMarkup = {
         <h3 class="text-xl font-bold text-brand-navy mt-8 mb-4">Deposit Best Practices</h3>
 
         <ul class="space-y-2">
-          <li><strong>Amount:</strong> $50-100 or 20-30% of estimated total</li>
-          <li><strong>Policy:</strong> Non-refundable, applies to session cost</li>
-          <li><strong>Timing:</strong> Required at booking, not later</li>
-          <li><strong>Clear terms:</strong> State your cancellation policy upfront</li>
+          <li><strong>Amount:</strong> a fixed sum or a percentage of your estimate, kept to a small part of the total price. It should cover your design time and the slot you are holding, not the whole session.</li>
+          <li><strong>Policy:</strong> say exactly when you keep the deposit (for example, a client cancels or does not turn up), when a client can move the date, and that the deposit comes back if you cancel. Keep those cases narrow and specific.</li>
+          <li><strong>Final price:</strong> say whether the deposit comes off the final price. In MyTattoo.Software the offer shows the remaining balance after the deposit.</li>
+          <li><strong>Timing:</strong> take the deposit before you confirm the slot, not later.</li>
+          <li><strong>Clear terms:</strong> show your terms in plain words before the client pays, and keep a record of what they agreed to.</li>
         </ul>
+
+        <p class="text-sm text-gray-600">This is general information, not legal advice. UK consumer law expects deposit terms to be fair and clear. See the CMA's <a href="https://www.gov.uk/government/publications/unfair-contract-terms-cma37" class="text-brand-red hover:underline" rel="noopener">unfair contract terms guidance</a> and Citizens Advice on <a href="https://www.citizensadvice.org.uk/consumer/changed-your-mind/cancelling-a-service-youve-arranged/" class="text-brand-red hover:underline" rel="noopener">cancelling a service</a>.</p>
 
         <!-- Calculator Callout -->
         <div style="background: linear-gradient(135deg, #F4E4E1 0%, #F3ECDD 100%); border-left: 4px solid #A62B22; padding: 1.5rem; border-radius: 0.5rem; margin: 2rem 0;">
